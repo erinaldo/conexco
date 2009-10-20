@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexcoFacturación", "Cone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.Model", "Conexco.Model\Conexco.Model.csproj", "{CF6BA7BA-87E6-425F-8AA5-B2BE7A3567F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.Controller", "Conexco.Controller\Conexco.Controller.csproj", "{280F6091-D771-417F-BC44-FDABE27DC122}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -23,6 +25,10 @@ Global
 		{CF6BA7BA-87E6-425F-8AA5-B2BE7A3567F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF6BA7BA-87E6-425F-8AA5-B2BE7A3567F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF6BA7BA-87E6-425F-8AA5-B2BE7A3567F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280F6091-D771-417F-BC44-FDABE27DC122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280F6091-D771-417F-BC44-FDABE27DC122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280F6091-D771-417F-BC44-FDABE27DC122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280F6091-D771-417F-BC44-FDABE27DC122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

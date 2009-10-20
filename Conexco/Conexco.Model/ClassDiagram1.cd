@@ -1,14 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Conexco.Model.Class1" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Class1.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Conexco.Model.ConexcoDataClassesDataContext" Collapsed="true">
-    <Position X="9.25" Y="1.5" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>cvEBhaSiEDQAFBCqQHZJOBYB4GQA2LCGANrDjAGhE4g=</HashCode>
     </TypeIdentifier>
@@ -17,6 +10,13 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAk6FAEBAeAKAKJIQUNJCACRijBCoqAcAAACAABEBAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Conexco.Model.Remitos_Linea" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEkIAEBAEEggCAAUFFAAAiBjCABABQAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -42,9 +42,9 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Cliente" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IsghFDPFAegCQIpMxJHCiAIBiCEWAAQVBAEEiAFhBUA=</HashCode>
+      <HashCode>IsghFDXFAagCQIpMRJHBiAIBiCEWAAA1BAEEiABhBUA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -72,7 +72,7 @@
   <Class Name="Conexco.Model.Clientes_Transportista" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>oCIgBAIFwQwMEAIAUIEAiBABmCAAgACUAABAigAJAgs=</HashCode>
+      <HashCode>oCIgBAIFwQwMEAIAUIGAiBABmCgAgACUAABAigAJAgs=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -84,101 +84,94 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Documentos_Estado" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="2.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CIAgAIIBAEgAEAAAwIMCAgABiCACAAQEAAAAAEGAAQA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Documentos_Tipo" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="2.5" Width="1.5" />
+    <Position X="4" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgEAABAcAAAAAAwAMAAAABiCACCUAEAAAAAAFAAQA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Egreso_Motivo" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4" Y="2.5" Width="1.5" />
+    <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAoABAAAAAAAAQAMAAAADiiACAAAEAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Egreso_Stock" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="2.5" Width="1.5" />
+    <Position X="7.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAkkAAEBAAEAAAAQQGFAIBCBiCABQAAEAAAAgAEQAgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Empresa" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ooAhABJNwSwGUYBEVJFAgAIBmCEUQACgBgEGihloBgk=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Factura" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+    <Position X="2.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>KAAgFIADAEpEEIKIwJGASQKBirkAaUQeEC4SgwgBagA=</HashCode>
+      <HashCode>KAAgFIADAEpEEIKIwJEASQKBirEAaUQeEC4SgwgBagA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Facturas_Linea" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAUgIAEBAAUAAAAAwEFAAAKBiCABAAAAEAgAQgAAAgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Localidade" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+    <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAgAAIBQQwAAAAAQAEAAKAhmCAAIAAACAAAAAAIAgE=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Presupuesto" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>aAAoFIEDBAhmAMKIwJHBeQCDivsBxQAcAi4Sg4gBSgA=</HashCode>
+      <HashCode>aAAoFIEDBAhmAMKIwJFBeQCDivMBxQAcAi4Sg4gBSgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Presupuestos_Linea" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIEgAAEBAAEAAAAAREFBIgSBiDADAAAAAgAAAAAIAgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Provincia" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+    <Position X="2.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gCAgAAABAAAAgAAAQAEAEAABiKAQIEAICAQAAAAIAAA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Conexco.Model.Remito" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="3.5" Width="1.5" />
+    <Position X="4" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>aCAsJIABBDpogOoIQJFIWJAHiOcBZRAWAAxAgIgBCgA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Conexco.Model.Remitos_Linea" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEkIAEBAEEggCAAUFFAAAiBjCABABQAAAAAAAAAAgA=</HashCode>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
   <Class Name="Conexco.Model.Properties.Settings" Collapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+    <Position X="7.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Font Name="Tahoma" Size="8.25" />
+  <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
