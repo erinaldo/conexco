@@ -131,7 +131,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ConexcoClassDiagram.cd" />
     <None Include="ConexcoDataClasses.dbml.layout">
       <DependentUpon>ConexcoDataClasses.dbml</DependentUpon>
     </None>
