@@ -15,7 +15,7 @@ namespace ConexcoFacturación
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmClienteAlta());
+            Application.Run(new MdiConexco());
         }
     }
 }
