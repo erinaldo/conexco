@@ -33,7 +33,6 @@
             this.txtWeb = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtCondIva = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.lblFax = new System.Windows.Forms.Label();
-            this.txtInicioActividades = new System.Windows.Forms.TextBox();
             this.lblInicioActividades = new System.Windows.Forms.Label();
             this.txtIngresosBrutos = new System.Windows.Forms.TextBox();
             this.lblIngresosBrutos = new System.Windows.Forms.Label();
@@ -65,6 +63,8 @@
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
+            this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
+            this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxDatosFiscales.SuspendLayout();
@@ -78,6 +78,7 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -87,6 +88,7 @@
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtWeb
             // 
@@ -108,13 +110,6 @@
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(100, 20);
             this.txtDomicilio.TabIndex = 0;
-            // 
-            // txtCondIva
-            // 
-            this.txtCondIva.Location = new System.Drawing.Point(124, 51);
-            this.txtCondIva.Name = "txtCondIva";
-            this.txtCondIva.Size = new System.Drawing.Size(100, 20);
-            this.txtCondIva.TabIndex = 1;
             // 
             // txtCuit
             // 
@@ -298,13 +293,6 @@
             this.lblFax.TabIndex = 49;
             this.lblFax.Text = "Fax";
             // 
-            // txtInicioActividades
-            // 
-            this.txtInicioActividades.Location = new System.Drawing.Point(124, 85);
-            this.txtInicioActividades.Name = "txtInicioActividades";
-            this.txtInicioActividades.Size = new System.Drawing.Size(100, 20);
-            this.txtInicioActividades.TabIndex = 2;
-            // 
             // lblInicioActividades
             // 
             this.lblInicioActividades.AutoSize = true;
@@ -373,7 +361,7 @@
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(203, 67);
+            this.btnLocalidad.Location = new System.Drawing.Point(203, 44);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 47;
@@ -386,18 +374,19 @@
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
+            this.cmbProvincia.Sorted = true;
             this.cmbProvincia.TabIndex = 46;
             // 
             // gbxDatosFiscales
             // 
+            this.gbxDatosFiscales.Controls.Add(this.dtpInicioActividades);
+            this.gbxDatosFiscales.Controls.Add(this.cmbCondicionIva);
             this.gbxDatosFiscales.Controls.Add(this.lblCuit);
             this.gbxDatosFiscales.Controls.Add(this.lblCondIva);
             this.gbxDatosFiscales.Controls.Add(this.txtIngresosBrutos);
             this.gbxDatosFiscales.Controls.Add(this.txtCuit);
             this.gbxDatosFiscales.Controls.Add(this.lblIngresosBrutos);
-            this.gbxDatosFiscales.Controls.Add(this.txtCondIva);
-            this.gbxDatosFiscales.Controls.Add(this.txtInicioActividades);
             this.gbxDatosFiscales.Controls.Add(this.lblInicioActividades);
             this.gbxDatosFiscales.Location = new System.Drawing.Point(262, 210);
             this.gbxDatosFiscales.Name = "gbxDatosFiscales";
@@ -405,6 +394,22 @@
             this.gbxDatosFiscales.TabIndex = 2;
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos Fiscales";
+            // 
+            // cmbCondicionIva
+            // 
+            this.cmbCondicionIva.FormattingEnabled = true;
+            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
+            this.cmbCondicionIva.Name = "cmbCondicionIva";
+            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
+            this.cmbCondicionIva.TabIndex = 54;
+            // 
+            // dtpInicioActividades
+            // 
+            this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioActividades.Location = new System.Drawing.Point(124, 86);
+            this.dtpInicioActividades.Name = "dtpInicioActividades";
+            this.dtpInicioActividades.Size = new System.Drawing.Size(104, 20);
+            this.dtpInicioActividades.TabIndex = 55;
             // 
             // FrmEmpresa
             // 
@@ -419,6 +424,7 @@
             this.Controls.Add(this.gbxDatosPersonales);
             this.Name = "FrmEmpresa";
             this.Text = "Datos de la Empresa";
+            this.Load += new System.EventHandler(this.FrmEmpresa_Load);
             this.gbxDatosPersonales.ResumeLayout(false);
             this.gbxDatosPersonales.PerformLayout();
             this.gbxDomicilio.ResumeLayout(false);
@@ -436,7 +442,6 @@
         private System.Windows.Forms.TextBox txtWeb;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtCondIva;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
@@ -459,7 +464,6 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label lblFax;
-        private System.Windows.Forms.TextBox txtInicioActividades;
         private System.Windows.Forms.Label lblInicioActividades;
         private System.Windows.Forms.TextBox txtIngresosBrutos;
         private System.Windows.Forms.Label lblIngresosBrutos;
@@ -468,6 +472,8 @@
         private System.Windows.Forms.GroupBox gbxDatosFiscales;
         private System.Windows.Forms.Button btnLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.ComboBox cmbCondicionIva;
+        private System.Windows.Forms.DateTimePicker dtpInicioActividades;
 
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Conexco.Controller;
 
 namespace ConexcoFacturación
 {
@@ -123,6 +124,20 @@ namespace ConexcoFacturación
         private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmLocalidades() { MdiParent = this }.Show();
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmArticulosStock() { MdiParent = this }.Show();
+        }
+
+        private void MdiConexco_Load(object sender, EventArgs e)
+        {
+            if(new EmpresaController().DatosEmpresa() == null)
+            {
+                MessageBox.Show("Bienvenido! Usted no tiene datos de su empresa cargados, por favor ingreselos");
+                new FrmEmpresa().ShowDialog();
+            }
         }
     }
 }

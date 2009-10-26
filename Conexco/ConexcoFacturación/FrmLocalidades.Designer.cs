@@ -49,6 +49,7 @@
             this.cmbProvincia.Location = new System.Drawing.Point(68, 24);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cmbProvincia.Sorted = true;
             this.cmbProvincia.TabIndex = 0;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
@@ -76,6 +77,7 @@
             this.cmbLocalidad.Location = new System.Drawing.Point(68, 57);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(121, 21);
+            this.cmbLocalidad.Sorted = true;
             this.cmbLocalidad.TabIndex = 3;
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 

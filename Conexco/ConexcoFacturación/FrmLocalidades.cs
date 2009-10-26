@@ -20,7 +20,7 @@ namespace ConexcoFacturación
 
         public LocalidadesController LocalidadesController { get; set;}
 
-        public string ProvinciaSeleccionada { get; set; }
+        public Provincia ProvinciaSeleccionada { get; set; }
 
         public string LocalidadSeleccionada { get; set; }
 
@@ -38,8 +38,9 @@ namespace ConexcoFacturación
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             var provincia = (Provincia) cmbProvincia.SelectedItem;
-            cmbProvincia.DataSource = LocalidadesController.ListarLocalidadesPorProvincia(provincia);
-            cmbProvincia.DisplayMember = "Localidad";
+            LimpiarPantalla();
+            cmbLocalidad.DataSource = LocalidadesController.ListarLocalidadesPorProvincia(provincia);
+            cmbLocalidad.DisplayMember = "Localidad";
         }
 
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,12 +63,33 @@ namespace ConexcoFacturación
                 nuevaLocalidad.idProvincia = ((Provincia) cmbProvincia.SelectedItem).idProvincia;
                 nuevaLocalidad.Provincia = (Provincia) cmbProvincia.SelectedItem;
 
-                LocalidadesController.GuardarNuevaLocalidad(nuevaLocalidad);
+                if (!LocalidadesController.GuardarNuevaLocalidad(nuevaLocalidad))
+                {
+                    MessageBox.Show("Ocurrio un problema al guardar la Localidad, intentelo nuevamente");
+                }
+
+                LocalidadSeleccionada = txtNuevaLocalidad.Text;
+                CodPostalSeleccionado = txtNuevoCodPostal.Text;
+            }
+            else
+            {
+                LocalidadSeleccionada = cmbLocalidad.Text;
+                CodPostalSeleccionado = lblCodPostal.Text;
             }
 
-            ProvinciaSeleccionada = cmbProvincia.SelectedText;
-            LocalidadSeleccionada = cmbLocalidad.SelectedText;
-            CodPostalSeleccionado = lblCodPostal.Text;
+            ProvinciaSeleccionada = (Provincia)cmbProvincia.SelectedItem;
+
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
+        }
+
+        public void LimpiarPantalla()
+        {
+            cmbLocalidad.ResetText();
+            lblCodPostal.Text = "";
+            txtNuevaLocalidad.Text = "";
+            txtNuevoCodPostal.Text = "";
+
         }
     }
 }

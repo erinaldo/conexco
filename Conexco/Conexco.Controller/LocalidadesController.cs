@@ -48,5 +48,10 @@ namespace Conexco.Controller
                 return false;
             }
         }
+
+        public Provincia DatosProvincia(string nombreProvincia)
+        {
+            return _context.Provincias.Single(prov => prov.Provincia1 == nombreProvincia);
+        }
     }
 }
