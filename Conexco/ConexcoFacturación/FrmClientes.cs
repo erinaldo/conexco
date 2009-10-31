@@ -27,7 +27,12 @@ namespace ConexcoFacturación
 
         private void RefrescarGrilla()
         {
-            grdClientes.DataSource = ClientesController.ListarClientes(); 
+            grdClientes.DataSource = ClientesController.ListarClientes();
+            grdClientes.Columns[0].Visible = false;
+            grdClientes.Columns[2].HeaderText = "Razón Social";
+            grdClientes.Columns[6].Visible = false;
+            grdClientes.Columns[10].Visible = false;
+            grdClientes.Columns[11].HeaderText = "Condición IVA";
         }
 
         private void grdClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,7 +42,7 @@ namespace ConexcoFacturación
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            var result = new FrmClienteAlta().ShowDialog();
+            var result = new FrmClientesAlta().ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 RefrescarGrilla();
@@ -53,7 +58,7 @@ namespace ConexcoFacturación
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
             int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
-            var result = new FrmClienteAlta(){IdCliente = idCliente}.ShowDialog();
+            var result = new FrmClientesAlta(){IdCliente = idCliente}.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 RefrescarGrilla();
@@ -89,6 +94,18 @@ namespace ConexcoFacturación
         {
             int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
             var result = new FrmClientesTelefonos() { IdCliente = idCliente }.ShowDialog();
+        }
+
+        private void btnContactos_Click(object sender, EventArgs e)
+        {
+            int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
+            var result = new FrmClientesContactos() { IdCliente = idCliente }.ShowDialog();
+        }
+
+        private void btnTransportistas_Click(object sender, EventArgs e)
+        {
+            int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
+            var result = new FrmClientesTransportistas() { IdCliente = idCliente }.ShowDialog();
         }
     }
 }

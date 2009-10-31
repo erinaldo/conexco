@@ -125,6 +125,7 @@
             this.btnContactos.TabIndex = 7;
             this.btnContactos.Text = "Contactos";
             this.btnContactos.UseVisualStyleBackColor = true;
+            this.btnContactos.Click += new System.EventHandler(this.btnContactos_Click);
             // 
             // btnTransportistas
             // 
@@ -134,6 +135,7 @@
             this.btnTransportistas.TabIndex = 8;
             this.btnTransportistas.Text = "Transportistas";
             this.btnTransportistas.UseVisualStyleBackColor = true;
+            this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
             // FrmClientes
             // 

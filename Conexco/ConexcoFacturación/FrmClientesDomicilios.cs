@@ -38,7 +38,11 @@ namespace ConexcoFacturación
 
         private void Refrescar()
         {
-            grdDomicilios.DataSource = ClientesController.ListarDomicilios(IdCliente);            
+            grdDomicilios.DataSource = ClientesController.ListarDomicilios(IdCliente);
+            grdDomicilios.Columns[0].Visible = false;
+            grdDomicilios.Columns[1].Visible = false;
+            grdDomicilios.Columns[5].HeaderText = "Código Postal";
+            grdDomicilios.Columns[7].Visible = false;
 
             Habilitar(Accion.Inicio);
         }

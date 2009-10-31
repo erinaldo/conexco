@@ -2808,7 +2808,13 @@ namespace Conexco.Model
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
     #endregion
-		
+
+    //WILSON: Sobreescritura
+    public override string ToString()
+    {
+        return Descripcion.ToString();
+    }
+
 		public CondicionIVA()
 		{
 			this._Clientes = new EntitySet<Cliente>(new Action<Cliente>(this.attach_Clientes), new Action<Cliente>(this.detach_Clientes));

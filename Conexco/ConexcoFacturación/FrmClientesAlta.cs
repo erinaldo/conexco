@@ -11,14 +11,14 @@ using Conexco.Model;
 
 namespace ConexcoFacturación
 {
-    public partial class FrmClienteAlta : Form
+    public partial class FrmClientesAlta : Form
     {
         public ClientesController ClientesController { get; set; }
         public LocalidadesController LocalidadesController { get; set; }
         public FiscalesController FiscalesController { get; set; }
         public int IdCliente { get; set; }
 
-        public FrmClienteAlta()
+        public FrmClientesAlta()
         {
             InitializeComponent();
         }

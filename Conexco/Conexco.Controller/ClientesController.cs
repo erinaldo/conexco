@@ -110,6 +110,16 @@ namespace Conexco.Controller
             return (_context.Clientes_Telefonos.Where(tel => tel.idCliente == idCliente)).ToList();
         }
 
+        public List<Clientes_Contacto> ListarContactos(int idCliente)
+        {
+            return (_context.Clientes_Contactos.Where(con => con.idCliente == idCliente)).ToList();
+        }
+
+        public List<Clientes_Transportista> ListarTransportistas(int idCliente)
+        {
+            return (_context.Clientes_Transportistas.Where(trans => trans.idCliente == idCliente)).ToList();
+        }
+
         public Cliente DatosCliente(int idCliente)
         {
             return _context.Clientes.Single(cte => cte.idCliente == idCliente);
@@ -123,6 +133,16 @@ namespace Conexco.Controller
         public Clientes_Telefono DatosTelefono(int idTelefono)
         {
             return _context.Clientes_Telefonos.Single(tel => tel.idTelefono == idTelefono);
+        }
+
+        public Clientes_Contacto DatosContacto(int idContacto)
+        {
+            return _context.Clientes_Contactos.Single(con => con.idContacto == idContacto);
+        }
+
+        public Clientes_Transportista DatosTransportista(int idTransportista)
+        {
+            return _context.Clientes_Transportistas.Single(trans => trans.idTransportista == idTransportista);
         }
 
         public bool EliminarCliente(int idCliente)
@@ -166,6 +186,51 @@ namespace Conexco.Controller
             {
                 var domicilio = _context.Clientes_Domicilios.Single(dom => dom.idDomicilio == idDomicilio);
                 _context.Clientes_Domicilios.DeleteOnSubmit(domicilio);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarTelefono(int idTelefono)
+        {
+            try
+            {
+                var telefono = _context.Clientes_Telefonos.Single(tel => tel.idTelefono == idTelefono);
+                _context.Clientes_Telefonos.DeleteOnSubmit(telefono);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarContacto(int idContacto)
+        {
+            try
+            {
+                var contacto = _context.Clientes_Contactos.Single(con => con.idContacto == idContacto);
+                _context.Clientes_Contactos.DeleteOnSubmit(contacto);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarTransportista(int isTransportista)
+        {
+            try
+            {
+                var transportista = _context.Clientes_Transportistas.Single(trans => trans.idTransportista == isTransportista);
+                _context.Clientes_Transportistas.DeleteOnSubmit(transportista);
                 _context.SubmitChanges();
                 return true;
             }

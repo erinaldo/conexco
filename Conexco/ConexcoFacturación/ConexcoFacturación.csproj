@@ -78,17 +78,23 @@
     <Compile Include="FrmArticulosStock.Designer.cs">
       <DependentUpon>FrmArticulosStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmClienteAlta.cs">
+    <Compile Include="FrmClientesAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmClienteAlta.Designer.cs">
-      <DependentUpon>FrmClienteAlta.cs</DependentUpon>
+    <Compile Include="FrmClientesAlta.Designer.cs">
+      <DependentUpon>FrmClientesAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesContactos.Designer.cs">
+      <DependentUpon>FrmClientesContactos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmClientesDomicilios.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,12 @@
     </Compile>
     <Compile Include="FrmClientesTelefonos.Designer.cs">
       <DependentUpon>FrmClientesTelefonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesTransportistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesTransportistas.Designer.cs">
+      <DependentUpon>FrmClientesTransportistas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpresa.cs">
       <SubType>Form</SubType>
@@ -126,12 +138,16 @@
       <DependentUpon>FrmArticulosStock.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmClienteAlta.resx">
-      <DependentUpon>FrmClienteAlta.cs</DependentUpon>
+    <EmbeddedResource Include="FrmClientesAlta.resx">
+      <DependentUpon>FrmClientesAlta.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesContactos.resx">
+      <DependentUpon>FrmClientesContactos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientesDomicilios.resx">
@@ -140,6 +156,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientesTelefonos.resx">
       <DependentUpon>FrmClientesTelefonos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesTransportistas.resx">
+      <DependentUpon>FrmClientesTransportistas.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpresa.resx">

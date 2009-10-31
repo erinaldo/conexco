@@ -32,6 +32,9 @@ namespace ConexcoFacturación
         private void Refrescar()
         {
             grdTelefonos.DataSource = ClientesController.ListarTelefonos(IdCliente);
+            grdTelefonos.Columns[0].Visible = false;
+            grdTelefonos.Columns[1].Visible = false;
+            grdTelefonos.Columns[5].Visible = false;
 
             Habilitar(Accion.Inicio);
         }
@@ -132,6 +135,23 @@ namespace ConexcoFacturación
                 MessageBox.Show("Ocurrio un problema al guardar el domicilio, intentelo de nuevo");
             }
             Refrescar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idTelefono = 0;
+            if (grdTelefonos.SelectedRows.Count > 0)
+                idTelefono = Convert.ToInt32(grdTelefonos.SelectedRows[0].Cells[0].Value);
+            if (idTelefono > 0)
+            {
+                if (ClientesController.EliminarTelefono(idTelefono))
+                    MessageBox.Show("Telefono eliminado correctamente");
+                else
+                    MessageBox.Show("Ocurrio un problema al eliminar el telefono, intentelo nuevamente");
+                Refrescar();
+            }
+            else
+                MessageBox.Show("Debe seleccionar un telefono");
         }
     }
 }

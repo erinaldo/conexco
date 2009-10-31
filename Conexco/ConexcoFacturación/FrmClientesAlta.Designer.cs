@@ -1,6 +1,6 @@
 ﻿namespace ConexcoFacturación
 {
-    partial class FrmClienteAlta
+    partial class FrmClientesAlta
     {
         /// <summary>
         /// Required designer variable.
