@@ -134,5 +134,10 @@ namespace ConexcoFacturación
                 new FrmEmpresa().ShowDialog();
             }
         }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmFactura(){MdiParent = this}.Show();
+        }
     }
 }
