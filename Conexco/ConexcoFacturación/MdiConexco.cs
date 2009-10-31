@@ -116,11 +116,6 @@ namespace ConexcoFacturación
             new FrmClientes(){MdiParent = this}.Show();
         }
 
-        private void clientesAltaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new FrmClienteAlta(){MdiParent = this}.Show();
-        }
-
         private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmLocalidades() { MdiParent = this }.Show();
