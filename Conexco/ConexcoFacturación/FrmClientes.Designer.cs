@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grdClientes = new System.Windows.Forms.DataGridView();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
@@ -37,23 +36,9 @@
             this.btnTelefonos = new System.Windows.Forms.Button();
             this.btnContactos = new System.Windows.Forms.Button();
             this.btnTransportistas = new System.Windows.Forms.Button();
+            this.grdClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grdClientes
-            // 
-            this.grdClientes.AllowUserToAddRows = false;
-            this.grdClientes.AllowUserToDeleteRows = false;
-            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdClientes.Location = new System.Drawing.Point(12, 26);
-            this.grdClientes.MultiSelect = false;
-            this.grdClientes.Name = "grdClientes";
-            this.grdClientes.ReadOnly = true;
-            this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdClientes.Size = new System.Drawing.Size(390, 178);
-            this.grdClientes.TabIndex = 0;
-            this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
-            this.grdClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdClientes_CellContentClick);
             // 
             // btnAgregarCliente
             // 
@@ -137,6 +122,21 @@
             this.btnTransportistas.UseVisualStyleBackColor = true;
             this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
+            // grdClientes
+            // 
+            this.grdClientes.AllowUserToAddRows = false;
+            this.grdClientes.AllowUserToDeleteRows = false;
+            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdClientes.Location = new System.Drawing.Point(12, 26);
+            this.grdClientes.MultiSelect = false;
+            this.grdClientes.Name = "grdClientes";
+            this.grdClientes.ReadOnly = true;
+            this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdClientes.Size = new System.Drawing.Size(390, 178);
+            this.grdClientes.TabIndex = 0;
+            this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
+            this.grdClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdClientes_CellContentClick);
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +161,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView grdClientes;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnModificarCliente;
         private System.Windows.Forms.Button btnEliminarCliente;
@@ -170,5 +169,6 @@
         private System.Windows.Forms.Button btnTelefonos;
         private System.Windows.Forms.Button btnContactos;
         private System.Windows.Forms.Button btnTransportistas;
+        private System.Windows.Forms.DataGridView grdClientes;
     }
 }

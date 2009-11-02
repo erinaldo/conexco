@@ -13,18 +13,43 @@ namespace ConexcoFacturación
 {
     public partial class FrmArticulosStock : Form
     {
+        public ArticulosController articulosController { get; set; }
+
         public FrmArticulosStock()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FrmArticulosStock_Load(object sender, EventArgs e)
         {
-            Articulos_Stock stock = new Articulos_Stock();
-            stock.idArticulo = Convert.ToInt32(textBox1.Text);
-            stock.Stock = Convert.ToInt32(textBox2.Text);
-            ArticulosController articulosController = new ArticulosController();
-            articulosController.IngresoStock(stock);
+            articulosController = new ArticulosController();
+            _ActualizarGrilla();
         }
+
+        private void _ActualizarGrilla()
+        {
+            var listadoArticulos = articulosController.ListarArticulos();
+            grdArticulos.DataSource = listadoArticulos;
+            grdArticulos.Columns[0].Visible = false;
+            grdArticulos.Columns[5].Visible = false;
+            grdArticulos.Columns[7].Visible = false;
+        }
+
+        private void OnArticuloAgregar(object sender, EventArgs e)
+        {
+            var resultado = new FrmArticulosAlta().ShowDialog();
+        }
+
+        private void OnArticuloModificar(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnArticuloEliminar(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

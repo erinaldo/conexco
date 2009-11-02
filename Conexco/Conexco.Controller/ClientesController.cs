@@ -25,7 +25,7 @@ namespace Conexco.Controller
                 _context.SubmitChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

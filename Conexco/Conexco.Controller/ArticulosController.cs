@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Conexco.Model;
 
 namespace Conexco.Controller
@@ -20,6 +18,11 @@ namespace Conexco.Controller
             _context.Articulos_Stocks.InsertOnSubmit(stock);
             _context.SubmitChanges();
             return true;
+        }
+
+        public List<Articulo> ListarArticulos()
+        {
+            return (_context.Articulos.Select(art => art)).ToList();
         }
     }
 }
