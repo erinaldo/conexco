@@ -59,7 +59,7 @@
             this.lblTEmpIngBrut = new System.Windows.Forms.Label();
             this.lblEmpIngBrutos = new System.Windows.Forms.Label();
             this.lblTInicioActividades = new System.Windows.Forms.Label();
-            this.lblInicioActividades = new System.Windows.Forms.Label();
+            this.lblEmpInicioActividades = new System.Windows.Forms.Label();
             this.gbxFiscales = new System.Windows.Forms.GroupBox();
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.txtClienteCod = new System.Windows.Forms.TextBox();
@@ -76,16 +76,11 @@
             this.gbxDetalle = new System.Windows.Forms.GroupBox();
             this.gbxObservaciones = new System.Windows.Forms.GroupBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdDetalleFactura = new System.Windows.Forms.DataGridView();
             this.lblCondiciones = new System.Windows.Forms.Label();
             this.txtCondiciones = new System.Windows.Forms.TextBox();
             this.lblPesos = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSonPesos = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardarImprimir = new System.Windows.Forms.Button();
@@ -101,12 +96,19 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTTotal = new System.Windows.Forms.Label();
             this.btnTipoValor = new System.Windows.Forms.Button();
+            this.lblTNumFact = new System.Windows.Forms.Label();
+            this.txtNumFactura = new System.Windows.Forms.TextBox();
+            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
             this.gbxDetalle.SuspendLayout();
             this.gbxObservaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -402,14 +404,14 @@
             this.lblTInicioActividades.TabIndex = 10;
             this.lblTInicioActividades.Text = "Inicio de Actividades:";
             // 
-            // lblInicioActividades
+            // lblEmpInicioActividades
             // 
-            this.lblInicioActividades.AutoSize = true;
-            this.lblInicioActividades.Location = new System.Drawing.Point(564, 102);
-            this.lblInicioActividades.Name = "lblInicioActividades";
-            this.lblInicioActividades.Size = new System.Drawing.Size(83, 13);
-            this.lblInicioActividades.TabIndex = 11;
-            this.lblInicioActividades.Text = "FECHA INI ACT";
+            this.lblEmpInicioActividades.AutoSize = true;
+            this.lblEmpInicioActividades.Location = new System.Drawing.Point(564, 102);
+            this.lblEmpInicioActividades.Name = "lblEmpInicioActividades";
+            this.lblEmpInicioActividades.Size = new System.Drawing.Size(83, 13);
+            this.lblEmpInicioActividades.TabIndex = 11;
+            this.lblEmpInicioActividades.Text = "FECHA INI ACT";
             // 
             // gbxFiscales
             // 
@@ -533,7 +535,7 @@
             // gbxDetalle
             // 
             this.gbxDetalle.Controls.Add(this.gbxObservaciones);
-            this.gbxDetalle.Controls.Add(this.dataGridView1);
+            this.gbxDetalle.Controls.Add(this.grdDetalleFactura);
             this.gbxDetalle.Location = new System.Drawing.Point(8, 297);
             this.gbxDetalle.Name = "gbxDetalle";
             this.gbxDetalle.Size = new System.Drawing.Size(672, 255);
@@ -560,44 +562,20 @@
             this.txtObservaciones.Size = new System.Drawing.Size(648, 39);
             this.txtObservaciones.TabIndex = 0;
             // 
-            // dataGridView1
+            // grdDetalleFactura
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Cantidad,
             this.Descripcion,
             this.Precio,
             this.Totales});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(658, 163);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Totales
-            // 
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
+            this.grdDetalleFactura.Location = new System.Drawing.Point(6, 16);
+            this.grdDetalleFactura.Name = "grdDetalleFactura";
+            this.grdDetalleFactura.Size = new System.Drawing.Size(658, 163);
+            this.grdDetalleFactura.TabIndex = 0;
+            this.grdDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_CellValueChanged);
             // 
             // lblCondiciones
             // 
@@ -626,14 +604,14 @@
             this.lblPesos.TabIndex = 29;
             this.lblPesos.Text = "Son pesos";
             // 
-            // textBox1
+            // txtSonPesos
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 649);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(349, 46);
-            this.textBox1.TabIndex = 30;
+            this.txtSonPesos.Location = new System.Drawing.Point(12, 649);
+            this.txtSonPesos.Multiline = true;
+            this.txtSonPesos.Name = "txtSonPesos";
+            this.txtSonPesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSonPesos.Size = new System.Drawing.Size(349, 46);
+            this.txtSonPesos.TabIndex = 30;
             // 
             // btnGuardar
             // 
@@ -768,12 +746,58 @@
             this.btnTipoValor.Text = "%";
             this.btnTipoValor.UseVisualStyleBackColor = true;
             // 
+            // lblTNumFact
+            // 
+            this.lblTNumFact.AutoSize = true;
+            this.lblTNumFact.Location = new System.Drawing.Point(383, 36);
+            this.lblTNumFact.Name = "lblTNumFact";
+            this.lblTNumFact.Size = new System.Drawing.Size(19, 13);
+            this.lblTNumFact.TabIndex = 43;
+            this.lblTNumFact.Text = "N°";
+            // 
+            // txtNumFactura
+            // 
+            this.txtNumFactura.Location = new System.Drawing.Point(404, 33);
+            this.txtNumFactura.Name = "txtNumFactura";
+            this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
+            this.txtNumFactura.TabIndex = 44;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Totales
+            // 
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            // 
             // FrmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.factura;
             this.ClientSize = new System.Drawing.Size(691, 741);
+            this.Controls.Add(this.txtNumFactura);
+            this.Controls.Add(this.lblTNumFact);
             this.Controls.Add(this.btnTipoValor);
             this.Controls.Add(this.btnGuardarImprimir);
             this.Controls.Add(this.lblTTotal);
@@ -781,7 +805,7 @@
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblNetoPagar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSonPesos);
             this.Controls.Add(this.lblDescuento);
             this.Controls.Add(this.lblPesos);
             this.Controls.Add(this.lblTotalIva);
@@ -794,7 +818,7 @@
             this.Controls.Add(this.lblSubtotal);
             this.Controls.Add(this.gbxFiscales);
             this.Controls.Add(this.lblTNetoPagar);
-            this.Controls.Add(this.lblInicioActividades);
+            this.Controls.Add(this.lblEmpInicioActividades);
             this.Controls.Add(this.txtDescuento);
             this.Controls.Add(this.lblTInicioActividades);
             this.Controls.Add(this.lblEmpIngBrutos);
@@ -819,7 +843,7 @@
             this.gbxDetalle.ResumeLayout(false);
             this.gbxObservaciones.ResumeLayout(false);
             this.gbxObservaciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -846,7 +870,7 @@
         private System.Windows.Forms.Label lblTEmpIngBrut;
         private System.Windows.Forms.Label lblEmpIngBrutos;
         private System.Windows.Forms.Label lblTInicioActividades;
-        private System.Windows.Forms.Label lblInicioActividades;
+        private System.Windows.Forms.Label lblEmpInicioActividades;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.Label lblRazonSocial;
@@ -873,18 +897,13 @@
         private System.Windows.Forms.TextBox txtClienteCod;
         private System.Windows.Forms.TextBox txtOrdenCompra;
         private System.Windows.Forms.GroupBox gbxDetalle;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.DataGridView grdDetalleFactura;
         private System.Windows.Forms.GroupBox gbxObservaciones;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblCondiciones;
         private System.Windows.Forms.TextBox txtCondiciones;
         private System.Windows.Forms.Label lblPesos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSonPesos;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardarImprimir;
@@ -900,6 +919,13 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTTotal;
         private System.Windows.Forms.Button btnTipoValor;
+        private System.Windows.Forms.Label lblTNumFact;
+        private System.Windows.Forms.TextBox txtNumFactura;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
 
     }
 }

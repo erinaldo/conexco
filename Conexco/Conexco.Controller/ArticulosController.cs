@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Conexco.Model;
 
@@ -23,6 +24,44 @@ namespace Conexco.Controller
         public List<Articulo> ListarArticulos()
         {
             return (_context.Articulos.Select(art => art)).ToList();
+        }
+
+        public List<string> ListarCodigoYColorArticulos()
+        {
+            //return (_context.Articulos.Select(art => art.Codigo + "-" + (_context.Articulos_Colors.Where(
+            //                                                                col => col.idColor == art.idColor).Select(
+            //                                                                col => col.Codigo)))).ToList();
+            return (_context.Articulos.Select(art => art.Codigo + "-" + art.idColor)).ToList();
+        }
+
+        public List<string> ListarDescripcionArticulos()
+        {
+            return (_context.Articulos.Select(art => art.Descripcion)).ToList();
+        }
+
+        public Articulo DatosArticuloPorCodigoYColor(string codigoYColor)
+        {
+            var arrayCodColor = codigoYColor.Split('-');
+            var codigo = arrayCodColor[0];
+            var codColor = arrayCodColor[1];
+
+            var idColor = DatosArticuloColorPorCodigoColor(codColor).idColor;
+            return (_context.Articulos.Single(art => art.Codigo == codigo && art.idColor == idColor));
+        }
+
+        public Articulo DatosArticuloPorDescripcion(string descripcion)
+        {
+            return (_context.Articulos.Single(art => art.Descripcion == descripcion));
+        }
+
+        public Articulos_Color DatosArticuloColorPorCodigoColor(string codColor)
+        {
+            return (_context.Articulos_Colors.Single(col => col.Codigo == codColor));
+        }
+
+        public Articulos_Color DatosArticuloColor(int idColor)
+        {
+            return (_context.Articulos_Colors.Single(col => col.idColor == idColor));
         }
     }
 }

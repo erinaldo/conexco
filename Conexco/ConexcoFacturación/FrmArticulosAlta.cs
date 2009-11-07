@@ -18,7 +18,14 @@ namespace ConexcoFacturación
 
         private void OnCrearNuevoColor(object sender, EventArgs e)
         {
-            var resultado = new FrmArticulosColor().ShowDialog();
+            var frmArticulosColor = new FrmArticulosColor();
+            var resultado = frmArticulosColor.ShowDialog();
+            comboColor.Text = frmArticulosColor.CodigoColorSeleccionado;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
