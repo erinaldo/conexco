@@ -100,6 +100,38 @@ namespace Conexco.Controller
             return (_context.Clientes.Select(cliente => cliente)).ToList();
         }
 
+        public List<Cliente> ListarClientesPorCriterio(string criterio, string valor)
+        {
+            List<Cliente> clientesEncontrados;
+            switch (criterio)
+            {
+                case "Código de Cliente":
+                    clientesEncontrados = (_context.Clientes.Where(cte => cte.Codigo.Contains(valor))).ToList();
+                    break;
+                case "Nombre o Razón Social":
+                    clientesEncontrados = (_context.Clientes.Where(cte => (cte.Nombre.Contains(valor) || cte.Apellido.Contains(valor) || cte.RazonSocial.Contains(valor)))).ToList();
+                    break;
+                case "CUIT":
+                    clientesEncontrados = (_context.Clientes.Where(cte => cte.CUIT.Contains(valor))).ToList();
+                    break;
+                case "Cond. IVA":                    
+                    clientesEncontrados = (_context.Clientes.Where(cte => cte.CondicionIVA.Descripcion.Contains(valor))).ToList();
+                    break;
+                case "Localidad":
+                    clientesEncontrados = (_context.Clientes.Where(
+                        cte => ((cte.Clientes_Domicilios.Where(dom => dom.Localidad.Contains(valor))).Count() > 0))).ToList();
+                    break;
+                case "Cod. Postal":
+                    clientesEncontrados = (_context.Clientes.Where(
+                        cte => ((cte.Clientes_Domicilios.Where(dom => dom.CodPostal.Contains(valor))).Count() > 0))).ToList();
+                    break;
+                default:
+                    clientesEncontrados = ListarClientes();
+                    break;
+            }
+            return clientesEncontrados;
+        }
+
         public List<Clientes_Domicilio> ListarDomicilios(int idCliente)
         {
             return (_context.Clientes_Domicilios.Where(dom => dom.idCliente == idCliente)).ToList();

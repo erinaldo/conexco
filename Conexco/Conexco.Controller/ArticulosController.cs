@@ -28,10 +28,7 @@ namespace Conexco.Controller
 
         public List<string> ListarCodigoYColorArticulos()
         {
-            //return (_context.Articulos.Select(art => art.Codigo + "-" + (_context.Articulos_Colors.Where(
-            //                                                                col => col.idColor == art.idColor).Select(
-            //                                                                col => col.Codigo)))).ToList();
-            return (_context.Articulos.Select(art => art.Codigo + "-" + art.idColor)).ToList();
+            return (_context.Articulos.Select(art => art.Codigo + "-" + art.CodColor)).ToList();
         }
 
         public List<string> ListarDescripcionArticulos()
@@ -45,8 +42,7 @@ namespace Conexco.Controller
             var codigo = arrayCodColor[0];
             var codColor = arrayCodColor[1];
 
-            var idColor = DatosArticuloColorPorCodigoColor(codColor).idColor;
-            return (_context.Articulos.Single(art => art.Codigo == codigo && art.idColor == idColor));
+            return (_context.Articulos.Single(art => art.Codigo == codigo && art.CodColor == codColor));
         }
 
         public Articulo DatosArticuloPorDescripcion(string descripcion)

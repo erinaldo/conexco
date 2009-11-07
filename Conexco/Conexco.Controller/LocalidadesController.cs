@@ -51,7 +51,14 @@ namespace Conexco.Controller
 
         public Provincia DatosProvincia(string nombreProvincia)
         {
-            return _context.Provincias.Single(prov => prov.Provincia1 == nombreProvincia);
+            try
+            {
+                return _context.Provincias.Single(prov => prov.Provincia1 == nombreProvincia);
+            }
+            catch (Exception)
+            {
+                return new Provincia();
+            }
         }
     }
 }

@@ -5,17 +5,15 @@
     <Type Name="Articulo">
       <Column Name="idArticulo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="idColor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodColor" Storage="_idColor" Type="System.String" DbType="VarChar(10) " CanBeNull="true" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="BajaLogica" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Stock" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Association Name="Articulo_Remitos_Linea" Member="Remitos_Lineas" OtherKey="idArticulo" Type="Remitos_Linea" />
-      <Association Name="Articulo_Articulos_Precio" Member="Articulos_Precios" OtherKey="idArticulo" Type="Articulos_Precio" />
       <Association Name="Articulo_Egreso_Stock" Member="Egreso_Stocks" OtherKey="idArticulo" Type="Egreso_Stock" />
       <Association Name="Articulo_Facturas_Linea" Member="Facturas_Lineas" OtherKey="idArticulo" Type="Facturas_Linea" />
       <Association Name="Articulo_Presupuestos_Linea" Member="Presupuestos_Lineas" OtherKey="idArticulo" Type="Presupuestos_Linea" />
-      <Association Name="Articulos_Color_Articulo" Member="Articulos_Color" ThisKey="idColor" Type="Articulos_Color" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Remitos_Linea" Member="Remitos_Lineas">
@@ -35,7 +33,6 @@
       <Column Name="Codigo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RGB" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Association Name="Articulos_Color_Articulo" Member="Articulos" OtherKey="idColor" Type="Articulo" />
     </Type>
   </Table>
   <Table Name="dbo.Articulos_Precio" Member="Articulos_Precios">
@@ -44,7 +41,6 @@
       <Column Name="idArticulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Articulo_Articulos_Precio" Member="Articulo" ThisKey="idArticulo" Type="Articulo" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Articulos_Stock" Member="Articulos_Stocks">
