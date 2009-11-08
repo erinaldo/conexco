@@ -102,6 +102,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Conexco.mdf</DependentUpon>
     </Content>
+    <Content Include="SQL Scripts.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

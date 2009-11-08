@@ -2650,11 +2650,6 @@ namespace Conexco.Model
 	[Table(Name="dbo.CondicionIVA")]
 	public partial class CondicionIVA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-        //Wilson: override de tostring()
-        public override string ToString()
-        {
-            return Descripcion.ToString();
-        }
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
@@ -3888,6 +3883,8 @@ namespace Conexco.Model
 		
 		private System.Nullable<bool> _BajaLogica;
 		
+		private int _idDomicilioCliente;
+		
 		private EntitySet<Facturas_Linea> _Facturas_Lineas;
 		
 		private EntityRef<Documentos_Estado> _Documentos_Estado;
@@ -3930,6 +3927,8 @@ namespace Conexco.Model
     partial void OnidEstadoChanged();
     partial void OnBajaLogicaChanging(System.Nullable<bool> value);
     partial void OnBajaLogicaChanged();
+    partial void OnidDomicilioClienteChanging(int value);
+    partial void OnidDomicilioClienteChanged();
     #endregion
 		
 		public Factura()
@@ -4268,6 +4267,26 @@ namespace Conexco.Model
 			}
 		}
 		
+		[Column(Storage="_idDomicilioCliente", DbType="Int NOT NULL")]
+		public int idDomicilioCliente
+		{
+			get
+			{
+				return this._idDomicilioCliente;
+			}
+			set
+			{
+				if ((this._idDomicilioCliente != value))
+				{
+					this.OnidDomicilioClienteChanging(value);
+					this.SendPropertyChanging();
+					this._idDomicilioCliente = value;
+					this.SendPropertyChanged("idDomicilioCliente");
+					this.OnidDomicilioClienteChanged();
+				}
+			}
+		}
+		
 		[Association(Name="Factura_Facturas_Linea", Storage="_Facturas_Lineas", OtherKey="idFactura")]
 		public EntitySet<Facturas_Linea> Facturas_Lineas
 		{
@@ -4396,6 +4415,8 @@ namespace Conexco.Model
 		
 		private decimal _Cantidad;
 		
+		private decimal _Precio;
+		
 		private EntityRef<Articulo> _Articulo;
 		
 		private EntityRef<Factura> _Factura;
@@ -4412,6 +4433,8 @@ namespace Conexco.Model
     partial void OnidArticuloChanged();
     partial void OnCantidadChanging(decimal value);
     partial void OnCantidadChanged();
+    partial void OnPrecioChanging(decimal value);
+    partial void OnPrecioChanged();
     #endregion
 		
 		public Facturas_Linea()
@@ -4505,6 +4528,26 @@ namespace Conexco.Model
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this.OnPrecioChanging(value);
+					this.SendPropertyChanging();
+					this._Precio = value;
+					this.SendPropertyChanged("Precio");
+					this.OnPrecioChanged();
 				}
 			}
 		}

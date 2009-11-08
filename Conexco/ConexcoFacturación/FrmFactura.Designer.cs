@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaEmision = new System.Windows.Forms.DateTimePicker();
             this.cmbLetra = new System.Windows.Forms.ComboBox();
             this.gbxEmpresa = new System.Windows.Forms.GroupBox();
             this.lblTEmpProvincia = new System.Windows.Forms.Label();
@@ -114,13 +114,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpFechaEmision
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(580, 18);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpFechaEmision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEmision.Location = new System.Drawing.Point(580, 18);
+            this.dtpFechaEmision.Name = "dtpFechaEmision";
+            this.dtpFechaEmision.Size = new System.Drawing.Size(83, 20);
+            this.dtpFechaEmision.TabIndex = 0;
             // 
             // cmbLetra
             // 
@@ -689,6 +689,7 @@
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -698,6 +699,7 @@
             this.btnCancelar.TabIndex = 41;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardarImprimir
             // 
@@ -754,6 +756,7 @@
             this.btnIva.TabIndex = 38;
             this.btnIva.Text = "21%";
             this.btnIva.UseVisualStyleBackColor = true;
+            this.btnIva.Click += new System.EventHandler(this.btnIva_Click);
             // 
             // lblTSubtotal
             // 
@@ -880,7 +883,7 @@
             this.Controls.Add(this.gbxCliente);
             this.Controls.Add(this.gbxEmpresa);
             this.Controls.Add(this.cmbLetra);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaEmision);
             this.Name = "FrmFactura";
             this.Text = "Formulario de Factura";
             this.Load += new System.EventHandler(this.FrmFactura_Load);
@@ -901,7 +904,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaEmision;
         private System.Windows.Forms.ComboBox cmbLetra;
         private System.Windows.Forms.GroupBox gbxEmpresa;
         private System.Windows.Forms.GroupBox gbxCliente;
