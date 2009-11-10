@@ -5,6 +5,8 @@ Agregar campo Precio en Facturas_Linea
 
 Agregar campo idDomicilioCliente en Facturas
 
+Agregar bit BajaLogica a Clientes_Domicilios
+
 
 
 --SCRIPT INSERT DOCUMENTOS ESTADOS

@@ -28,5 +28,15 @@ namespace Conexco.Controller
                 return false;
             }
         }
+
+        public List<Documentos_Tipo> ListarDocumentosTipo()
+        {
+           return _context.Documentos_Tipos.Select(dt => dt).ToList();
+        }
+
+        public List<Documentos_Estado> ListarDocumentosEstado()
+        {
+            return _context.Documentos_Estados.Select(de => de).ToList();
+        }
     }
 }

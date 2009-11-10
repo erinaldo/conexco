@@ -106,6 +106,8 @@
             this.btnTipoValor = new System.Windows.Forms.Button();
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
+            this.cmbEstadoDoc = new System.Windows.Forms.ComboBox();
+            this.lblEstadoDoc = new System.Windows.Forms.Label();
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -125,10 +127,6 @@
             // cmbLetra
             // 
             this.cmbLetra.FormattingEnabled = true;
-            this.cmbLetra.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
             this.cmbLetra.Location = new System.Drawing.Point(329, 24);
             this.cmbLetra.Name = "cmbLetra";
             this.cmbLetra.Size = new System.Drawing.Size(34, 21);
@@ -265,6 +263,8 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.Controls.Add(this.lblEstadoDoc);
+            this.gbxCliente.Controls.Add(this.cmbEstadoDoc);
             this.gbxCliente.Controls.Add(this.txtProvincia);
             this.gbxCliente.Controls.Add(this.btnClientes);
             this.gbxCliente.Controls.Add(this.txtCodPostal);
@@ -620,11 +620,13 @@
             // 
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 80;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 70;
             // 
             // Descripcion
             // 
@@ -632,18 +634,21 @@
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.Width = 300;
             // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            this.Precio.Width = 70;
             // 
             // Totales
             // 
             this.Totales.HeaderText = "Totales";
             this.Totales.Name = "Totales";
             this.Totales.ReadOnly = true;
+            this.Totales.Width = 90;
             // 
             // lblCondiciones
             // 
@@ -712,7 +717,7 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(569, 588);
+            this.txtDescuento.Location = new System.Drawing.Point(575, 588);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDescuento.Size = new System.Drawing.Size(100, 20);
@@ -731,11 +736,10 @@
             // 
             // lblSubtotal
             // 
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(656, 611);
+            this.lblSubtotal.Location = new System.Drawing.Point(575, 615);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblSubtotal.Size = new System.Drawing.Size(13, 13);
+            this.lblSubtotal.Size = new System.Drawing.Size(100, 13);
             this.lblSubtotal.TabIndex = 37;
             this.lblSubtotal.Text = "0";
             // 
@@ -769,11 +773,10 @@
             // 
             // lblTotalIva
             // 
-            this.lblTotalIva.AutoSize = true;
-            this.lblTotalIva.Location = new System.Drawing.Point(656, 638);
+            this.lblTotalIva.Location = new System.Drawing.Point(575, 642);
             this.lblTotalIva.Name = "lblTotalIva";
             this.lblTotalIva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTotalIva.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalIva.Size = new System.Drawing.Size(100, 13);
             this.lblTotalIva.TabIndex = 39;
             this.lblTotalIva.Text = "0";
             // 
@@ -788,22 +791,20 @@
             // 
             // lblNetoPagar
             // 
-            this.lblNetoPagar.AutoSize = true;
-            this.lblNetoPagar.Location = new System.Drawing.Point(656, 668);
+            this.lblNetoPagar.Location = new System.Drawing.Point(575, 672);
             this.lblNetoPagar.Name = "lblNetoPagar";
             this.lblNetoPagar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNetoPagar.Size = new System.Drawing.Size(13, 13);
+            this.lblNetoPagar.Size = new System.Drawing.Size(100, 13);
             this.lblNetoPagar.TabIndex = 40;
             this.lblNetoPagar.Text = "0";
             this.lblNetoPagar.TextChanged += new System.EventHandler(this.lblNetoPagar_TextChanged);
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(656, 562);
+            this.lblTotal.Location = new System.Drawing.Point(580, 562);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblTotal.Size = new System.Drawing.Size(100, 13);
             this.lblTotal.TabIndex = 28;
             this.lblTotal.Text = "0";
             this.lblTotal.TextChanged += new System.EventHandler(this.lblTotal_TextChanged);
@@ -842,6 +843,23 @@
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 44;
+            // 
+            // cmbEstadoDoc
+            // 
+            this.cmbEstadoDoc.FormattingEnabled = true;
+            this.cmbEstadoDoc.Location = new System.Drawing.Point(483, 16);
+            this.cmbEstadoDoc.Name = "cmbEstadoDoc";
+            this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstadoDoc.TabIndex = 25;
+            // 
+            // lblEstadoDoc
+            // 
+            this.lblEstadoDoc.AutoSize = true;
+            this.lblEstadoDoc.Location = new System.Drawing.Point(393, 23);
+            this.lblEstadoDoc.Name = "lblEstadoDoc";
+            this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
+            this.lblEstadoDoc.TabIndex = 26;
+            this.lblEstadoDoc.Text = "Estado del doc.:";
             // 
             // FrmFactura
             // 
@@ -971,17 +989,19 @@
         private System.Windows.Forms.Button btnTipoValor;
         private System.Windows.Forms.Label lblTNumFact;
         private System.Windows.Forms.TextBox txtNumFactura;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.Label lblTEmpProvincia;
         private System.Windows.Forms.Label lblTEmpPosicionIva;
         private System.Windows.Forms.Label lblTEmpFax;
         private System.Windows.Forms.Label lblTEmpTelefono;
         private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.TextBox txtCondIva;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.Label lblEstadoDoc;
+        private System.Windows.Forms.ComboBox cmbEstadoDoc;
 
     }
 }

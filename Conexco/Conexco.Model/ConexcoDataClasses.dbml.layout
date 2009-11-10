@@ -44,10 +44,10 @@
         <elementListCompartment Id="2c1c6be3-b663-47b9-803c-a77e5ff58026" absoluteBounds="15.265, 10.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="aaedc6b0-6aa0-462e-bd30-12153b426d02" absoluteBounds="15.25, 15, 2, 2.15549967447917">
+    <classShape Id="aaedc6b0-6aa0-462e-bd30-12153b426d02" absoluteBounds="15.25, 15, 2, 2.3478011067708344">
       <DataClassMoniker Name="/ConexcoDataClassesDataContext/Clientes_Domicilio" />
       <nestedChildShapes>
-        <elementListCompartment Id="f22774a9-835a-4791-9161-ac595a614eec" absoluteBounds="15.265, 15.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f22774a9-835a-4791-9161-ac595a614eec" absoluteBounds="15.265, 15.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="1dae4492-941b-4337-95cf-838f4ad889b2" absoluteBounds="15.25, 12.5, 2, 1.7708968098958344">
@@ -140,7 +140,7 @@
         <elementListCompartment Id="80ad233e-7e49-44e4-b1e8-82a9d36056c9" absoluteBounds="6.515, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 4.97195556640625); (5.57291666666667 : 4.97195556640625 : JumpStart); (5.73958333333333 : 4.97195556640625 : JumpEnd); (9.25 : 4.97195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 4.97195556640625); (9.25 : 4.97195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Remitos_Linea" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />
@@ -154,7 +154,7 @@
         <classShapeMoniker Id="a7f08a42-0f7f-4509-aeb0-40d7093ea3dd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.5 : 15.8998527018229); (15.25 : 15.8998527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(14.5 : 15.8998527018229); (15.25 : 15.8998527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Cliente/Cliente_Clientes_Domicilio" />
       <nodes>
         <classShapeMoniker Id="69e22f9e-5bf2-4386-9af1-215d3c7dc9e3" />
@@ -210,14 +210,14 @@
         <classShapeMoniker Id="355ea58b-59cb-4de6-b82d-dfa7fcf7aa49" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.62165252063301); (5.75 : 8.87165252063301); (5.75 : 8.2486387716847); (6.2513612283153 : 8.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 8.62165252063301); (5.59732443490112 : 8.71897695553413 : JumpStart); (5.71517556509888 : 8.83682808573189 : JumpEnd); (5.75 : 8.87165252063301); (5.75 : 8.2486387716847); (6.2513612283153 : 8.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Facturas_Linea" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />
         <classShapeMoniker Id="74c2cdb3-4d9b-4031-9ea6-69feef73f0a9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.57291666666667 : 10.0729484049479 : JumpStart); (5.73958333333333 : 10.0729484049479 : JumpEnd); (5.79166666666667 : 10.0729484049479 : JumpStart); (5.95833333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.79166666666667 : 10.0729484049479 : JumpStart); (5.95833333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Factura/Factura_Facturas_Linea" />
       <nodes>
         <classShapeMoniker Id="355ea58b-59cb-4de6-b82d-dfa7fcf7aa49" />

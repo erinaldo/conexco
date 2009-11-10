@@ -18,6 +18,7 @@ namespace ConexcoFacturación
         public FiscalesController FiscalesController { get; set; }
         public EmpresaController EmpresaController { get; set; }
         public ArticulosController ArticulosController { get; set; }
+        public FacturasController FacturasController { get; set; }
 
         private int _idCliente;
         private int _idDomicilio;
@@ -34,6 +35,7 @@ namespace ConexcoFacturación
             FiscalesController = new FiscalesController();
             EmpresaController = new EmpresaController();
             ArticulosController = new ArticulosController();
+            FacturasController = new FacturasController();
 
             CargarControles();
         }
@@ -54,6 +56,15 @@ namespace ConexcoFacturación
             lblEmpIngBrutos.Text = empresa.IngBrutos;
             lblEmpInicioActividades.Text = empresa.InicioActividades.ToShortDateString();
 
+            //Documento tipo
+            cmbLetra.DataSource = FacturasController.ListarDocumentosTipo();
+            cmbLetra.ValueMember = "idTipoDocumento";
+            cmbLetra.DisplayMember = "Codigo";
+
+            //Documento estado
+            cmbEstadoDoc.DataSource = FacturasController.ListarDocumentosEstado();
+            cmbEstadoDoc.ValueMember = "idEstado";
+            cmbEstadoDoc.DisplayMember = "Descripcion";
 
             //Articulos
             var columnCodigo = (DataGridViewComboBoxColumn) grdDetalleFactura.Columns["Codigo"];
@@ -185,13 +196,11 @@ namespace ConexcoFacturación
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var factura  = new Factura();
-            var facturasController = new FacturasController();
 
             factura.idCliente = _idCliente;
             factura.idDomicilioCliente = _idDomicilio;
             factura.FechaEmision = dtpFechaEmision.Value;
-            //TODO: Definir los tipos de doc
-            factura.idTipoDocumento = 1;//Convert.ToInt32(cmbLetra.SelectedValue);
+            factura.idTipoDocumento = Convert.ToInt32(cmbLetra.SelectedValue);
             factura.Numero = txtNumFactura.Text;
             factura.Remito = txtRemito.Text;
             factura.OrdenCompra = txtOrdenCompra.Text;
@@ -202,8 +211,7 @@ namespace ConexcoFacturación
             factura.Subtotal = Convert.ToDecimal(lblSubtotal.Text);
             factura.TotalIVA = Convert.ToDecimal(lblTotalIva.Text);
             factura.TotalNeto = Convert.ToDecimal(lblNetoPagar.Text);
-            //TODO: Definir los estados
-            factura.idEstado = 1;
+            factura.idEstado = Convert.ToInt32(cmbEstadoDoc.SelectedValue);
 
             //Carga de lineas
             foreach (DataGridViewRow row in grdDetalleFactura.Rows)
@@ -220,7 +228,7 @@ namespace ConexcoFacturación
                 }
             }
 
-            if(facturasController.AgregarFactura(factura))
+            if(FacturasController.AgregarFactura(factura))
             {
                 MessageBox.Show("Factura guardada correctamente");
             }

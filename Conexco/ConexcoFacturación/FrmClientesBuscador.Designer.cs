@@ -40,12 +40,12 @@
             this.rbtnCodigoCliente = new System.Windows.Forms.RadioButton();
             this.rbtnNombreRazonSocial = new System.Windows.Forms.RadioButton();
             this.gbxResultados = new System.Windows.Forms.GroupBox();
+            this.lblSeleccioneCliente = new System.Windows.Forms.Label();
+            this.lblSeleccioneDomicilio = new System.Windows.Forms.Label();
+            this.grdDomicilios = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.grdDomicilios = new System.Windows.Forms.DataGridView();
-            this.lblSeleccioneDomicilio = new System.Windows.Forms.Label();
-            this.lblSeleccioneCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.gbxCriteriosBusqueda.SuspendLayout();
             this.gbxResultados.SuspendLayout();
@@ -61,7 +61,7 @@
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
             this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdClientes.Size = new System.Drawing.Size(556, 100);
+            this.grdClientes.Size = new System.Drawing.Size(556, 115);
             this.grdClientes.TabIndex = 0;
             this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
             // 
@@ -183,52 +183,10 @@
             this.gbxResultados.Controls.Add(this.grdClientes);
             this.gbxResultados.Location = new System.Drawing.Point(12, 121);
             this.gbxResultados.Name = "gbxResultados";
-            this.gbxResultados.Size = new System.Drawing.Size(568, 243);
+            this.gbxResultados.Size = new System.Drawing.Size(568, 280);
             this.gbxResultados.TabIndex = 2;
             this.gbxResultados.TabStop = false;
             this.gbxResultados.Text = "Resultados";
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(101, 370);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(339, 370);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // grdDomicilios
-            // 
-            this.grdDomicilios.AllowUserToAddRows = false;
-            this.grdDomicilios.AllowUserToDeleteRows = false;
-            this.grdDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDomicilios.Location = new System.Drawing.Point(6, 178);
-            this.grdDomicilios.MultiSelect = false;
-            this.grdDomicilios.Name = "grdDomicilios";
-            this.grdDomicilios.ReadOnly = true;
-            this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDomicilios.Size = new System.Drawing.Size(552, 59);
-            this.grdDomicilios.TabIndex = 5;
-            // 
-            // lblSeleccioneDomicilio
-            // 
-            this.lblSeleccioneDomicilio.AutoSize = true;
-            this.lblSeleccioneDomicilio.Location = new System.Drawing.Point(6, 162);
-            this.lblSeleccioneDomicilio.Name = "lblSeleccioneDomicilio";
-            this.lblSeleccioneDomicilio.Size = new System.Drawing.Size(116, 13);
-            this.lblSeleccioneDomicilio.TabIndex = 6;
-            this.lblSeleccioneDomicilio.Text = "Seleccione el Domicilio";
             // 
             // lblSeleccioneCliente
             // 
@@ -239,11 +197,53 @@
             this.lblSeleccioneCliente.TabIndex = 7;
             this.lblSeleccioneCliente.Text = "Seleccione el Cliente";
             // 
+            // lblSeleccioneDomicilio
+            // 
+            this.lblSeleccioneDomicilio.AutoSize = true;
+            this.lblSeleccioneDomicilio.Location = new System.Drawing.Point(6, 157);
+            this.lblSeleccioneDomicilio.Name = "lblSeleccioneDomicilio";
+            this.lblSeleccioneDomicilio.Size = new System.Drawing.Size(116, 13);
+            this.lblSeleccioneDomicilio.TabIndex = 6;
+            this.lblSeleccioneDomicilio.Text = "Seleccione el Domicilio";
+            // 
+            // grdDomicilios
+            // 
+            this.grdDomicilios.AllowUserToAddRows = false;
+            this.grdDomicilios.AllowUserToDeleteRows = false;
+            this.grdDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDomicilios.Location = new System.Drawing.Point(6, 179);
+            this.grdDomicilios.MultiSelect = false;
+            this.grdDomicilios.Name = "grdDomicilios";
+            this.grdDomicilios.ReadOnly = true;
+            this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdDomicilios.Size = new System.Drawing.Size(552, 92);
+            this.grdDomicilios.TabIndex = 5;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(121, 407);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(359, 407);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmClientesBuscador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 405);
+            this.ClientSize = new System.Drawing.Size(592, 442);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbxResultados);

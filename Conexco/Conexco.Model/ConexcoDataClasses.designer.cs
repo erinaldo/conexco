@@ -1902,6 +1902,8 @@ namespace Conexco.Model
 		
 		private string _Descripcion;
 		
+		private System.Nullable<bool> _BajaLogica;
+		
 		private EntityRef<Cliente> _Cliente;
 		
     #region Extensibility Method Definitions
@@ -1922,6 +1924,8 @@ namespace Conexco.Model
     partial void OnCodPostalChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
+    partial void OnBajaLogicaChanging(System.Nullable<bool> value);
+    partial void OnBajaLogicaChanged();
     #endregion
 		
 		public Clientes_Domicilio()
@@ -2070,6 +2074,26 @@ namespace Conexco.Model
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_BajaLogica", DbType="Bit")]
+		public System.Nullable<bool> BajaLogica
+		{
+			get
+			{
+				return this._BajaLogica;
+			}
+			set
+			{
+				if ((this._BajaLogica != value))
+				{
+					this.OnBajaLogicaChanging(value);
+					this.SendPropertyChanging();
+					this._BajaLogica = value;
+					this.SendPropertyChanged("BajaLogica");
+					this.OnBajaLogicaChanged();
 				}
 			}
 		}
@@ -2650,6 +2674,10 @@ namespace Conexco.Model
 	[Table(Name="dbo.CondicionIVA")]
 	public partial class CondicionIVA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+        public override string ToString()
+        {
+            return Descripcion;
+        }
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		

@@ -97,7 +97,7 @@ namespace Conexco.Controller
 
         public List<Cliente> ListarClientes()
         {
-            return (_context.Clientes.Select(cliente => cliente)).ToList();
+            return (_context.Clientes.Where(cliente => !(cliente.BajaLogica.HasValue && cliente.BajaLogica.Value))).ToList();
         }
 
         public List<Cliente> ListarClientesPorCriterio(string criterio, string valor)
@@ -106,24 +106,24 @@ namespace Conexco.Controller
             switch (criterio)
             {
                 case "Código de Cliente":
-                    clientesEncontrados = (_context.Clientes.Where(cte => cte.Codigo.Contains(valor))).ToList();
+                    clientesEncontrados = (_context.Clientes.Where(cte => !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && (cte.Codigo.Contains(valor)))).ToList();
                     break;
                 case "Nombre o Razón Social":
-                    clientesEncontrados = (_context.Clientes.Where(cte => (cte.Nombre.Contains(valor) || cte.Apellido.Contains(valor) || cte.RazonSocial.Contains(valor)))).ToList();
+                    clientesEncontrados = (_context.Clientes.Where(cte => !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && ((cte.Nombre.Contains(valor) || cte.Apellido.Contains(valor) || cte.RazonSocial.Contains(valor))))).ToList();
                     break;
                 case "CUIT":
-                    clientesEncontrados = (_context.Clientes.Where(cte => cte.CUIT.Contains(valor))).ToList();
+                    clientesEncontrados = (_context.Clientes.Where(cte => !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && (cte.CUIT.Contains(valor)))).ToList();
                     break;
-                case "Cond. IVA":                    
-                    clientesEncontrados = (_context.Clientes.Where(cte => cte.CondicionIVA.Descripcion.Contains(valor))).ToList();
+                case "Cond. IVA":
+                    clientesEncontrados = (_context.Clientes.Where(cte => !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && (cte.CondicionIVA.Descripcion.Contains(valor)))).ToList();
                     break;
                 case "Localidad":
                     clientesEncontrados = (_context.Clientes.Where(
-                        cte => ((cte.Clientes_Domicilios.Where(dom => dom.Localidad.Contains(valor))).Count() > 0))).ToList();
+                        cte => ((cte.Clientes_Domicilios.Where(dom => !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.Localidad.Contains(valor))).Count() > 0))).ToList();
                     break;
                 case "Cod. Postal":
                     clientesEncontrados = (_context.Clientes.Where(
-                        cte => ((cte.Clientes_Domicilios.Where(dom => dom.CodPostal.Contains(valor))).Count() > 0))).ToList();
+                        cte => ((cte.Clientes_Domicilios.Where(dom => !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.CodPostal.Contains(valor))).Count() > 0))).ToList();
                     break;
                 default:
                     clientesEncontrados = ListarClientes();
@@ -134,7 +134,7 @@ namespace Conexco.Controller
 
         public List<Clientes_Domicilio> ListarDomicilios(int idCliente)
         {
-            return (_context.Clientes_Domicilios.Where(dom => dom.idCliente == idCliente)).ToList();
+            return (_context.Clientes_Domicilios.Where(dom => !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && (dom.idCliente == idCliente))).ToList();
         }
 
         public List<Clientes_Telefono> ListarTelefonos(int idCliente)
@@ -149,7 +149,7 @@ namespace Conexco.Controller
 
         public List<Clientes_Transportista> ListarTransportistas(int idCliente)
         {
-            return (_context.Clientes_Transportistas.Where(trans => trans.idCliente == idCliente)).ToList();
+            return (_context.Clientes_Transportistas.Where(trans => !(trans.BajaLogica.HasValue && trans.BajaLogica.Value) && (trans.idCliente == idCliente))).ToList();
         }
 
         public Cliente DatosCliente(int idCliente)
@@ -182,27 +182,28 @@ namespace Conexco.Controller
             try
             {
                 var cliente = DatosCliente(idCliente);
-                _context.Clientes.DeleteOnSubmit(cliente);
-                foreach (var contacto in _context.Clientes_Contactos)
-                {
-                    if(contacto.idCliente == idCliente)
-                        _context.Clientes_Contactos.DeleteOnSubmit(contacto);
-                }
-                foreach (var domicilio in _context.Clientes_Domicilios)
-                {
-                    if(domicilio.idCliente == idCliente)
-                        _context.Clientes_Domicilios.DeleteOnSubmit(domicilio);
-                }
-                foreach(var telefono in _context.Clientes_Telefonos)
-                {
-                    if(telefono.idCliente == idCliente)
-                        _context.Clientes_Telefonos.DeleteOnSubmit(telefono);
-                }
-                foreach (var transportista in _context.Clientes_Transportistas)
-                {
-                    if(transportista.idCliente == idCliente)
-                        _context.Clientes_Transportistas.DeleteOnSubmit(transportista);
-                }
+                //_context.Clientes.DeleteOnSubmit(cliente);
+                //foreach (var contacto in _context.Clientes_Contactos)
+                //{
+                //    if(contacto.idCliente == idCliente)
+                //        _context.Clientes_Contactos.DeleteOnSubmit(contacto);
+                //}
+                //foreach (var domicilio in _context.Clientes_Domicilios)
+                //{
+                //    if(domicilio.idCliente == idCliente)
+                //        _context.Clientes_Domicilios.DeleteOnSubmit(domicilio);
+                //}
+                //foreach(var telefono in _context.Clientes_Telefonos)
+                //{
+                //    if(telefono.idCliente == idCliente)
+                //        _context.Clientes_Telefonos.DeleteOnSubmit(telefono);
+                //}
+                //foreach (var transportista in _context.Clientes_Transportistas)
+                //{
+                //    if(transportista.idCliente == idCliente)
+                //        _context.Clientes_Transportistas.DeleteOnSubmit(transportista);
+                //}
+                cliente.BajaLogica = true;
                 _context.SubmitChanges();
                 return true;
             }
@@ -216,8 +217,9 @@ namespace Conexco.Controller
         {
             try
             {
-                var domicilio = _context.Clientes_Domicilios.Single(dom => dom.idDomicilio == idDomicilio);
-                _context.Clientes_Domicilios.DeleteOnSubmit(domicilio);
+                var domicilio = DatosDomicilio(idDomicilio);
+                //_context.Clientes_Domicilios.DeleteOnSubmit(domicilio);
+                domicilio.BajaLogica = true;
                 _context.SubmitChanges();
                 return true;
             }
@@ -257,12 +259,13 @@ namespace Conexco.Controller
             }
         }
 
-        public bool EliminarTransportista(int isTransportista)
+        public bool EliminarTransportista(int idTransportista)
         {
             try
             {
-                var transportista = _context.Clientes_Transportistas.Single(trans => trans.idTransportista == isTransportista);
-                _context.Clientes_Transportistas.DeleteOnSubmit(transportista);
+                var transportista = DatosTransportista(idTransportista);
+                //_context.Clientes_Transportistas.DeleteOnSubmit(transportista);
+                transportista.BajaLogica = true;
                 _context.SubmitChanges();
                 return true;
             }

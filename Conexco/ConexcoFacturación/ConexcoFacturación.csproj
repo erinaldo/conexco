@@ -158,6 +158,12 @@
     <Compile Include="FrmLocalidades.Designer.cs">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRemito.Designer.cs">
+      <DependentUpon>FrmRemito.cs</DependentUpon>
+    </Compile>
     <Compile Include="MdiConexco.cs">
       <SubType>Form</SubType>
     </Compile>
