@@ -7,6 +7,12 @@ Agregar campo idDomicilioCliente en Facturas
 
 Agregar bit BajaLogica a Clientes_Domicilios
 
+--SCRIPT INSERT TIPO DOCUMENTOS
+INSERT INTO Documentos_Tipo(Codigo, Descripcion)
+VALUES ('A', 'Venta con discriminación de IVA')
+
+INSERT INTO Documentos_Tipo(Codigo, Descripcion)
+VALUES ('B', 'Venta sin discriminación de IVA')
 
 
 --SCRIPT INSERT DOCUMENTOS ESTADOS

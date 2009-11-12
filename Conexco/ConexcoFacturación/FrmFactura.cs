@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -75,6 +76,26 @@ namespace ConexcoFacturación
 
         }
 
+        private decimal _CalcularPrecio(decimal precio)
+        {
+            if(cmbLetra.Text == "B")
+                precio += Convert.ToDecimal(Convert.ToDouble(precio)*((btnIva.Text == "21%") ? 0.21 : 0.105));
+            return precio;
+        }
+
+        private void _RecalcularArticulos()
+        {
+            foreach (DataGridViewRow row in grdDetalleFactura.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var codArticulo = row.Cells["Codigo"].Value.ToString();
+                    var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
+                    row.Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
+                }
+            }
+        }
+
         private void grdDetalleFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if(grdDetalleFactura.SelectedCells.Count >0)
@@ -83,14 +104,14 @@ namespace ConexcoFacturación
                 {
                     var codArticulo = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = articulo.Precio;
+                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                     grdDetalleFactura.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
                 }
                 else if(e.ColumnIndex == 2)
                 {
                     var descripcion = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = articulo.Precio;
+                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                     grdDetalleFactura.Rows[e.RowIndex].Cells["Codigo"].Value = articulo.Codigo + ((articulo.CodColor == null) ? "" : "-"+articulo.CodColor);
                 }
                 grdDetalleFactura.Rows[e.RowIndex].Cells["Totales"].Value =
@@ -170,17 +191,25 @@ namespace ConexcoFacturación
             else
                 lblSubtotal.Text = (totalBruto - (totalBruto * descuento / 100)).ToString();
 
-            //TODO: Definir discriminacion de IVA (A,B)
-            if(btnIva.Text == "21%")
+            if (cmbLetra.Text == "A")
             {
-                lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text) * 0.21).ToString();
+                if (btnIva.Text == "21%")
+                {
+                    lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.21).ToString();
+                }
+                else
+                {
+                    lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.105).ToString();
+                }
+
+                lblNetoPagar.Text = (Convert.ToDouble(lblSubtotal.Text) + Convert.ToDouble(lblTotalIva.Text)).ToString();
             }
             else
             {
-                lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text) * 0.105).ToString();
+                lblTotalIva.Text = "INCLUIDO";
+                lblNetoPagar.Text = lblSubtotal.Text;
             }
 
-            lblNetoPagar.Text = (Convert.ToDouble(lblSubtotal.Text) + Convert.ToDouble(lblTotalIva.Text)).ToString();
         }
 
         private void btnIva_Click(object sender, EventArgs e)
@@ -189,7 +218,8 @@ namespace ConexcoFacturación
                 btnIva.Text = "10.5%";
             else
                 btnIva.Text = "21%";
-
+            if (cmbLetra.Text == "B")
+                _RecalcularArticulos();
             CalcularTotales();
         }
 
@@ -209,7 +239,7 @@ namespace ConexcoFacturación
             factura.Total = Convert.ToDecimal(lblTotal.Text);
             factura.Descuento = Convert.ToDecimal(txtDescuento.Text);
             factura.Subtotal = Convert.ToDecimal(lblSubtotal.Text);
-            factura.TotalIVA = Convert.ToDecimal(lblTotalIva.Text);
+            factura.TotalIVA = (cmbLetra.Text == "A") ? Convert.ToDecimal(lblTotalIva.Text) : 0;
             factura.TotalNeto = Convert.ToDecimal(lblNetoPagar.Text);
             factura.idEstado = Convert.ToInt32(cmbEstadoDoc.SelectedValue);
 
@@ -243,6 +273,13 @@ namespace ConexcoFacturación
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbLetra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbLetra.Text == "A")
+                lblTotalIva.Text = "INCLUIDO";
+            _RecalcularArticulos();
         }   
    }
 

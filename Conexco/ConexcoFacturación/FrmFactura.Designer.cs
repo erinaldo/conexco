@@ -44,6 +44,8 @@
             this.lblEmpDomicilio = new System.Windows.Forms.Label();
             this.lblEmpRazonSocial = new System.Windows.Forms.Label();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
+            this.lblEstadoDoc = new System.Windows.Forms.Label();
+            this.cmbEstadoDoc = new System.Windows.Forms.ComboBox();
             this.txtProvincia = new System.Windows.Forms.TextBox();
             this.btnClientes = new System.Windows.Forms.Button();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
@@ -106,8 +108,6 @@
             this.btnTipoValor = new System.Windows.Forms.Button();
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
-            this.cmbEstadoDoc = new System.Windows.Forms.ComboBox();
-            this.lblEstadoDoc = new System.Windows.Forms.Label();
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -131,6 +131,7 @@
             this.cmbLetra.Name = "cmbLetra";
             this.cmbLetra.Size = new System.Drawing.Size(34, 21);
             this.cmbLetra.TabIndex = 2;
+            this.cmbLetra.SelectedIndexChanged += new System.EventHandler(this.cmbLetra_SelectedIndexChanged);
             // 
             // gbxEmpresa
             // 
@@ -282,6 +283,23 @@
             this.gbxCliente.TabIndex = 0;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
+            // 
+            // lblEstadoDoc
+            // 
+            this.lblEstadoDoc.AutoSize = true;
+            this.lblEstadoDoc.Location = new System.Drawing.Point(393, 23);
+            this.lblEstadoDoc.Name = "lblEstadoDoc";
+            this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
+            this.lblEstadoDoc.TabIndex = 26;
+            this.lblEstadoDoc.Text = "Estado del doc.:";
+            // 
+            // cmbEstadoDoc
+            // 
+            this.cmbEstadoDoc.FormattingEnabled = true;
+            this.cmbEstadoDoc.Location = new System.Drawing.Point(483, 16);
+            this.cmbEstadoDoc.Name = "cmbEstadoDoc";
+            this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstadoDoc.TabIndex = 25;
             // 
             // txtProvincia
             // 
@@ -843,23 +861,6 @@
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 44;
-            // 
-            // cmbEstadoDoc
-            // 
-            this.cmbEstadoDoc.FormattingEnabled = true;
-            this.cmbEstadoDoc.Location = new System.Drawing.Point(483, 16);
-            this.cmbEstadoDoc.Name = "cmbEstadoDoc";
-            this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstadoDoc.TabIndex = 25;
-            // 
-            // lblEstadoDoc
-            // 
-            this.lblEstadoDoc.AutoSize = true;
-            this.lblEstadoDoc.Location = new System.Drawing.Point(393, 23);
-            this.lblEstadoDoc.Name = "lblEstadoDoc";
-            this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
-            this.lblEstadoDoc.TabIndex = 26;
-            this.lblEstadoDoc.Text = "Estado del doc.:";
             // 
             // FrmFactura
             // 

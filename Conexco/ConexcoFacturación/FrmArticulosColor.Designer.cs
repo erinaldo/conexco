@@ -35,8 +35,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.ultraColorPicker1 = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraColorPicker1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,20 +100,11 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.OnCancel);
             // 
-            // ultraColorPicker1
-            // 
-            this.ultraColorPicker1.Location = new System.Drawing.Point(36, 137);
-            this.ultraColorPicker1.Name = "ultraColorPicker1";
-            this.ultraColorPicker1.Size = new System.Drawing.Size(144, 21);
-            this.ultraColorPicker1.TabIndex = 7;
-            this.ultraColorPicker1.Text = "Control";
-            // 
             // FrmArticulosColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(216, 162);
-            this.Controls.Add(this.ultraColorPicker1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.button1);
@@ -125,7 +114,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmArticulosColor";
             this.Text = "Agregar Color";
-            ((System.ComponentModel.ISupportInitialize)(this.ultraColorPicker1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +128,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private Infragistics.Win.UltraWinEditors.UltraColorPicker ultraColorPicker1;
     }
 }
