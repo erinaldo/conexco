@@ -8,10 +8,10 @@
         <elementListCompartment Id="2024a3e4-fba9-4704-8131-20d29a289367" absoluteBounds="3.515, 6.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="453218bf-0c92-48f1-83b1-bbec6c0f34e7" absoluteBounds="9.25, 3.75, 2, 1.7708968098958331">
+    <classShape Id="453218bf-0c92-48f1-83b1-bbec6c0f34e7" absoluteBounds="9.25, 3.75, 2, 1.9631982421874996">
       <DataClassMoniker Name="/ConexcoDataClassesDataContext/Remitos_Linea" />
       <nestedChildShapes>
-        <elementListCompartment Id="98d8f94b-9ac4-4277-8f3f-c264ba98c1db" absoluteBounds="9.265, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="98d8f94b-9ac4-4277-8f3f-c264ba98c1db" absoluteBounds="9.265, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="5ec394e1-0a0f-444f-8cfe-023d1acfaa21" absoluteBounds="0.75, 6.75, 2, 1.5785953776041666">
@@ -122,10 +122,10 @@
         <elementListCompartment Id="cb5ee381-6571-462c-a189-984dbf377cb8" absoluteBounds="6.515, 18.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="88450b4b-09cd-46e9-8fbf-a859c7d9c426" absoluteBounds="9.25, 6.75, 2, 1.5785953776041666">
+    <classShape Id="88450b4b-09cd-46e9-8fbf-a859c7d9c426" absoluteBounds="9.25, 6.75, 2, 1.7708968098958327">
       <DataClassMoniker Name="/ConexcoDataClassesDataContext/Presupuestos_Linea" />
       <nestedChildShapes>
-        <elementListCompartment Id="084c5084-e18b-44f2-b370-e38c6777205a" absoluteBounds="9.265, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="084c5084-e18b-44f2-b370-e38c6777205a" absoluteBounds="9.265, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="19e03f8d-a6dc-4eda-bea6-f527cc65c68d" absoluteBounds="11.75, 1.625, 2, 1.1939925130208335">
@@ -134,13 +134,13 @@
         <elementListCompartment Id="098bc8c5-5677-45eb-8d28-f87a72d897fc" absoluteBounds="11.765, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="eb77d03a-aeb1-4d2f-adc4-8836051fe270" absoluteBounds="6.5, 0.75, 2, 3.6939111328124996">
+    <classShape Id="eb77d03a-aeb1-4d2f-adc4-8836051fe270" absoluteBounds="6.5, 0.75, 2, 3.8862125651041666">
       <DataClassMoniker Name="/ConexcoDataClassesDataContext/Remito" />
       <nestedChildShapes>
-        <elementListCompartment Id="80ad233e-7e49-44e4-b1e8-82a9d36056c9" absoluteBounds="6.515, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="80ad233e-7e49-44e4-b1e8-82a9d36056c9" absoluteBounds="6.515, 1.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 4.97195556640625); (9.25 : 4.97195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 5.06810628255208); (5.57291666666667 : 5.06810628255208 : JumpStart); (5.73958333333333 : 5.06810628255208 : JumpEnd); (9.25 : 5.06810628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Remitos_Linea" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />
@@ -154,7 +154,7 @@
         <classShapeMoniker Id="a7f08a42-0f7f-4509-aeb0-40d7093ea3dd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.5 : 15.8998527018229); (15.25 : 15.8998527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.5 : 15.8998527018229); (15.25 : 15.8998527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Cliente/Cliente_Clientes_Domicilio" />
       <nodes>
         <classShapeMoniker Id="69e22f9e-5bf2-4386-9af1-215d3c7dc9e3" />
@@ -182,7 +182,7 @@
         <classShapeMoniker Id="69e22f9e-5bf2-4386-9af1-215d3c7dc9e3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.46769230769231 : 8.65549967447917); (5.875 : 9.06280736678686); (5.875 : 15.8854484049479); (6.25 : 15.8854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.46769230769231 : 8.65549967447917); (5.59732443490112 : 8.78513180168798 : JumpStart); (5.71517556509888 : 8.90298293188574 : JumpEnd); (5.875 : 9.06280736678686); (5.875 : 15.8854484049479); (6.25 : 15.8854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Egreso_Stock" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />
@@ -217,7 +217,7 @@
         <classShapeMoniker Id="74c2cdb3-4d9b-4031-9ea6-69feef73f0a9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.79166666666667 : 10.0729484049479 : JumpStart); (5.95833333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.57291666666667 : 10.0729484049479 : JumpStart); (5.73958333333333 : 10.0729484049479 : JumpEnd); (5.79166666666667 : 10.0729484049479 : JumpStart); (5.95833333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Factura/Factura_Facturas_Linea" />
       <nodes>
         <classShapeMoniker Id="355ea58b-59cb-4de6-b82d-dfa7fcf7aa49" />
@@ -231,14 +231,14 @@
         <classShapeMoniker Id="3005ca52-1d96-4ff4-b5d1-6cbe2e467c5a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.73484537760417); (5.57291666666667 : 7.73484537760417 : JumpStart); (5.73958333333333 : 7.73484537760417 : JumpEnd); (9.25 : 7.73484537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 7.53953412760417); (5.57291666666667 : 7.53953412760417 : JumpStart); (5.73958333333333 : 7.53953412760417 : JumpEnd); (9.25 : 7.53953412760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Presupuestos_Linea" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />
         <classShapeMoniker Id="88450b4b-09cd-46e9-8fbf-a859c7d9c426" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 18.5); (8.40625 : 8.06297287760417); (9.25 : 8.06297287760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.40625 : 18.5); (8.40625 : 8.06146796875); (9.25 : 8.06146796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Presupuesto/Presupuesto_Presupuestos_Linea" />
       <nodes>
         <classShapeMoniker Id="3005ca52-1d96-4ff4-b5d1-6cbe2e467c5a" />
@@ -252,14 +252,14 @@
         <classShapeMoniker Id="383fdb92-0765-4771-983b-e961c3e08e24" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 4.09695556640625); (9.25 : 4.09695556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.5 : 4.19310628255208); (9.25 : 4.19310628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Remito/Remito_Remitos_Linea" />
       <nodes>
         <classShapeMoniker Id="eb77d03a-aeb1-4d2f-adc4-8836051fe270" />
         <classShapeMoniker Id="453218bf-0c92-48f1-83b1-bbec6c0f34e7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 2.59699625651042); (6.5 : 2.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.75 : 2.59699625651042); (6.5 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Documentos_Estado/Documentos_Estado_Remito" />
       <nodes>
         <classShapeMoniker Id="a952113f-5b60-4b1b-8e93-b80eb5b2164b" />

@@ -650,6 +650,8 @@ namespace Conexco.Model
 		
 		private decimal _Cantidad;
 		
+		private decimal _Precio;
+		
 		private EntityRef<Articulo> _Articulo;
 		
 		private EntityRef<Remito> _Remito;
@@ -668,6 +670,8 @@ namespace Conexco.Model
     partial void OnEnvasesChanged();
     partial void OnCantidadChanging(decimal value);
     partial void OnCantidadChanged();
+    partial void OnPrecioChanging(decimal value);
+    partial void OnPrecioChanged();
     #endregion
 		
 		public Remitos_Linea()
@@ -781,6 +785,26 @@ namespace Conexco.Model
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this.OnPrecioChanging(value);
+					this.SendPropertyChanging();
+					this._Precio = value;
+					this.SendPropertyChanged("Precio");
+					this.OnPrecioChanged();
 				}
 			}
 		}
@@ -2674,11 +2698,12 @@ namespace Conexco.Model
 	[Table(Name="dbo.CondicionIVA")]
 	public partial class CondicionIVA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+
         public override string ToString()
         {
-            return Descripcion;
+            return Descripcion.ToString();
         }
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idCondicionIVA;
@@ -5373,6 +5398,8 @@ namespace Conexco.Model
 		
 		private int _Cantidad;
 		
+		private decimal _Precio;
+		
 		private EntityRef<Articulo> _Articulo;
 		
 		private EntityRef<Presupuesto> _Presupuesto;
@@ -5389,6 +5416,8 @@ namespace Conexco.Model
     partial void OnidArticuloChanged();
     partial void OnCantidadChanging(int value);
     partial void OnCantidadChanged();
+    partial void OnPrecioChanging(decimal value);
+    partial void OnPrecioChanged();
     #endregion
 		
 		public Presupuestos_Linea()
@@ -5482,6 +5511,26 @@ namespace Conexco.Model
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this.OnPrecioChanging(value);
+					this.SendPropertyChanging();
+					this._Precio = value;
+					this.SendPropertyChanged("Precio");
+					this.OnPrecioChanged();
 				}
 			}
 		}
@@ -5725,6 +5774,8 @@ namespace Conexco.Model
 		
 		private System.Nullable<bool> _BajaLogica;
 		
+		private decimal _Total;
+		
 		private EntitySet<Remitos_Linea> _Remitos_Lineas;
 		
 		private EntityRef<Documentos_Estado> _Documentos_Estado;
@@ -5763,6 +5814,8 @@ namespace Conexco.Model
     partial void OnidEstadoChanged();
     partial void OnBajaLogicaChanging(System.Nullable<bool> value);
     partial void OnBajaLogicaChanged();
+    partial void OnTotalChanging(decimal value);
+    partial void OnTotalChanged();
     #endregion
 		
 		public Remito()
@@ -6072,6 +6125,26 @@ namespace Conexco.Model
 					this._BajaLogica = value;
 					this.SendPropertyChanged("BajaLogica");
 					this.OnBajaLogicaChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
 				}
 			}
 		}

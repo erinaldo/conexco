@@ -23,6 +23,7 @@
       <Column Name="idArticulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Envases" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Association Name="Articulo_Remitos_Linea" Member="Articulo" ThisKey="idArticulo" Type="Articulo" IsForeignKey="true" />
       <Association Name="Remito_Remitos_Linea" Member="Remito" ThisKey="idRemito" Type="Remito" IsForeignKey="true" />
     </Type>
@@ -252,6 +253,7 @@
       <Column Name="idPresupuesto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idArticulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Association Name="Articulo_Presupuestos_Linea" Member="Articulo" ThisKey="idArticulo" Type="Articulo" IsForeignKey="true" />
       <Association Name="Presupuesto_Presupuestos_Linea" Member="Presupuesto" ThisKey="idPresupuesto" Type="Presupuesto" IsForeignKey="true" />
     </Type>
@@ -280,6 +282,7 @@
       <Column Name="Observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="idEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="BajaLogica" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Association Name="Remito_Remitos_Linea" Member="Remitos_Lineas" OtherKey="idRemito" Type="Remitos_Linea" />
       <Association Name="Documentos_Estado_Remito" Member="Documentos_Estado" ThisKey="idEstado" Type="Documentos_Estado" IsForeignKey="true" />
     </Type>

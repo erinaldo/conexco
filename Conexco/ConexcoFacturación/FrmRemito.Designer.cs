@@ -36,18 +36,33 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.grdDetalleFactura = new System.Windows.Forms.DataGridView();
+            this.grdDetalleRemito = new System.Windows.Forms.DataGridView();
+            this.Envases = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDetalle = new System.Windows.Forms.GroupBox();
+            this.lblTArticulo = new System.Windows.Forms.Label();
+            this.lblTCantidad = new System.Windows.Forms.Label();
             this.gbxFiscales = new System.Windows.Forms.GroupBox();
-            this.txtClienteCod = new System.Windows.Forms.TextBox();
+            this.lblCantBultos = new System.Windows.Forms.Label();
+            this.txtCantBultos = new System.Windows.Forms.TextBox();
+            this.txtOrdenCompra = new System.Windows.Forms.TextBox();
+            this.lblOrdenCompra = new System.Windows.Forms.Label();
+            this.txtTransportistaCUIT = new System.Windows.Forms.TextBox();
+            this.lblTransportistaCUIT = new System.Windows.Forms.Label();
+            this.btnTransportistas = new System.Windows.Forms.Button();
             this.txtTransportistaDomicilio = new System.Windows.Forms.TextBox();
-            this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtTransportistaRazonSocial = new System.Windows.Forms.TextBox();
-            this.lblClienteCod = new System.Windows.Forms.Label();
             this.lblDomicilioComercial = new System.Windows.Forms.Label();
+            this.lblTTransportista = new System.Windows.Forms.Label();
+            this.txtClienteCod = new System.Windows.Forms.TextBox();
+            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.lblClienteCod = new System.Windows.Forms.Label();
             this.lblIva = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.lblTTransportista = new System.Windows.Forms.Label();
             this.lblEmpInicioActividades = new System.Windows.Forms.Label();
             this.lblTInicioActividades = new System.Windows.Forms.Label();
             this.lblEmpIngBrutos = new System.Windows.Forms.Label();
@@ -85,22 +100,10 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
-            this.btnTransportistas = new System.Windows.Forms.Button();
-            this.lblTransportistaCUIT = new System.Windows.Forms.Label();
-            this.txtTransportistaCUIT = new System.Windows.Forms.TextBox();
-            this.lblOrdenCompra = new System.Windows.Forms.Label();
-            this.txtOrdenCompra = new System.Windows.Forms.TextBox();
-            this.txtCantBultos = new System.Windows.Forms.TextBox();
-            this.lblCantBultos = new System.Windows.Forms.Label();
-            this.Envases = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTCantidad = new System.Windows.Forms.Label();
-            this.lblTArticulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).BeginInit();
+            this.btnIva = new System.Windows.Forms.Button();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
             this.gbxCliente.SuspendLayout();
@@ -160,6 +163,7 @@
             this.btnCancelar.TabIndex = 76;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblTotal
             // 
@@ -178,33 +182,93 @@
             this.btnGuardar.TabIndex = 48;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // grdDetalleFactura
+            // grdDetalleRemito
             // 
-            this.grdDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdDetalleRemito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDetalleRemito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Envases,
             this.Unidades,
             this.Codigo,
             this.Descripcion,
             this.Precio,
             this.Totales});
-            this.grdDetalleFactura.Location = new System.Drawing.Point(3, 46);
-            this.grdDetalleFactura.Name = "grdDetalleFactura";
-            this.grdDetalleFactura.Size = new System.Drawing.Size(658, 200);
-            this.grdDetalleFactura.TabIndex = 0;
+            this.grdDetalleRemito.Location = new System.Drawing.Point(3, 46);
+            this.grdDetalleRemito.Name = "grdDetalleRemito";
+            this.grdDetalleRemito.Size = new System.Drawing.Size(658, 200);
+            this.grdDetalleRemito.TabIndex = 0;
+            this.grdDetalleRemito.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_CellValueChanged);
+            // 
+            // Envases
+            // 
+            this.Envases.HeaderText = "Envases";
+            this.Envases.Name = "Envases";
+            this.Envases.Width = 50;
+            // 
+            // Unidades
+            // 
+            this.Unidades.HeaderText = "Unidades";
+            this.Unidades.Name = "Unidades";
+            this.Unidades.Width = 70;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 80;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.Width = 280;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 70;
+            // 
+            // Totales
+            // 
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            this.Totales.Width = 70;
             // 
             // gbxDetalle
             // 
             this.gbxDetalle.Controls.Add(this.lblTArticulo);
             this.gbxDetalle.Controls.Add(this.lblTCantidad);
-            this.gbxDetalle.Controls.Add(this.grdDetalleFactura);
+            this.gbxDetalle.Controls.Add(this.grdDetalleRemito);
             this.gbxDetalle.Location = new System.Drawing.Point(9, 314);
             this.gbxDetalle.Name = "gbxDetalle";
             this.gbxDetalle.Size = new System.Drawing.Size(672, 255);
             this.gbxDetalle.TabIndex = 60;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle";
+            // 
+            // lblTArticulo
+            // 
+            this.lblTArticulo.AutoSize = true;
+            this.lblTArticulo.Location = new System.Drawing.Point(325, 22);
+            this.lblTArticulo.Name = "lblTArticulo";
+            this.lblTArticulo.Size = new System.Drawing.Size(61, 13);
+            this.lblTArticulo.TabIndex = 2;
+            this.lblTArticulo.Text = "ARTICULO";
+            // 
+            // lblTCantidad
+            // 
+            this.lblTCantidad.AutoSize = true;
+            this.lblTCantidad.Location = new System.Drawing.Point(70, 22);
+            this.lblTCantidad.Name = "lblTCantidad";
+            this.lblTCantidad.Size = new System.Drawing.Size(62, 13);
+            this.lblTCantidad.TabIndex = 1;
+            this.lblTCantidad.Text = "CANTIDAD";
             // 
             // gbxFiscales
             // 
@@ -225,13 +289,63 @@
             this.gbxFiscales.TabIndex = 59;
             this.gbxFiscales.TabStop = false;
             // 
-            // txtClienteCod
+            // lblCantBultos
             // 
-            this.txtClienteCod.Location = new System.Drawing.Point(572, 66);
-            this.txtClienteCod.Name = "txtClienteCod";
-            this.txtClienteCod.ReadOnly = true;
-            this.txtClienteCod.Size = new System.Drawing.Size(100, 20);
-            this.txtClienteCod.TabIndex = 58;
+            this.lblCantBultos.AutoSize = true;
+            this.lblCantBultos.Location = new System.Drawing.Point(364, 53);
+            this.lblCantBultos.Name = "lblCantBultos";
+            this.lblCantBultos.Size = new System.Drawing.Size(131, 13);
+            this.lblCantBultos.TabIndex = 66;
+            this.lblCantBultos.Text = "Cant. de bultos/Paquetes:";
+            // 
+            // txtCantBultos
+            // 
+            this.txtCantBultos.Location = new System.Drawing.Point(498, 46);
+            this.txtCantBultos.Name = "txtCantBultos";
+            this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
+            this.txtCantBultos.TabIndex = 65;
+            // 
+            // txtOrdenCompra
+            // 
+            this.txtOrdenCompra.Location = new System.Drawing.Point(498, 15);
+            this.txtOrdenCompra.Name = "txtOrdenCompra";
+            this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtOrdenCompra.TabIndex = 64;
+            // 
+            // lblOrdenCompra
+            // 
+            this.lblOrdenCompra.AutoSize = true;
+            this.lblOrdenCompra.Location = new System.Drawing.Point(384, 20);
+            this.lblOrdenCompra.Name = "lblOrdenCompra";
+            this.lblOrdenCompra.Size = new System.Drawing.Size(108, 13);
+            this.lblOrdenCompra.TabIndex = 63;
+            this.lblOrdenCompra.Text = "Orden de Compra N°:";
+            // 
+            // txtTransportistaCUIT
+            // 
+            this.txtTransportistaCUIT.Location = new System.Drawing.Point(76, 65);
+            this.txtTransportistaCUIT.Name = "txtTransportistaCUIT";
+            this.txtTransportistaCUIT.ReadOnly = true;
+            this.txtTransportistaCUIT.Size = new System.Drawing.Size(100, 20);
+            this.txtTransportistaCUIT.TabIndex = 62;
+            // 
+            // lblTransportistaCUIT
+            // 
+            this.lblTransportistaCUIT.AutoSize = true;
+            this.lblTransportistaCUIT.Location = new System.Drawing.Point(18, 65);
+            this.lblTransportistaCUIT.Name = "lblTransportistaCUIT";
+            this.lblTransportistaCUIT.Size = new System.Drawing.Size(50, 13);
+            this.lblTransportistaCUIT.TabIndex = 61;
+            this.lblTransportistaCUIT.Text = "CUIT N°:";
+            // 
+            // btnTransportistas
+            // 
+            this.btnTransportistas.Location = new System.Drawing.Point(329, 12);
+            this.btnTransportistas.Name = "btnTransportistas";
+            this.btnTransportistas.Size = new System.Drawing.Size(32, 23);
+            this.btnTransportistas.TabIndex = 60;
+            this.btnTransportistas.Text = "...";
+            this.btnTransportistas.UseVisualStyleBackColor = true;
             // 
             // txtTransportistaDomicilio
             // 
@@ -241,14 +355,6 @@
             this.txtTransportistaDomicilio.Size = new System.Drawing.Size(100, 20);
             this.txtTransportistaDomicilio.TabIndex = 57;
             // 
-            // txtCuit
-            // 
-            this.txtCuit.Location = new System.Drawing.Point(499, 42);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.ReadOnly = true;
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
-            this.txtCuit.TabIndex = 7;
-            // 
             // txtTransportistaRazonSocial
             // 
             this.txtTransportistaRazonSocial.Location = new System.Drawing.Point(90, 13);
@@ -256,15 +362,6 @@
             this.txtTransportistaRazonSocial.ReadOnly = true;
             this.txtTransportistaRazonSocial.Size = new System.Drawing.Size(229, 20);
             this.txtTransportistaRazonSocial.TabIndex = 6;
-            // 
-            // lblClienteCod
-            // 
-            this.lblClienteCod.AutoSize = true;
-            this.lblClienteCod.Location = new System.Drawing.Point(509, 68);
-            this.lblClienteCod.Name = "lblClienteCod";
-            this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
-            this.lblClienteCod.TabIndex = 4;
-            this.lblClienteCod.Text = "Cliente N°:";
             // 
             // lblDomicilioComercial
             // 
@@ -274,6 +371,40 @@
             this.lblDomicilioComercial.Size = new System.Drawing.Size(101, 13);
             this.lblDomicilioComercial.TabIndex = 3;
             this.lblDomicilioComercial.Text = "Domicilio Comercial:";
+            // 
+            // lblTTransportista
+            // 
+            this.lblTTransportista.AutoSize = true;
+            this.lblTTransportista.Location = new System.Drawing.Point(16, 16);
+            this.lblTTransportista.Name = "lblTTransportista";
+            this.lblTTransportista.Size = new System.Drawing.Size(71, 13);
+            this.lblTTransportista.TabIndex = 0;
+            this.lblTTransportista.Text = "Transportista:";
+            // 
+            // txtClienteCod
+            // 
+            this.txtClienteCod.Location = new System.Drawing.Point(572, 66);
+            this.txtClienteCod.Name = "txtClienteCod";
+            this.txtClienteCod.ReadOnly = true;
+            this.txtClienteCod.Size = new System.Drawing.Size(100, 20);
+            this.txtClienteCod.TabIndex = 58;
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(499, 42);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.ReadOnly = true;
+            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.TabIndex = 7;
+            // 
+            // lblClienteCod
+            // 
+            this.lblClienteCod.AutoSize = true;
+            this.lblClienteCod.Location = new System.Drawing.Point(509, 68);
+            this.lblClienteCod.Name = "lblClienteCod";
+            this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
+            this.lblClienteCod.TabIndex = 4;
+            this.lblClienteCod.Text = "Cliente N°:";
             // 
             // lblIva
             // 
@@ -292,15 +423,6 @@
             this.lblCuit.Size = new System.Drawing.Size(50, 13);
             this.lblCuit.TabIndex = 1;
             this.lblCuit.Text = "CUIT N°:";
-            // 
-            // lblTTransportista
-            // 
-            this.lblTTransportista.AutoSize = true;
-            this.lblTTransportista.Location = new System.Drawing.Point(16, 16);
-            this.lblTTransportista.Name = "lblTTransportista";
-            this.lblTTransportista.Size = new System.Drawing.Size(71, 13);
-            this.lblTTransportista.TabIndex = 0;
-            this.lblTTransportista.Text = "Transportista:";
             // 
             // lblEmpInicioActividades
             // 
@@ -390,6 +512,7 @@
             this.btnClientes.TabIndex = 22;
             this.btnClientes.Text = "...";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // lblTEmpFax
             // 
@@ -413,7 +536,6 @@
             // 
             this.txtProvincia.Location = new System.Drawing.Point(263, 68);
             this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.ReadOnly = true;
             this.txtProvincia.Size = new System.Drawing.Size(75, 20);
             this.txtProvincia.TabIndex = 24;
             // 
@@ -467,7 +589,6 @@
             // 
             this.txtCodPostal.Location = new System.Drawing.Point(331, 42);
             this.txtCodPostal.Name = "txtCodPostal";
-            this.txtCodPostal.ReadOnly = true;
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
             this.txtCodPostal.TabIndex = 20;
             // 
@@ -475,7 +596,6 @@
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(76, 68);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.ReadOnly = true;
             this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtLocalidad.TabIndex = 19;
             // 
@@ -483,7 +603,6 @@
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.ReadOnly = true;
             this.txtDomicilio.Size = new System.Drawing.Size(154, 20);
             this.txtDomicilio.TabIndex = 18;
             // 
@@ -657,121 +776,32 @@
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 79;
             // 
-            // btnTransportistas
+            // btnIva
             // 
-            this.btnTransportistas.Location = new System.Drawing.Point(329, 12);
-            this.btnTransportistas.Name = "btnTransportistas";
-            this.btnTransportistas.Size = new System.Drawing.Size(32, 23);
-            this.btnTransportistas.TabIndex = 60;
-            this.btnTransportistas.Text = "...";
-            this.btnTransportistas.UseVisualStyleBackColor = true;
+            this.btnIva.Location = new System.Drawing.Point(506, 618);
+            this.btnIva.Name = "btnIva";
+            this.btnIva.Size = new System.Drawing.Size(41, 23);
+            this.btnIva.TabIndex = 80;
+            this.btnIva.Text = "21%";
+            this.btnIva.UseVisualStyleBackColor = true;
+            this.btnIva.Click += new System.EventHandler(this.btnIva_Click);
             // 
-            // lblTransportistaCUIT
+            // txtObservaciones
             // 
-            this.lblTransportistaCUIT.AutoSize = true;
-            this.lblTransportistaCUIT.Location = new System.Drawing.Point(18, 65);
-            this.lblTransportistaCUIT.Name = "lblTransportistaCUIT";
-            this.lblTransportistaCUIT.Size = new System.Drawing.Size(50, 13);
-            this.lblTransportistaCUIT.TabIndex = 61;
-            this.lblTransportistaCUIT.Text = "CUIT N°:";
+            this.txtObservaciones.Location = new System.Drawing.Point(217, 601);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txtObservaciones.TabIndex = 81;
             // 
-            // txtTransportistaCUIT
+            // lblObservaciones
             // 
-            this.txtTransportistaCUIT.Location = new System.Drawing.Point(76, 65);
-            this.txtTransportistaCUIT.Name = "txtTransportistaCUIT";
-            this.txtTransportistaCUIT.ReadOnly = true;
-            this.txtTransportistaCUIT.Size = new System.Drawing.Size(100, 20);
-            this.txtTransportistaCUIT.TabIndex = 62;
-            // 
-            // lblOrdenCompra
-            // 
-            this.lblOrdenCompra.AutoSize = true;
-            this.lblOrdenCompra.Location = new System.Drawing.Point(384, 20);
-            this.lblOrdenCompra.Name = "lblOrdenCompra";
-            this.lblOrdenCompra.Size = new System.Drawing.Size(108, 13);
-            this.lblOrdenCompra.TabIndex = 63;
-            this.lblOrdenCompra.Text = "Orden de Compra N°:";
-            // 
-            // txtOrdenCompra
-            // 
-            this.txtOrdenCompra.Location = new System.Drawing.Point(498, 15);
-            this.txtOrdenCompra.Name = "txtOrdenCompra";
-            this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtOrdenCompra.TabIndex = 64;
-            // 
-            // txtCantBultos
-            // 
-            this.txtCantBultos.Location = new System.Drawing.Point(498, 46);
-            this.txtCantBultos.Name = "txtCantBultos";
-            this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
-            this.txtCantBultos.TabIndex = 65;
-            // 
-            // lblCantBultos
-            // 
-            this.lblCantBultos.AutoSize = true;
-            this.lblCantBultos.Location = new System.Drawing.Point(364, 53);
-            this.lblCantBultos.Name = "lblCantBultos";
-            this.lblCantBultos.Size = new System.Drawing.Size(131, 13);
-            this.lblCantBultos.TabIndex = 66;
-            this.lblCantBultos.Text = "Cant. de bultos/Paquetes:";
-            // 
-            // Envases
-            // 
-            this.Envases.HeaderText = "Envases";
-            this.Envases.Name = "Envases";
-            this.Envases.Width = 50;
-            // 
-            // Unidades
-            // 
-            this.Unidades.HeaderText = "Unidades";
-            this.Unidades.Name = "Unidades";
-            this.Unidades.Width = 70;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 80;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Descripcion.Width = 280;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 70;
-            // 
-            // Totales
-            // 
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
-            this.Totales.ReadOnly = true;
-            this.Totales.Width = 70;
-            // 
-            // lblTCantidad
-            // 
-            this.lblTCantidad.AutoSize = true;
-            this.lblTCantidad.Location = new System.Drawing.Point(70, 22);
-            this.lblTCantidad.Name = "lblTCantidad";
-            this.lblTCantidad.Size = new System.Drawing.Size(62, 13);
-            this.lblTCantidad.TabIndex = 1;
-            this.lblTCantidad.Text = "CANTIDAD";
-            // 
-            // lblTArticulo
-            // 
-            this.lblTArticulo.AutoSize = true;
-            this.lblTArticulo.Location = new System.Drawing.Point(325, 22);
-            this.lblTArticulo.Name = "lblTArticulo";
-            this.lblTArticulo.Size = new System.Drawing.Size(61, 13);
-            this.lblTArticulo.TabIndex = 2;
-            this.lblTArticulo.Text = "ARTICULO";
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(116, 601);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
+            this.lblObservaciones.TabIndex = 82;
+            this.lblObservaciones.Text = "Observaciones";
             // 
             // FrmRemito
             // 
@@ -779,6 +809,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.factura;
             this.ClientSize = new System.Drawing.Size(690, 740);
+            this.Controls.Add(this.lblObservaciones);
+            this.Controls.Add(this.txtObservaciones);
+            this.Controls.Add(this.btnIva);
             this.Controls.Add(this.lblTNumFact);
             this.Controls.Add(this.btnGuardarImprimir);
             this.Controls.Add(this.lblValorDeclarado);
@@ -802,7 +835,8 @@
             this.Controls.Add(this.lblLetra);
             this.Name = "FrmRemito";
             this.Text = "FrmRemito";
-            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).EndInit();
+            this.Load += new System.EventHandler(this.FrmRemito_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).EndInit();
             this.gbxDetalle.ResumeLayout(false);
             this.gbxDetalle.PerformLayout();
             this.gbxFiscales.ResumeLayout(false);
@@ -826,7 +860,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView grdDetalleFactura;
+        private System.Windows.Forms.DataGridView grdDetalleRemito;
         private System.Windows.Forms.GroupBox gbxDetalle;
         private System.Windows.Forms.GroupBox gbxFiscales;
         private System.Windows.Forms.TextBox txtClienteCod;
@@ -890,5 +924,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.Label lblTArticulo;
         private System.Windows.Forms.Label lblTCantidad;
+        private System.Windows.Forms.Button btnIva;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label lblObservaciones;
     }
 }
