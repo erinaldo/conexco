@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ConexcoFacturación
@@ -23,7 +17,12 @@ namespace ConexcoFacturación
             comboColor.Text = frmArticulosColor.CodigoColorSeleccionado;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void OnCancelarAlta(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void OnGuardarArticulo(object sender, EventArgs e)
         {
 
         }
