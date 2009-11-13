@@ -54,28 +54,6 @@ namespace ConexcoFacturación
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -140,9 +118,9 @@ namespace ConexcoFacturación
             new FrmFactura(){MdiParent = this}.Show();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void remitoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmClientes() { MdiParent = this }.Show();
+            new FrmRemito() {MdiParent = this }.Show();
         }
     }
 }

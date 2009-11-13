@@ -11,6 +11,14 @@ Agregar campo idDomicilioCliente en Facturas
 Agregar bit BajaLogica a Clientes_Domicilios
 
 
+COSAS A HACER:
+-Terminar remito: Poder elejir prov y localidad, poder elejir transportista.
+-Ver que el selector de localidades cuando elejis BS AS te trae capital.
+
+COSAS A PREGUNTAR:
+-El stock lo reduce en Factura o Remito?
+
+
 
 
 
