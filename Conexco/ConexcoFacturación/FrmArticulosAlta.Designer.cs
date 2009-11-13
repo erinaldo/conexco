@@ -41,6 +41,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.errorCodigo = new System.Windows.Forms.Label();
+            this.errorDescripcion = new System.Windows.Forms.Label();
+            this.errorPrecio = new System.Windows.Forms.Label();
+            this.errorStock = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -130,9 +134,7 @@
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-
             this.btnGuardar.Click += new System.EventHandler(this.OnGuardarArticulo);
-
             // 
             // btnCancelar
             // 
@@ -163,11 +165,63 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.OnCrearNuevoColor);
             // 
+            // errorCodigo
+            // 
+            this.errorCodigo.AutoSize = true;
+            this.errorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorCodigo.ForeColor = System.Drawing.Color.Red;
+            this.errorCodigo.Location = new System.Drawing.Point(237, 51);
+            this.errorCodigo.Name = "errorCodigo";
+            this.errorCodigo.Size = new System.Drawing.Size(12, 13);
+            this.errorCodigo.TabIndex = 14;
+            this.errorCodigo.Text = "*";
+            this.errorCodigo.Visible = false;
+            // 
+            // errorDescripcion
+            // 
+            this.errorDescripcion.AutoSize = true;
+            this.errorDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorDescripcion.ForeColor = System.Drawing.Color.Red;
+            this.errorDescripcion.Location = new System.Drawing.Point(238, 113);
+            this.errorDescripcion.Name = "errorDescripcion";
+            this.errorDescripcion.Size = new System.Drawing.Size(12, 13);
+            this.errorDescripcion.TabIndex = 15;
+            this.errorDescripcion.Text = "*";
+            this.errorDescripcion.Visible = false;
+            // 
+            // errorPrecio
+            // 
+            this.errorPrecio.AutoSize = true;
+            this.errorPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorPrecio.ForeColor = System.Drawing.Color.Red;
+            this.errorPrecio.Location = new System.Drawing.Point(238, 145);
+            this.errorPrecio.Name = "errorPrecio";
+            this.errorPrecio.Size = new System.Drawing.Size(12, 13);
+            this.errorPrecio.TabIndex = 16;
+            this.errorPrecio.Text = "*";
+            this.errorPrecio.Visible = false;
+            // 
+            // errorStock
+            // 
+            this.errorStock.AutoSize = true;
+            this.errorStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorStock.ForeColor = System.Drawing.Color.Red;
+            this.errorStock.Location = new System.Drawing.Point(238, 175);
+            this.errorStock.Name = "errorStock";
+            this.errorStock.Size = new System.Drawing.Size(12, 13);
+            this.errorStock.TabIndex = 17;
+            this.errorStock.Text = "*";
+            this.errorStock.Visible = false;
+            // 
             // FrmArticulosAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 266);
+            this.Controls.Add(this.errorStock);
+            this.Controls.Add(this.errorPrecio);
+            this.Controls.Add(this.errorDescripcion);
+            this.Controls.Add(this.errorCodigo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboColor);
             this.Controls.Add(this.btnCancelar);
@@ -203,5 +257,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox comboColor;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label errorCodigo;
+        private System.Windows.Forms.Label errorDescripcion;
+        private System.Windows.Forms.Label errorPrecio;
+        private System.Windows.Forms.Label errorStock;
     }
 }

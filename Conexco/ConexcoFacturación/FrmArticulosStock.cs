@@ -32,7 +32,6 @@ namespace ConexcoFacturación
             grdArticulos.DataSource = listadoArticulos;
             grdArticulos.Columns[0].Visible = false;
             grdArticulos.Columns[5].Visible = false;
-            grdArticulos.Columns[7].Visible = false;
         }
 
         private void OnArticuloAgregar(object sender, EventArgs e)

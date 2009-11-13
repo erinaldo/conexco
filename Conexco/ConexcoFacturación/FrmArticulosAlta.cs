@@ -24,7 +24,13 @@ namespace ConexcoFacturación
 
         private void OnGuardarArticulo(object sender, EventArgs e)
         {
+            errorCodigo.Visible = String.IsNullOrEmpty(txtCodigo.Text);
+            errorDescripcion.Visible = String.IsNullOrEmpty(txtDescripcion.Text);
+            errorPrecio.Visible = String.IsNullOrEmpty(txtPrecio.Text);
+            errorStock.Visible = String.IsNullOrEmpty(txtStock.Text);
 
+            if (errorCodigo.Visible || errorDescripcion.Visible || errorPrecio.Visible || errorStock.Visible)
+                return;
         }
     }
 }

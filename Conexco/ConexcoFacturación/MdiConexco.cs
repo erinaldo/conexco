@@ -68,7 +68,7 @@ namespace ConexcoFacturación
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +138,11 @@ namespace ConexcoFacturación
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmFactura(){MdiParent = this}.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            new FrmClientes() { MdiParent = this }.Show();
         }
     }
 }
