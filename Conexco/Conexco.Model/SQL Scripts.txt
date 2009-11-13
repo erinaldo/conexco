@@ -14,9 +14,15 @@ Agregar bit BajaLogica a Clientes_Domicilios
 COSAS A HACER:
 -Terminar remito: Poder elejir prov y localidad, poder elejir transportista.
 -Ver que el selector de localidades cuando elejis BS AS te trae capital.
+-Sacar el boton de IVA de factura y formulario.
+-Factura cuando arranca dice INCLUIDO en el IVA
 
 COSAS A PREGUNTAR:
 -El stock lo reduce en Factura o Remito?
+
+COSAS A HACER:
+-Crear tabla para guardar el valor de iva y formulario para que lo pueda modificar. 
+	(formulario de opciones asi metemos otras cosas tbm)
 
 
 
