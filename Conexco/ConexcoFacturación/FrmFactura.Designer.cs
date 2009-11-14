@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dtpFechaEmision = new System.Windows.Forms.DateTimePicker();
             this.cmbLetra = new System.Windows.Forms.ComboBox();
             this.gbxEmpresa = new System.Windows.Forms.GroupBox();
@@ -98,7 +99,6 @@
             this.lblTNetoPagar = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblTTotalIva = new System.Windows.Forms.Label();
-            this.btnIva = new System.Windows.Forms.Button();
             this.lblTSubtotal = new System.Windows.Forms.Label();
             this.lblTotalIva = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
@@ -108,6 +108,7 @@
             this.btnTipoValor = new System.Windows.Forms.Button();
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
+            this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -316,6 +317,7 @@
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
             this.btnClientes.TabIndex = 22;
             this.btnClientes.Text = "...";
+            this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -633,6 +635,8 @@
             this.grdDetalleFactura.Size = new System.Drawing.Size(658, 163);
             this.grdDetalleFactura.TabIndex = 0;
             this.grdDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_CellValueChanged);
+            this.grdDetalleFactura.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleFactura_UserDeletedRow);
+            this.grdDetalleFactura.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_RowValidated);
             // 
             // Codigo
             // 
@@ -770,16 +774,6 @@
             this.lblTTotalIva.TabIndex = 33;
             this.lblTTotalIva.Text = "I.V.A.:";
             // 
-            // btnIva
-            // 
-            this.btnIva.Location = new System.Drawing.Point(507, 633);
-            this.btnIva.Name = "btnIva";
-            this.btnIva.Size = new System.Drawing.Size(41, 23);
-            this.btnIva.TabIndex = 38;
-            this.btnIva.Text = "21%";
-            this.btnIva.UseVisualStyleBackColor = true;
-            this.btnIva.Click += new System.EventHandler(this.btnIva_Click);
-            // 
             // lblTSubtotal
             // 
             this.lblTSubtotal.AutoSize = true;
@@ -884,7 +878,6 @@
             this.Controls.Add(this.txtCondiciones);
             this.Controls.Add(this.lblTSubtotal);
             this.Controls.Add(this.lblCondiciones);
-            this.Controls.Add(this.btnIva);
             this.Controls.Add(this.lblTTotalIva);
             this.Controls.Add(this.gbxDetalle);
             this.Controls.Add(this.lblSubtotal);
@@ -903,6 +896,8 @@
             this.Controls.Add(this.gbxEmpresa);
             this.Controls.Add(this.cmbLetra);
             this.Controls.Add(this.dtpFechaEmision);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "FrmFactura";
             this.Text = "Formulario de Factura";
             this.Load += new System.EventHandler(this.FrmFactura_Load);
@@ -980,7 +975,6 @@
         private System.Windows.Forms.Label lblTNetoPagar;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblTTotalIva;
-        private System.Windows.Forms.Button btnIva;
         private System.Windows.Forms.Label lblTSubtotal;
         private System.Windows.Forms.Label lblTotalIva;
         private System.Windows.Forms.Label lblDescuento;
@@ -1003,6 +997,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.Label lblEstadoDoc;
         private System.Windows.Forms.ComboBox cmbEstadoDoc;
+        private System.Windows.Forms.ToolTip toolTipControl;
 
     }
 }

@@ -20,6 +20,8 @@ namespace ConexcoFacturación
         public ArticulosController ArticulosController { get; set; }
         public RemitosController RemitosController { get; set; }
 
+        private const int MAX_FILAS = 10;
+
         private int _idCliente;
         private int _idTransportista;
 
@@ -234,6 +236,20 @@ namespace ConexcoFacturación
             {
                 MessageBox.Show("Seleccione un cliente primero");
             }
+        }
+
+        private void grdDetalleRemito_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if(grdDetalleRemito.Rows.Count > MAX_FILAS)
+            {
+                MessageBox.Show("No se pueden agregar mas de " + MAX_FILAS + " lineas");
+                grdDetalleRemito.AllowUserToAddRows = false;
+            }
+        }
+
+        private void grdDetalleRemito_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            grdDetalleRemito.AllowUserToAddRows = true;
         }
     }
 }

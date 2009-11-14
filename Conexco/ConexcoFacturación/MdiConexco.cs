@@ -99,7 +99,7 @@ namespace ConexcoFacturación
             new FrmLocalidades() { MdiParent = this }.Show();
         }
 
-        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmArticulos() { MdiParent = this }.Show();
         }
@@ -126,6 +126,41 @@ namespace ConexcoFacturación
         private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new FrmStock(){MdiParent = this}.Show();
+        }
+
+        private void salieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButtonLocalidades_Click(object sender, EventArgs e)
+        {
+            new FrmLocalidades(){MdiParent = this}.Show();
+        }
+
+        private void toolStripButtonStock_Click(object sender, EventArgs e)
+        {
+            new FrmStock() { MdiParent = this }.Show();
+        }
+
+        private void toolStripButtonArticulos_Click(object sender, EventArgs e)
+        {
+            new FrmArticulos() { MdiParent = this }.Show();
+        }
+
+        private void toolStripButtonClientes_Click(object sender, EventArgs e)
+        {
+            new FrmClientes() { MdiParent = this }.Show();
+        }
+
+        private void toolStripButtonRemitos_Click(object sender, EventArgs e)
+        {
+            new FrmRemito() { MdiParent = this }.Show();
+        }
+
+        private void toolStripButtonFacturas_Click(object sender, EventArgs e)
+        {
+            new FrmFactura() { MdiParent = this }.Show();
         }
     }
 }

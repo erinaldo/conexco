@@ -21,6 +21,8 @@ namespace ConexcoFacturación
         public ArticulosController ArticulosController { get; set; }
         public FacturasController FacturasController { get; set; }
 
+        private const int MAX_FILAS = 10;
+
         private int _idCliente;
         private int _idDomicilio;
 
@@ -79,7 +81,8 @@ namespace ConexcoFacturación
         private decimal _CalcularPrecio(decimal precio)
         {
             if(cmbLetra.Text == "B")
-                precio += Convert.ToDecimal(Convert.ToDouble(precio)*((btnIva.Text == "21%") ? 0.21 : 0.105));
+                //TODO: Definir IVA
+                precio += Convert.ToDecimal(Convert.ToDouble(precio)*0.21);
             return precio;
         }
 
@@ -193,14 +196,8 @@ namespace ConexcoFacturación
 
             if (cmbLetra.Text == "A")
             {
-                if (btnIva.Text == "21%")
-                {
-                    lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.21).ToString();
-                }
-                else
-                {
-                    lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.105).ToString();
-                }
+
+                lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.21).ToString();
 
                 lblNetoPagar.Text = (Convert.ToDouble(lblSubtotal.Text) + Convert.ToDouble(lblTotalIva.Text)).ToString();
             }
@@ -210,17 +207,6 @@ namespace ConexcoFacturación
                 lblNetoPagar.Text = lblSubtotal.Text;
             }
 
-        }
-
-        private void btnIva_Click(object sender, EventArgs e)
-        {
-            if (btnIva.Text == "21%")
-                btnIva.Text = "10.5%";
-            else
-                btnIva.Text = "21%";
-            if (cmbLetra.Text == "B")
-                _RecalcularArticulos();
-            CalcularTotales();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -277,9 +263,23 @@ namespace ConexcoFacturación
 
         private void cmbLetra_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbLetra.Text == "A")
+            if(cmbLetra.Text == "B")
                 lblTotalIva.Text = "INCLUIDO";
             _RecalcularArticulos();
+        }
+
+        private void grdDetalleFactura_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdDetalleFactura.Rows.Count > MAX_FILAS)
+            {
+                MessageBox.Show("No se pueden agregar mas de " + MAX_FILAS + " lineas");
+                grdDetalleFactura.AllowUserToAddRows = false;
+            }
+        }
+
+        private void grdDetalleFactura_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            grdDetalleFactura.AllowUserToAddRows = true;
         }   
    }
 

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRemito));
             this.lblLetra = new System.Windows.Forms.Label();
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.btnGuardarImprimir = new System.Windows.Forms.Button();
@@ -103,6 +105,7 @@
             this.txtNumFactura = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -131,7 +134,7 @@
             // 
             // btnGuardarImprimir
             // 
-            this.btnGuardarImprimir.Location = new System.Drawing.Point(146, 710);
+            this.btnGuardarImprimir.Location = new System.Drawing.Point(146, 685);
             this.btnGuardarImprimir.Name = "btnGuardarImprimir";
             this.btnGuardarImprimir.Size = new System.Drawing.Size(109, 23);
             this.btnGuardarImprimir.TabIndex = 77;
@@ -157,7 +160,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(419, 710);
+            this.btnCancelar.Location = new System.Drawing.Point(419, 685);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 76;
@@ -167,7 +170,7 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(584, 604);
+            this.lblTotal.Location = new System.Drawing.Point(578, 604);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTotal.Size = new System.Drawing.Size(100, 13);
@@ -176,7 +179,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(291, 710);
+            this.btnGuardar.Location = new System.Drawing.Point(291, 685);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 48;
@@ -196,9 +199,11 @@
             this.Totales});
             this.grdDetalleRemito.Location = new System.Drawing.Point(7, 44);
             this.grdDetalleRemito.Name = "grdDetalleRemito";
-            this.grdDetalleRemito.Size = new System.Drawing.Size(658, 200);
+            this.grdDetalleRemito.Size = new System.Drawing.Size(658, 178);
             this.grdDetalleRemito.TabIndex = 0;
             this.grdDetalleRemito.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_CellValueChanged);
+            this.grdDetalleRemito.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleRemito_UserDeletedRow);
+            this.grdDetalleRemito.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_RowValidated);
             // 
             // Envases
             // 
@@ -210,7 +215,7 @@
             // 
             this.Unidades.HeaderText = "Unidades";
             this.Unidades.Name = "Unidades";
-            this.Unidades.Width = 70;
+            this.Unidades.Width = 60;
             // 
             // Codigo
             // 
@@ -231,7 +236,7 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 70;
+            this.Precio.Width = 60;
             // 
             // Totales
             // 
@@ -245,9 +250,9 @@
             this.gbxDetalle.Controls.Add(this.lblTArticulo);
             this.gbxDetalle.Controls.Add(this.lblTCantidad);
             this.gbxDetalle.Controls.Add(this.grdDetalleRemito);
-            this.gbxDetalle.Location = new System.Drawing.Point(9, 342);
+            this.gbxDetalle.Location = new System.Drawing.Point(9, 361);
             this.gbxDetalle.Name = "gbxDetalle";
-            this.gbxDetalle.Size = new System.Drawing.Size(672, 250);
+            this.gbxDetalle.Size = new System.Drawing.Size(672, 228);
             this.gbxDetalle.TabIndex = 60;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle";
@@ -283,7 +288,7 @@
             this.gbxFiscales.Controls.Add(this.txtTransportistaRazonSocial);
             this.gbxFiscales.Controls.Add(this.lblDomicilioComercial);
             this.gbxFiscales.Controls.Add(this.lblTTransportista);
-            this.gbxFiscales.Location = new System.Drawing.Point(9, 251);
+            this.gbxFiscales.Location = new System.Drawing.Point(9, 259);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 91);
             this.gbxFiscales.TabIndex = 59;
@@ -292,7 +297,7 @@
             // lblCantBultos
             // 
             this.lblCantBultos.AutoSize = true;
-            this.lblCantBultos.Location = new System.Drawing.Point(364, 53);
+            this.lblCantBultos.Location = new System.Drawing.Point(427, 55);
             this.lblCantBultos.Name = "lblCantBultos";
             this.lblCantBultos.Size = new System.Drawing.Size(131, 13);
             this.lblCantBultos.TabIndex = 66;
@@ -300,14 +305,14 @@
             // 
             // txtCantBultos
             // 
-            this.txtCantBultos.Location = new System.Drawing.Point(498, 46);
+            this.txtCantBultos.Location = new System.Drawing.Point(562, 48);
             this.txtCantBultos.Name = "txtCantBultos";
             this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
             this.txtCantBultos.TabIndex = 65;
             // 
             // txtOrdenCompra
             // 
-            this.txtOrdenCompra.Location = new System.Drawing.Point(498, 15);
+            this.txtOrdenCompra.Location = new System.Drawing.Point(562, 17);
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
             this.txtOrdenCompra.TabIndex = 64;
@@ -315,7 +320,7 @@
             // lblOrdenCompra
             // 
             this.lblOrdenCompra.AutoSize = true;
-            this.lblOrdenCompra.Location = new System.Drawing.Point(384, 20);
+            this.lblOrdenCompra.Location = new System.Drawing.Point(447, 22);
             this.lblOrdenCompra.Name = "lblOrdenCompra";
             this.lblOrdenCompra.Size = new System.Drawing.Size(108, 13);
             this.lblOrdenCompra.TabIndex = 63;
@@ -345,6 +350,7 @@
             this.btnTransportistas.Size = new System.Drawing.Size(32, 23);
             this.btnTransportistas.TabIndex = 60;
             this.btnTransportistas.Text = "...";
+            this.toolTipControl.SetToolTip(this.btnTransportistas, "Buscador de Transportistas");
             this.btnTransportistas.UseVisualStyleBackColor = true;
             this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
@@ -500,7 +506,7 @@
             // cmbEstadoDoc
             // 
             this.cmbEstadoDoc.FormattingEnabled = true;
-            this.cmbEstadoDoc.Location = new System.Drawing.Point(540, 19);
+            this.cmbEstadoDoc.Location = new System.Drawing.Point(543, 19);
             this.cmbEstadoDoc.Name = "cmbEstadoDoc";
             this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
             this.cmbEstadoDoc.TabIndex = 25;
@@ -512,6 +518,7 @@
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
             this.btnClientes.TabIndex = 22;
             this.btnClientes.Text = "...";
+            this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -595,6 +602,7 @@
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 60;
             this.btnLocalidad.Text = "...";
+            this.toolTipControl.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
@@ -792,7 +800,7 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(19, 604);
+            this.lblObservaciones.Location = new System.Drawing.Point(20, 602);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
             this.lblObservaciones.TabIndex = 82;
@@ -800,19 +808,19 @@
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(20, 620);
+            this.txtObservaciones.Location = new System.Drawing.Point(16, 618);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservaciones.Size = new System.Drawing.Size(350, 53);
+            this.txtObservaciones.Size = new System.Drawing.Size(379, 53);
             this.txtObservaciones.TabIndex = 83;
             // 
             // FrmRemito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.factura;
-            this.ClientSize = new System.Drawing.Size(690, 740);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(689, 721);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTNumFact);
@@ -836,6 +844,8 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtNumFactura);
             this.Controls.Add(this.lblLetra);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "FrmRemito";
             this.Text = "FrmRemito";
             this.Load += new System.EventHandler(this.FrmRemito_Load);
@@ -918,17 +928,18 @@
         private System.Windows.Forms.TextBox txtCantBultos;
         private System.Windows.Forms.TextBox txtOrdenCompra;
         private System.Windows.Forms.Label lblOrdenCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Envases;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unidades;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.Label lblTArticulo;
         private System.Windows.Forms.Label lblTCantidad;
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Button btnLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Envases;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidades;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.ToolTip toolTipControl;
     }
 }
