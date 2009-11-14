@@ -92,11 +92,11 @@
     <Compile Include="FrmArticulosColor.Designer.cs">
       <DependentUpon>FrmArticulosColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmArticulosStock.cs">
+    <Compile Include="FrmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmArticulosStock.Designer.cs">
-      <DependentUpon>FrmArticulosStock.cs</DependentUpon>
+    <Compile Include="FrmArticulos.Designer.cs">
+      <DependentUpon>FrmArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmClientesAlta.cs">
       <SubType>Form</SubType>
@@ -140,6 +140,12 @@
     <Compile Include="FrmClientesTransportistas.Designer.cs">
       <DependentUpon>FrmClientesTransportistas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEgreso.Designer.cs">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     <Compile Include="FrmRemito.Designer.cs">
       <DependentUpon>FrmRemito.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStock.Designer.cs">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="MdiConexco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,8 +192,8 @@
       <DependentUpon>FrmArticulosColor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmArticulosStock.resx">
-      <DependentUpon>FrmArticulosStock.cs</DependentUpon>
+    <EmbeddedResource Include="FrmArticulos.resx">
+      <DependentUpon>FrmArticulos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientesAlta.resx">
@@ -212,6 +224,10 @@
       <DependentUpon>FrmClientesTransportistas.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEgreso.resx">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpresa.resx">
       <DependentUpon>FrmEmpresa.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -226,6 +242,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRemito.resx">
       <DependentUpon>FrmRemito.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStock.resx">
+      <DependentUpon>FrmStock.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MdiConexco.resx">

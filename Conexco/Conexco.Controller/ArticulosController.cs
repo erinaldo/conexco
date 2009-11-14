@@ -59,5 +59,24 @@ namespace Conexco.Controller
         {
             return (_context.Articulos_Colors.Single(col => col.idColor == idColor));
         }
+
+        public bool AgregarArticulo(Articulo articuloGuardar)
+        {
+            try
+            {
+                _context.Articulos.InsertOnSubmit(articuloGuardar);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;   
+            }
+        }
+
+        public Articulo DatosArticuloPorCodigo(int idArticulo)
+        {
+            return (_context.Articulos.Single(art => art.idArticulo == idArticulo));
+        }
     }
 }

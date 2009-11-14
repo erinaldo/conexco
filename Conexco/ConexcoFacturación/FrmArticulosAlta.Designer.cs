@@ -237,6 +237,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmArticulosAlta";
             this.Text = "Alta Articulo";
+            this.Load += new System.EventHandler(this.FrmArticulosAlta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -101,7 +101,7 @@ namespace ConexcoFacturación
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmArticulosStock() { MdiParent = this }.Show();
+            new FrmArticulos() { MdiParent = this }.Show();
         }
 
         private void MdiConexco_Load(object sender, EventArgs e)
@@ -121,6 +121,11 @@ namespace ConexcoFacturación
         private void remitoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmRemito() {MdiParent = this }.Show();
+        }
+
+        private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmStock(){MdiParent = this}.Show();
         }
     }
 }

@@ -11,11 +11,11 @@ using Conexco.Model;
 
 namespace ConexcoFacturación
 {
-    public partial class FrmArticulosStock : Form
+    public partial class FrmArticulos : Form
     {
         public ArticulosController articulosController { get; set; }
 
-        public FrmArticulosStock()
+        public FrmArticulos()
         {
             InitializeComponent();
         }
@@ -37,11 +37,18 @@ namespace ConexcoFacturación
         private void OnArticuloAgregar(object sender, EventArgs e)
         {
             var resultado = new FrmArticulosAlta().ShowDialog();
+            if (resultado == DialogResult.OK)
+                _ActualizarGrilla();
         }
 
         private void OnArticuloModificar(object sender, EventArgs e)
         {
-
+            var idArticulo = Convert.ToInt32(grdArticulos.SelectedRows[0].Cells[0].Value);
+            var result = new FrmArticulosAlta() { IdArticulo = idArticulo }.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                _ActualizarGrilla();
+            }
         }
 
         private void OnArticuloEliminar(object sender, EventArgs e)
@@ -49,6 +56,10 @@ namespace ConexcoFacturación
 
         }
 
-
+        private void OnArticuloSeleccionado(object sender, EventArgs e)
+        {
+            btnEliiminar.Enabled = true;
+            btnModificar.Enabled = true;
+        }
     }
 }

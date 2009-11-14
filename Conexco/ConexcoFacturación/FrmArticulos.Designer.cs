@@ -1,6 +1,6 @@
 ﻿namespace ConexcoFacturación
 {
-    partial class FrmArticulosStock
+    partial class FrmArticulos
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,7 @@
             this.grdArticulos.ReadOnly = true;
             this.grdArticulos.Size = new System.Drawing.Size(543, 230);
             this.grdArticulos.TabIndex = 7;
+            this.grdArticulos.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);
             // 
             // btnModificar
             // 
@@ -80,7 +81,7 @@
             this.btnEliiminar.UseVisualStyleBackColor = true;
             this.btnEliiminar.Click += new System.EventHandler(this.OnArticuloEliminar);
             // 
-            // FrmArticulosStock
+            // FrmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +90,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grdArticulos);
             this.Controls.Add(this.btnAgregar);
-            this.Name = "FrmArticulosStock";
+            this.Name = "FrmArticulos";
             this.Text = "Stock Articulos";
             this.Load += new System.EventHandler(this.FrmArticulosStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulos)).EndInit();
