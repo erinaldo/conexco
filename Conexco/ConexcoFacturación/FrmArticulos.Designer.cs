@@ -50,6 +50,7 @@
             this.grdArticulos.AllowUserToAddRows = false;
             this.grdArticulos.AllowUserToDeleteRows = false;
             this.grdArticulos.AllowUserToResizeColumns = false;
+            this.grdArticulos.AllowUserToResizeRows = false;
             this.grdArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdArticulos.Location = new System.Drawing.Point(13, 13);
             this.grdArticulos.MultiSelect = false;

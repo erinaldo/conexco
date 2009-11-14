@@ -23,7 +23,13 @@ namespace ConexcoFacturación
         private void FrmStock_Load(object sender, EventArgs e)
         {
             StockController = new StockController();
+            ArticulosController = new ArticulosController();
 
+            var listadoArticulos = ArticulosController.ListarArticulos();
+            grdArticulosStock.DataSource = listadoArticulos;
+            grdArticulosStock.Columns[0].Visible = false;
+            grdArticulosStock.Columns[4].Visible = false;
+            grdArticulosStock.Columns[5].Visible = false;
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
@@ -45,6 +51,12 @@ namespace ConexcoFacturación
             var resultado = new FrmEgreso() { IdArticulo = Convert.ToInt32(idArticulo) }.ShowDialog();
             if (resultado == DialogResult.OK)
                 _ActualizarGrilla();
+        }
+
+        private void OnArticuloSeleccionado(object sender, EventArgs e)
+        {
+            btnIngreso.Enabled = grdArticulosStock.SelectedRows.Count > 0;
+            btnEgreso.Enabled = btnIngreso.Enabled;
         }
     }
 }

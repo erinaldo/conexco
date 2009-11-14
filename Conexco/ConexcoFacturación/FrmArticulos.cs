@@ -68,11 +68,8 @@ namespace ConexcoFacturación
 
         private void OnArticuloSeleccionado(object sender, EventArgs e)
         {
-            if (grdArticulos.SelectedRows.Count>0)
-            {
-                btnEliiminar.Enabled = true;
-                btnModificar.Enabled = true;     
-            }
+            btnEliiminar.Enabled = grdArticulos.SelectedRows.Count > 0;
+            btnModificar.Enabled = btnEliiminar.Enabled;     
         }
     }
 }

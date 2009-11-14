@@ -24,7 +24,10 @@ namespace ConexcoFacturación
 
         private void FromIngreso_Load(object sender, EventArgs e)
         {
-            ArticulosController = new ArticulosController();   
+            ArticulosController = new ArticulosController();
+            ArticulosController = new ArticulosController();
+            if (IdArticulo > 0)
+                _CargarDatosArticulo();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

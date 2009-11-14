@@ -36,11 +36,20 @@
             // 
             // grdArticulosStock
             // 
+            this.grdArticulosStock.AllowUserToAddRows = false;
+            this.grdArticulosStock.AllowUserToDeleteRows = false;
+            this.grdArticulosStock.AllowUserToOrderColumns = true;
+            this.grdArticulosStock.AllowUserToResizeColumns = false;
+            this.grdArticulosStock.AllowUserToResizeRows = false;
+            this.grdArticulosStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdArticulosStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdArticulosStock.Location = new System.Drawing.Point(12, 81);
+            this.grdArticulosStock.MultiSelect = false;
             this.grdArticulosStock.Name = "grdArticulosStock";
+            this.grdArticulosStock.ReadOnly = true;
             this.grdArticulosStock.Size = new System.Drawing.Size(521, 175);
             this.grdArticulosStock.TabIndex = 0;
+            this.grdArticulosStock.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);
             // 
             // btnIngreso
             // 
