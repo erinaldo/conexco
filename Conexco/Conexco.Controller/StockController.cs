@@ -17,7 +17,21 @@ namespace Conexco.Controller
 
         public bool EgresoStockArticulo(Egreso_Stock articuloEgresoStock)
         {
-            return true;
+            try
+            {
+                _context.Egreso_Stocks.InsertOnSubmit(articuloEgresoStock);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public List<String> ListadoMotivosEgreso()
+        {
+            return _context.Egreso_Motivos.Select(egre => egre.Descripcion).ToList();
         }
     }
 }

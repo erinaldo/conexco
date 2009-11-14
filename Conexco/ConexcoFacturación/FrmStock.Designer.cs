@@ -37,28 +37,32 @@
             // grdArticulosStock
             // 
             this.grdArticulosStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdArticulosStock.Location = new System.Drawing.Point(12, 12);
+            this.grdArticulosStock.Location = new System.Drawing.Point(12, 81);
             this.grdArticulosStock.Name = "grdArticulosStock";
-            this.grdArticulosStock.Size = new System.Drawing.Size(521, 244);
+            this.grdArticulosStock.Size = new System.Drawing.Size(521, 175);
             this.grdArticulosStock.TabIndex = 0;
             // 
             // btnIngreso
             // 
+            this.btnIngreso.Enabled = false;
             this.btnIngreso.Location = new System.Drawing.Point(154, 279);
             this.btnIngreso.Name = "btnIngreso";
-            this.btnIngreso.Size = new System.Drawing.Size(75, 23);
+            this.btnIngreso.Size = new System.Drawing.Size(89, 23);
             this.btnIngreso.TabIndex = 1;
             this.btnIngreso.Text = "Ingreso Stock";
             this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // btnEgreso
             // 
-            this.btnEgreso.Location = new System.Drawing.Point(283, 279);
+            this.btnEgreso.Enabled = false;
+            this.btnEgreso.Location = new System.Drawing.Point(263, 279);
             this.btnEgreso.Name = "btnEgreso";
-            this.btnEgreso.Size = new System.Drawing.Size(75, 23);
+            this.btnEgreso.Size = new System.Drawing.Size(89, 23);
             this.btnEgreso.TabIndex = 2;
             this.btnEgreso.Text = "Egreso Stock";
             this.btnEgreso.UseVisualStyleBackColor = true;
+            this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
             // 
             // FrmStock
             // 

@@ -37,7 +37,7 @@
             this.codArticulo = new System.Windows.Forms.TextBox();
             this.nombreArticulo = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ddlMotivos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblCodArticulo
@@ -84,6 +84,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -93,6 +94,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // codArticulo
             // 
@@ -117,20 +119,21 @@
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 8;
             // 
-            // comboBox1
+            // ddlMotivos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(134, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.ddlMotivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlMotivos.FormattingEnabled = true;
+            this.ddlMotivos.Location = new System.Drawing.Point(134, 101);
+            this.ddlMotivos.Name = "ddlMotivos";
+            this.ddlMotivos.Size = new System.Drawing.Size(121, 21);
+            this.ddlMotivos.TabIndex = 9;
             // 
             // FrmEgreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 266);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ddlMotivos);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.nombreArticulo);
             this.Controls.Add(this.codArticulo);
@@ -159,6 +162,6 @@
         private System.Windows.Forms.TextBox codArticulo;
         private System.Windows.Forms.TextBox nombreArticulo;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ddlMotivos;
     }
 }

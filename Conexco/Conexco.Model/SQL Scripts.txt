@@ -15,6 +15,7 @@ Agregar bit BajaLogica a Clientes_Domicilios
 
 COSAS A HACER:
 -TOOLTIPS
+-Usar el BajaLogica para 
 
 COSAS A PREGUNTAR:
 -El stock lo reduce en Factura o Remito?

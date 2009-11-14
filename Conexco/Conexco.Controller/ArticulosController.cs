@@ -23,7 +23,7 @@ namespace Conexco.Controller
 
         public List<Articulo> ListarArticulos()
         {
-            return (_context.Articulos.Select(art => art)).ToList();
+            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value))).ToList();
         }
 
         public List<string> ListarCodigoYColorArticulos()
@@ -74,9 +74,42 @@ namespace Conexco.Controller
             }
         }
 
+        public bool ActualizarArticulo(Articulo articuloActualizar)
+        {
+            try
+            {
+                var articulo = _context.Articulos.Where(art => art.idArticulo == articuloActualizar.idArticulo).Single();
+                articulo.Precio = articuloActualizar.Precio;
+                articulo.Descripcion = articuloActualizar.Descripcion;
+                articulo.Stock = articuloActualizar.Stock;
+                articulo.Codigo = articuloActualizar.Codigo;
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public Articulo DatosArticuloPorCodigo(int idArticulo)
         {
             return (_context.Articulos.Single(art => art.idArticulo == idArticulo));
+        }
+
+        public bool EliminarArticulo(int idArticulo)
+        {
+            try
+            {
+                var articulo = _context.Articulos.Where(art => art.idArticulo == idArticulo).Single();
+                articulo.BajaLogica = true;
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ namespace ConexcoFacturación
     {
         public ArticulosController ArticulosController { get; set; }
         public int IdArticulo { get; set; }
+        public bool Modificar { get; set; }
 
         public FrmArticulosAlta()
         {
@@ -60,12 +61,17 @@ namespace ConexcoFacturación
 
             var articuloGuardar = new Articulo()
                                       {
+                                          idArticulo = IdArticulo,
                                           Codigo = txtCodigo.Text,
                                           Descripcion = txtDescripcion.Text,
                                           Precio = Convert.ToDecimal(txtPrecio.Text),
-                                          Stock = Convert.ToDecimal(txtStock.Text)
-                                      };
-            var correcto = ArticulosController.AgregarArticulo(articuloGuardar);
+                                          Stock = Convert.ToDecimal(txtStock.Text),
+                                    };
+
+            bool correcto;
+            
+            correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar) 
+                                 : ArticulosController.AgregarArticulo(articuloGuardar);
 
             if (correcto)
             {
