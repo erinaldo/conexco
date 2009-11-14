@@ -2388,6 +2388,8 @@ namespace Conexco.Model
 		
 		private string _Nombre;
 		
+		private string _CUIT;
+		
 		private string _Domicilio;
 		
 		private string _Localidad;
@@ -2414,6 +2416,8 @@ namespace Conexco.Model
     partial void OnidClienteChanged();
     partial void OnNombreChanging(string value);
     partial void OnNombreChanged();
+    partial void OnCUITChanging(string value);
+    partial void OnCUITChanged();
     partial void OnDomicilioChanging(string value);
     partial void OnDomicilioChanged();
     partial void OnLocalidadChanging(string value);
@@ -2496,6 +2500,26 @@ namespace Conexco.Model
 					this._Nombre = value;
 					this.SendPropertyChanged("Nombre");
 					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CUIT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CUIT
+		{
+			get
+			{
+				return this._CUIT;
+			}
+			set
+			{
+				if ((this._CUIT != value))
+				{
+					this.OnCUITChanging(value);
+					this.SendPropertyChanging();
+					this._CUIT = value;
+					this.SendPropertyChanged("CUIT");
+					this.OnCUITChanged();
 				}
 			}
 		}
@@ -2698,12 +2722,7 @@ namespace Conexco.Model
 	[Table(Name="dbo.CondicionIVA")]
 	public partial class CondicionIVA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-
-        public override string ToString()
-        {
-            return Descripcion.ToString();
-        }
-
+		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idCondicionIVA;

@@ -16,10 +16,13 @@ namespace ConexcoFacturación
         public ClientesController ClientesController { get; set; }
         public LocalidadesController LocalidadesController { get; set; }
         public int IdCliente { get; set; }
+        public bool SeleccionHabilitada { get; set; }
+        public Clientes_Transportista TransportistaSeleccionado { get; set; }
 
         public FrmClientesTransportistas()
         {
             InitializeComponent();
+            SeleccionHabilitada = false;
         }
 
         private void FrmClientesTransportistas_Load(object sender, EventArgs e)
@@ -33,6 +36,8 @@ namespace ConexcoFacturación
 
             lblCliente.Text = ClientesController.DatosCliente(IdCliente).RazonSocial;
 
+            btnSeleccionar.Visible = SeleccionHabilitada;
+
             Refrescar();
         }
 
@@ -41,10 +46,10 @@ namespace ConexcoFacturación
             gridTransportistas.DataSource = ClientesController.ListarTransportistas(IdCliente);
             gridTransportistas.Columns[0].Visible = false;
             gridTransportistas.Columns[1].Visible = false;
-            gridTransportistas.Columns[6].HeaderText = "Código Postal";
-            gridTransportistas.Columns[8].HeaderText = "Información Adicional";
-            gridTransportistas.Columns[9].Visible = false;
+            gridTransportistas.Columns[7].HeaderText = "Código Postal";
+            gridTransportistas.Columns[9].HeaderText = "Información Adicional";
             gridTransportistas.Columns[10].Visible = false;
+            gridTransportistas.Columns[11].Visible = false;
 
             Habilitar(Accion.Inicio);
         }
@@ -141,6 +146,7 @@ namespace ConexcoFacturación
             }
 
             transportista.Nombre = txtNombre.Text;
+            transportista.CUIT = txtCuit.Text;
             transportista.Telefono = txtTelefono.Text;
             transportista.Domicilio = txtDomicilio.Text;
             transportista.Provincia = cmbProvincia.Text;
@@ -166,6 +172,7 @@ namespace ConexcoFacturación
                 int idTransportista = Convert.ToInt32(gridTransportistas.SelectedRows[0].Cells[0].Value);
                 var transportista = ClientesController.DatosTransportista(idTransportista);
                 txtNombre.Text = transportista.Nombre;
+                txtCuit.Text = transportista.CUIT;
                 txtTelefono.Text = transportista.Telefono;
                 txtDomicilio.Text = transportista.Domicilio;
                 cmbProvincia.SelectedValue = LocalidadesController.DatosProvincia(transportista.Provincia).idProvincia;
@@ -189,6 +196,17 @@ namespace ConexcoFacturación
                 txtLocalidad.Text = frmLocalidades.LocalidadSeleccionada;
                 txtCodPostal.Text = frmLocalidades.CodPostalSeleccionado;
                 cmbProvincia.SelectedValue = frmLocalidades.ProvinciaSeleccionada.idProvincia;
+            }
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if(gridTransportistas.SelectedRows.Count > 0)
+            {
+                TransportistaSeleccionado =
+                    ClientesController.DatosTransportista(Convert.ToInt32(gridTransportistas.SelectedCells[0].Value));
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.Close();
             }
         }
     }

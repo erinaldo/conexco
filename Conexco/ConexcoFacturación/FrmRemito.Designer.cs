@@ -75,10 +75,11 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.lblTEmpFax = new System.Windows.Forms.Label();
             this.lblTEmpTelefono = new System.Windows.Forms.Label();
-            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.lblEmpPosicionIVA = new System.Windows.Forms.Label();
             this.lblEmpFax = new System.Windows.Forms.Label();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
+            this.btnLocalidad = new System.Windows.Forms.Button();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
@@ -100,9 +101,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
-            this.btnIva = new System.Windows.Forms.Button();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -141,7 +141,7 @@
             // lblValorDeclarado
             // 
             this.lblValorDeclarado.AutoSize = true;
-            this.lblValorDeclarado.Location = new System.Drawing.Point(452, 593);
+            this.lblValorDeclarado.Location = new System.Drawing.Point(452, 604);
             this.lblValorDeclarado.Name = "lblValorDeclarado";
             this.lblValorDeclarado.Size = new System.Drawing.Size(95, 13);
             this.lblValorDeclarado.TabIndex = 62;
@@ -149,7 +149,7 @@
             // 
             // txtCondIva
             // 
-            this.txtCondIva.Location = new System.Drawing.Point(393, 68);
+            this.txtCondIva.Location = new System.Drawing.Point(564, 94);
             this.txtCondIva.Name = "txtCondIva";
             this.txtCondIva.ReadOnly = true;
             this.txtCondIva.Size = new System.Drawing.Size(100, 20);
@@ -167,7 +167,7 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(581, 593);
+            this.lblTotal.Location = new System.Drawing.Point(584, 604);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTotal.Size = new System.Drawing.Size(100, 13);
@@ -194,7 +194,7 @@
             this.Descripcion,
             this.Precio,
             this.Totales});
-            this.grdDetalleRemito.Location = new System.Drawing.Point(3, 46);
+            this.grdDetalleRemito.Location = new System.Drawing.Point(7, 44);
             this.grdDetalleRemito.Name = "grdDetalleRemito";
             this.grdDetalleRemito.Size = new System.Drawing.Size(658, 200);
             this.grdDetalleRemito.TabIndex = 0;
@@ -245,9 +245,9 @@
             this.gbxDetalle.Controls.Add(this.lblTArticulo);
             this.gbxDetalle.Controls.Add(this.lblTCantidad);
             this.gbxDetalle.Controls.Add(this.grdDetalleRemito);
-            this.gbxDetalle.Location = new System.Drawing.Point(9, 314);
+            this.gbxDetalle.Location = new System.Drawing.Point(9, 342);
             this.gbxDetalle.Name = "gbxDetalle";
-            this.gbxDetalle.Size = new System.Drawing.Size(672, 255);
+            this.gbxDetalle.Size = new System.Drawing.Size(672, 250);
             this.gbxDetalle.TabIndex = 60;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle";
@@ -283,7 +283,7 @@
             this.gbxFiscales.Controls.Add(this.txtTransportistaRazonSocial);
             this.gbxFiscales.Controls.Add(this.lblDomicilioComercial);
             this.gbxFiscales.Controls.Add(this.lblTTransportista);
-            this.gbxFiscales.Location = new System.Drawing.Point(9, 217);
+            this.gbxFiscales.Location = new System.Drawing.Point(9, 251);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 91);
             this.gbxFiscales.TabIndex = 59;
@@ -323,7 +323,7 @@
             // 
             // txtTransportistaCUIT
             // 
-            this.txtTransportistaCUIT.Location = new System.Drawing.Point(76, 65);
+            this.txtTransportistaCUIT.Location = new System.Drawing.Point(74, 65);
             this.txtTransportistaCUIT.Name = "txtTransportistaCUIT";
             this.txtTransportistaCUIT.ReadOnly = true;
             this.txtTransportistaCUIT.Size = new System.Drawing.Size(100, 20);
@@ -346,13 +346,14 @@
             this.btnTransportistas.TabIndex = 60;
             this.btnTransportistas.Text = "...";
             this.btnTransportistas.UseVisualStyleBackColor = true;
+            this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
             // txtTransportistaDomicilio
             // 
             this.txtTransportistaDomicilio.Location = new System.Drawing.Point(125, 41);
             this.txtTransportistaDomicilio.Name = "txtTransportistaDomicilio";
             this.txtTransportistaDomicilio.ReadOnly = true;
-            this.txtTransportistaDomicilio.Size = new System.Drawing.Size(100, 20);
+            this.txtTransportistaDomicilio.Size = new System.Drawing.Size(194, 20);
             this.txtTransportistaDomicilio.TabIndex = 57;
             // 
             // txtTransportistaRazonSocial
@@ -383,7 +384,7 @@
             // 
             // txtClienteCod
             // 
-            this.txtClienteCod.Location = new System.Drawing.Point(572, 66);
+            this.txtClienteCod.Location = new System.Drawing.Point(564, 68);
             this.txtClienteCod.Name = "txtClienteCod";
             this.txtClienteCod.ReadOnly = true;
             this.txtClienteCod.Size = new System.Drawing.Size(100, 20);
@@ -391,7 +392,7 @@
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(499, 42);
+            this.txtCuit.Location = new System.Drawing.Point(564, 44);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.ReadOnly = true;
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
@@ -400,7 +401,7 @@
             // lblClienteCod
             // 
             this.lblClienteCod.AutoSize = true;
-            this.lblClienteCod.Location = new System.Drawing.Point(509, 68);
+            this.lblClienteCod.Location = new System.Drawing.Point(495, 71);
             this.lblClienteCod.Name = "lblClienteCod";
             this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
             this.lblClienteCod.TabIndex = 4;
@@ -409,7 +410,7 @@
             // lblIva
             // 
             this.lblIva.AutoSize = true;
-            this.lblIva.Location = new System.Drawing.Point(367, 68);
+            this.lblIva.Location = new System.Drawing.Point(523, 97);
             this.lblIva.Name = "lblIva";
             this.lblIva.Size = new System.Drawing.Size(27, 13);
             this.lblIva.TabIndex = 2;
@@ -418,7 +419,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(443, 48);
+            this.lblCuit.Location = new System.Drawing.Point(500, 47);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(50, 13);
             this.lblCuit.TabIndex = 1;
@@ -490,7 +491,7 @@
             // lblEstadoDoc
             // 
             this.lblEstadoDoc.AutoSize = true;
-            this.lblEstadoDoc.Location = new System.Drawing.Point(393, 23);
+            this.lblEstadoDoc.Location = new System.Drawing.Point(442, 23);
             this.lblEstadoDoc.Name = "lblEstadoDoc";
             this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
             this.lblEstadoDoc.TabIndex = 26;
@@ -499,7 +500,7 @@
             // cmbEstadoDoc
             // 
             this.cmbEstadoDoc.FormattingEnabled = true;
-            this.cmbEstadoDoc.Location = new System.Drawing.Point(483, 16);
+            this.cmbEstadoDoc.Location = new System.Drawing.Point(540, 19);
             this.cmbEstadoDoc.Name = "cmbEstadoDoc";
             this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
             this.cmbEstadoDoc.TabIndex = 25;
@@ -532,13 +533,6 @@
             this.lblTEmpTelefono.TabIndex = 8;
             this.lblTEmpTelefono.Text = "Tel.";
             // 
-            // txtProvincia
-            // 
-            this.txtProvincia.Location = new System.Drawing.Point(263, 68);
-            this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(75, 20);
-            this.txtProvincia.TabIndex = 24;
-            // 
             // lblEmpPosicionIVA
             // 
             this.lblEmpPosicionIVA.AutoSize = true;
@@ -559,11 +553,12 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.Controls.Add(this.cmbProvincia);
+            this.gbxCliente.Controls.Add(this.btnLocalidad);
             this.gbxCliente.Controls.Add(this.txtCondIva);
             this.gbxCliente.Controls.Add(this.lblEstadoDoc);
             this.gbxCliente.Controls.Add(this.txtClienteCod);
             this.gbxCliente.Controls.Add(this.cmbEstadoDoc);
-            this.gbxCliente.Controls.Add(this.txtProvincia);
             this.gbxCliente.Controls.Add(this.btnClientes);
             this.gbxCliente.Controls.Add(this.txtCuit);
             this.gbxCliente.Controls.Add(this.lblClienteCod);
@@ -580,14 +575,32 @@
             this.gbxCliente.Controls.Add(this.lblRazonSocial);
             this.gbxCliente.Location = new System.Drawing.Point(9, 127);
             this.gbxCliente.Name = "gbxCliente";
-            this.gbxCliente.Size = new System.Drawing.Size(672, 92);
+            this.gbxCliente.Size = new System.Drawing.Size(672, 123);
             this.gbxCliente.TabIndex = 45;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
             // 
+            // cmbProvincia
+            // 
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Location = new System.Drawing.Point(76, 94);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(149, 21);
+            this.cmbProvincia.TabIndex = 61;
+            // 
+            // btnLocalidad
+            // 
+            this.btnLocalidad.Location = new System.Drawing.Point(392, 66);
+            this.btnLocalidad.Name = "btnLocalidad";
+            this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
+            this.btnLocalidad.TabIndex = 60;
+            this.btnLocalidad.Text = "...";
+            this.btnLocalidad.UseVisualStyleBackColor = true;
+            this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
+            // 
             // txtCodPostal
             // 
-            this.txtCodPostal.Location = new System.Drawing.Point(331, 42);
+            this.txtCodPostal.Location = new System.Drawing.Point(311, 68);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
             this.txtCodPostal.TabIndex = 20;
@@ -596,14 +609,14 @@
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(76, 68);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
+            this.txtLocalidad.Size = new System.Drawing.Size(149, 20);
             this.txtLocalidad.TabIndex = 19;
             // 
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(154, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(243, 20);
             this.txtDomicilio.TabIndex = 18;
             // 
             // txtRazonSocial
@@ -617,7 +630,7 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(203, 69);
+            this.lblProvincia.Location = new System.Drawing.Point(11, 94);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
             this.lblProvincia.TabIndex = 16;
@@ -626,7 +639,7 @@
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(255, 47);
+            this.lblCodPostal.Location = new System.Drawing.Point(244, 75);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(64, 13);
             this.lblCodPostal.TabIndex = 15;
@@ -776,32 +789,23 @@
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 79;
             // 
-            // btnIva
-            // 
-            this.btnIva.Location = new System.Drawing.Point(506, 618);
-            this.btnIva.Name = "btnIva";
-            this.btnIva.Size = new System.Drawing.Size(41, 23);
-            this.btnIva.TabIndex = 80;
-            this.btnIva.Text = "21%";
-            this.btnIva.UseVisualStyleBackColor = true;
-            this.btnIva.Click += new System.EventHandler(this.btnIva_Click);
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(217, 601);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
-            this.txtObservaciones.TabIndex = 81;
-            // 
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(116, 601);
+            this.lblObservaciones.Location = new System.Drawing.Point(19, 604);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
             this.lblObservaciones.TabIndex = 82;
             this.lblObservaciones.Text = "Observaciones";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(20, 620);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservaciones.Size = new System.Drawing.Size(350, 53);
+            this.txtObservaciones.TabIndex = 83;
             // 
             // FrmRemito
             // 
@@ -809,9 +813,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.factura;
             this.ClientSize = new System.Drawing.Size(690, 740);
-            this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.txtObservaciones);
-            this.Controls.Add(this.btnIva);
+            this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTNumFact);
             this.Controls.Add(this.btnGuardarImprimir);
             this.Controls.Add(this.lblValorDeclarado);
@@ -884,7 +887,6 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Label lblTEmpFax;
         private System.Windows.Forms.Label lblTEmpTelefono;
-        private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.Label lblEmpPosicionIVA;
         private System.Windows.Forms.Label lblEmpFax;
         private System.Windows.Forms.GroupBox gbxCliente;
@@ -924,8 +926,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.Label lblTArticulo;
         private System.Windows.Forms.Label lblTCantidad;
-        private System.Windows.Forms.Button btnIva;
-        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Button btnLocalidad;
+        private System.Windows.Forms.ComboBox cmbProvincia;
     }
 }

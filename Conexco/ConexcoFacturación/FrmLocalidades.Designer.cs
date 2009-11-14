@@ -49,7 +49,6 @@
             this.cmbProvincia.Location = new System.Drawing.Point(68, 24);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(121, 21);
-            this.cmbProvincia.Sorted = true;
             this.cmbProvincia.TabIndex = 0;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 

@@ -68,11 +68,16 @@ namespace ConexcoFacturación
             var columnDescripcion = (DataGridViewComboBoxColumn)grdDetalleRemito.Columns["Descripcion"];
             columnDescripcion.DataSource = ArticulosController.ListarDescripcionArticulos();
 
+            //Provincias
+            cmbProvincia.DataSource = LocalidadesController.ListarProvincias();
+            cmbProvincia.ValueMember = "idProvincia";
+            cmbProvincia.DisplayMember = "Provincia1";
         }
 
         private decimal _CalcularPrecio(decimal precio)
         {
-            precio += Convert.ToDecimal(Convert.ToDouble(precio) * ((btnIva.Text == "21%") ? 0.21 : 0.105));
+            //TODO: Definir IVA
+            precio += Convert.ToDecimal(Convert.ToDouble(precio) * 0.21);
             return precio;
         }
 
@@ -142,21 +147,12 @@ namespace ConexcoFacturación
                 txtRazonSocial.Text = cliente.RazonSocial;
                 txtDomicilio.Text = domicilio.Domicilio;
                 txtLocalidad.Text = domicilio.Localidad;
-                txtProvincia.Text = domicilio.Provincia;
+                cmbProvincia.SelectedValue = LocalidadesController.DatosProvincia(domicilio.Provincia).idProvincia;
                 txtCodPostal.Text = domicilio.CodPostal;
                 txtCuit.Text = cliente.CUIT;
                 txtCondIva.Text = cliente.CondicionIVA.ToString();
                 txtClienteCod.Text = cliente.Codigo;
             }
-        }
-
-        private void btnIva_Click(object sender, EventArgs e)
-        {
-            if (btnIva.Text == "21%")
-                btnIva.Text = "10.5%";
-            else
-                btnIva.Text = "21%";
-            _RecalcularArticulos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -174,7 +170,7 @@ namespace ConexcoFacturación
             remito.idTransportista = _idTransportista;
             remito.DomicilioEntrega = txtDomicilio.Text;
             remito.LocalidadEntrega = txtLocalidad.Text;
-            remito.ProvinciaEntrega = txtProvincia.Text;
+            remito.ProvinciaEntrega = cmbProvincia.Text;
             remito.CodPostalEntrega = txtCodPostal.Text;
             remito.OrdenCompra = txtOrdenCompra.Text;
             remito.CantBultos = Convert.ToInt32(txtCantBultos.Text);
@@ -208,7 +204,36 @@ namespace ConexcoFacturación
             }
         }
 
+        private void btnLocalidad_Click(object sender, EventArgs e)
+        {
+            var frmLocalidades = new FrmLocalidades();
+            var result = frmLocalidades.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                txtLocalidad.Text = frmLocalidades.LocalidadSeleccionada;
+                txtCodPostal.Text = frmLocalidades.CodPostalSeleccionado;
+                cmbProvincia.SelectedValue = frmLocalidades.ProvinciaSeleccionada.idProvincia;
+            }
+        }
 
-
+        private void btnTransportistas_Click(object sender, EventArgs e)
+        {
+            if(_idCliente > 0)
+            {
+                var frmTransportistas = new FrmClientesTransportistas() { IdCliente = _idCliente, SeleccionHabilitada = true };
+                var result = frmTransportistas.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    _idTransportista = frmTransportistas.TransportistaSeleccionado.idTransportista;
+                    txtTransportistaRazonSocial.Text = frmTransportistas.TransportistaSeleccionado.Nombre;
+                    txtTransportistaDomicilio.Text = frmTransportistas.TransportistaSeleccionado.Domicilio + " - " + frmTransportistas.TransportistaSeleccionado.Localidad + " - CP: " + frmTransportistas.TransportistaSeleccionado.CodPostal;
+                    txtTransportistaCUIT.Text = frmTransportistas.TransportistaSeleccionado.CUIT;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un cliente primero");
+            }
+        }
     }
 }

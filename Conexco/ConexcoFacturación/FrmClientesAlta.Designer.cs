@@ -330,7 +330,6 @@
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
-            this.cmbProvincia.Sorted = true;
             this.cmbProvincia.TabIndex = 46;
             // 
             // lblDomicilio
@@ -400,7 +399,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FrmClienteAlta
+            // FrmClientesAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,7 +409,7 @@
             this.Controls.Add(this.gbxDatosFiscales);
             this.Controls.Add(this.gbxDatosPersonales);
             this.Controls.Add(this.btnGuardar);
-            this.Name = "FrmClienteAlta";
+            this.Name = "FrmClientesAlta";
             this.Text = "Alta de Clientes";
             this.Load += new System.EventHandler(this.FrmClienteAlta_Load);
             this.gbxDatosPersonales.ResumeLayout(false);

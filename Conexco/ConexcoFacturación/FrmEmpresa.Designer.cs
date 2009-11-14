@@ -63,8 +63,8 @@
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
-            this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
+            this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxDatosFiscales.SuspendLayout();
@@ -375,7 +375,6 @@
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
-            this.cmbProvincia.Sorted = true;
             this.cmbProvincia.TabIndex = 46;
             // 
             // gbxDatosFiscales
@@ -395,14 +394,6 @@
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos Fiscales";
             // 
-            // cmbCondicionIva
-            // 
-            this.cmbCondicionIva.FormattingEnabled = true;
-            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
-            this.cmbCondicionIva.Name = "cmbCondicionIva";
-            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
-            this.cmbCondicionIva.TabIndex = 54;
-            // 
             // dtpInicioActividades
             // 
             this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -410,6 +401,14 @@
             this.dtpInicioActividades.Name = "dtpInicioActividades";
             this.dtpInicioActividades.Size = new System.Drawing.Size(104, 20);
             this.dtpInicioActividades.TabIndex = 55;
+            // 
+            // cmbCondicionIva
+            // 
+            this.cmbCondicionIva.FormattingEnabled = true;
+            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
+            this.cmbCondicionIva.Name = "cmbCondicionIva";
+            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
+            this.cmbCondicionIva.TabIndex = 54;
             // 
             // FrmEmpresa
             // 
