@@ -14,13 +14,6 @@ namespace Conexco.Controller
             _context = new ConexcoDataClassesDataContext();
         }
 
-        public bool IngresoStock(Articulos_Stock stock)
-        {
-            _context.Articulos_Stocks.InsertOnSubmit(stock);
-            _context.SubmitChanges();
-            return true;
-        }
-
         public List<Articulo> ListarArticulos()
         {
             return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value))).ToList();

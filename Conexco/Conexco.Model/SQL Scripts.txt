@@ -1,22 +1,4 @@
-﻿CAMBIOS A HACER EN TABLAS
-
-Agregar Campo Contrasenia varchar(20) en tabla Empresa
-
-Agregar campo Disponibilidad varchar(250) en tabla Presupuesto
-
-AGREGAR CAMPO PorcentajeIVA decimal(18,2) en tabla Empresa
-
-AGREGAR CAMPO CUIT EN CLIENTES_TRANSPORTISTAS VARCHAR(20) NOT NULL
-
-Cambiar en tabla Articulos id IdColor por CodColor varchar(10) y borrar relacion entre Articulos y Articulos_Color
-
-Agregar campo Precio decimal(18, 2) en Facturas_Linea, Remitos_Linea, Presupuestos_Linea
-
-Agregar campo Total decimal(18,2) en Remitos
-
-Agregar campo idDomicilioCliente en Facturas
-
-Agregar bit BajaLogica a Clientes_Domicilios
+﻿
 
 -----------------------------------------------------------------------
 

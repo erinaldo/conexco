@@ -20,18 +20,6 @@
         <elementListCompartment Id="dc73e55b-340b-48ad-baeb-92a4a23f87f1" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95c0104d-6a65-474a-89f7-1425d87aeaa7" absoluteBounds="6.25, 5.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/ConexcoDataClassesDataContext/Articulos_Precio" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f33f7b24-7963-4115-94a8-fc44f9e45145" absoluteBounds="6.265, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bdb3874d-92e1-4c00-bf08-121d613d9637" absoluteBounds="0.75, 4.375, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/ConexcoDataClassesDataContext/Articulos_Stock" />
-      <nestedChildShapes>
-        <elementListCompartment Id="62048695-619f-4388-b20a-264914bf3f4e" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="69e22f9e-5bf2-4386-9af1-215d3c7dc9e3" absoluteBounds="12.5, 13.875, 2, 2.9247054036458326">
       <DataClassMoniker Name="/ConexcoDataClassesDataContext/Cliente" />
       <nestedChildShapes>
@@ -189,7 +177,7 @@
         <classShapeMoniker Id="aa89032f-3bcc-465a-9ada-f43394a3da90" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.75 : 18.3189925130208); (10.75 : 23.4142569986979); (12.5 : 23.4142569986979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.75 : 18.3189925130208); (10.75 : 23.4142569986979); (12.5 : 23.4142569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/CondicionIVA/CondicionIVA_Empresa" />
       <nodes>
         <classShapeMoniker Id="d4ae7a99-c6f0-4c81-a90c-d835a6978eb5" />
@@ -217,7 +205,7 @@
         <classShapeMoniker Id="74c2cdb3-4d9b-4031-9ea6-69feef73f0a9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.57291666666667 : 10.0729484049479 : JumpStart); (5.73958333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.0729484049479); (5.57291666666667 : 10.0729484049479 : JumpStart); (5.73958333333333 : 10.0729484049479 : JumpEnd); (5.79166666666667 : 10.0729484049479 : JumpStart); (5.95833333333333 : 10.0729484049479 : JumpEnd); (6.25 : 10.0729484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Factura/Factura_Facturas_Linea" />
       <nodes>
         <classShapeMoniker Id="355ea58b-59cb-4de6-b82d-dfa7fcf7aa49" />
@@ -231,7 +219,7 @@
         <classShapeMoniker Id="3005ca52-1d96-4ff4-b5d1-6cbe2e467c5a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.53953412760417); (5.57291666666667 : 7.53953412760417 : JumpStart); (5.73958333333333 : 7.53953412760417 : JumpEnd); (9.25 : 7.53953412760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 7.53953412760417); (9.25 : 7.53953412760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexcoDataClassesDataContext/Articulo/Articulo_Presupuestos_Linea" />
       <nodes>
         <classShapeMoniker Id="98fbdf9a-e062-47c2-8dc5-ff14818fae2a" />

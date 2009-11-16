@@ -64,6 +64,7 @@ namespace ConexcoFacturación
             dtpInicioActividades.Value = empresa.InicioActividades;
             txtIngresosBrutos.Text = empresa.IngBrutos;
             txtPorcentajeIVA.Text = (empresa.PorcentajeIVA.HasValue) ? empresa.PorcentajeIVA.Value.ToString() : "";
+            txtContrasenia.Text = empresa.Contrasenia ?? "";
         }
 
         private void btnLocalidad_Click(object sender, EventArgs e)
@@ -85,6 +86,17 @@ namespace ConexcoFacturación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if(txtContrasenia.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una contraseña válida");
+                return;
+            }
+            if(txtContrasenia.Text != txtRepetirContrasenia.Text)
+            {
+                MessageBox.Show("La contraseña y la confirmación de contraseña deben ser iguales");
+                return;
+            }
+
             var empresa = new Empresa();
             empresa.idEmpresa = IdEmpresa;
             empresa.RazonSocial = txtRazonSocial.Text;
@@ -103,7 +115,7 @@ namespace ConexcoFacturación
             empresa.InicioActividades = dtpInicioActividades.Value;
             empresa.IngBrutos = txtIngresosBrutos.Text;
             empresa.PorcentajeIVA = Convert.ToDecimal(txtPorcentajeIVA.Text);
-
+            empresa.Contrasenia = txtContrasenia.Text;
 
             if(EmpresaController.CrearOActualizarEmpresa(empresa))
             {

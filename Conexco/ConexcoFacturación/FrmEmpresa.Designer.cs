@@ -63,19 +63,25 @@
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
+            this.lblPorciento = new System.Windows.Forms.Label();
+            this.txtPorcentajeIVA = new System.Windows.Forms.TextBox();
+            this.lblPorcentajeIVA = new System.Windows.Forms.Label();
             this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
             this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
-            this.lblPorcentajeIVA = new System.Windows.Forms.Label();
-            this.txtPorcentajeIVA = new System.Windows.Forms.TextBox();
-            this.lblPorciento = new System.Windows.Forms.Label();
+            this.gbxConfiguracion = new System.Windows.Forms.GroupBox();
+            this.lblContrasenia = new System.Windows.Forms.Label();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
+            this.txtRepetirContrasenia = new System.Windows.Forms.TextBox();
+            this.lblRepetirContrasenia = new System.Windows.Forms.Label();
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxDatosFiscales.SuspendLayout();
+            this.gbxConfiguracion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(279, 395);
+            this.btnCancelar.Location = new System.Drawing.Point(313, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
@@ -85,7 +91,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(104, 395);
+            this.btnGuardar.Location = new System.Drawing.Point(120, 448);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
@@ -337,7 +343,7 @@
             this.gbxDatosPersonales.Controls.Add(this.lblWeb);
             this.gbxDatosPersonales.Controls.Add(this.txtEmail);
             this.gbxDatosPersonales.Controls.Add(this.txtWeb);
-            this.gbxDatosPersonales.Location = new System.Drawing.Point(15, 62);
+            this.gbxDatosPersonales.Location = new System.Drawing.Point(15, 51);
             this.gbxDatosPersonales.Name = "gbxDatosPersonales";
             this.gbxDatosPersonales.Size = new System.Drawing.Size(226, 265);
             this.gbxDatosPersonales.TabIndex = 0;
@@ -355,7 +361,7 @@
             this.gbxDomicilio.Controls.Add(this.lblProvincia);
             this.gbxDomicilio.Controls.Add(this.txtCodPostal);
             this.gbxDomicilio.Controls.Add(this.lblCodPostal);
-            this.gbxDomicilio.Location = new System.Drawing.Point(262, 62);
+            this.gbxDomicilio.Location = new System.Drawing.Point(262, 51);
             this.gbxDomicilio.Name = "gbxDomicilio";
             this.gbxDomicilio.Size = new System.Drawing.Size(256, 142);
             this.gbxDomicilio.TabIndex = 1;
@@ -382,9 +388,6 @@
             // 
             // gbxDatosFiscales
             // 
-            this.gbxDatosFiscales.Controls.Add(this.lblPorciento);
-            this.gbxDatosFiscales.Controls.Add(this.txtPorcentajeIVA);
-            this.gbxDatosFiscales.Controls.Add(this.lblPorcentajeIVA);
             this.gbxDatosFiscales.Controls.Add(this.dtpInicioActividades);
             this.gbxDatosFiscales.Controls.Add(this.cmbCondicionIva);
             this.gbxDatosFiscales.Controls.Add(this.lblCuit);
@@ -393,12 +396,37 @@
             this.gbxDatosFiscales.Controls.Add(this.txtCuit);
             this.gbxDatosFiscales.Controls.Add(this.lblIngresosBrutos);
             this.gbxDatosFiscales.Controls.Add(this.lblInicioActividades);
-            this.gbxDatosFiscales.Location = new System.Drawing.Point(262, 210);
+            this.gbxDatosFiscales.Location = new System.Drawing.Point(262, 199);
             this.gbxDatosFiscales.Name = "gbxDatosFiscales";
-            this.gbxDatosFiscales.Size = new System.Drawing.Size(256, 179);
+            this.gbxDatosFiscales.Size = new System.Drawing.Size(256, 157);
             this.gbxDatosFiscales.TabIndex = 2;
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos Fiscales";
+            // 
+            // lblPorciento
+            // 
+            this.lblPorciento.AutoSize = true;
+            this.lblPorciento.Location = new System.Drawing.Point(159, 29);
+            this.lblPorciento.Name = "lblPorciento";
+            this.lblPorciento.Size = new System.Drawing.Size(15, 13);
+            this.lblPorciento.TabIndex = 58;
+            this.lblPorciento.Text = "%";
+            // 
+            // txtPorcentajeIVA
+            // 
+            this.txtPorcentajeIVA.Location = new System.Drawing.Point(115, 26);
+            this.txtPorcentajeIVA.Name = "txtPorcentajeIVA";
+            this.txtPorcentajeIVA.Size = new System.Drawing.Size(38, 20);
+            this.txtPorcentajeIVA.TabIndex = 57;
+            // 
+            // lblPorcentajeIVA
+            // 
+            this.lblPorcentajeIVA.AutoSize = true;
+            this.lblPorcentajeIVA.Location = new System.Drawing.Point(19, 29);
+            this.lblPorcentajeIVA.Name = "lblPorcentajeIVA";
+            this.lblPorcentajeIVA.Size = new System.Drawing.Size(78, 13);
+            this.lblPorcentajeIVA.TabIndex = 56;
+            this.lblPorcentajeIVA.Text = "Porcentaje IVA";
             // 
             // dtpInicioActividades
             // 
@@ -416,36 +444,62 @@
             this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
             this.cmbCondicionIva.TabIndex = 54;
             // 
-            // lblPorcentajeIVA
+            // gbxConfiguracion
             // 
-            this.lblPorcentajeIVA.AutoSize = true;
-            this.lblPorcentajeIVA.Location = new System.Drawing.Point(24, 156);
-            this.lblPorcentajeIVA.Name = "lblPorcentajeIVA";
-            this.lblPorcentajeIVA.Size = new System.Drawing.Size(78, 13);
-            this.lblPorcentajeIVA.TabIndex = 56;
-            this.lblPorcentajeIVA.Text = "Porcentaje IVA";
+            this.gbxConfiguracion.Controls.Add(this.lblRepetirContrasenia);
+            this.gbxConfiguracion.Controls.Add(this.txtRepetirContrasenia);
+            this.gbxConfiguracion.Controls.Add(this.txtContrasenia);
+            this.gbxConfiguracion.Controls.Add(this.lblContrasenia);
+            this.gbxConfiguracion.Controls.Add(this.lblPorciento);
+            this.gbxConfiguracion.Controls.Add(this.lblPorcentajeIVA);
+            this.gbxConfiguracion.Controls.Add(this.txtPorcentajeIVA);
+            this.gbxConfiguracion.Location = new System.Drawing.Point(20, 324);
+            this.gbxConfiguracion.Name = "gbxConfiguracion";
+            this.gbxConfiguracion.Size = new System.Drawing.Size(221, 100);
+            this.gbxConfiguracion.TabIndex = 41;
+            this.gbxConfiguracion.TabStop = false;
+            this.gbxConfiguracion.Text = "Configuración del Sistema";
             // 
-            // txtPorcentajeIVA
+            // lblContrasenia
             // 
-            this.txtPorcentajeIVA.Location = new System.Drawing.Point(124, 152);
-            this.txtPorcentajeIVA.Name = "txtPorcentajeIVA";
-            this.txtPorcentajeIVA.Size = new System.Drawing.Size(38, 20);
-            this.txtPorcentajeIVA.TabIndex = 57;
+            this.lblContrasenia.AutoSize = true;
+            this.lblContrasenia.Location = new System.Drawing.Point(19, 55);
+            this.lblContrasenia.Name = "lblContrasenia";
+            this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasenia.TabIndex = 59;
+            this.lblContrasenia.Text = "Contraseña";
             // 
-            // lblPorciento
+            // txtContrasenia
             // 
-            this.lblPorciento.AutoSize = true;
-            this.lblPorciento.Location = new System.Drawing.Point(168, 155);
-            this.lblPorciento.Name = "lblPorciento";
-            this.lblPorciento.Size = new System.Drawing.Size(15, 13);
-            this.lblPorciento.TabIndex = 58;
-            this.lblPorciento.Text = "%";
+            this.txtContrasenia.Location = new System.Drawing.Point(115, 48);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasenia.TabIndex = 60;
+            this.txtContrasenia.UseSystemPasswordChar = true;
+            // 
+            // txtRepetirContrasenia
+            // 
+            this.txtRepetirContrasenia.Location = new System.Drawing.Point(115, 74);
+            this.txtRepetirContrasenia.Name = "txtRepetirContrasenia";
+            this.txtRepetirContrasenia.Size = new System.Drawing.Size(100, 20);
+            this.txtRepetirContrasenia.TabIndex = 61;
+            this.txtRepetirContrasenia.UseSystemPasswordChar = true;
+            // 
+            // lblRepetirContrasenia
+            // 
+            this.lblRepetirContrasenia.AutoSize = true;
+            this.lblRepetirContrasenia.Location = new System.Drawing.Point(19, 77);
+            this.lblRepetirContrasenia.Name = "lblRepetirContrasenia";
+            this.lblRepetirContrasenia.Size = new System.Drawing.Size(98, 13);
+            this.lblRepetirContrasenia.TabIndex = 62;
+            this.lblRepetirContrasenia.Text = "Repetir Contraseña";
             // 
             // FrmEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 451);
+            this.ClientSize = new System.Drawing.Size(530, 483);
+            this.Controls.Add(this.gbxConfiguracion);
             this.Controls.Add(this.gbxDatosFiscales);
             this.Controls.Add(this.gbxDomicilio);
             this.Controls.Add(this.lblTitulo);
@@ -461,6 +515,8 @@
             this.gbxDomicilio.PerformLayout();
             this.gbxDatosFiscales.ResumeLayout(false);
             this.gbxDatosFiscales.PerformLayout();
+            this.gbxConfiguracion.ResumeLayout(false);
+            this.gbxConfiguracion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -507,6 +563,11 @@
         private System.Windows.Forms.Label lblPorciento;
         private System.Windows.Forms.TextBox txtPorcentajeIVA;
         private System.Windows.Forms.Label lblPorcentajeIVA;
+        private System.Windows.Forms.GroupBox gbxConfiguracion;
+        private System.Windows.Forms.TextBox txtContrasenia;
+        private System.Windows.Forms.Label lblContrasenia;
+        private System.Windows.Forms.Label lblRepetirContrasenia;
+        private System.Windows.Forms.TextBox txtRepetirContrasenia;
 
     }
 }
