@@ -36,7 +36,7 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.comboColor = new System.Windows.Forms.ComboBox();
@@ -98,6 +98,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress_Precio);
             // 
             // label4
             // 
@@ -116,15 +117,15 @@
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 9;
             // 
-            // label5
+            // lblStock
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Stock:";
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(47, 173);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(86, 17);
+            this.lblStock.TabIndex = 8;
+            this.lblStock.Text = "Stock Inicial:";
             // 
             // btnGuardar
             // 
@@ -227,7 +228,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblStock);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDescripcion);
@@ -253,7 +254,7 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox comboColor;

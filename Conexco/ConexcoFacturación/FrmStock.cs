@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
+using Conexco.Model;
 
 namespace ConexcoFacturación
 {
@@ -57,6 +58,33 @@ namespace ConexcoFacturación
         {
             btnIngreso.Enabled = grdArticulosStock.SelectedRows.Count > 0;
             btnEgreso.Enabled = btnIngreso.Enabled;
+        }
+
+        private void OnKeyPress_Busqueda(object sender, KeyPressEventArgs e)
+        {
+            var listaArticulos = new List<Articulo>();
+            var teclaIngresada = e.KeyChar.ToString();
+            var valorIngresado = (teclaIngresada=="\b") ? txtValorBusqueda.Text.Substring(0,txtValorBusqueda.Text.Length-1) : txtValorBusqueda.Text + teclaIngresada;
+
+            if (String.IsNullOrEmpty((valorIngresado).Trim()))
+            {
+                listaArticulos = ArticulosController.ListarArticulos();
+            }
+            else
+            {
+                if (rbtnCodigoArticulo.Checked)
+                {
+                    listaArticulos =
+                        ArticulosController.BuscadorPorCodigoArticulo(valorIngresado);
+                }
+                else
+                {
+                    listaArticulos = rbtnDescripcion.Checked ? ArticulosController.BuscadorPorDescripcion(valorIngresado) 
+                                                            : ArticulosController.BuscadorPorCódigoColor(valorIngresado);
+                }
+            }
+
+            grdArticulosStock.DataSource = listaArticulos;
         }
     }
 }

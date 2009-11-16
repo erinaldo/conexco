@@ -112,6 +112,21 @@ namespace Conexco.Controller
             }
         }
 
+        public List<Articulo> BuscadorPorCodigoArticulo(string codigoArticulo)
+        {
+            return _context.Articulos.Where(art => art.Codigo.Contains(codigoArticulo)).ToList();
+        }
+
+        public List<Articulo> BuscadorPorDescripcion(string descripcion)
+        {
+            return _context.Articulos.Where(art => art.Descripcion.Contains(descripcion)).ToList();
+        }
+
+        public List<Articulo> BuscadorPorCódigoColor(string codigoColor)
+        {
+            return _context.Articulos.Where(art => art.CodColor.Contains(codigoColor)).ToList();
+        }
+
         public bool ReducirStock(int idArticulo, decimal cantidad)
         {
             try

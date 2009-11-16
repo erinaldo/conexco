@@ -21,11 +21,14 @@ namespace ConexcoFacturación
             ArticulosController = new ArticulosController();
             if (IdArticulo > 0)
             {
-                this.Text = "Modificar Articulo";
+                Text = "Modificar Articulo";
+                txtStock.Visible = false;
+                errorStock.Visible = false;
+                lblStock.Visible = false;
                 _CargarDatosArticulo();
             }
             else
-                this.Text = "Agregar Articulo";
+                Text = "Agregar Articulo";
         }
 
         private void _CargarDatosArticulo()
@@ -40,7 +43,7 @@ namespace ConexcoFacturación
         private void OnCrearNuevoColor(object sender, EventArgs e)
         {
             var frmArticulosColor = new FrmArticulosColor();
-            var resultado = frmArticulosColor.ShowDialog();
+            //var resultado = frmArticulosColor.ShowDialog();
             comboColor.Text = frmArticulosColor.CodigoColorSeleccionado;
         }
 
@@ -59,7 +62,7 @@ namespace ConexcoFacturación
             if (errorCodigo.Visible || errorDescripcion.Visible || errorPrecio.Visible || errorStock.Visible)
                 return;
 
-            var articuloGuardar = new Articulo()
+            var articuloGuardar = new Articulo
                                       {
                                           idArticulo = IdArticulo,
                                           Codigo = txtCodigo.Text,
@@ -68,22 +71,33 @@ namespace ConexcoFacturación
                                           Stock = Convert.ToDecimal(txtStock.Text),
                                     };
 
-            bool correcto;
-            
-            correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar) 
-                                 : ArticulosController.AgregarArticulo(articuloGuardar);
+            bool correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar) 
+                                : ArticulosController.AgregarArticulo(articuloGuardar);
 
             if (correcto)
             {
                 MessageBox.Show("Articulo guardado satisfactoriamente");
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             else
             {
                 MessageBox.Show("Ha ocurrido un error al guardar el articulo, intentelo de nuevo");
             }
 
+        }
+
+        private void OnKeyPress_Precio(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                Convert.ToDecimal(txtPrecio.Text);
+                e.Handled = true;
+            }
+            catch (Exception)
+            {
+                e.Handled = false;
+            }
         }
 
  
