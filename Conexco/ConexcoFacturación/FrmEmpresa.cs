@@ -63,6 +63,7 @@ namespace ConexcoFacturación
             cmbCondicionIva.SelectedValue = empresa.idCondicionIVA;
             dtpInicioActividades.Value = empresa.InicioActividades;
             txtIngresosBrutos.Text = empresa.IngBrutos;
+            txtPorcentajeIVA.Text = (empresa.PorcentajeIVA.HasValue) ? empresa.PorcentajeIVA.Value.ToString() : "";
         }
 
         private void btnLocalidad_Click(object sender, EventArgs e)
@@ -101,6 +102,7 @@ namespace ConexcoFacturación
             empresa.idCondicionIVA = Convert.ToInt32(cmbCondicionIva.SelectedValue);
             empresa.InicioActividades = dtpInicioActividades.Value;
             empresa.IngBrutos = txtIngresosBrutos.Text;
+            empresa.PorcentajeIVA = Convert.ToDecimal(txtPorcentajeIVA.Text);
 
 
             if(EmpresaController.CrearOActualizarEmpresa(empresa))

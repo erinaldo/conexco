@@ -20,6 +20,8 @@ namespace ConexcoFacturación
         public EmpresaController EmpresaController { get; set; }
         public ArticulosController ArticulosController { get; set; }
         public FacturasController FacturasController { get; set; }
+        public decimal PorcentajeIVA { get; set; }
+
 
         private const int MAX_FILAS = 10;
 
@@ -47,6 +49,7 @@ namespace ConexcoFacturación
         {
             //Empresa
             var empresa = EmpresaController.DatosEmpresa();
+
             lblEmpRazonSocial.Text = empresa.RazonSocial;
             lblEmpDomicilio.Text = empresa.Domicilio;
             lblEmpCodPostal.Text = empresa.CodPostal;
@@ -81,8 +84,7 @@ namespace ConexcoFacturación
         private decimal _CalcularPrecio(decimal precio)
         {
             if(cmbLetra.Text == "B")
-                //TODO: Definir IVA
-                precio += Convert.ToDecimal(Convert.ToDouble(precio)*0.21);
+                precio += Convert.ToDecimal(Convert.ToDouble(precio)*Convert.ToDouble(PorcentajeIVA) / 100);
             return precio;
         }
 

@@ -1,5 +1,7 @@
 ﻿CAMBIOS A HACER EN TABLAS
 
+AGREGAR CAMPO PorcentajeIVA decimal(18,2) en tabla Empresa
+
 AGREGAR CAMPO CUIT EN CLIENTES_TRANSPORTISTAS VARCHAR(20) NOT NULL
 
 Cambiar en tabla Articulos id IdColor por CodColor varchar(10) y borrar relacion entre Articulos y Articulos_Color
@@ -13,16 +15,16 @@ Agregar campo idDomicilioCliente en Facturas
 Agregar bit BajaLogica a Clientes_Domicilios
 
 
-COSAS A HACER:
--TOOLTIPS
--Usar el BajaLogica para 
+CREAR UN CODIGO DE COLOR 0 QUE SIGNIFIQUE COLOR UNICO
 
 COSAS A PREGUNTAR:
--El stock lo reduce en Factura o Remito?
+-El stock lo reduce en Factura o Remito? REDUCE POR REMITO
 
 COSAS A HACER:
--Crear tabla para guardar el valor de iva y formulario para que lo pueda modificar. 
-	(formulario de opciones asi metemos otras cosas tbm)
+-Menu opciones para acceder a la informacion de la empresa.
+-TOOLTIPS
+-Reducir Stock con Remito
+-Elegir clientes con dropdown
 
 
 

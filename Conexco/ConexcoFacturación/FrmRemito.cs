@@ -19,6 +19,7 @@ namespace ConexcoFacturación
         public EmpresaController EmpresaController { get; set; }
         public ArticulosController ArticulosController { get; set; }
         public RemitosController RemitosController { get; set; }
+        public decimal PorcentajeIVA { get; set; }
 
         private const int MAX_FILAS = 10;
 
@@ -78,22 +79,29 @@ namespace ConexcoFacturación
 
         private decimal _CalcularPrecio(decimal precio)
         {
-            //TODO: Definir IVA
-            precio += Convert.ToDecimal(Convert.ToDouble(precio) * 0.21);
+            precio += Convert.ToDecimal(Convert.ToDouble(precio) * Convert.ToDouble(PorcentajeIVA) / 100);
             return precio;
         }
 
-        private void _RecalcularArticulos()
+        private void _ReducirStockArticulos()
         {
-            foreach (DataGridViewRow row in grdDetalleRemito.Rows)
+            try
             {
-                if (!row.IsNewRow)
+                foreach (DataGridViewRow row in grdDetalleRemito.Rows)
                 {
-                    var codArticulo = row.Cells["Codigo"].Value.ToString();
-                    var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
-                    row.Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
+                    if (!row.IsNewRow)
+                    {
+                        var codArticulo = row.Cells["Codigo"].Value.ToString();
+                        var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
+                        ArticulosController.ReducirStock(articulo.idArticulo, Convert.ToDecimal(row.Cells["Cantidad"].Value));
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo reducir el stock correctamente");
+            }
+
         }
 
         private void grdDetalleRemito_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -198,7 +206,9 @@ namespace ConexcoFacturación
 
             if (RemitosController.AgregarRemito(remito))
             {
+                _ReducirStockArticulos();
                 MessageBox.Show("Remito guardado correctamente");
+                this.Close();
             }
             else
             {

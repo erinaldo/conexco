@@ -108,7 +108,7 @@
       <Column Name="idTransportista" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
-	  <Column Name="CUIT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CUIT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Domicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Localidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Provincia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
@@ -178,6 +178,7 @@
       <Column Name="IngBrutos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Web" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PorcentajeIVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Association Name="CondicionIVA_Empresa" Member="CondicionIVA" ThisKey="idCondicionIVA" Type="CondicionIVA" IsForeignKey="true" />
     </Type>
   </Table>

@@ -35,6 +35,7 @@ namespace Conexco.Controller
                 empresaGuardada.idCondicionIVA = empresa.idCondicionIVA;
                 empresaGuardada.InicioActividades = empresa.InicioActividades;
                 empresaGuardada.IngBrutos = empresa.IngBrutos;
+                empresaGuardada.PorcentajeIVA = empresa.PorcentajeIVA;
             }
             else
             {

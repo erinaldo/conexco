@@ -65,6 +65,9 @@
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
             this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
             this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
+            this.lblPorcentajeIVA = new System.Windows.Forms.Label();
+            this.txtPorcentajeIVA = new System.Windows.Forms.TextBox();
+            this.lblPorciento = new System.Windows.Forms.Label();
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxDatosFiscales.SuspendLayout();
@@ -379,6 +382,9 @@
             // 
             // gbxDatosFiscales
             // 
+            this.gbxDatosFiscales.Controls.Add(this.lblPorciento);
+            this.gbxDatosFiscales.Controls.Add(this.txtPorcentajeIVA);
+            this.gbxDatosFiscales.Controls.Add(this.lblPorcentajeIVA);
             this.gbxDatosFiscales.Controls.Add(this.dtpInicioActividades);
             this.gbxDatosFiscales.Controls.Add(this.cmbCondicionIva);
             this.gbxDatosFiscales.Controls.Add(this.lblCuit);
@@ -389,7 +395,7 @@
             this.gbxDatosFiscales.Controls.Add(this.lblInicioActividades);
             this.gbxDatosFiscales.Location = new System.Drawing.Point(262, 210);
             this.gbxDatosFiscales.Name = "gbxDatosFiscales";
-            this.gbxDatosFiscales.Size = new System.Drawing.Size(256, 166);
+            this.gbxDatosFiscales.Size = new System.Drawing.Size(256, 179);
             this.gbxDatosFiscales.TabIndex = 2;
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos Fiscales";
@@ -409,6 +415,31 @@
             this.cmbCondicionIva.Name = "cmbCondicionIva";
             this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
             this.cmbCondicionIva.TabIndex = 54;
+            // 
+            // lblPorcentajeIVA
+            // 
+            this.lblPorcentajeIVA.AutoSize = true;
+            this.lblPorcentajeIVA.Location = new System.Drawing.Point(24, 156);
+            this.lblPorcentajeIVA.Name = "lblPorcentajeIVA";
+            this.lblPorcentajeIVA.Size = new System.Drawing.Size(78, 13);
+            this.lblPorcentajeIVA.TabIndex = 56;
+            this.lblPorcentajeIVA.Text = "Porcentaje IVA";
+            // 
+            // txtPorcentajeIVA
+            // 
+            this.txtPorcentajeIVA.Location = new System.Drawing.Point(124, 152);
+            this.txtPorcentajeIVA.Name = "txtPorcentajeIVA";
+            this.txtPorcentajeIVA.Size = new System.Drawing.Size(38, 20);
+            this.txtPorcentajeIVA.TabIndex = 57;
+            // 
+            // lblPorciento
+            // 
+            this.lblPorciento.AutoSize = true;
+            this.lblPorciento.Location = new System.Drawing.Point(168, 155);
+            this.lblPorciento.Name = "lblPorciento";
+            this.lblPorciento.Size = new System.Drawing.Size(15, 13);
+            this.lblPorciento.TabIndex = 58;
+            this.lblPorciento.Text = "%";
             // 
             // FrmEmpresa
             // 
@@ -473,6 +504,9 @@
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.ComboBox cmbCondicionIva;
         private System.Windows.Forms.DateTimePicker dtpInicioActividades;
+        private System.Windows.Forms.Label lblPorciento;
+        private System.Windows.Forms.TextBox txtPorcentajeIVA;
+        private System.Windows.Forms.Label lblPorcentajeIVA;
 
     }
 }

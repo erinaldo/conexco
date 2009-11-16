@@ -111,5 +111,26 @@ namespace Conexco.Controller
                 return false;
             }
         }
+
+        public bool ReducirStock(int idArticulo, decimal cantidad)
+        {
+            try
+            {
+                var articulo = _context.Articulos.Where(art => art.idArticulo == idArticulo).Single();
+                articulo.Stock -= cantidad;
+                var egreso = new Egreso_Stock();
+                egreso.idArticulo = articulo.idArticulo;
+                egreso.FechaEgreso = DateTime.Now;
+                egreso.Cantidad = cantidad;
+                egreso.Motivo = "Remito";
+                _context.Egreso_Stocks.InsertOnSubmit(egreso);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

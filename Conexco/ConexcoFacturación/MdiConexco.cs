@@ -115,12 +115,44 @@ namespace ConexcoFacturación
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmFactura(){MdiParent = this}.Show();
+            var empresa = new EmpresaController().DatosEmpresa();
+
+            if (empresa.PorcentajeIVA.HasValue && empresa.PorcentajeIVA.Value > 0)
+            {
+                new FrmFactura() { MdiParent = this, PorcentajeIVA = empresa.PorcentajeIVA.Value }.Show();
+            }
+            else
+            {
+                var result =
+                        MessageBox.Show(
+                            "Para crear una factura primero debe indicar el porcentaje de IVA, desea hacerlo ahora?",
+                            "Atención", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    new FrmEmpresa() { MdiParent = this }.Show();
+                }
+            }
         }
 
         private void remitoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmRemito() {MdiParent = this }.Show();
+            var empresa = new EmpresaController().DatosEmpresa();
+
+            if (empresa.PorcentajeIVA.HasValue && empresa.PorcentajeIVA.Value > 0)
+            {
+                new FrmRemito() { MdiParent = this, PorcentajeIVA = empresa.PorcentajeIVA.Value }.Show();
+            }
+            else
+            {
+                var result =
+                        MessageBox.Show(
+                            "Para crear una factura primero debe indicar el porcentaje de IVA, desea hacerlo ahora?",
+                            "Atención", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    new FrmEmpresa() { MdiParent = this }.Show();
+                }
+            }
         }
 
         private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -155,12 +187,44 @@ namespace ConexcoFacturación
 
         private void toolStripButtonRemitos_Click(object sender, EventArgs e)
         {
-            new FrmRemito() { MdiParent = this }.Show();
+            var empresa = new EmpresaController().DatosEmpresa();
+
+            if (empresa.PorcentajeIVA.HasValue && empresa.PorcentajeIVA.Value > 0)
+            {
+                new FrmRemito() { MdiParent = this, PorcentajeIVA = empresa.PorcentajeIVA.Value }.Show();
+            }
+            else
+            {
+                var result =
+                        MessageBox.Show(
+                            "Para crear una factura primero debe indicar el porcentaje de IVA, desea hacerlo ahora?",
+                            "Atención", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    new FrmEmpresa() { MdiParent = this }.Show();
+                }
+            }
         }
 
         private void toolStripButtonFacturas_Click(object sender, EventArgs e)
         {
-            new FrmFactura() { MdiParent = this }.Show();
+            var empresa = new EmpresaController().DatosEmpresa();
+
+            if (empresa.PorcentajeIVA.HasValue && empresa.PorcentajeIVA.Value > 0)
+            {
+                new FrmFactura() { MdiParent = this, PorcentajeIVA = empresa.PorcentajeIVA.Value }.Show();
+            }
+            else
+            {
+                var result =
+                        MessageBox.Show(
+                            "Para crear una factura primero debe indicar el porcentaje de IVA, desea hacerlo ahora?",
+                            "Atención", MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    new FrmEmpresa() { MdiParent = this }.Show();
+                }
+            }
         }
     }
 }
