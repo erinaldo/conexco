@@ -42,10 +42,10 @@ namespace ConexcoFacturación
             ArticulosController = new ArticulosController();
             FacturasController = new FacturasController();
 
-            CargarControles();
+            _CargarControles();
         }
 
-        private void CargarControles()
+        private void _CargarControles()
         {
             //Empresa
             var empresa = EmpresaController.DatosEmpresa();
@@ -71,6 +71,13 @@ namespace ConexcoFacturación
             cmbEstadoDoc.DataSource = FacturasController.ListarDocumentosEstado();
             cmbEstadoDoc.ValueMember = "idEstado";
             cmbEstadoDoc.DisplayMember = "Descripcion";
+
+            //Clientes
+            cmbRazonSocial.DataSource = ClientesController.ListarClientes();
+            cmbRazonSocial.ValueMember = "idCliente";
+            cmbRazonSocial.DisplayMember = "RazonSocial";
+            cmbRazonSocial.SelectedIndex = -1;
+
 
             //Articulos
             var columnCodigo = (DataGridViewComboBoxColumn) grdDetalleFactura.Columns["Codigo"];
@@ -141,18 +148,15 @@ namespace ConexcoFacturación
             lblTotal.Text = total.ToString();
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var frmClientesBuscador = new FrmClientesBuscador();
-            var result = frmClientesBuscador.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                var cliente = frmClientesBuscador.ClienteSeleccionado;
+                var cliente = ClientesController.DatosCliente(Convert.ToInt32(((Cliente)cmbRazonSocial.SelectedItem).idCliente));
                 _idCliente = cliente.idCliente;
-                var domicilio = frmClientesBuscador.DomicilioSeleccionado;
+                var domicilio = cliente.Clientes_Domicilios.FirstOrDefault();
                 _idDomicilio = domicilio.idDomicilio;
 
-                txtRazonSocial.Text = cliente.RazonSocial;
                 txtDomicilio.Text = domicilio.Domicilio;
                 txtLocalidad.Text = domicilio.Localidad;
                 txtProvincia.Text = domicilio.Provincia;
@@ -160,6 +164,40 @@ namespace ConexcoFacturación
                 txtCuit.Text = cliente.CUIT;
                 txtCondIva.Text = cliente.CondicionIVA.ToString();
                 txtClienteCod.Text = cliente.Codigo;
+            }
+            catch (Exception)
+            {
+                _LimpiarControles();
+            }
+
+        }
+
+        private void _LimpiarControles()
+        {
+            cmbRazonSocial.Text = "";
+            txtDomicilio.Text = "";
+            txtLocalidad.Text = "";
+            txtProvincia.Text = "";
+            txtCodPostal.Text = "";
+            txtCuit.Text = "";
+            txtCondIva.Text = "";
+            txtClienteCod.Text = "";
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            var frmClientesBuscador = new FrmClientesBuscador();
+            var result = frmClientesBuscador.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                cmbRazonSocial.SelectedValue = frmClientesBuscador.ClienteSeleccionado.idCliente;
+                var domicilio = frmClientesBuscador.DomicilioSeleccionado;
+                _idDomicilio = domicilio.idDomicilio;
+
+                txtDomicilio.Text = domicilio.Domicilio;
+                txtLocalidad.Text = domicilio.Localidad;
+                txtProvincia.Text = domicilio.Provincia;
+                txtCodPostal.Text = domicilio.CodPostal;
             }
         }
 
@@ -282,7 +320,7 @@ namespace ConexcoFacturación
         private void grdDetalleFactura_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             grdDetalleFactura.AllowUserToAddRows = true;
-        }   
+        }
    }
 
 

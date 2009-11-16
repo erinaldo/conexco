@@ -64,6 +64,12 @@ namespace ConexcoFacturación
             cmbEstadoDoc.ValueMember = "idEstado";
             cmbEstadoDoc.DisplayMember = "Descripcion";
 
+            //Clientes
+            cmbRazonSocial.DataSource = ClientesController.ListarClientes();
+            cmbRazonSocial.ValueMember = "idCliente";
+            cmbRazonSocial.DisplayMember = "RazonSocial";
+            cmbRazonSocial.SelectedIndex = -1;
+
             //Articulos
             var columnCodigo = (DataGridViewComboBoxColumn) grdDetalleRemito.Columns["Codigo"];
             columnCodigo.DataSource = ArticulosController.ListarCodigoYColorArticulos();
@@ -104,6 +110,26 @@ namespace ConexcoFacturación
 
         }
 
+        private void _VerificarStock(Articulo articulo, int roxIndex)
+        {
+            if (articulo != null)
+            {
+                decimal cantidad;
+                if (
+                    Decimal.TryParse(
+                        Convert.ToString(grdDetalleRemito.Rows[roxIndex].Cells["Unidades"].Value),
+                        out cantidad))
+                {
+                    if (articulo.Stock < cantidad)
+                    {
+                        MessageBox.Show("La cantidad ingresada supera el Stock del artículo, reduzca a " +
+                                        articulo.Stock + " o agregue mas Stock");
+                        return;
+                    }
+                }
+            }
+        }
+
         private void grdDetalleRemito_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (grdDetalleRemito.SelectedCells.Count > 0)
@@ -114,6 +140,8 @@ namespace ConexcoFacturación
                     var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
                     grdDetalleRemito.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                     grdDetalleRemito.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
+
+                    _VerificarStock(articulo, e.RowIndex);
                 }
                 else if (e.ColumnIndex == 3)
                 {
@@ -121,6 +149,15 @@ namespace ConexcoFacturación
                     var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
                     grdDetalleRemito.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                     grdDetalleRemito.Rows[e.RowIndex].Cells["Codigo"].Value = articulo.Codigo + ((articulo.CodColor == null) ? "" : "-" + articulo.CodColor);
+                }
+                else if(e.ColumnIndex == 1)
+                {
+                    if (grdDetalleRemito.Rows[e.RowIndex].Cells["Codigo"].Value != null)
+                    {
+                        var codArticulo = grdDetalleRemito.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                        var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
+                        _VerificarStock(articulo, e.RowIndex);
+                    }
                 }
                 grdDetalleRemito.Rows[e.RowIndex].Cells["Totales"].Value =
                         Convert.ToDecimal(grdDetalleRemito.Rows[e.RowIndex].Cells["Precio"].Value) *
@@ -150,18 +187,13 @@ namespace ConexcoFacturación
             var result = frmClientesBuscador.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                var cliente = frmClientesBuscador.ClienteSeleccionado;
-                _idCliente = cliente.idCliente;
+                cmbRazonSocial.SelectedValue = frmClientesBuscador.ClienteSeleccionado.idCliente;
                 var domicilio = frmClientesBuscador.DomicilioSeleccionado;
 
-                txtRazonSocial.Text = cliente.RazonSocial;
                 txtDomicilio.Text = domicilio.Domicilio;
                 txtLocalidad.Text = domicilio.Localidad;
                 cmbProvincia.SelectedValue = LocalidadesController.DatosProvincia(domicilio.Provincia).idProvincia;
                 txtCodPostal.Text = domicilio.CodPostal;
-                txtCuit.Text = cliente.CUIT;
-                txtCondIva.Text = cliente.CondicionIVA.ToString();
-                txtClienteCod.Text = cliente.Codigo;
             }
         }
 
@@ -260,6 +292,40 @@ namespace ConexcoFacturación
         private void grdDetalleRemito_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             grdDetalleRemito.AllowUserToAddRows = true;
+        }
+
+        private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var cliente = ClientesController.DatosCliente(Convert.ToInt32(((Cliente)cmbRazonSocial.SelectedItem).idCliente));
+                _idCliente = cliente.idCliente;
+                var domicilio = cliente.Clientes_Domicilios.FirstOrDefault();
+
+                txtDomicilio.Text = domicilio.Domicilio;
+                txtLocalidad.Text = domicilio.Localidad;
+                cmbProvincia.SelectedValue = LocalidadesController.DatosProvincia(domicilio.Provincia).idProvincia;
+                txtCodPostal.Text = domicilio.CodPostal;
+                txtCuit.Text = cliente.CUIT;
+                txtCondIva.Text = cliente.CondicionIVA.ToString();
+                txtClienteCod.Text = cliente.Codigo;
+            }
+            catch (Exception)
+            {
+                _LimpiarControles();
+            }
+        }
+
+        private void _LimpiarControles()
+        {
+            cmbRazonSocial.Text = "";
+            txtDomicilio.Text = "";
+            txtLocalidad.Text = "";
+            cmbProvincia.Text = "";
+            txtCodPostal.Text = "";
+            txtCuit.Text = "";
+            txtCondIva.Text = "";
+            txtClienteCod.Text = "";
         }
     }
 }

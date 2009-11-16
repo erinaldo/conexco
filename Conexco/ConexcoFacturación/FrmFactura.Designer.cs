@@ -45,6 +45,7 @@
             this.lblEmpDomicilio = new System.Windows.Forms.Label();
             this.lblEmpRazonSocial = new System.Windows.Forms.Label();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
+            this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
             this.lblEstadoDoc = new System.Windows.Forms.Label();
             this.cmbEstadoDoc = new System.Windows.Forms.ComboBox();
             this.txtProvincia = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblCodPostal = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
@@ -265,6 +265,7 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.Controls.Add(this.cmbRazonSocial);
             this.gbxCliente.Controls.Add(this.lblEstadoDoc);
             this.gbxCliente.Controls.Add(this.cmbEstadoDoc);
             this.gbxCliente.Controls.Add(this.txtProvincia);
@@ -272,7 +273,6 @@
             this.gbxCliente.Controls.Add(this.txtCodPostal);
             this.gbxCliente.Controls.Add(this.txtLocalidad);
             this.gbxCliente.Controls.Add(this.txtDomicilio);
-            this.gbxCliente.Controls.Add(this.txtRazonSocial);
             this.gbxCliente.Controls.Add(this.lblProvincia);
             this.gbxCliente.Controls.Add(this.lblCodPostal);
             this.gbxCliente.Controls.Add(this.lblLocalidad);
@@ -284,6 +284,15 @@
             this.gbxCliente.TabIndex = 0;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
+            // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.FormattingEnabled = true;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(219, 21);
+            this.cmbRazonSocial.TabIndex = 27;
+            this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
             // lblEstadoDoc
             // 
@@ -344,14 +353,6 @@
             this.txtDomicilio.ReadOnly = true;
             this.txtDomicilio.Size = new System.Drawing.Size(154, 20);
             this.txtDomicilio.TabIndex = 18;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(76, 13);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.ReadOnly = true;
-            this.txtRazonSocial.Size = new System.Drawing.Size(243, 20);
-            this.txtRazonSocial.TabIndex = 17;
             // 
             // lblProvincia
             // 
@@ -941,7 +942,6 @@
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.Label lblRazonSocial;
-        private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblCodPostal;
         private System.Windows.Forms.TextBox txtCodPostal;
@@ -998,6 +998,7 @@
         private System.Windows.Forms.Label lblEstadoDoc;
         private System.Windows.Forms.ComboBox cmbEstadoDoc;
         private System.Windows.Forms.ToolTip toolTipControl;
+        private System.Windows.Forms.ComboBox cmbRazonSocial;
 
     }
 }

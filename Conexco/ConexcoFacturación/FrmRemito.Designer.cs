@@ -85,7 +85,6 @@
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblCodPostal = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
@@ -106,6 +105,7 @@
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
+            this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -560,6 +560,7 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.Controls.Add(this.cmbRazonSocial);
             this.gbxCliente.Controls.Add(this.cmbProvincia);
             this.gbxCliente.Controls.Add(this.btnLocalidad);
             this.gbxCliente.Controls.Add(this.txtCondIva);
@@ -573,7 +574,6 @@
             this.gbxCliente.Controls.Add(this.txtLocalidad);
             this.gbxCliente.Controls.Add(this.lblIva);
             this.gbxCliente.Controls.Add(this.txtDomicilio);
-            this.gbxCliente.Controls.Add(this.txtRazonSocial);
             this.gbxCliente.Controls.Add(this.lblProvincia);
             this.gbxCliente.Controls.Add(this.lblCuit);
             this.gbxCliente.Controls.Add(this.lblCodPostal);
@@ -626,14 +626,6 @@
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(243, 20);
             this.txtDomicilio.TabIndex = 18;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(76, 13);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.ReadOnly = true;
-            this.txtRazonSocial.Size = new System.Drawing.Size(243, 20);
-            this.txtRazonSocial.TabIndex = 17;
             // 
             // lblProvincia
             // 
@@ -815,6 +807,15 @@
             this.txtObservaciones.Size = new System.Drawing.Size(379, 53);
             this.txtObservaciones.TabIndex = 83;
             // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.FormattingEnabled = true;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(243, 21);
+            this.cmbRazonSocial.TabIndex = 62;
+            this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
+            // 
             // FrmRemito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -903,7 +904,6 @@
         private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblCodPostal;
         private System.Windows.Forms.Label lblLocalidad;
@@ -941,5 +941,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.ToolTip toolTipControl;
+        private System.Windows.Forms.ComboBox cmbRazonSocial;
     }
 }
