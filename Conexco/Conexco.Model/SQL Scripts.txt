@@ -1,5 +1,9 @@
 ﻿CAMBIOS A HACER EN TABLAS
 
+Agregar Campo Contrasenia varchar(20) en tabla Empresa
+
+Agregar campo Disponibilidad varchar(250) en tabla Presupuesto
+
 AGREGAR CAMPO PorcentajeIVA decimal(18,2) en tabla Empresa
 
 AGREGAR CAMPO CUIT EN CLIENTES_TRANSPORTISTAS VARCHAR(20) NOT NULL
@@ -21,13 +25,15 @@ CREAR UN CODIGO DE COLOR 0 QUE SIGNIFIQUE COLOR UNICO
 ------------------------------------------------------------------------
 
 COSAS A HACER:
--Menu opciones para acceder a la informacion de la empresa.
+-Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.
 -TOOLTIPS
+-Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones
 
 
 ------------------------------------------------------------------------
 
 NO OLVIDAR:
+
 Presupueso:
 -En formulario Presupuesto agregar leyenda "Los importes expresados no incluyen I.V.A."
 -Campo Disponibilidad
@@ -53,8 +59,40 @@ ESPACIO PARA OBSERVACIONES
 
 -------------------------------------------------------
 	
+--Script LIMPIADOR
+delete from facturas_linea
+delete from remitos_linea
+delete from presupuestos_linea
+delete from articulos
+delete from articulos_color
+delete from clientes_contactos
+delete from clientes_domicilios
+delete from clientes_telefonos
+delete from clientes_transportistas
+delete from egreso_stock
+delete from localidades
+delete from facturas
+delete from remitos
+delete from presupuestos
+delete from articulos
+delete from clientes
+delete from empresa
 
 
+----------------------------------------------------------
+
+--SCRIPT INSERT EGRESO_MOTIVOS
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Devolución por Defecto')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Entrega de muestra')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Rotura sin devolución')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Otro')
 
 
 --SCRIPT INSERT TIPO DOCUMENTOS
