@@ -14,18 +14,45 @@ Agregar campo idDomicilioCliente en Facturas
 
 Agregar bit BajaLogica a Clientes_Domicilios
 
+-----------------------------------------------------------------------
 
 CREAR UN CODIGO DE COLOR 0 QUE SIGNIFIQUE COLOR UNICO
 
-COSAS A PREGUNTAR:
--El stock lo reduce en Factura o Remito? REDUCE POR REMITO
+------------------------------------------------------------------------
 
 COSAS A HACER:
 -Menu opciones para acceder a la informacion de la empresa.
 -TOOLTIPS
--Reducir Stock con Remito
--Elegir clientes con dropdown
 
+
+------------------------------------------------------------------------
+
+NO OLVIDAR:
+Presupueso:
+-En formulario Presupuesto agregar leyenda "Los importes expresados no incluyen I.V.A."
+-Campo Disponibilidad
+-Entrega en
+-Cond de Pago
+-Exportable e imprimible
+
+
+Clientes:
+En los campos Pagos y Contactos, dejar bastante espacio dado que en pagos van los dias de pago, horario, y telefonos de reclamos y sus respectivos dias.
+En Contactos puede haber varios y con sus respectivos mails.
+
+Ver Facturas:
+Ordenadas por fecha de vencimiento y estado pendiente, con posibilidad de cambiar el estado.
+Imprimible? segun lo dificil q sea
+Campos de la grilla:
+NRO.DE FAC
+FECHA DE EMISION
+FECHA DE VTO.
+CLIENTE
+IMPORTE TOTAL DE LA FAC
+ESPACIO PARA OBSERVACIONES
+
+-------------------------------------------------------
+	
 
 
 
