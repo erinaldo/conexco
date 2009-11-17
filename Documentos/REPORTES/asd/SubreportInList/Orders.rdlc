@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>5138cbbb-7342-4edb-af31-9e590d0151dc</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Left>0.125in</Left>
+        <ReportItems>
+          <Subreport Name="subreport1">
+            <Parameters>
+              <Parameter Name="OrderID">
+                <Value>=Fields!OrderID.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Top>1.375in</Top>
+            <ZIndex>8</ZIndex>
+            <Width>5.61458in</Width>
+            <ReportName>OrderDetails</ReportName>
+          </Subreport>
+          <Textbox Name="ShippedDate_1">
+            <Left>1in</Left>
+            <Top>0.625in</Top>
+            <rd:DefaultName>ShippedDate_1</rd:DefaultName>
+            <ZIndex>7</ZIndex>
+            <Width>2.125in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <Format>d</Format>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>=Fields!ShippedDate.Value</Value>
+          </Textbox>
+          <Textbox Name="OrderDate_1">
+            <Left>1in</Left>
+            <Top>0.42708in</Top>
+            <rd:DefaultName>OrderDate_1</rd:DefaultName>
+            <ZIndex>6</ZIndex>
+            <Width>2.125in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <Format>d</Format>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>=Fields!OrderDate.Value</Value>
+          </Textbox>
+          <Textbox Name="ShippedDate">
+            <Top>0.625in</Top>
+            <rd:DefaultName>ShippedDate</rd:DefaultName>
+            <ZIndex>5</ZIndex>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>Shipped date:</Value>
+          </Textbox>
+          <Textbox Name="OrderDate">
+            <Top>0.42708in</Top>
+            <rd:DefaultName>OrderDate</rd:DefaultName>
+            <ZIndex>4</ZIndex>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>Order date:</Value>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <rd:DefaultName>textbox11</rd:DefaultName>
+            <ZIndex>3</ZIndex>
+            <Width>1.875in</Width>
+            <Style>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>14pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.3in</Height>
+            <Value>="Order #" &amp; Fields!OrderID.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Top>0.82292in</Top>
+            <rd:DefaultName>textbox6</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>Customer:</Value>
+          </Textbox>
+          <Textbox Name="ShipName">
+            <Left>1in</Left>
+            <Top>0.82292in</Top>
+            <rd:DefaultName>ShipName</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>2.625in</Width>
+            <CanGrow>true</CanGrow>
+            <Height>0.19444in</Height>
+            <Value>=Fields!ShipName.Value</Value>
+          </Textbox>
+          <Textbox Name="ShipCity">
+            <Left>1in</Left>
+            <Top>1.02083in</Top>
+            <rd:DefaultName>ShipCity</rd:DefaultName>
+            <Width>2.625in</Width>
+            <CanGrow>true</CanGrow>
+            <Height>14pt</Height>
+            <Value>=Fields!ShipCity.Value &amp; ", " &amp; Fields!ShipCountry.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>OrdersDataSet_Orders</DataSetName>
+        <Top>0.125in</Top>
+        <Width>5.625in</Width>
+        <Grouping Name="list1_Details_Group">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <GroupExpressions>
+            <GroupExpression>=Fields!OrderID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <Height>2.375in</Height>
+      </List>
+    </ReportItems>
+    <Height>2.625in</Height>
+  </Body>
+  <rd:ReportID>b57add5e-53ab-47eb-8fbb-3707d4764432</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="OrdersDataSet_Orders">
+      <rd:DataSetInfo>
+        <rd:DataSetName>OrdersDataSet</rd:DataSetName>
+        <rd:TableName>Orders</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="OrderID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>OrderID</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="RequiredDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>RequiredDate</DataField>
+        </Field>
+        <Field Name="ShippedDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ShippedDate</DataField>
+        </Field>
+        <Field Name="ShipVia">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ShipVia</DataField>
+        </Field>
+        <Field Name="Freight">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Freight</DataField>
+        </Field>
+        <Field Name="ShipName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ShipName</DataField>
+        </Field>
+        <Field Name="ShipCity">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ShipCity</DataField>
+        </Field>
+        <Field Name="ShipPostalCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ShipPostalCode</DataField>
+        </Field>
+        <Field Name="ShipCountry">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ShipCountry</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>5.875in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>
