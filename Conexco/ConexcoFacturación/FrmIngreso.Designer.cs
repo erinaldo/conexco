@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.nombreArticulo = new System.Windows.Forms.TextBox();
             this.codArticulo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -36,18 +35,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCodArticulo = new System.Windows.Forms.Label();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(130, 111);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 18;
             // 
             // nombreArticulo
             // 
-            this.nombreArticulo.Location = new System.Drawing.Point(130, 74);
+            this.nombreArticulo.Location = new System.Drawing.Point(130, 62);
             this.nombreArticulo.Name = "nombreArticulo";
             this.nombreArticulo.ReadOnly = true;
             this.nombreArticulo.Size = new System.Drawing.Size(100, 20);
@@ -55,7 +50,7 @@
             // 
             // codArticulo
             // 
-            this.codArticulo.Location = new System.Drawing.Point(130, 37);
+            this.codArticulo.Location = new System.Drawing.Point(130, 24);
             this.codArticulo.Name = "codArticulo";
             this.codArticulo.ReadOnly = true;
             this.codArticulo.Size = new System.Drawing.Size(100, 20);
@@ -63,7 +58,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(130, 165);
+            this.btnCancelar.Location = new System.Drawing.Point(130, 169);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -73,7 +68,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(48, 165);
+            this.btnAceptar.Location = new System.Drawing.Point(48, 169);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 14;
@@ -84,16 +79,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 118);
+            this.label3.Location = new System.Drawing.Point(27, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Cantidad:";
+            this.label3.Text = "Cantidad a Agregar:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 81);
+            this.label1.Location = new System.Drawing.Point(27, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 11;
@@ -102,18 +97,46 @@
             // lblCodArticulo
             // 
             this.lblCodArticulo.AutoSize = true;
-            this.lblCodArticulo.Location = new System.Drawing.Point(42, 45);
+            this.lblCodArticulo.Location = new System.Drawing.Point(27, 27);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Size = new System.Drawing.Size(81, 13);
             this.lblCodArticulo.TabIndex = 10;
             this.lblCodArticulo.Text = "Código Articulo:";
             // 
-            // FromIngreso
+            // txtStockActual
+            // 
+            this.txtStockActual.Location = new System.Drawing.Point(130, 97);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.ReadOnly = true;
+            this.txtStockActual.Size = new System.Drawing.Size(100, 20);
+            this.txtStockActual.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Stock Actual:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(130, 129);
+            this.txtCantidad.Mask = "00000.00";
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 21;
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // FrmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(257, 214);
             this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtStockActual);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nombreArticulo);
             this.Controls.Add(this.codArticulo);
             this.Controls.Add(this.btnCancelar);
@@ -121,7 +144,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodArticulo);
-            this.Name = "FromIngreso";
+            this.Name = "FrmIngreso";
             this.Text = "FromIngreso";
             this.Load += new System.EventHandler(this.FromIngreso_Load);
             this.ResumeLayout(false);
@@ -131,7 +154,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox nombreArticulo;
         private System.Windows.Forms.TextBox codArticulo;
         private System.Windows.Forms.Button btnCancelar;
@@ -139,6 +161,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCodArticulo;
+        private System.Windows.Forms.TextBox txtStockActual;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtCantidad;
 
     }
 }

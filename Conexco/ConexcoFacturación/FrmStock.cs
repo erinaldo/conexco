@@ -64,7 +64,11 @@ namespace ConexcoFacturación
         {
             var listaArticulos = new List<Articulo>();
             var teclaIngresada = e.KeyChar.ToString();
-            var valorIngresado = (teclaIngresada=="\b") ? txtValorBusqueda.Text.Substring(0,txtValorBusqueda.Text.Length-1) : txtValorBusqueda.Text + teclaIngresada;
+            var valorIngresado = (teclaIngresada=="\b") 
+                                                ? (txtValorBusqueda.Text.Length == 0 
+                                                                ? String.Empty 
+                                                                : txtValorBusqueda.Text.Substring(0,txtValorBusqueda.Text.Length-1)) 
+                                                : txtValorBusqueda.Text + teclaIngresada;
 
             if (String.IsNullOrEmpty((valorIngresado).Trim()))
             {

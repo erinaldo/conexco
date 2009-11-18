@@ -36,14 +36,16 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.codArticulo = new System.Windows.Forms.TextBox();
             this.nombreArticulo = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.ddlMotivos = new System.Windows.Forms.ComboBox();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCodArticulo
             // 
             this.lblCodArticulo.AutoSize = true;
-            this.lblCodArticulo.Location = new System.Drawing.Point(46, 39);
+            this.lblCodArticulo.Location = new System.Drawing.Point(37, 39);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Size = new System.Drawing.Size(81, 13);
             this.lblCodArticulo.TabIndex = 0;
@@ -52,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 75);
+            this.label1.Location = new System.Drawing.Point(37, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +63,7 @@
             // lblEgresoMotivo
             // 
             this.lblEgresoMotivo.AutoSize = true;
-            this.lblEgresoMotivo.Location = new System.Drawing.Point(46, 108);
+            this.lblEgresoMotivo.Location = new System.Drawing.Point(37, 108);
             this.lblEgresoMotivo.Name = "lblEgresoMotivo";
             this.lblEgresoMotivo.Size = new System.Drawing.Size(78, 13);
             this.lblEgresoMotivo.TabIndex = 2;
@@ -70,15 +72,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 139);
+            this.label3.Location = new System.Drawing.Point(37, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Cantidad:";
+            this.label3.Text = "Cantidad a Quitar:";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(64, 200);
+            this.btnAceptar.Location = new System.Drawing.Point(54, 231);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(145, 200);
+            this.btnCancelar.Location = new System.Drawing.Point(135, 231);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -112,13 +114,6 @@
             this.nombreArticulo.Size = new System.Drawing.Size(100, 20);
             this.nombreArticulo.TabIndex = 7;
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(134, 139);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 8;
-            // 
             // ddlMotivos
             // 
             this.ddlMotivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -128,13 +123,41 @@
             this.ddlMotivos.Size = new System.Drawing.Size(121, 21);
             this.ddlMotivos.TabIndex = 9;
             // 
+            // txtStockActual
+            // 
+            this.txtStockActual.Location = new System.Drawing.Point(134, 132);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.ReadOnly = true;
+            this.txtStockActual.Size = new System.Drawing.Size(100, 20);
+            this.txtStockActual.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Stock Actual:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(134, 163);
+            this.txtCantidad.Mask = "00000.00";
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 12;
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FrmEgreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 266);
-            this.Controls.Add(this.ddlMotivos);
             this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtStockActual);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ddlMotivos);
             this.Controls.Add(this.nombreArticulo);
             this.Controls.Add(this.codArticulo);
             this.Controls.Add(this.btnCancelar);
@@ -161,7 +184,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox codArticulo;
         private System.Windows.Forms.TextBox nombreArticulo;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.ComboBox ddlMotivos;
+        private System.Windows.Forms.TextBox txtStockActual;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtCantidad;
     }
 }

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
+using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -32,7 +28,21 @@ namespace ConexcoFacturación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            var articulo = new Articulo() 
+                                {
+                                    idArticulo = IdArticulo,
+                                    Stock = Convert.ToDecimal(txtStockActual.Text) + Convert.ToDecimal(txtCantidad.Text)
+                                };
+            
+            var resultado = ArticulosController.ActualizarStockArticulo(articulo);
+            if (resultado)
+            {
+                MessageBox.Show(Constants.OK_ACTUALIZAR_STOCK);
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+                MessageBox.Show(Constants.ERROR_ACTUALIZAR_STOCK);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -44,7 +54,8 @@ namespace ConexcoFacturación
         {
             var articulo = ArticulosController.DatosArticuloPorCodigo(IdArticulo);
             codArticulo.Text = articulo.Codigo;
-            nombreArticulo.Text = articulo.Codigo;
+            txtStockActual.Text = articulo.Stock.ToString();
+            nombreArticulo.Text = articulo.Descripcion;
         }
     }
 }

@@ -85,6 +85,20 @@ namespace Conexco.Controller
             }
         }
 
+        public bool ActualizarStockArticulo(Articulo articuloActualizar)
+        {
+            try
+            {
+                var articulo = _context.Articulos.Where(art => art.idArticulo == articuloActualizar.idArticulo).Single();
+                articulo.Stock = articuloActualizar.Stock;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public Articulo DatosArticuloPorCodigo(int idArticulo)
         {
             return (_context.Articulos.Single(art => art.idArticulo == idArticulo));

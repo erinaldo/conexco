@@ -291,6 +291,10 @@
       <Project>{CF6BA7BA-87E6-425F-8AA5-B2BE7A3567F1}</Project>
       <Name>Conexco.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Conexco.Utils\Conexco.Utils.csproj">
+      <Project>{9AA2928B-87CA-4BDB-A02F-42B18C828841}</Project>
+      <Name>Conexco.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

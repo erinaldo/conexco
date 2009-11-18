@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -76,13 +77,13 @@ namespace ConexcoFacturación
 
             if (correcto)
             {
-                MessageBox.Show("Articulo guardado satisfactoriamente");
+                MessageBox.Show(Constants.OK_ALTA_ARTICULO);
                 DialogResult = DialogResult.OK;
                 Close();
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un error al guardar el articulo, intentelo de nuevo");
+                MessageBox.Show(Constants.ERROR_ALTA_ARTICULO);
             }
 
         }

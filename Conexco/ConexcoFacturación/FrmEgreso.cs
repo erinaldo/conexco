@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -37,9 +38,18 @@ namespace ConexcoFacturación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            var stockActual = Convert.ToDecimal(txtStockActual.Text);
+            var stockEgreso = Convert.ToDecimal(txtCantidad.Text);
+
+            if (stockActual < stockEgreso)
+            {
+                MessageBox.Show(Constants.ERROR_STOCK_INSUFICIENTE);
+                return;
+            }
+
             var egresoArticulo = new Egreso_Stock()
                                      {
-                                         Cantidad = Convert.ToDecimal(txtCantidad.Text),
+                                         Cantidad = stockActual - stockEgreso,
                                          FechaEgreso = DateTime.Now,
                                          Motivo = ddlMotivos.SelectedText,
                                          idArticulo = IdArticulo
@@ -48,13 +58,13 @@ namespace ConexcoFacturación
             
             if (resultado)
             {
-                MessageBox.Show("Egreso guardado satisfactoriamente");
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
+                MessageBox.Show(Constants.OK_EGRESO_STOCK);
+                DialogResult = DialogResult.OK;
+                Close();
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un error al guardar el Egreso, intentelo de nuevo");
+                MessageBox.Show(Constants.ERROR_EGRESO_STOCK);
             }
         }
 
@@ -63,6 +73,7 @@ namespace ConexcoFacturación
             var articulo = ArticulosController.DatosArticuloPorCodigo(IdArticulo);
             codArticulo.Text = articulo.Codigo;
             nombreArticulo.Text = articulo.Descripcion;
+            txtStockActual.Text = articulo.Stock.ToString();
             ddlMotivos.DataSource = StockController.ListadoMotivosEgreso();
         }
     }
