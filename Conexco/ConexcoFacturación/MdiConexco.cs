@@ -229,7 +229,7 @@ namespace ConexcoFacturación
 
         private void imprimirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmFacturaImprimir(){IdFactura = 1}.Show();
+            new FrmFacturaImprimir(){IdFactura = 6}.Show();
         }
     }
 }

@@ -251,7 +251,12 @@ namespace ConexcoFacturación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var factura  = new Factura();
+            _GuardarFactura();
+        }
+
+        private int _GuardarFactura()
+        {
+            var factura = new Factura();
 
             factura.idCliente = _idCliente;
             factura.idDomicilioCliente = _idDomicilio;
@@ -286,7 +291,7 @@ namespace ConexcoFacturación
                 }
             }
 
-            if(FacturasController.AgregarFactura(factura))
+            if (FacturasController.AgregarFactura(factura))
             {
                 MessageBox.Show("Factura guardada correctamente");
             }
@@ -294,8 +299,7 @@ namespace ConexcoFacturación
             {
                 MessageBox.Show("Ocurrio un problema al guardar la factura, intentelo nuevamente");
             }
-
-
+            return factura.idFactura;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -322,6 +326,12 @@ namespace ConexcoFacturación
         private void grdDetalleFactura_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             grdDetalleFactura.AllowUserToAddRows = true;
+        }
+
+        private void btnGuardarImprimir_Click(object sender, EventArgs e)
+        {
+            var idFactura = _GuardarFactura();
+            new FrmFacturaImprimir() {IdFactura = idFactura}.ShowDialog();
         }
    }
 

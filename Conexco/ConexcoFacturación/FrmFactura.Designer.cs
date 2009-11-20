@@ -737,6 +737,7 @@
             this.btnGuardarImprimir.TabIndex = 42;
             this.btnGuardarImprimir.Text = "Guardar e Imprimir";
             this.btnGuardarImprimir.UseVisualStyleBackColor = true;
+            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // txtDescuento
             // 

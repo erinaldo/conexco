@@ -69,6 +69,10 @@
             this.reportViewerFactura.LocalReport.ReportEmbeddedResource = "ConexcoFacturación.Reportes.FacturaImpresion.rdlc";
             this.reportViewerFactura.Location = new System.Drawing.Point(13, 13);
             this.reportViewerFactura.Name = "reportViewerFactura";
+            this.reportViewerFactura.ShowBackButton = false;
+            this.reportViewerFactura.ShowCredentialPrompts = false;
+            this.reportViewerFactura.ShowFindControls = false;
+            this.reportViewerFactura.ShowPageNavigationControls = false;
             this.reportViewerFactura.Size = new System.Drawing.Size(743, 463);
             this.reportViewerFactura.TabIndex = 0;
             // 

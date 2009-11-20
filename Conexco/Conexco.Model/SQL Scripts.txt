@@ -45,6 +45,36 @@ ESPACIO PARA OBSERVACIONES
 
 
 ------------------------------------------------------------
+--Function Para Reportes
+
+ALTER FUNCTION IsNotZero (
+@Number varchar(10),
+@IsNotZeroNumber varchar(10)
+)
+RETURNS varchar(10)
+AS
+BEGIN
+ 
+
+IF (@Number <> '0')
+BEGIN
+SET @Number = @IsNotZeroNumber
+END
+ELSE
+BEGIN
+SET @Number = ''
+END
+
+ 
+
+RETURN (@Number)
+ 
+
+END
+
+GO
+
+
 --Stored procedures Impresion
 
 CREATE PROCEDURE FacturaImpresion
@@ -66,15 +96,16 @@ BEGIN
 
 END
 
+GO
 
-CREATE PROCEDURE FacturaLineaImpresion
+CREATE PROCEDURE [dbo].[FacturaLineaImpresion]
 (
 	@IdFactura int
 )
 AS
 BEGIN
 
-	SELECT fl.*, (a.Codigo + '-' + a.CodColor) 'CodigoYColor', a.Descripcion, (fl.Precio * fl.Cantidad) 'TotalLinea' FROM Facturas_Linea fl
+	SELECT fl.*, (a.Codigo + dbo.IsNotZero(a.CodColor, '-' + a.CodColor)) 'CodigoYColor', a.Descripcion, (fl.Precio * fl.Cantidad) 'TotalLinea' FROM Facturas_Linea fl
 	JOIN Articulos a ON a.idArticulo = fl.idArticulo
 	WHERE fl.idFactura = @IdFactura
 
