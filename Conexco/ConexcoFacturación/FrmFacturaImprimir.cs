@@ -25,17 +25,7 @@ namespace ConexcoFacturación
             // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.FacturaLineaImpresion' table. You can move, or remove it, as needed.
             this.FacturaLineaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.FacturaLineaImpresion, IdFactura);
 
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Bottom = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Left = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Right = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Top = 0;
-
             this.reportViewerFactura.RefreshReport();
-
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Bottom = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Left = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Right = 0;
-            reportViewerFactura.LocalReport.GetDefaultPageSettings().Margins.Top = 0;
         }
     }
 }

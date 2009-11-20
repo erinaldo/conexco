@@ -73,11 +73,7 @@ namespace ConexcoFacturación
             cmbEstadoDoc.DisplayMember = "Descripcion";
 
             //Clientes
-            cmbRazonSocial.DataSource = ClientesController.ListarClientes();
-            cmbRazonSocial.ValueMember = "idCliente";
-            cmbRazonSocial.DisplayMember = "RazonSocial";
-            cmbRazonSocial.SelectedIndex = -1;
-
+            _RefrescarClientes();
 
             //Articulos
             var columnCodigo = (DataGridViewComboBoxColumn) grdDetalleFactura.Columns["Codigo"];
@@ -86,6 +82,14 @@ namespace ConexcoFacturación
             var columnDescripcion = (DataGridViewComboBoxColumn)grdDetalleFactura.Columns["Descripcion"];
             columnDescripcion.DataSource = ArticulosController.ListarDescripcionArticulos();
 
+        }
+
+        private void _RefrescarClientes()
+        {
+            cmbRazonSocial.DataSource = ClientesController.ListarClientes();
+            cmbRazonSocial.ValueMember = "idCliente";
+            cmbRazonSocial.DisplayMember = "RazonSocial";
+            cmbRazonSocial.SelectedIndex = -1;
         }
 
         private decimal _CalcularPrecio(decimal precio)
@@ -190,6 +194,7 @@ namespace ConexcoFacturación
             var result = frmClientesBuscador.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
+                _RefrescarClientes();
                 cmbRazonSocial.SelectedValue = frmClientesBuscador.ClienteSeleccionado.idCliente;
                 var domicilio = frmClientesBuscador.DomicilioSeleccionado;
                 _idDomicilio = domicilio.idDomicilio;
