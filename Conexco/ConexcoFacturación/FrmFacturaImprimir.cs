@@ -25,7 +25,7 @@ namespace ConexcoFacturación
             // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.FacturaLineaImpresion' table. You can move, or remove it, as needed.
             this.FacturaLineaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.FacturaLineaImpresion, IdFactura);
 
-            this.reportViewer1.RefreshReport();
+            this.reportViewerFactura.RefreshReport();
         }
     }
 }
