@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -49,14 +43,20 @@ namespace ConexcoFacturación
 
             var egresoArticulo = new Egreso_Stock()
                                      {
-                                         Cantidad = stockActual - stockEgreso,
+                                         Cantidad = stockEgreso,
                                          FechaEgreso = DateTime.Now,
                                          Motivo = ddlMotivos.SelectedText,
                                          idArticulo = IdArticulo
                                      };
-            var resultado = StockController.EgresoStockArticulo(egresoArticulo);
+            var articulo = new Articulo(){
+                                            idArticulo = IdArticulo,
+                                            Stock = Convert.ToDecimal(txtStockActual.Text) - Convert.ToDecimal(txtCantidad.Text)
+                                         };
+
+            var resultadoArticuloGuardado = ArticulosController.ActualizarStockArticulo(articulo);
+            var resultadoEgreso = StockController.EgresoStockArticulo(egresoArticulo);
             
-            if (resultado)
+            if (resultadoArticuloGuardado && resultadoEgreso)
             {
                 MessageBox.Show(Constants.OK_EGRESO_STOCK);
                 DialogResult = DialogResult.OK;

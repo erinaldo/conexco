@@ -91,6 +91,7 @@ namespace Conexco.Controller
             {
                 var articulo = _context.Articulos.Where(art => art.idArticulo == articuloActualizar.idArticulo).Single();
                 articulo.Stock = articuloActualizar.Stock;
+                _context.SubmitChanges();
                 return true;
             }
             catch (Exception)
@@ -134,6 +135,8 @@ namespace Conexco.Controller
             return _context.Articulos.Where(art => art.CodColor.Contains(codigoColor)).ToList();
         }
 
+        //TODO: Fijarse de cambiar esta logica, en el STOCK controller hay para guardar un egreso. Y en este controller
+        //TODO: tambien hay un ActualizarStock().
         public bool ReducirStock(int idArticulo, decimal cantidad)
         {
             try

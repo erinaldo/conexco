@@ -38,7 +38,10 @@ namespace ConexcoFacturación
             var idArticulo = grdArticulosStock.SelectedRows[0].Cells[0].Value;
             var resultado = new FrmIngreso() {IdArticulo = Convert.ToInt32(idArticulo)}.ShowDialog();
             if (resultado == DialogResult.OK)
+            {
+                ArticulosController = new ArticulosController();
                 _ActualizarGrilla();
+            }
         }
 
         private void _ActualizarGrilla()
@@ -51,7 +54,10 @@ namespace ConexcoFacturación
             var idArticulo = grdArticulosStock.SelectedRows[0].Cells[0].Value;
             var resultado = new FrmEgreso() { IdArticulo = Convert.ToInt32(idArticulo) }.ShowDialog();
             if (resultado == DialogResult.OK)
+            {
+                ArticulosController = new ArticulosController();
                 _ActualizarGrilla();
+            }
         }
 
         private void OnArticuloSeleccionado(object sender, EventArgs e)
