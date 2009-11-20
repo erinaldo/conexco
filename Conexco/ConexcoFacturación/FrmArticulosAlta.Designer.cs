@@ -134,7 +134,7 @@
             // 
             // comboColor
             // 
-            this.comboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboColor.FormattingEnabled = true;
             this.comboColor.Location = new System.Drawing.Point(138, 72);
             this.comboColor.Name = "comboColor";

@@ -63,12 +63,14 @@ namespace ConexcoFacturación
             if (errorCodigo.Visible || errorDescripcion.Visible || errorPrecio.Visible || errorStock.Visible)
                 return;
 
+            var color = String.IsNullOrEmpty(comboColor.Text) ? "0" : comboColor.Text;
             var articuloGuardar = new Articulo
                                       {
                                           idArticulo = IdArticulo,
                                           Codigo = txtCodigo.Text,
                                           Descripcion = txtDescripcion.Text,
                                           Precio = Convert.ToDecimal(txtPrecio.Text),
+                                          CodColor = color,
                                           Stock = Convert.ToDecimal(txtStock.Text),
                                     };
 
