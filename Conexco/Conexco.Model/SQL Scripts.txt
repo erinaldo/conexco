@@ -1,4 +1,8 @@
-﻿
+﻿CAMPOS A AGREGAR
+
+Facturas:
+Observaciones varchar(250) nuleable
+SonPesos varchar(250) nuleable
 
 -----------------------------------------------------------------------
 
@@ -38,6 +42,45 @@ FECHA DE VTO.
 CLIENTE
 IMPORTE TOTAL DE LA FAC
 ESPACIO PARA OBSERVACIONES
+
+
+------------------------------------------------------------
+--Stored procedures Impresion
+
+CREATE PROCEDURE FacturaImpresion
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT f.*, c.RazonSocial, c.CUIT, c.Codigo, cd.Domicilio, 
+			cd.Localidad, cd.Provincia, cd.CodPostal, 
+			ci.Descripcion FROM Facturas f
+	JOIN Clientes c ON f.idCliente = c.idCliente
+	JOIN Clientes_Domicilios cd ON c.idCliente = cd.idCliente
+	JOIN CondicionIVA ci ON c.idCondicionIVA = ci.idCondicionIVA
+	
+
+	WHERE f.idFactura = @IdFactura
+
+END
+
+
+CREATE PROCEDURE FacturaLineaImpresion
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT fl.*, (a.Codigo + '-' + a.CodColor) 'CodigoYColor', a.Descripcion, (fl.Precio * fl.Cantidad) 'TotalLinea' FROM Facturas_Linea fl
+	JOIN Articulos a ON a.idArticulo = fl.idArticulo
+	WHERE fl.idFactura = @IdFactura
+
+END
+
+
 
 -------------------------------------------------------
 	

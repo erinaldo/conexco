@@ -261,7 +261,9 @@ namespace ConexcoFacturación
             factura.Remito = txtRemito.Text;
             factura.OrdenCompra = txtOrdenCompra.Text;
             factura.FechaVto = dtpVencimiento.Value;
+            factura.Observaciones = txtObservaciones.Text;
             factura.Condiciones = txtCondiciones.Text;
+            factura.SonPesos = txtSonPesos.Text;
             factura.Total = Convert.ToDecimal(lblTotal.Text);
             factura.Descuento = Convert.ToDecimal(txtDescuento.Text);
             factura.Subtotal = Convert.ToDecimal(lblSubtotal.Text);

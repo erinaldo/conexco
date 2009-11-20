@@ -55,6 +55,8 @@
     <Reference Include="Infragistics2.Win.UltraWinEditors.v9.1, Version=9.1.20091.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics2.Win.UltraWinGrid.v9.1, Version=9.1.20091.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics2.Win.v9.1, Version=9.1.20091.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -67,6 +69,7 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -80,6 +83,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexcoImpresionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConexcoImpresionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmArticulosAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +165,12 @@
     </Compile>
     <Compile Include="FrmFactura.Designer.cs">
       <DependentUpon>FrmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFacturaImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacturaImprimir.Designer.cs">
+      <DependentUpon>FrmFacturaImprimir.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLocalidades.cs">
       <SubType>Form</SubType>
@@ -242,6 +256,10 @@
       <DependentUpon>FrmFactura.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacturaImprimir.resx">
+      <DependentUpon>FrmFacturaImprimir.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLocalidades.resx">
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -267,6 +285,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FacturaImpresion.rdlc" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -319,6 +338,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ConexcoImpresionDataSet.xsc">
+      <DependentUpon>ConexcoImpresionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConexcoImpresionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConexcoImpresionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConexcoImpresionDataSet.xss">
+      <DependentUpon>ConexcoImpresionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\factura.png" />
   </ItemGroup>
   <ItemGroup>
