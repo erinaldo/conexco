@@ -336,7 +336,10 @@ namespace ConexcoFacturación
         private void btnGuardarImprimir_Click(object sender, EventArgs e)
         {
             var idFactura = _GuardarFactura();
-            new FrmFacturaImprimir() {IdFactura = idFactura}.ShowDialog();
+            if(cmbLetra.Text == "A")
+                new FrmFacturaImprimir() {IdFactura = idFactura}.ShowDialog();
+            else
+                new FrmFacturaBImprimir() { IdFactura = idFactura }.ShowDialog();
         }
    }
 

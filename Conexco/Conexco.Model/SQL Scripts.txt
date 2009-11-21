@@ -77,6 +77,22 @@ GO
 
 --Stored procedures Impresion
 
+CREATE PROCEDURE [dbo].[FacturaBLineaImpresion]
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT fl.idFacturasLinea, fl.idFactura, fl.idArticulo, fl.Cantidad, (fl.Precio + (fl.Precio * e.PorcentajeIVA / 100)) 'Precio', (a.Codigo + dbo.IsNotZero(a.CodColor, '-' + a.CodColor)) 'CodigoYColor', a.Descripcion, (fl.Precio * fl.Cantidad + ((fl.Precio * fl.Cantidad) * e.PorcentajeIVA / 100)) 'TotalLinea' FROM Facturas_Linea fl
+	JOIN Articulos a ON a.idArticulo = fl.idArticulo
+	JOIN Empresa e ON e.idEmpresa = (SELECT TOP 1 idEmpresa FROM Empresa)
+	WHERE fl.idFactura = @IdFactura
+
+END
+
+
+
 CREATE PROCEDURE FacturaImpresion
 (
 	@IdFactura int
