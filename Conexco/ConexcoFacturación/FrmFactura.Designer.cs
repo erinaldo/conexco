@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFactura));
             this.dtpFechaEmision = new System.Windows.Forms.DateTimePicker();
             this.cmbLetra = new System.Windows.Forms.ComboBox();
             this.gbxEmpresa = new System.Windows.Forms.GroupBox();
@@ -120,15 +121,15 @@
             // dtpFechaEmision
             // 
             this.dtpFechaEmision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEmision.Location = new System.Drawing.Point(580, 18);
+            this.dtpFechaEmision.Location = new System.Drawing.Point(575, 18);
             this.dtpFechaEmision.Name = "dtpFechaEmision";
-            this.dtpFechaEmision.Size = new System.Drawing.Size(83, 20);
+            this.dtpFechaEmision.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaEmision.TabIndex = 0;
             // 
             // cmbLetra
             // 
             this.cmbLetra.FormattingEnabled = true;
-            this.cmbLetra.Location = new System.Drawing.Point(329, 24);
+            this.cmbLetra.Location = new System.Drawing.Point(328, 24);
             this.cmbLetra.Name = "cmbLetra";
             this.cmbLetra.Size = new System.Drawing.Size(34, 21);
             this.cmbLetra.TabIndex = 2;
@@ -136,6 +137,7 @@
             // 
             // gbxEmpresa
             // 
+            this.gbxEmpresa.BackColor = System.Drawing.Color.Transparent;
             this.gbxEmpresa.Controls.Add(this.lblTEmpProvincia);
             this.gbxEmpresa.Controls.Add(this.lblTEmpPosicionIva);
             this.gbxEmpresa.Controls.Add(this.lblTEmpFax);
@@ -265,6 +267,7 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.BackColor = System.Drawing.Color.Transparent;
             this.gbxCliente.Controls.Add(this.cmbRazonSocial);
             this.gbxCliente.Controls.Add(this.lblEstadoDoc);
             this.gbxCliente.Controls.Add(this.cmbEstadoDoc);
@@ -287,17 +290,18 @@
             // 
             // cmbRazonSocial
             // 
+            this.cmbRazonSocial.BackColor = System.Drawing.SystemColors.Window;
             this.cmbRazonSocial.FormattingEnabled = true;
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
             this.cmbRazonSocial.Name = "cmbRazonSocial";
-            this.cmbRazonSocial.Size = new System.Drawing.Size(219, 21);
+            this.cmbRazonSocial.Size = new System.Drawing.Size(272, 21);
             this.cmbRazonSocial.TabIndex = 27;
             this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
             // lblEstadoDoc
             // 
             this.lblEstadoDoc.AutoSize = true;
-            this.lblEstadoDoc.Location = new System.Drawing.Point(393, 23);
+            this.lblEstadoDoc.Location = new System.Drawing.Point(449, 24);
             this.lblEstadoDoc.Name = "lblEstadoDoc";
             this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
             this.lblEstadoDoc.TabIndex = 26;
@@ -306,33 +310,35 @@
             // cmbEstadoDoc
             // 
             this.cmbEstadoDoc.FormattingEnabled = true;
-            this.cmbEstadoDoc.Location = new System.Drawing.Point(483, 16);
+            this.cmbEstadoDoc.Location = new System.Drawing.Point(538, 16);
             this.cmbEstadoDoc.Name = "cmbEstadoDoc";
             this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
             this.cmbEstadoDoc.TabIndex = 25;
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(543, 66);
+            this.txtProvincia.Location = new System.Drawing.Point(538, 66);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.ReadOnly = true;
-            this.txtProvincia.Size = new System.Drawing.Size(75, 20);
+            this.txtProvincia.Size = new System.Drawing.Size(117, 20);
             this.txtProvincia.TabIndex = 24;
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(329, 13);
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClientes.Location = new System.Drawing.Point(360, 13);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
             this.btnClientes.TabIndex = 22;
-            this.btnClientes.Text = "...";
             this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
-            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // txtCodPostal
             // 
-            this.txtCodPostal.Location = new System.Drawing.Point(319, 67);
+            this.txtCodPostal.Location = new System.Drawing.Point(367, 67);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.ReadOnly = true;
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
@@ -340,24 +346,26 @@
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.BackColor = System.Drawing.SystemColors.Control;
             this.txtLocalidad.Location = new System.Drawing.Point(76, 68);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.ReadOnly = true;
-            this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
+            this.txtLocalidad.Size = new System.Drawing.Size(215, 20);
             this.txtLocalidad.TabIndex = 19;
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.BackColor = System.Drawing.SystemColors.Control;
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.ReadOnly = true;
-            this.txtDomicilio.Size = new System.Drawing.Size(154, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(215, 20);
             this.txtDomicilio.TabIndex = 18;
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(467, 70);
+            this.lblProvincia.Location = new System.Drawing.Point(479, 70);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
             this.lblProvincia.TabIndex = 16;
@@ -366,7 +374,7 @@
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(249, 72);
+            this.lblCodPostal.Location = new System.Drawing.Point(299, 72);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(64, 13);
             this.lblCodPostal.TabIndex = 15;
@@ -384,7 +392,7 @@
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(16, 40);
+            this.lblDomicilio.Location = new System.Drawing.Point(13, 40);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(52, 13);
             this.lblDomicilio.TabIndex = 13;
@@ -402,6 +410,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(379, 17);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(57, 13);
@@ -411,6 +420,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Location = new System.Drawing.Point(521, 24);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(37, 13);
@@ -420,6 +430,7 @@
             // lblTEmpCuit
             // 
             this.lblTEmpCuit.AutoSize = true;
+            this.lblTEmpCuit.BackColor = System.Drawing.Color.Transparent;
             this.lblTEmpCuit.Location = new System.Drawing.Point(521, 51);
             this.lblTEmpCuit.Name = "lblTEmpCuit";
             this.lblTEmpCuit.Size = new System.Drawing.Size(35, 13);
@@ -429,6 +440,7 @@
             // lblEmpCuit
             // 
             this.lblEmpCuit.AutoSize = true;
+            this.lblEmpCuit.BackColor = System.Drawing.Color.Transparent;
             this.lblEmpCuit.Location = new System.Drawing.Point(562, 51);
             this.lblEmpCuit.Name = "lblEmpCuit";
             this.lblEmpCuit.Size = new System.Drawing.Size(83, 13);
@@ -438,7 +450,8 @@
             // lblTEmpIngBrut
             // 
             this.lblTEmpIngBrut.AutoSize = true;
-            this.lblTEmpIngBrut.Location = new System.Drawing.Point(431, 83);
+            this.lblTEmpIngBrut.BackColor = System.Drawing.Color.Transparent;
+            this.lblTEmpIngBrut.Location = new System.Drawing.Point(431, 76);
             this.lblTEmpIngBrut.Name = "lblTEmpIngBrut";
             this.lblTEmpIngBrut.Size = new System.Drawing.Size(127, 13);
             this.lblTEmpIngBrut.TabIndex = 8;
@@ -447,7 +460,8 @@
             // lblEmpIngBrutos
             // 
             this.lblEmpIngBrutos.AutoSize = true;
-            this.lblEmpIngBrutos.Location = new System.Drawing.Point(562, 83);
+            this.lblEmpIngBrutos.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpIngBrutos.Location = new System.Drawing.Point(562, 76);
             this.lblEmpIngBrutos.Name = "lblEmpIngBrutos";
             this.lblEmpIngBrutos.Size = new System.Drawing.Size(110, 13);
             this.lblEmpIngBrutos.TabIndex = 9;
@@ -456,7 +470,8 @@
             // lblTInicioActividades
             // 
             this.lblTInicioActividades.AutoSize = true;
-            this.lblTInicioActividades.Location = new System.Drawing.Point(450, 102);
+            this.lblTInicioActividades.BackColor = System.Drawing.Color.Transparent;
+            this.lblTInicioActividades.Location = new System.Drawing.Point(450, 101);
             this.lblTInicioActividades.Name = "lblTInicioActividades";
             this.lblTInicioActividades.Size = new System.Drawing.Size(108, 13);
             this.lblTInicioActividades.TabIndex = 10;
@@ -465,7 +480,8 @@
             // lblEmpInicioActividades
             // 
             this.lblEmpInicioActividades.AutoSize = true;
-            this.lblEmpInicioActividades.Location = new System.Drawing.Point(564, 102);
+            this.lblEmpInicioActividades.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpInicioActividades.Location = new System.Drawing.Point(564, 101);
             this.lblEmpInicioActividades.Name = "lblEmpInicioActividades";
             this.lblEmpInicioActividades.Size = new System.Drawing.Size(83, 13);
             this.lblEmpInicioActividades.TabIndex = 11;
@@ -473,6 +489,7 @@
             // 
             // gbxFiscales
             // 
+            this.gbxFiscales.BackColor = System.Drawing.Color.Transparent;
             this.gbxFiscales.Controls.Add(this.txtCondIva);
             this.gbxFiscales.Controls.Add(this.dtpVencimiento);
             this.gbxFiscales.Controls.Add(this.txtClienteCod);
@@ -490,22 +507,21 @@
             this.gbxFiscales.Size = new System.Drawing.Size(672, 73);
             this.gbxFiscales.TabIndex = 24;
             this.gbxFiscales.TabStop = false;
-            this.gbxFiscales.Text = "Fiscales";
             // 
             // txtCondIva
             // 
-            this.txtCondIva.Location = new System.Drawing.Point(358, 17);
+            this.txtCondIva.Location = new System.Drawing.Point(334, 17);
             this.txtCondIva.Name = "txtCondIva";
             this.txtCondIva.ReadOnly = true;
-            this.txtCondIva.Size = new System.Drawing.Size(100, 20);
+            this.txtCondIva.Size = new System.Drawing.Size(124, 20);
             this.txtCondIva.TabIndex = 59;
             // 
             // dtpVencimiento
             // 
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVencimiento.Location = new System.Drawing.Point(572, 40);
+            this.dtpVencimiento.Location = new System.Drawing.Point(555, 40);
             this.dtpVencimiento.Name = "dtpVencimiento";
-            this.dtpVencimiento.Size = new System.Drawing.Size(83, 20);
+            this.dtpVencimiento.Size = new System.Drawing.Size(100, 20);
             this.dtpVencimiento.TabIndex = 25;
             // 
             // txtClienteCod
@@ -541,7 +557,7 @@
             // lblVencimiento
             // 
             this.lblVencimiento.AutoSize = true;
-            this.lblVencimiento.Location = new System.Drawing.Point(540, 44);
+            this.lblVencimiento.Location = new System.Drawing.Point(530, 44);
             this.lblVencimiento.Name = "lblVencimiento";
             this.lblVencimiento.Size = new System.Drawing.Size(26, 13);
             this.lblVencimiento.TabIndex = 5;
@@ -559,7 +575,7 @@
             // lblOrdenCompra
             // 
             this.lblOrdenCompra.AutoSize = true;
-            this.lblOrdenCompra.Location = new System.Drawing.Point(243, 43);
+            this.lblOrdenCompra.Location = new System.Drawing.Point(244, 45);
             this.lblOrdenCompra.Name = "lblOrdenCompra";
             this.lblOrdenCompra.Size = new System.Drawing.Size(108, 13);
             this.lblOrdenCompra.TabIndex = 3;
@@ -568,7 +584,7 @@
             // lblIva
             // 
             this.lblIva.AutoSize = true;
-            this.lblIva.Location = new System.Drawing.Point(321, 18);
+            this.lblIva.Location = new System.Drawing.Point(302, 18);
             this.lblIva.Name = "lblIva";
             this.lblIva.Size = new System.Drawing.Size(27, 13);
             this.lblIva.TabIndex = 2;
@@ -577,7 +593,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(9, 44);
+            this.lblCuit.Location = new System.Drawing.Point(17, 44);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(50, 13);
             this.lblCuit.TabIndex = 1;
@@ -594,6 +610,7 @@
             // 
             // gbxDetalle
             // 
+            this.gbxDetalle.BackColor = System.Drawing.Color.Transparent;
             this.gbxDetalle.Controls.Add(this.gbxObservaciones);
             this.gbxDetalle.Controls.Add(this.grdDetalleFactura);
             this.gbxDetalle.Location = new System.Drawing.Point(8, 297);
@@ -615,11 +632,11 @@
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(6, 19);
+            this.txtObservaciones.Location = new System.Drawing.Point(6, 12);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservaciones.Size = new System.Drawing.Size(648, 39);
+            this.txtObservaciones.Size = new System.Drawing.Size(648, 46);
             this.txtObservaciones.TabIndex = 0;
             // 
             // grdDetalleFactura
@@ -688,7 +705,7 @@
             this.txtCondiciones.Multiline = true;
             this.txtCondiciones.Name = "txtCondiciones";
             this.txtCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtCondiciones.Size = new System.Drawing.Size(350, 53);
+            this.txtCondiciones.Size = new System.Drawing.Size(391, 53);
             this.txtCondiciones.TabIndex = 26;
             // 
             // lblPesos
@@ -706,16 +723,18 @@
             this.txtSonPesos.Multiline = true;
             this.txtSonPesos.Name = "txtSonPesos";
             this.txtSonPesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSonPesos.Size = new System.Drawing.Size(349, 46);
+            this.txtSonPesos.Size = new System.Drawing.Size(390, 46);
             this.txtSonPesos.TabIndex = 30;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGuardar.Location = new System.Drawing.Point(290, 709);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "    Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -752,14 +771,17 @@
             // lblTNetoPagar
             // 
             this.lblTNetoPagar.AutoSize = true;
-            this.lblTNetoPagar.Location = new System.Drawing.Point(462, 668);
+            this.lblTNetoPagar.BackColor = System.Drawing.Color.Transparent;
+            this.lblTNetoPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTNetoPagar.Location = new System.Drawing.Point(464, 671);
             this.lblTNetoPagar.Name = "lblTNetoPagar";
-            this.lblTNetoPagar.Size = new System.Drawing.Size(73, 13);
+            this.lblTNetoPagar.Size = new System.Drawing.Size(86, 13);
             this.lblTNetoPagar.TabIndex = 34;
             this.lblTNetoPagar.Text = "Neto a Pagar:";
             // 
             // lblSubtotal
             // 
+            this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.lblSubtotal.Location = new System.Drawing.Point(575, 615);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -770,7 +792,8 @@
             // lblTTotalIva
             // 
             this.lblTTotalIva.AutoSize = true;
-            this.lblTTotalIva.Location = new System.Drawing.Point(465, 638);
+            this.lblTTotalIva.BackColor = System.Drawing.Color.Transparent;
+            this.lblTTotalIva.Location = new System.Drawing.Point(514, 642);
             this.lblTTotalIva.Name = "lblTTotalIva";
             this.lblTTotalIva.Size = new System.Drawing.Size(36, 13);
             this.lblTTotalIva.TabIndex = 33;
@@ -779,7 +802,8 @@
             // lblTSubtotal
             // 
             this.lblTSubtotal.AutoSize = true;
-            this.lblTSubtotal.Location = new System.Drawing.Point(462, 614);
+            this.lblTSubtotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTSubtotal.Location = new System.Drawing.Point(501, 614);
             this.lblTSubtotal.Name = "lblTSubtotal";
             this.lblTSubtotal.Size = new System.Drawing.Size(49, 13);
             this.lblTSubtotal.TabIndex = 32;
@@ -787,6 +811,7 @@
             // 
             // lblTotalIva
             // 
+            this.lblTotalIva.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalIva.Location = new System.Drawing.Point(575, 642);
             this.lblTotalIva.Name = "lblTotalIva";
             this.lblTotalIva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -797,7 +822,8 @@
             // lblDescuento
             // 
             this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Location = new System.Drawing.Point(462, 592);
+            this.lblDescuento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescuento.Location = new System.Drawing.Point(465, 592);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(62, 13);
             this.lblDescuento.TabIndex = 31;
@@ -805,6 +831,7 @@
             // 
             // lblNetoPagar
             // 
+            this.lblNetoPagar.BackColor = System.Drawing.Color.Transparent;
             this.lblNetoPagar.Location = new System.Drawing.Point(575, 672);
             this.lblNetoPagar.Name = "lblNetoPagar";
             this.lblNetoPagar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -815,7 +842,8 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(580, 562);
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Location = new System.Drawing.Point(575, 563);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTotal.Size = new System.Drawing.Size(100, 13);
@@ -826,6 +854,7 @@
             // lblTTotal
             // 
             this.lblTTotal.AutoSize = true;
+            this.lblTTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTTotal.Location = new System.Drawing.Point(507, 562);
             this.lblTTotal.Name = "lblTTotal";
             this.lblTTotal.Size = new System.Drawing.Size(43, 13);
@@ -845,6 +874,7 @@
             // lblTNumFact
             // 
             this.lblTNumFact.AutoSize = true;
+            this.lblTNumFact.BackColor = System.Drawing.Color.Transparent;
             this.lblTNumFact.Location = new System.Drawing.Point(383, 36);
             this.lblTNumFact.Name = "lblTNumFact";
             this.lblTNumFact.Size = new System.Drawing.Size(19, 13);
@@ -862,8 +892,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.factura;
-            this.ClientSize = new System.Drawing.Size(691, 741);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(689, 741);
             this.Controls.Add(this.txtNumFactura);
             this.Controls.Add(this.lblTNumFact);
             this.Controls.Add(this.btnTipoValor);

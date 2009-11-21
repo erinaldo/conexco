@@ -114,42 +114,52 @@ namespace ConexcoFacturación
 
         private void grdDetalleFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if(grdDetalleFactura.SelectedCells.Count >0)
+            try
             {
-                if(e.ColumnIndex == 0)
+                if (grdDetalleFactura.SelectedCells.Count > 0)
                 {
-                    var codArticulo = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
-                }
-                else if(e.ColumnIndex == 2)
-                {
-                    var descripcion = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
-                    grdDetalleFactura.Rows[e.RowIndex].Cells["Codigo"].Value = articulo.Codigo + ((articulo.CodColor == null) ? "" : "-"+articulo.CodColor);
-                }
-                grdDetalleFactura.Rows[e.RowIndex].Cells["Totales"].Value =
-                        Convert.ToDecimal(grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value) *
+                    if (e.ColumnIndex == 0)
+                    {
+                        var codArticulo = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
+                        grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
+                        grdDetalleFactura.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
+                    }
+                    else if (e.ColumnIndex == 2)
+                    {
+                        var descripcion = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
+                        grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
+                        grdDetalleFactura.Rows[e.RowIndex].Cells["Codigo"].Value = articulo.Codigo +
+                                                                                   ((articulo.CodColor == null)
+                                                                                        ? ""
+                                                                                        : "-" + articulo.CodColor);
+                    }
+                    grdDetalleFactura.Rows[e.RowIndex].Cells["Totales"].Value =
+                        Convert.ToDecimal(grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value)*
                         Convert.ToDecimal(grdDetalleFactura.Rows[e.RowIndex].Cells["Cantidad"].Value);
-            }
+                }
 
-            double total = 0;         
-            foreach (DataGridViewRow row in grdDetalleFactura.Rows)
+                double total = 0;
+                foreach (DataGridViewRow row in grdDetalleFactura.Rows)
+                {
+                    try
+                    {
+                        total += Convert.ToDouble(row.Cells["Totales"].Value);
+
+                    }
+                    catch (Exception)
+                    {
+                        total = 0;
+                    }
+                }
+
+                lblTotal.Text = total.ToString();
+            }
+            catch(Exception)
             {
-                try
-                {
-                    total += Convert.ToDouble(row.Cells["Totales"].Value);
-
-                }
-                catch (Exception)
-                {
-                    total = 0;
-                }
+                return;
             }
-
-            lblTotal.Text = total.ToString();
         }
 
         private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)

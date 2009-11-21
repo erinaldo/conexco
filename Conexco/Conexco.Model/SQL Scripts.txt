@@ -4,16 +4,15 @@ Facturas:
 Observaciones varchar(250) nuleable
 SonPesos varchar(250) nuleable
 
------------------------------------------------------------------------
-
-CREAR UN CODIGO DE COLOR 0 QUE SIGNIFIQUE COLOR UNICO
-
 ------------------------------------------------------------------------
 
 COSAS A HACER:
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.
+-No mostrar el color 0 de los articulos ????
 -TOOLTIPS
 -Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones
+-Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
+-Mejorar UI!
 
 
 ------------------------------------------------------------------------
@@ -76,6 +75,40 @@ GO
 
 
 --Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[RemitoLineaImpresion]
+(
+	@IdRemito int
+)
+AS
+BEGIN
+
+	SELECT rl.idRemitosLinea, rl.idRemito, rl.idArticulo, rl.Envases, 
+		rl.Cantidad, rl.Precio, (a.Codigo + dbo.IsNotZero(a.CodColor, '-' + a.CodColor)) 'CodigoYColor', 
+		a.Descripcion, (rl.Cantidad * rl.Precio) 'TotalLinea' FROM Remitos_Linea rl
+	JOIN Articulos a ON a.idArticulo = rl.idArticulo
+	WHERE rl.idRemito = @IdRemito
+
+END
+
+
+CREATE PROCEDURE [dbo].[RemitoImpresion]
+(
+	@IdRemito int
+)
+AS
+BEGIN
+
+	SELECT r.*, c.RazonSocial, c.CUIT, ct.Nombre 'NombreTransp', ct.CUIT 'CUITTransp', ct.Domicilio 'DomicilioTransp', ct.Localidad 'LocalidadTransp', ct.CodPostal 'CodPostalTransp',
+			ci.Descripcion 'ClienteIVA' FROM Remitos r
+	JOIN Clientes c ON r.idCliente = c.idCliente
+	JOIN Clientes_Transportistas ct ON r.idTransportista = ct.idTransportista
+	JOIN CondicionIVA ci ON c.idCondicionIVA = ci.idCondicionIVA
+	
+
+	WHERE r.idRemito = @IdRemito
+
+END
 
 CREATE PROCEDURE [dbo].[FacturaBLineaImpresion]
 (
