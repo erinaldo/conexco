@@ -185,10 +185,23 @@
     </DataSet>
   </DataSets>
   <Code />
-  <Width>21cm</Width>
+  <Width>21.00529cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Line Name="line1">
+        <Top>19.25cm</Top>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <Height>0cm</Height>
+      </Line>
       <Textbox Name="textbox4">
         <rd:DefaultName>textbox4</rd:DefaultName>
         <Top>19.5cm</Top>

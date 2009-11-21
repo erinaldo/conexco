@@ -193,10 +193,23 @@
     </DataSet>
   </DataSets>
   <Code />
-  <Width>21cm</Width>
+  <Width>21.00529cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Line Name="line1">
+        <Top>19.25cm</Top>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>23</ZIndex>
+        <Height>0cm</Height>
+      </Line>
       <Rectangle Name="rectangleDetalleFactura">
         <Left>0.19687in</Left>
         <ZIndex>22</ZIndex>
