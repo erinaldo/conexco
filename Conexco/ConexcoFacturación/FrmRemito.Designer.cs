@@ -80,6 +80,7 @@
             this.lblEmpPosicionIVA = new System.Windows.Forms.Label();
             this.lblEmpFax = new System.Windows.Forms.Label();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
+            this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
@@ -105,7 +106,6 @@
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
-            this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -140,6 +140,7 @@
             this.btnGuardarImprimir.TabIndex = 77;
             this.btnGuardarImprimir.Text = "Guardar e Imprimir";
             this.btnGuardarImprimir.UseVisualStyleBackColor = true;
+            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // lblValorDeclarado
             // 
@@ -587,6 +588,15 @@
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
             // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.FormattingEnabled = true;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(243, 21);
+            this.cmbRazonSocial.TabIndex = 62;
+            this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
+            // 
             // cmbProvincia
             // 
             this.cmbProvincia.FormattingEnabled = true;
@@ -806,15 +816,6 @@
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservaciones.Size = new System.Drawing.Size(379, 53);
             this.txtObservaciones.TabIndex = 83;
-            // 
-            // cmbRazonSocial
-            // 
-            this.cmbRazonSocial.FormattingEnabled = true;
-            this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
-            this.cmbRazonSocial.Name = "cmbRazonSocial";
-            this.cmbRazonSocial.Size = new System.Drawing.Size(243, 21);
-            this.cmbRazonSocial.TabIndex = 62;
-            this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
             // FrmRemito
             // 

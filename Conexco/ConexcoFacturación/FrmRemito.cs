@@ -204,6 +204,11 @@ namespace ConexcoFacturación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            _GuardarRemito();
+        }
+
+        private int _GuardarRemito()
+        {
             var remito = new Remito();
 
             remito.idCliente = _idCliente;
@@ -246,6 +251,8 @@ namespace ConexcoFacturación
             {
                 MessageBox.Show("Ocurrio un problema al guardar el remito, intentelo nuevamente");
             }
+
+            return remito.idRemito;
         }
 
         private void btnLocalidad_Click(object sender, EventArgs e)
@@ -326,6 +333,13 @@ namespace ConexcoFacturación
             txtCuit.Text = "";
             txtCondIva.Text = "";
             txtClienteCod.Text = "";
+        }
+
+        private void btnGuardarImprimir_Click(object sender, EventArgs e)
+        {
+            int idRemito = _GuardarRemito();
+            if (idRemito > 0)
+                new FrmRemitoImprimir() {IdRemito = idRemito}.ShowDialog();
         }
     }
 }

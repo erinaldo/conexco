@@ -22,8 +22,6 @@ namespace ConexcoFacturación
         {
             // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.FacturaImpresion' table. You can move, or remove it, as needed.
             this.FacturaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.FacturaImpresion, IdFactura);
-            // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.FacturaLineaImpresion' table. You can move, or remove it, as needed.
-            this.FacturaLineaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.FacturaLineaImpresion, IdFactura);
             // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.FacturaBLineaImpresion' table. You can move, or remove it, as needed.
             this.FacturaBLineaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.FacturaBLineaImpresion, IdFactura);
 

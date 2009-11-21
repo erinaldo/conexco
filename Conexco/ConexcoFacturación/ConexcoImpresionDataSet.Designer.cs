@@ -31,6 +31,10 @@ namespace ConexcoFacturación {
         
         private FacturaBLineaImpresionDataTable tableFacturaBLineaImpresion;
         
+        private RemitoImpresionDataTable tableRemitoImpresion;
+        
+        private RemitoLineaImpresionDataTable tableRemitoLineaImpresion;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -65,6 +69,12 @@ namespace ConexcoFacturación {
                 }
                 if ((ds.Tables["FacturaBLineaImpresion"] != null)) {
                     base.Tables.Add(new FacturaBLineaImpresionDataTable(ds.Tables["FacturaBLineaImpresion"]));
+                }
+                if ((ds.Tables["RemitoImpresion"] != null)) {
+                    base.Tables.Add(new RemitoImpresionDataTable(ds.Tables["RemitoImpresion"]));
+                }
+                if ((ds.Tables["RemitoLineaImpresion"] != null)) {
+                    base.Tables.Add(new RemitoLineaImpresionDataTable(ds.Tables["RemitoLineaImpresion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -108,6 +118,24 @@ namespace ConexcoFacturación {
         public FacturaBLineaImpresionDataTable FacturaBLineaImpresion {
             get {
                 return this.tableFacturaBLineaImpresion;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RemitoImpresionDataTable RemitoImpresion {
+            get {
+                return this.tableRemitoImpresion;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RemitoLineaImpresionDataTable RemitoLineaImpresion {
+            get {
+                return this.tableRemitoLineaImpresion;
             }
         }
         
@@ -179,6 +207,12 @@ namespace ConexcoFacturación {
                 if ((ds.Tables["FacturaBLineaImpresion"] != null)) {
                     base.Tables.Add(new FacturaBLineaImpresionDataTable(ds.Tables["FacturaBLineaImpresion"]));
                 }
+                if ((ds.Tables["RemitoImpresion"] != null)) {
+                    base.Tables.Add(new RemitoImpresionDataTable(ds.Tables["RemitoImpresion"]));
+                }
+                if ((ds.Tables["RemitoLineaImpresion"] != null)) {
+                    base.Tables.Add(new RemitoLineaImpresionDataTable(ds.Tables["RemitoLineaImpresion"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -227,6 +261,18 @@ namespace ConexcoFacturación {
                     this.tableFacturaBLineaImpresion.InitVars();
                 }
             }
+            this.tableRemitoImpresion = ((RemitoImpresionDataTable)(base.Tables["RemitoImpresion"]));
+            if ((initTable == true)) {
+                if ((this.tableRemitoImpresion != null)) {
+                    this.tableRemitoImpresion.InitVars();
+                }
+            }
+            this.tableRemitoLineaImpresion = ((RemitoLineaImpresionDataTable)(base.Tables["RemitoLineaImpresion"]));
+            if ((initTable == true)) {
+                if ((this.tableRemitoLineaImpresion != null)) {
+                    this.tableRemitoLineaImpresion.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,6 +288,10 @@ namespace ConexcoFacturación {
             base.Tables.Add(this.tableFacturaLineaImpresion);
             this.tableFacturaBLineaImpresion = new FacturaBLineaImpresionDataTable();
             base.Tables.Add(this.tableFacturaBLineaImpresion);
+            this.tableRemitoImpresion = new RemitoImpresionDataTable();
+            base.Tables.Add(this.tableRemitoImpresion);
+            this.tableRemitoLineaImpresion = new RemitoLineaImpresionDataTable();
+            base.Tables.Add(this.tableRemitoLineaImpresion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -256,6 +306,16 @@ namespace ConexcoFacturación {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private bool ShouldSerializeFacturaBLineaImpresion() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeRemitoImpresion() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeRemitoLineaImpresion() {
             return false;
         }
         
@@ -317,6 +377,10 @@ namespace ConexcoFacturación {
         public delegate void FacturaLineaImpresionRowChangeEventHandler(object sender, FacturaLineaImpresionRowChangeEvent e);
         
         public delegate void FacturaBLineaImpresionRowChangeEventHandler(object sender, FacturaBLineaImpresionRowChangeEvent e);
+        
+        public delegate void RemitoImpresionRowChangeEventHandler(object sender, RemitoImpresionRowChangeEvent e);
+        
+        public delegate void RemitoLineaImpresionRowChangeEventHandler(object sender, RemitoLineaImpresionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1616,6 +1680,937 @@ namespace ConexcoFacturación {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RemitoImpresionDataTable : global::System.Data.TypedTableBase<RemitoImpresionRow> {
+            
+            private global::System.Data.DataColumn columnidRemito;
+            
+            private global::System.Data.DataColumn columnidCliente;
+            
+            private global::System.Data.DataColumn columnFechaEmision;
+            
+            private global::System.Data.DataColumn columnNumero;
+            
+            private global::System.Data.DataColumn columnidTransportista;
+            
+            private global::System.Data.DataColumn columnDomicilioEntrega;
+            
+            private global::System.Data.DataColumn columnLocalidadEntrega;
+            
+            private global::System.Data.DataColumn columnProvinciaEntrega;
+            
+            private global::System.Data.DataColumn columnCodPostalEntrega;
+            
+            private global::System.Data.DataColumn columnCantBultos;
+            
+            private global::System.Data.DataColumn columnOrdenCompra;
+            
+            private global::System.Data.DataColumn columnFechaVto;
+            
+            private global::System.Data.DataColumn columnObservaciones;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnidEstado;
+            
+            private global::System.Data.DataColumn columnBajaLogica;
+            
+            private global::System.Data.DataColumn columnRazonSocial;
+            
+            private global::System.Data.DataColumn columnCUIT;
+            
+            private global::System.Data.DataColumn columnNombreTransp;
+            
+            private global::System.Data.DataColumn columnCUITTransp;
+            
+            private global::System.Data.DataColumn columnDomicilioTransp;
+            
+            private global::System.Data.DataColumn columnLocalidadTransp;
+            
+            private global::System.Data.DataColumn columnCodPostalTransp;
+            
+            private global::System.Data.DataColumn columnClienteIVA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionDataTable() {
+                this.TableName = "RemitoImpresion";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal RemitoImpresionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected RemitoImpresionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idRemitoColumn {
+                get {
+                    return this.columnidRemito;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idClienteColumn {
+                get {
+                    return this.columnidCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn FechaEmisionColumn {
+                get {
+                    return this.columnFechaEmision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn NumeroColumn {
+                get {
+                    return this.columnNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idTransportistaColumn {
+                get {
+                    return this.columnidTransportista;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DomicilioEntregaColumn {
+                get {
+                    return this.columnDomicilioEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn LocalidadEntregaColumn {
+                get {
+                    return this.columnLocalidadEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ProvinciaEntregaColumn {
+                get {
+                    return this.columnProvinciaEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CodPostalEntregaColumn {
+                get {
+                    return this.columnCodPostalEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CantBultosColumn {
+                get {
+                    return this.columnCantBultos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn OrdenCompraColumn {
+                get {
+                    return this.columnOrdenCompra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn FechaVtoColumn {
+                get {
+                    return this.columnFechaVto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ObservacionesColumn {
+                get {
+                    return this.columnObservaciones;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idEstadoColumn {
+                get {
+                    return this.columnidEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn BajaLogicaColumn {
+                get {
+                    return this.columnBajaLogica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn RazonSocialColumn {
+                get {
+                    return this.columnRazonSocial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CUITColumn {
+                get {
+                    return this.columnCUIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn NombreTranspColumn {
+                get {
+                    return this.columnNombreTransp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CUITTranspColumn {
+                get {
+                    return this.columnCUITTransp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DomicilioTranspColumn {
+                get {
+                    return this.columnDomicilioTransp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn LocalidadTranspColumn {
+                get {
+                    return this.columnLocalidadTransp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CodPostalTranspColumn {
+                get {
+                    return this.columnCodPostalTransp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ClienteIVAColumn {
+                get {
+                    return this.columnClienteIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRow this[int index] {
+                get {
+                    return ((RemitoImpresionRow)(this.Rows[index]));
+                }
+            }
+            
+            public event RemitoImpresionRowChangeEventHandler RemitoImpresionRowChanging;
+            
+            public event RemitoImpresionRowChangeEventHandler RemitoImpresionRowChanged;
+            
+            public event RemitoImpresionRowChangeEventHandler RemitoImpresionRowDeleting;
+            
+            public event RemitoImpresionRowChangeEventHandler RemitoImpresionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddRemitoImpresionRow(RemitoImpresionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRow AddRemitoImpresionRow(
+                        int idCliente, 
+                        System.DateTime FechaEmision, 
+                        string Numero, 
+                        int idTransportista, 
+                        string DomicilioEntrega, 
+                        string LocalidadEntrega, 
+                        string ProvinciaEntrega, 
+                        string CodPostalEntrega, 
+                        int CantBultos, 
+                        string OrdenCompra, 
+                        System.DateTime FechaVto, 
+                        string Observaciones, 
+                        decimal Total, 
+                        int idEstado, 
+                        bool BajaLogica, 
+                        string RazonSocial, 
+                        string CUIT, 
+                        string NombreTransp, 
+                        string CUITTransp, 
+                        string DomicilioTransp, 
+                        string LocalidadTransp, 
+                        string CodPostalTransp, 
+                        string ClienteIVA) {
+                RemitoImpresionRow rowRemitoImpresionRow = ((RemitoImpresionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idCliente,
+                        FechaEmision,
+                        Numero,
+                        idTransportista,
+                        DomicilioEntrega,
+                        LocalidadEntrega,
+                        ProvinciaEntrega,
+                        CodPostalEntrega,
+                        CantBultos,
+                        OrdenCompra,
+                        FechaVto,
+                        Observaciones,
+                        Total,
+                        idEstado,
+                        BajaLogica,
+                        RazonSocial,
+                        CUIT,
+                        NombreTransp,
+                        CUITTransp,
+                        DomicilioTransp,
+                        LocalidadTransp,
+                        CodPostalTransp,
+                        ClienteIVA};
+                rowRemitoImpresionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRemitoImpresionRow);
+                return rowRemitoImpresionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRow FindByidRemito(int idRemito) {
+                return ((RemitoImpresionRow)(this.Rows.Find(new object[] {
+                            idRemito})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                RemitoImpresionDataTable cln = ((RemitoImpresionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new RemitoImpresionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnidRemito = base.Columns["idRemito"];
+                this.columnidCliente = base.Columns["idCliente"];
+                this.columnFechaEmision = base.Columns["FechaEmision"];
+                this.columnNumero = base.Columns["Numero"];
+                this.columnidTransportista = base.Columns["idTransportista"];
+                this.columnDomicilioEntrega = base.Columns["DomicilioEntrega"];
+                this.columnLocalidadEntrega = base.Columns["LocalidadEntrega"];
+                this.columnProvinciaEntrega = base.Columns["ProvinciaEntrega"];
+                this.columnCodPostalEntrega = base.Columns["CodPostalEntrega"];
+                this.columnCantBultos = base.Columns["CantBultos"];
+                this.columnOrdenCompra = base.Columns["OrdenCompra"];
+                this.columnFechaVto = base.Columns["FechaVto"];
+                this.columnObservaciones = base.Columns["Observaciones"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnidEstado = base.Columns["idEstado"];
+                this.columnBajaLogica = base.Columns["BajaLogica"];
+                this.columnRazonSocial = base.Columns["RazonSocial"];
+                this.columnCUIT = base.Columns["CUIT"];
+                this.columnNombreTransp = base.Columns["NombreTransp"];
+                this.columnCUITTransp = base.Columns["CUITTransp"];
+                this.columnDomicilioTransp = base.Columns["DomicilioTransp"];
+                this.columnLocalidadTransp = base.Columns["LocalidadTransp"];
+                this.columnCodPostalTransp = base.Columns["CodPostalTransp"];
+                this.columnClienteIVA = base.Columns["ClienteIVA"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnidRemito = new global::System.Data.DataColumn("idRemito", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidRemito);
+                this.columnidCliente = new global::System.Data.DataColumn("idCliente", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCliente);
+                this.columnFechaEmision = new global::System.Data.DataColumn("FechaEmision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaEmision);
+                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero);
+                this.columnidTransportista = new global::System.Data.DataColumn("idTransportista", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidTransportista);
+                this.columnDomicilioEntrega = new global::System.Data.DataColumn("DomicilioEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDomicilioEntrega);
+                this.columnLocalidadEntrega = new global::System.Data.DataColumn("LocalidadEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocalidadEntrega);
+                this.columnProvinciaEntrega = new global::System.Data.DataColumn("ProvinciaEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProvinciaEntrega);
+                this.columnCodPostalEntrega = new global::System.Data.DataColumn("CodPostalEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodPostalEntrega);
+                this.columnCantBultos = new global::System.Data.DataColumn("CantBultos", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantBultos);
+                this.columnOrdenCompra = new global::System.Data.DataColumn("OrdenCompra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrdenCompra);
+                this.columnFechaVto = new global::System.Data.DataColumn("FechaVto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaVto);
+                this.columnObservaciones = new global::System.Data.DataColumn("Observaciones", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservaciones);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnidEstado = new global::System.Data.DataColumn("idEstado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidEstado);
+                this.columnBajaLogica = new global::System.Data.DataColumn("BajaLogica", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBajaLogica);
+                this.columnRazonSocial = new global::System.Data.DataColumn("RazonSocial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRazonSocial);
+                this.columnCUIT = new global::System.Data.DataColumn("CUIT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUIT);
+                this.columnNombreTransp = new global::System.Data.DataColumn("NombreTransp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreTransp);
+                this.columnCUITTransp = new global::System.Data.DataColumn("CUITTransp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUITTransp);
+                this.columnDomicilioTransp = new global::System.Data.DataColumn("DomicilioTransp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDomicilioTransp);
+                this.columnLocalidadTransp = new global::System.Data.DataColumn("LocalidadTransp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocalidadTransp);
+                this.columnCodPostalTransp = new global::System.Data.DataColumn("CodPostalTransp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodPostalTransp);
+                this.columnClienteIVA = new global::System.Data.DataColumn("ClienteIVA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClienteIVA);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidRemito}, true));
+                this.columnidRemito.AutoIncrement = true;
+                this.columnidRemito.AllowDBNull = false;
+                this.columnidRemito.ReadOnly = true;
+                this.columnidRemito.Unique = true;
+                this.columnidCliente.AllowDBNull = false;
+                this.columnFechaEmision.AllowDBNull = false;
+                this.columnNumero.AllowDBNull = false;
+                this.columnNumero.MaxLength = 50;
+                this.columnDomicilioEntrega.MaxLength = 250;
+                this.columnLocalidadEntrega.MaxLength = 100;
+                this.columnProvinciaEntrega.MaxLength = 100;
+                this.columnCodPostalEntrega.MaxLength = 10;
+                this.columnCantBultos.AllowDBNull = false;
+                this.columnOrdenCompra.MaxLength = 50;
+                this.columnObservaciones.MaxLength = 250;
+                this.columnTotal.AllowDBNull = false;
+                this.columnidEstado.AllowDBNull = false;
+                this.columnRazonSocial.MaxLength = 250;
+                this.columnCUIT.AllowDBNull = false;
+                this.columnCUIT.MaxLength = 20;
+                this.columnNombreTransp.AllowDBNull = false;
+                this.columnNombreTransp.MaxLength = 250;
+                this.columnCUITTransp.AllowDBNull = false;
+                this.columnCUITTransp.MaxLength = 20;
+                this.columnDomicilioTransp.MaxLength = 250;
+                this.columnLocalidadTransp.MaxLength = 100;
+                this.columnCodPostalTransp.MaxLength = 10;
+                this.columnClienteIVA.AllowDBNull = false;
+                this.columnClienteIVA.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRow NewRemitoImpresionRow() {
+                return ((RemitoImpresionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RemitoImpresionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(RemitoImpresionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.RemitoImpresionRowChanged != null)) {
+                    this.RemitoImpresionRowChanged(this, new RemitoImpresionRowChangeEvent(((RemitoImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.RemitoImpresionRowChanging != null)) {
+                    this.RemitoImpresionRowChanging(this, new RemitoImpresionRowChangeEvent(((RemitoImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.RemitoImpresionRowDeleted != null)) {
+                    this.RemitoImpresionRowDeleted(this, new RemitoImpresionRowChangeEvent(((RemitoImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.RemitoImpresionRowDeleting != null)) {
+                    this.RemitoImpresionRowDeleting(this, new RemitoImpresionRowChangeEvent(((RemitoImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveRemitoImpresionRow(RemitoImpresionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ConexcoImpresionDataSet ds = new ConexcoImpresionDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RemitoImpresionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RemitoLineaImpresionDataTable : global::System.Data.TypedTableBase<RemitoLineaImpresionRow> {
+            
+            private global::System.Data.DataColumn columnidRemitosLinea;
+            
+            private global::System.Data.DataColumn columnidRemito;
+            
+            private global::System.Data.DataColumn columnidArticulo;
+            
+            private global::System.Data.DataColumn columnEnvases;
+            
+            private global::System.Data.DataColumn columnCantidad;
+            
+            private global::System.Data.DataColumn columnPrecio;
+            
+            private global::System.Data.DataColumn columnCodigoYColor;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnTotalLinea;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionDataTable() {
+                this.TableName = "RemitoLineaImpresion";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal RemitoLineaImpresionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected RemitoLineaImpresionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idRemitosLineaColumn {
+                get {
+                    return this.columnidRemitosLinea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idRemitoColumn {
+                get {
+                    return this.columnidRemito;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn idArticuloColumn {
+                get {
+                    return this.columnidArticulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn EnvasesColumn {
+                get {
+                    return this.columnEnvases;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CantidadColumn {
+                get {
+                    return this.columnCantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CodigoYColorColumn {
+                get {
+                    return this.columnCodigoYColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn TotalLineaColumn {
+                get {
+                    return this.columnTotalLinea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRow this[int index] {
+                get {
+                    return ((RemitoLineaImpresionRow)(this.Rows[index]));
+                }
+            }
+            
+            public event RemitoLineaImpresionRowChangeEventHandler RemitoLineaImpresionRowChanging;
+            
+            public event RemitoLineaImpresionRowChangeEventHandler RemitoLineaImpresionRowChanged;
+            
+            public event RemitoLineaImpresionRowChangeEventHandler RemitoLineaImpresionRowDeleting;
+            
+            public event RemitoLineaImpresionRowChangeEventHandler RemitoLineaImpresionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddRemitoLineaImpresionRow(RemitoLineaImpresionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRow AddRemitoLineaImpresionRow(int idRemito, int idArticulo, decimal Envases, decimal Cantidad, decimal Precio, string CodigoYColor, string Descripcion, decimal TotalLinea) {
+                RemitoLineaImpresionRow rowRemitoLineaImpresionRow = ((RemitoLineaImpresionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idRemito,
+                        idArticulo,
+                        Envases,
+                        Cantidad,
+                        Precio,
+                        CodigoYColor,
+                        Descripcion,
+                        TotalLinea};
+                rowRemitoLineaImpresionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRemitoLineaImpresionRow);
+                return rowRemitoLineaImpresionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRow FindByidRemitosLinea(int idRemitosLinea) {
+                return ((RemitoLineaImpresionRow)(this.Rows.Find(new object[] {
+                            idRemitosLinea})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                RemitoLineaImpresionDataTable cln = ((RemitoLineaImpresionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new RemitoLineaImpresionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnidRemitosLinea = base.Columns["idRemitosLinea"];
+                this.columnidRemito = base.Columns["idRemito"];
+                this.columnidArticulo = base.Columns["idArticulo"];
+                this.columnEnvases = base.Columns["Envases"];
+                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnPrecio = base.Columns["Precio"];
+                this.columnCodigoYColor = base.Columns["CodigoYColor"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnTotalLinea = base.Columns["TotalLinea"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnidRemitosLinea = new global::System.Data.DataColumn("idRemitosLinea", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidRemitosLinea);
+                this.columnidRemito = new global::System.Data.DataColumn("idRemito", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidRemito);
+                this.columnidArticulo = new global::System.Data.DataColumn("idArticulo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidArticulo);
+                this.columnEnvases = new global::System.Data.DataColumn("Envases", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnvases);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
+                this.columnCodigoYColor = new global::System.Data.DataColumn("CodigoYColor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoYColor);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnTotalLinea = new global::System.Data.DataColumn("TotalLinea", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLinea);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidRemitosLinea}, true));
+                this.columnidRemitosLinea.AutoIncrement = true;
+                this.columnidRemitosLinea.AllowDBNull = false;
+                this.columnidRemitosLinea.ReadOnly = true;
+                this.columnidRemitosLinea.Unique = true;
+                this.columnidRemito.AllowDBNull = false;
+                this.columnidArticulo.AllowDBNull = false;
+                this.columnEnvases.AllowDBNull = false;
+                this.columnCantidad.AllowDBNull = false;
+                this.columnPrecio.AllowDBNull = false;
+                this.columnCodigoYColor.ReadOnly = true;
+                this.columnCodigoYColor.MaxLength = 30;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 250;
+                this.columnTotalLinea.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRow NewRemitoLineaImpresionRow() {
+                return ((RemitoLineaImpresionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RemitoLineaImpresionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(RemitoLineaImpresionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.RemitoLineaImpresionRowChanged != null)) {
+                    this.RemitoLineaImpresionRowChanged(this, new RemitoLineaImpresionRowChangeEvent(((RemitoLineaImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.RemitoLineaImpresionRowChanging != null)) {
+                    this.RemitoLineaImpresionRowChanging(this, new RemitoLineaImpresionRowChangeEvent(((RemitoLineaImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.RemitoLineaImpresionRowDeleted != null)) {
+                    this.RemitoLineaImpresionRowDeleted(this, new RemitoLineaImpresionRowChangeEvent(((RemitoLineaImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.RemitoLineaImpresionRowDeleting != null)) {
+                    this.RemitoLineaImpresionRowDeleting(this, new RemitoLineaImpresionRowChangeEvent(((RemitoLineaImpresionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveRemitoLineaImpresionRow(RemitoLineaImpresionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ConexcoImpresionDataSet ds = new ConexcoImpresionDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RemitoLineaImpresionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -2346,6 +3341,591 @@ namespace ConexcoFacturación {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class RemitoImpresionRow : global::System.Data.DataRow {
+            
+            private RemitoImpresionDataTable tableRemitoImpresion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal RemitoImpresionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRemitoImpresion = ((RemitoImpresionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idRemito {
+                get {
+                    return ((int)(this[this.tableRemitoImpresion.idRemitoColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.idRemitoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idCliente {
+                get {
+                    return ((int)(this[this.tableRemitoImpresion.idClienteColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.idClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime FechaEmision {
+                get {
+                    return ((global::System.DateTime)(this[this.tableRemitoImpresion.FechaEmisionColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.FechaEmisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Numero {
+                get {
+                    return ((string)(this[this.tableRemitoImpresion.NumeroColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.NumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idTransportista {
+                get {
+                    try {
+                        return ((int)(this[this.tableRemitoImpresion.idTransportistaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idTransportista\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.idTransportistaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string DomicilioEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.DomicilioEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DomicilioEntrega\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.DomicilioEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string LocalidadEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.LocalidadEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LocalidadEntrega\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.LocalidadEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string ProvinciaEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.ProvinciaEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProvinciaEntrega\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.ProvinciaEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CodPostalEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.CodPostalEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodPostalEntrega\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.CodPostalEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int CantBultos {
+                get {
+                    return ((int)(this[this.tableRemitoImpresion.CantBultosColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.CantBultosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string OrdenCompra {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.OrdenCompraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OrdenCompra\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.OrdenCompraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime FechaVto {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRemitoImpresion.FechaVtoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaVto\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.FechaVtoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Observaciones {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.ObservacionesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Observaciones\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.ObservacionesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal Total {
+                get {
+                    return ((decimal)(this[this.tableRemitoImpresion.TotalColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idEstado {
+                get {
+                    return ((int)(this[this.tableRemitoImpresion.idEstadoColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.idEstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool BajaLogica {
+                get {
+                    try {
+                        return ((bool)(this[this.tableRemitoImpresion.BajaLogicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BajaLogica\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.BajaLogicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string RazonSocial {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.RazonSocialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RazonSocial\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.RazonSocialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CUIT {
+                get {
+                    return ((string)(this[this.tableRemitoImpresion.CUITColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.CUITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string NombreTransp {
+                get {
+                    return ((string)(this[this.tableRemitoImpresion.NombreTranspColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.NombreTranspColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CUITTransp {
+                get {
+                    return ((string)(this[this.tableRemitoImpresion.CUITTranspColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.CUITTranspColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string DomicilioTransp {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.DomicilioTranspColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DomicilioTransp\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.DomicilioTranspColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string LocalidadTransp {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.LocalidadTranspColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LocalidadTransp\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.LocalidadTranspColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CodPostalTransp {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoImpresion.CodPostalTranspColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodPostalTransp\' in table \'RemitoImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoImpresion.CodPostalTranspColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string ClienteIVA {
+                get {
+                    return ((string)(this[this.tableRemitoImpresion.ClienteIVAColumn]));
+                }
+                set {
+                    this[this.tableRemitoImpresion.ClienteIVAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsidTransportistaNull() {
+                return this.IsNull(this.tableRemitoImpresion.idTransportistaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetidTransportistaNull() {
+                this[this.tableRemitoImpresion.idTransportistaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsDomicilioEntregaNull() {
+                return this.IsNull(this.tableRemitoImpresion.DomicilioEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetDomicilioEntregaNull() {
+                this[this.tableRemitoImpresion.DomicilioEntregaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsLocalidadEntregaNull() {
+                return this.IsNull(this.tableRemitoImpresion.LocalidadEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetLocalidadEntregaNull() {
+                this[this.tableRemitoImpresion.LocalidadEntregaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsProvinciaEntregaNull() {
+                return this.IsNull(this.tableRemitoImpresion.ProvinciaEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetProvinciaEntregaNull() {
+                this[this.tableRemitoImpresion.ProvinciaEntregaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCodPostalEntregaNull() {
+                return this.IsNull(this.tableRemitoImpresion.CodPostalEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCodPostalEntregaNull() {
+                this[this.tableRemitoImpresion.CodPostalEntregaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsOrdenCompraNull() {
+                return this.IsNull(this.tableRemitoImpresion.OrdenCompraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetOrdenCompraNull() {
+                this[this.tableRemitoImpresion.OrdenCompraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsFechaVtoNull() {
+                return this.IsNull(this.tableRemitoImpresion.FechaVtoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetFechaVtoNull() {
+                this[this.tableRemitoImpresion.FechaVtoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsObservacionesNull() {
+                return this.IsNull(this.tableRemitoImpresion.ObservacionesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetObservacionesNull() {
+                this[this.tableRemitoImpresion.ObservacionesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsBajaLogicaNull() {
+                return this.IsNull(this.tableRemitoImpresion.BajaLogicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetBajaLogicaNull() {
+                this[this.tableRemitoImpresion.BajaLogicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsRazonSocialNull() {
+                return this.IsNull(this.tableRemitoImpresion.RazonSocialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetRazonSocialNull() {
+                this[this.tableRemitoImpresion.RazonSocialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsDomicilioTranspNull() {
+                return this.IsNull(this.tableRemitoImpresion.DomicilioTranspColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetDomicilioTranspNull() {
+                this[this.tableRemitoImpresion.DomicilioTranspColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsLocalidadTranspNull() {
+                return this.IsNull(this.tableRemitoImpresion.LocalidadTranspColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetLocalidadTranspNull() {
+                this[this.tableRemitoImpresion.LocalidadTranspColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCodPostalTranspNull() {
+                return this.IsNull(this.tableRemitoImpresion.CodPostalTranspColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCodPostalTranspNull() {
+                this[this.tableRemitoImpresion.CodPostalTranspColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class RemitoLineaImpresionRow : global::System.Data.DataRow {
+            
+            private RemitoLineaImpresionDataTable tableRemitoLineaImpresion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal RemitoLineaImpresionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRemitoLineaImpresion = ((RemitoLineaImpresionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idRemitosLinea {
+                get {
+                    return ((int)(this[this.tableRemitoLineaImpresion.idRemitosLineaColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.idRemitosLineaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idRemito {
+                get {
+                    return ((int)(this[this.tableRemitoLineaImpresion.idRemitoColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.idRemitoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int idArticulo {
+                get {
+                    return ((int)(this[this.tableRemitoLineaImpresion.idArticuloColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.idArticuloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal Envases {
+                get {
+                    return ((decimal)(this[this.tableRemitoLineaImpresion.EnvasesColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.EnvasesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal Cantidad {
+                get {
+                    return ((decimal)(this[this.tableRemitoLineaImpresion.CantidadColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.CantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal Precio {
+                get {
+                    return ((decimal)(this[this.tableRemitoLineaImpresion.PrecioColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CodigoYColor {
+                get {
+                    try {
+                        return ((string)(this[this.tableRemitoLineaImpresion.CodigoYColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoYColor\' in table \'RemitoLineaImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.CodigoYColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableRemitoLineaImpresion.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal TotalLinea {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRemitoLineaImpresion.TotalLineaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLinea\' in table \'RemitoLineaImpresion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRemitoLineaImpresion.TotalLineaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCodigoYColorNull() {
+                return this.IsNull(this.tableRemitoLineaImpresion.CodigoYColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCodigoYColorNull() {
+                this[this.tableRemitoLineaImpresion.CodigoYColorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsTotalLineaNull() {
+                return this.IsNull(this.tableRemitoLineaImpresion.TotalLineaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetTotalLineaNull() {
+                this[this.tableRemitoLineaImpresion.TotalLineaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -2425,6 +4005,68 @@ namespace ConexcoFacturación {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public FacturaBLineaImpresionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class RemitoImpresionRowChangeEvent : global::System.EventArgs {
+            
+            private RemitoImpresionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRowChangeEvent(RemitoImpresionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoImpresionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class RemitoLineaImpresionRowChangeEvent : global::System.EventArgs {
+            
+            private RemitoLineaImpresionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRowChangeEvent(RemitoLineaImpresionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public RemitoLineaImpresionRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2990,6 +4632,379 @@ namespace ConexcoFacturación.ConexcoImpresionDataSetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             ConexcoImpresionDataSet.FacturaBLineaImpresionDataTable dataTable = new ConexcoImpresionDataSet.FacturaBLineaImpresionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class RemitoImpresionTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public RemitoImpresionTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "RemitoImpresion";
+            tableMapping.ColumnMappings.Add("idRemito", "idRemito");
+            tableMapping.ColumnMappings.Add("idCliente", "idCliente");
+            tableMapping.ColumnMappings.Add("FechaEmision", "FechaEmision");
+            tableMapping.ColumnMappings.Add("Numero", "Numero");
+            tableMapping.ColumnMappings.Add("idTransportista", "idTransportista");
+            tableMapping.ColumnMappings.Add("DomicilioEntrega", "DomicilioEntrega");
+            tableMapping.ColumnMappings.Add("LocalidadEntrega", "LocalidadEntrega");
+            tableMapping.ColumnMappings.Add("ProvinciaEntrega", "ProvinciaEntrega");
+            tableMapping.ColumnMappings.Add("CodPostalEntrega", "CodPostalEntrega");
+            tableMapping.ColumnMappings.Add("CantBultos", "CantBultos");
+            tableMapping.ColumnMappings.Add("OrdenCompra", "OrdenCompra");
+            tableMapping.ColumnMappings.Add("FechaVto", "FechaVto");
+            tableMapping.ColumnMappings.Add("Observaciones", "Observaciones");
+            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("idEstado", "idEstado");
+            tableMapping.ColumnMappings.Add("BajaLogica", "BajaLogica");
+            tableMapping.ColumnMappings.Add("RazonSocial", "RazonSocial");
+            tableMapping.ColumnMappings.Add("CUIT", "CUIT");
+            tableMapping.ColumnMappings.Add("NombreTransp", "NombreTransp");
+            tableMapping.ColumnMappings.Add("CUITTransp", "CUITTransp");
+            tableMapping.ColumnMappings.Add("DomicilioTransp", "DomicilioTransp");
+            tableMapping.ColumnMappings.Add("LocalidadTransp", "LocalidadTransp");
+            tableMapping.ColumnMappings.Add("CodPostalTransp", "CodPostalTransp");
+            tableMapping.ColumnMappings.Add("ClienteIVA", "ClienteIVA");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ConexcoFacturación.Properties.Settings.Default.ConexcoConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.RemitoImpresion";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdRemito", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ConexcoImpresionDataSet.RemitoImpresionDataTable dataTable, global::System.Nullable<int> IdRemito) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IdRemito.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdRemito.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ConexcoImpresionDataSet.RemitoImpresionDataTable GetData(global::System.Nullable<int> IdRemito) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IdRemito.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdRemito.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ConexcoImpresionDataSet.RemitoImpresionDataTable dataTable = new ConexcoImpresionDataSet.RemitoImpresionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class RemitoLineaImpresionTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public RemitoLineaImpresionTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "RemitoLineaImpresion";
+            tableMapping.ColumnMappings.Add("idRemitosLinea", "idRemitosLinea");
+            tableMapping.ColumnMappings.Add("idRemito", "idRemito");
+            tableMapping.ColumnMappings.Add("idArticulo", "idArticulo");
+            tableMapping.ColumnMappings.Add("Envases", "Envases");
+            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
+            tableMapping.ColumnMappings.Add("Precio", "Precio");
+            tableMapping.ColumnMappings.Add("CodigoYColor", "CodigoYColor");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("TotalLinea", "TotalLinea");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ConexcoFacturación.Properties.Settings.Default.ConexcoConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.RemitoLineaImpresion";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdRemito", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ConexcoImpresionDataSet.RemitoLineaImpresionDataTable dataTable, global::System.Nullable<int> IdRemito) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IdRemito.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdRemito.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ConexcoImpresionDataSet.RemitoLineaImpresionDataTable GetData(global::System.Nullable<int> IdRemito) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IdRemito.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdRemito.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ConexcoImpresionDataSet.RemitoLineaImpresionDataTable dataTable = new ConexcoImpresionDataSet.RemitoLineaImpresionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
