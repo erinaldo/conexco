@@ -135,6 +135,20 @@ namespace Conexco.Controller
             return _context.Articulos.Where(art => art.CodColor.Contains(codigoColor)).ToList();
         }
 
+        public bool GuardarColor(Articulos_Color nuevoColor)
+        {
+            try
+            {
+                _context.Articulos_Colors.InsertOnSubmit(nuevoColor);
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         //TODO: Fijarse de cambiar esta logica, en el STOCK controller hay para guardar un egreso. Y en este controller
         //TODO: tambien hay un ActualizarStock().
         public bool ReducirStock(int idArticulo, decimal cantidad)
@@ -156,6 +170,11 @@ namespace Conexco.Controller
             {
                 return false;
             }
+        }
+
+        public List<Articulos_Color> ListarColores()
+        {
+            return _context.Articulos_Colors.Select(color => color).ToList();
         }
     }
 }

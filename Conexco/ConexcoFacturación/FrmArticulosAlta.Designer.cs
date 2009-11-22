@@ -37,7 +37,6 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.comboColor = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.errorCodigo = new System.Windows.Forms.Label();
             this.errorDescripcion = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.errorStock = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.MaskedTextBox();
             this.txtPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.comboColor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -83,14 +83,14 @@
             this.txtCodigo.Location = new System.Drawing.Point(138, 40);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 1;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(138, 103);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label4
             // 
@@ -117,7 +117,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(53, 217);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 10;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.OnGuardarArticulo);
@@ -127,23 +127,14 @@
             this.btnCancelar.Location = new System.Drawing.Point(149, 217);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.OnCancelarAlta);
             // 
-            // comboColor
-            // 
-            this.comboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboColor.FormattingEnabled = true;
-            this.comboColor.Location = new System.Drawing.Point(138, 72);
-            this.comboColor.Name = "comboColor";
-            this.comboColor.Size = new System.Drawing.Size(100, 21);
-            this.comboColor.TabIndex = 12;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(244, 73);
+            this.button1.Location = new System.Drawing.Point(266, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 20);
             this.button1.TabIndex = 13;
@@ -205,7 +196,7 @@
             this.txtStock.Mask = "00000.00";
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
-            this.txtStock.TabIndex = 18;
+            this.txtStock.TabIndex = 5;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecio
@@ -214,14 +205,23 @@
             this.txtPrecio.Mask = "00000.00";
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 19;
+            this.txtPrecio.TabIndex = 4;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // comboColor
+            // 
+            this.comboColor.FormattingEnabled = true;
+            this.comboColor.Location = new System.Drawing.Point(138, 72);
+            this.comboColor.Name = "comboColor";
+            this.comboColor.Size = new System.Drawing.Size(121, 21);
+            this.comboColor.TabIndex = 2;
             // 
             // FrmArticulosAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(297, 266);
+            this.Controls.Add(this.comboColor);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.errorStock);
@@ -229,7 +229,6 @@
             this.Controls.Add(this.errorDescripcion);
             this.Controls.Add(this.errorCodigo);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboColor);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblStock);
@@ -258,7 +257,6 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox comboColor;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label errorCodigo;
         private System.Windows.Forms.Label errorDescripcion;
@@ -266,5 +264,6 @@
         private System.Windows.Forms.Label errorStock;
         private System.Windows.Forms.MaskedTextBox txtStock;
         private System.Windows.Forms.MaskedTextBox txtPrecio;
+        private System.Windows.Forms.ComboBox comboColor;
     }
 }

@@ -34,6 +34,9 @@
       <Column Name="Codigo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RGB" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Member="R" Type="System.String" CanBeNull="false" />
+      <Column Member="G" Type="System.String" CanBeNull="false" />
+      <Column Member="B" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Clientes" Member="Clientes">

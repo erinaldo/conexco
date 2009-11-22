@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -30,6 +31,8 @@ namespace ConexcoFacturación
             }
             else
                 Text = "Agregar Articulo";
+
+            _CargarComboColores();
         }
 
         private void _CargarDatosArticulo()
@@ -41,11 +44,26 @@ namespace ConexcoFacturación
             txtStock.Text = articulo.Stock.ToString();
         }
 
+        private void _CargarComboColores()
+        {
+            var listadoColores = ArticulosController.ListarColores();
+
+            foreach (var color in listadoColores)
+            {
+                color.RGB = String.Format("{0} - {1}", color.Codigo, color.Descripcion);
+            }
+
+            comboColor.DisplayMember = "RGB";
+            comboColor.ValueMember = "Codigo";
+            comboColor.DataSource = listadoColores;
+        }
+
         private void OnCrearNuevoColor(object sender, EventArgs e)
         {
             var frmArticulosColor = new FrmArticulosColor();
-            //var resultado = frmArticulosColor.ShowDialog();
-            comboColor.Text = frmArticulosColor.CodigoColorSeleccionado;
+            var resultado = frmArticulosColor.ShowDialog();
+            if (resultado == DialogResult.OK)
+                _CargarComboColores();
         }
 
         private void OnCancelarAlta(object sender, EventArgs e)
@@ -89,20 +107,5 @@ namespace ConexcoFacturación
             }
 
         }
-
-        private void OnKeyPress_Precio(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                Convert.ToDecimal(txtPrecio.Text);
-                e.Handled = true;
-            }
-            catch (Exception)
-            {
-                e.Handled = false;
-            }
-        }
-
- 
     }
 }
