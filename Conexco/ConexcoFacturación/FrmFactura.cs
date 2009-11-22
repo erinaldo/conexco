@@ -146,7 +146,6 @@ namespace ConexcoFacturación
                     try
                     {
                         total += Convert.ToDouble(row.Cells["Totales"].Value);
-
                     }
                     catch (Exception)
                     {
