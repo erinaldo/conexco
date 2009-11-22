@@ -124,13 +124,19 @@
   <data name="guardar3png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardar3png.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LupaFacturaPequenia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LupaFacturaPequenia.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="factura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\factura.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LupaFacturaPequenia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LupaFacturaPequenia.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FondoTodos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoTodos.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoTodos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoTodos1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

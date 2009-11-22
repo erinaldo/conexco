@@ -28,24 +28,49 @@ namespace ConexcoFacturación
 
         private void FrmLocalidades_Load(object sender, EventArgs e)
         {
-            LocalidadesController = new LocalidadesController();
-            var provincias = LocalidadesController.ListarProvincias();
+            try
+            {
+                LocalidadesController = new LocalidadesController();
+                var provincias = LocalidadesController.ListarProvincias();
 
-            cmbProvincia.DataSource = provincias;
-            cmbProvincia.DisplayMember = "Provincia1"; 
+                cmbProvincia.DataSource = provincias;
+                cmbProvincia.DisplayMember = "Provincia1";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un problema al listar las provincias, inténtelo nuevamente");
+                this.Close();
+            }
+ 
         }
 
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var provincia = (Provincia) cmbProvincia.SelectedItem;
-            LimpiarPantalla();
-            cmbLocalidad.DataSource = LocalidadesController.ListarLocalidadesPorProvincia(provincia);
-            cmbLocalidad.DisplayMember = "Localidad";
+            try
+            {
+                var provincia = (Provincia)cmbProvincia.SelectedItem;
+                _LimpiarPantalla();
+                cmbLocalidad.DataSource = LocalidadesController.ListarLocalidadesPorProvincia(provincia);
+                cmbLocalidad.DisplayMember = "Localidad";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un problema al listar las Localidades, inténtelo nuevamente");
+                this.Close();
+            }
+
         }
 
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblCodPostal.Text = ((Localidade) cmbLocalidad.SelectedItem).CodPostal;
+            try
+            {
+                lblCodPostal.Text = ((Localidade)cmbLocalidad.SelectedItem).CodPostal;
+            }
+            catch (Exception)
+            {
+                lblCodPostal.Text = "";
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -55,8 +80,17 @@ namespace ConexcoFacturación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if(_FaltaCampoRequerido())
+                return;
+
             if(txtNuevaLocalidad.Text != "" && txtNuevoCodPostal.Text != "")
             {
+                var result =
+                    MessageBox.Show("Va a agregar una nueva localidad. Ha verificado que los datos sean correctos?",
+                                    "Confirmación", MessageBoxButtons.OKCancel);
+                if(result == System.Windows.Forms.DialogResult.Cancel)
+                    return;
+
                 var nuevaLocalidad = new Localidade();
                 nuevaLocalidad.Localidad = txtNuevaLocalidad.Text;
                 nuevaLocalidad.CodPostal = txtNuevoCodPostal.Text;
@@ -83,13 +117,43 @@ namespace ConexcoFacturación
             this.Close();
         }
 
-        public void LimpiarPantalla()
+        public void _LimpiarPantalla()
         {
             cmbLocalidad.ResetText();
             lblCodPostal.Text = "";
             txtNuevaLocalidad.Text = "";
             txtNuevoCodPostal.Text = "";
+        }
 
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0)
+            {
+                errorProviderRequerido.SetError(control, "Campo Requerido");
+            }
+            else
+            {
+                errorProviderRequerido.Clear();
+            }
+        }
+
+        public bool _FaltaCampoRequerido()
+        {
+            bool error = false;
+
+            if (String.IsNullOrEmpty(cmbProvincia.Text))
+                error = true;
+            if (!String.IsNullOrEmpty(txtNuevaLocalidad.Text) || !String.IsNullOrEmpty(txtNuevoCodPostal.Text))
+                if (String.IsNullOrEmpty(txtNuevaLocalidad.Text) || String.IsNullOrEmpty(txtNuevoCodPostal.Text))
+                    error = true;
+            if (String.IsNullOrEmpty(txtNuevaLocalidad.Text) && String.IsNullOrEmpty(txtNuevoCodPostal.Text) && String.IsNullOrEmpty(cmbLocalidad.Text))
+                error = true;
+
+            if (error)
+                MessageBox.Show("Ingrese los campos requeridos y la nueva Localidad y Código Postal");
+
+            return error;
         }
     }
 }

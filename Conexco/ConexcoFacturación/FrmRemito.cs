@@ -281,7 +281,15 @@ namespace ConexcoFacturación
             remito.CantBultos = Convert.ToInt32(txtCantBultos.Text);
             remito.Observaciones = txtObservaciones.Text;
             remito.Total = Convert.ToDecimal(lblTotal.Text);
-            remito.idEstado = 1;
+
+            try
+            {
+                remito.idEstado = RemitosController.ListarDocumentosEstado().FirstOrDefault().idEstado;
+            }
+            catch (Exception)
+            {
+                remito.idEstado = 1;                
+            }
 
             //Carga de lineas
             foreach (DataGridViewRow row in grdDetalleRemito.Rows)

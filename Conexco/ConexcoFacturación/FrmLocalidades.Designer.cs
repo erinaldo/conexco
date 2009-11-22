@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLocalidades));
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
@@ -41,21 +43,30 @@
             this.txtNuevaLocalidad = new System.Windows.Forms.TextBox();
             this.txtNuevoCodPostal = new System.Windows.Forms.TextBox();
             this.lblTCodPostal = new System.Windows.Forms.Label();
+            this.toolTipLocalidades = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProvincia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(68, 24);
+            this.cmbProvincia.Location = new System.Drawing.Point(100, 22);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(121, 21);
             this.cmbProvincia.TabIndex = 0;
+            this.toolTipLocalidades.SetToolTip(this.cmbProvincia, "Selecciona la Provincia");
+            this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(12, 24);
+            this.lblProvincia.BackColor = System.Drawing.Color.Transparent;
+            this.lblProvincia.Location = new System.Drawing.Point(33, 24);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(51, 13);
             this.lblProvincia.TabIndex = 1;
@@ -64,7 +75,8 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(12, 57);
+            this.lblLocalidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblLocalidad.Location = new System.Drawing.Point(31, 60);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
             this.lblLocalidad.TabIndex = 2;
@@ -72,16 +84,22 @@
             // 
             // cmbLocalidad
             // 
+            this.cmbLocalidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbLocalidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(68, 57);
+            this.cmbLocalidad.Location = new System.Drawing.Point(100, 57);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(121, 21);
             this.cmbLocalidad.Sorted = true;
             this.cmbLocalidad.TabIndex = 3;
+            this.toolTipLocalidades.SetToolTip(this.cmbLocalidad, "Seleccione la Localidad");
+            this.cmbLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
             // lblMensaje
             // 
+            this.lblMensaje.BackColor = System.Drawing.Color.Transparent;
             this.lblMensaje.Location = new System.Drawing.Point(12, 115);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(240, 32);
@@ -91,7 +109,8 @@
             // lblNuevaLocalidad
             // 
             this.lblNuevaLocalidad.AutoSize = true;
-            this.lblNuevaLocalidad.Location = new System.Drawing.Point(12, 159);
+            this.lblNuevaLocalidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevaLocalidad.Location = new System.Drawing.Point(34, 159);
             this.lblNuevaLocalidad.Name = "lblNuevaLocalidad";
             this.lblNuevaLocalidad.Size = new System.Drawing.Size(88, 13);
             this.lblNuevaLocalidad.TabIndex = 5;
@@ -100,6 +119,7 @@
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
+            this.lblCodPostal.BackColor = System.Drawing.Color.Transparent;
             this.lblCodPostal.Location = new System.Drawing.Point(100, 91);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(0, 13);
@@ -108,7 +128,8 @@
             // lblNuevoCodPostal
             // 
             this.lblNuevoCodPostal.AutoSize = true;
-            this.lblNuevoCodPostal.Location = new System.Drawing.Point(12, 189);
+            this.lblNuevoCodPostal.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevoCodPostal.Location = new System.Drawing.Point(15, 189);
             this.lblNuevoCodPostal.Name = "lblNuevoCodPostal";
             this.lblNuevoCodPostal.Size = new System.Drawing.Size(107, 13);
             this.lblNuevoCodPostal.TabIndex = 7;
@@ -136,31 +157,39 @@
             // 
             // txtNuevaLocalidad
             // 
-            this.txtNuevaLocalidad.Location = new System.Drawing.Point(142, 156);
+            this.txtNuevaLocalidad.Location = new System.Drawing.Point(138, 156);
             this.txtNuevaLocalidad.Name = "txtNuevaLocalidad";
             this.txtNuevaLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtNuevaLocalidad.TabIndex = 10;
+            this.toolTipLocalidades.SetToolTip(this.txtNuevaLocalidad, "Ingrese aquí la nueva Localidad");
             // 
             // txtNuevoCodPostal
             // 
-            this.txtNuevoCodPostal.Location = new System.Drawing.Point(142, 189);
+            this.txtNuevoCodPostal.Location = new System.Drawing.Point(138, 189);
             this.txtNuevoCodPostal.Name = "txtNuevoCodPostal";
             this.txtNuevoCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoCodPostal.TabIndex = 11;
+            this.toolTipLocalidades.SetToolTip(this.txtNuevoCodPostal, "Ingrese aquí el nuevo Código Postal");
             // 
             // lblTCodPostal
             // 
             this.lblTCodPostal.AutoSize = true;
+            this.lblTCodPostal.BackColor = System.Drawing.Color.Transparent;
             this.lblTCodPostal.Location = new System.Drawing.Point(12, 91);
             this.lblTCodPostal.Name = "lblTCodPostal";
             this.lblTCodPostal.Size = new System.Drawing.Size(72, 13);
             this.lblTCodPostal.TabIndex = 12;
             this.lblTCodPostal.Text = "Código Postal";
             // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
+            // 
             // FrmLocalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.ClientSize = new System.Drawing.Size(268, 262);
             this.Controls.Add(this.lblTCodPostal);
             this.Controls.Add(this.txtNuevoCodPostal);
@@ -175,9 +204,13 @@
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.cmbProvincia);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmLocalidades";
             this.Text = "Seleccionar Localidad";
             this.Load += new System.EventHandler(this.FrmLocalidades_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +231,7 @@
         private System.Windows.Forms.TextBox txtNuevaLocalidad;
         private System.Windows.Forms.TextBox txtNuevoCodPostal;
         private System.Windows.Forms.Label lblTCodPostal;
+        private System.Windows.Forms.ToolTip toolTipLocalidades;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
     }
 }

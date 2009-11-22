@@ -74,6 +74,20 @@ namespace ConexcoFacturación.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap FondoTodos {
+            get {
+                object obj = ResourceManager.GetObject("FondoTodos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FondoTodos1 {
+            get {
+                object obj = ResourceManager.GetObject("FondoTodos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap guardar3png {
             get {
                 object obj = ResourceManager.GetObject("guardar3png", resourceCulture);

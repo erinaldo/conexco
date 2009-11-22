@@ -67,6 +67,11 @@ namespace ConexcoFacturación
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Esta seguro que desea eliminar el cliente? Se perderan todos sus datos.",
+                                         "Atención", MessageBoxButtons.OKCancel);
+            if(result != System.Windows.Forms.DialogResult.OK)
+                return;
+
             int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
             if(ClientesController.EliminarCliente(idCliente))
             {
