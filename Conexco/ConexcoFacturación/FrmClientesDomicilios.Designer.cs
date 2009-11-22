@@ -131,11 +131,13 @@
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(216, 44);
+            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLocalidad.Location = new System.Drawing.Point(216, 43);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 2;
-            this.btnLocalidad.Text = "...";
+            this.toolTipClientes.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 

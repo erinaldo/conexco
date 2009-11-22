@@ -41,11 +41,11 @@ namespace ConexcoFacturación
 
             if (empresa != null)
             {
-                CargarControles(empresa);
+                _CargarControles(empresa);
             }
         }
 
-        private void CargarControles(Empresa empresa)
+        private void _CargarControles(Empresa empresa)
         {
             IdEmpresa = empresa.idEmpresa;
             txtRazonSocial.Text = empresa.RazonSocial;
@@ -86,46 +86,137 @@ namespace ConexcoFacturación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(txtContrasenia.Text == "")
-            {
-                MessageBox.Show("Debe ingresar una contraseña válida");
+            if (_FaltaCampoRequerido())
                 return;
-            }
-            if(txtContrasenia.Text != txtRepetirContrasenia.Text)
-            {
-                MessageBox.Show("La contraseña y la confirmación de contraseña deben ser iguales");
-                return;
-            }
 
-            var empresa = new Empresa();
-            empresa.idEmpresa = IdEmpresa;
-            empresa.RazonSocial = txtRazonSocial.Text;
-            empresa.Nombre = txtNombre.Text;
-            empresa.Apellido = txtApellido.Text;
-            empresa.Telefono = txtTelefono.Text;
-            empresa.Fax = txtFax.Text;
-            empresa.Email = txtEmail.Text;
-            empresa.Web = txtWeb.Text;
-            empresa.Domicilio = txtDomicilio.Text;
-            empresa.Provincia = cmbProvincia.Text;
-            empresa.Localidad = txtLocalidad.Text;
-            empresa.CodPostal = txtCodPostal.Text;
-            empresa.CUIT = txtCuit.Text;
-            empresa.idCondicionIVA = Convert.ToInt32(cmbCondicionIva.SelectedValue);
-            empresa.InicioActividades = dtpInicioActividades.Value;
-            empresa.IngBrutos = txtIngresosBrutos.Text;
-            empresa.PorcentajeIVA = Convert.ToDecimal(txtPorcentajeIVA.Text);
-            empresa.Contrasenia = txtContrasenia.Text;
-
-            if(EmpresaController.CrearOActualizarEmpresa(empresa))
+            try
             {
-                MessageBox.Show("Datos guardados correctamente");
+                if (txtContrasenia.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar una contraseña válida");
+                    return;
+                }
+                if (txtContrasenia.Text != txtRepetirContrasenia.Text)
+                {
+                    MessageBox.Show("La contraseña y la confirmación de contraseña deben ser iguales");
+                    return;
+                }
+
+                var empresa = new Empresa();
+                empresa.idEmpresa = IdEmpresa;
+                empresa.RazonSocial = txtRazonSocial.Text;
+                empresa.Nombre = txtNombre.Text;
+                empresa.Apellido = txtApellido.Text;
+                empresa.Telefono = txtTelefono.Text;
+                empresa.Fax = txtFax.Text;
+                empresa.Email = txtEmail.Text;
+                empresa.Web = txtWeb.Text;
+                empresa.Domicilio = txtDomicilio.Text;
+                empresa.Provincia = cmbProvincia.Text;
+                empresa.Localidad = txtLocalidad.Text;
+                empresa.CodPostal = txtCodPostal.Text;
+                empresa.CUIT = txtCuit.Text;
+                empresa.idCondicionIVA = Convert.ToInt32(cmbCondicionIva.SelectedValue);
+                empresa.InicioActividades = dtpInicioActividades.Value;
+                empresa.IngBrutos = txtIngresosBrutos.Text;
+                empresa.PorcentajeIVA = Convert.ToDecimal(txtPorcentajeIVA.Text);
+                empresa.Contrasenia = txtContrasenia.Text;
+
+                if (EmpresaController.CrearOActualizarEmpresa(empresa))
+                {
+                    MessageBox.Show("Datos guardados correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un problema al guardar los datos de la Empresa, inténtelo nuevamente");
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ocurrio un problema al guardar los datos de la Empresa, inténtelo nuevamente");
                 this.Close();
+            }
+        }
+
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0 || control.Text.Trim().StartsWith("-"))
+            {
+                errorProviderRequerido.SetError(control, "Campo Requerido");
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al guardar los datos de la empresa, inténtelo nuevamente");
+                errorProviderRequerido.Clear();
             }
+        }
+
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void SoloNumerosYGuion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == '-')
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private bool _FaltaCampoRequerido()
+        {
+            bool error = false;
+
+            if (String.IsNullOrEmpty(txtRazonSocial.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtNombre.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtApellido.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtTelefono.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtCuit.Text))
+                error = true;
+            if (String.IsNullOrEmpty(cmbCondicionIva.Text))
+                error = true;
+            if (String.IsNullOrEmpty(dtpInicioActividades.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtIngresosBrutos.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtPorcentajeIVA.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtContrasenia.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtRepetirContrasenia.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtDomicilio.Text))
+                error = true;
+            if (String.IsNullOrEmpty(cmbProvincia.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtLocalidad.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtCodPostal.Text))
+                error = true;
+
+            if (error)
+                MessageBox.Show("Ingrese los campos requeridos");
+
+            return error;
         }
     }
 }

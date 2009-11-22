@@ -38,10 +38,10 @@ namespace ConexcoFacturación
 
             btnSeleccionar.Visible = SeleccionHabilitada;
 
-            Refrescar();
+            _Refrescar();
         }
 
-        private void Refrescar()
+        private void _Refrescar()
         {
             gridTransportistas.DataSource = ClientesController.ListarTransportistas(IdCliente);
             gridTransportistas.Columns[0].Visible = false;
@@ -51,10 +51,10 @@ namespace ConexcoFacturación
             gridTransportistas.Columns[10].Visible = false;
             gridTransportistas.Columns[11].Visible = false;
 
-            Habilitar(Accion.Inicio);
+            _Habilitar(Accion.Inicio);
         }
 
-        public void Habilitar(Accion accion)
+        public void _Habilitar(Accion accion)
         {
             if (accion == Accion.Inicio)
             {
@@ -104,6 +104,10 @@ namespace ConexcoFacturación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Realmente desea eliminar el Transportista?", "Atención", MessageBoxButtons.OKCancel);
+            if (result != System.Windows.Forms.DialogResult.OK)
+                return;
+
             int idTransportista = 0;
             if (gridTransportistas.SelectedRows.Count > 0)
                 idTransportista = Convert.ToInt32(gridTransportistas.SelectedRows[0].Cells[0].Value);
@@ -113,7 +117,7 @@ namespace ConexcoFacturación
                     MessageBox.Show("Transportista eliminado correctamente");
                 else
                     MessageBox.Show("Ocurrio un problema al eliminar el transportista, inténtelo nuevamente");
-                Refrescar();
+                _Refrescar();
             }
             else
                 MessageBox.Show("Debe seleccionar un transportista");
@@ -121,48 +125,59 @@ namespace ConexcoFacturación
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Habilitar(Accion.Modificar);
+            _Habilitar(Accion.Modificar);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Habilitar(Accion.Crear);
+            _Habilitar(Accion.Crear);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idTransportista = 0;
-            if (gridTransportistas.SelectedRows.Count > 0)
-                idTransportista = Convert.ToInt32(gridTransportistas.SelectedRows[0].Cells[0].Value);
-            Clientes_Transportista transportista;
-            if (idTransportista > 0)
-            {
-                transportista = ClientesController.DatosTransportista(idTransportista);
-            }
-            else
-            {
-                transportista = new Clientes_Transportista();
-                ClientesController.DatosCliente(IdCliente).Clientes_Transportistas.Add(transportista);
-            }
+            if(_FaltaCampoRequerido())
+                return;
 
-            transportista.Nombre = txtNombre.Text;
-            transportista.CUIT = txtCuit.Text;
-            transportista.Telefono = txtTelefono.Text;
-            transportista.Domicilio = txtDomicilio.Text;
-            transportista.Provincia = cmbProvincia.Text;
-            transportista.Localidad = txtLocalidad.Text;
-            transportista.CodPostal = txtCodPostal.Text;
-            transportista.InformacionAdicional = txtInfoAdicional.Text;
-
-            if (ClientesController.GuardarCambios())
+            try
             {
-                MessageBox.Show("Transportista guardado correctamente");
+                int idTransportista = 0;
+                if (gridTransportistas.SelectedRows.Count > 0)
+                    idTransportista = Convert.ToInt32(gridTransportistas.SelectedRows[0].Cells[0].Value);
+                Clientes_Transportista transportista;
+                if (idTransportista > 0)
+                {
+                    transportista = ClientesController.DatosTransportista(idTransportista);
+                }
+                else
+                {
+                    transportista = new Clientes_Transportista();
+                    ClientesController.DatosCliente(IdCliente).Clientes_Transportistas.Add(transportista);
+                }
+
+                transportista.Nombre = txtNombre.Text;
+                transportista.CUIT = txtCuit.Text;
+                transportista.Telefono = txtTelefono.Text;
+                transportista.Domicilio = txtDomicilio.Text;
+                transportista.Provincia = cmbProvincia.Text;
+                transportista.Localidad = txtLocalidad.Text;
+                transportista.CodPostal = txtCodPostal.Text;
+                transportista.InformacionAdicional = txtInfoAdicional.Text;
+
+                if (ClientesController.GuardarCambios())
+                {
+                    MessageBox.Show("Transportista guardado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un problema al guardar el transportista, inténtelo de nuevo");
+                }
+                _Refrescar();
             }
-            else
+            catch(Exception)
             {
                 MessageBox.Show("Ocurrio un problema al guardar el transportista, inténtelo de nuevo");
+                this.Close();
             }
-            Refrescar();
         }
 
         private void gridTransportistas_SelectionChanged(object sender, EventArgs e)
@@ -208,6 +223,58 @@ namespace ConexcoFacturación
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0 || control.Text.Trim().StartsWith("-"))
+            {
+                errorProviderRequerido.SetError(control, "Campo Requerido");
+            }
+            else
+            {
+                errorProviderRequerido.Clear();
+            }
+        }
+
+        private void SoloNumerosYGuion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == '-')
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private bool _FaltaCampoRequerido()
+        {
+            bool error = false;
+
+            if (String.IsNullOrEmpty(txtNombre.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtCuit.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtDomicilio.Text))
+                error = true;
+            if (String.IsNullOrEmpty(cmbProvincia.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtLocalidad.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtCodPostal.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtTelefono.Text))
+                error = true;
+
+            if (error)
+                MessageBox.Show("Ingrese los campos requeridos");
+
+            return error;
         }
     }
 }

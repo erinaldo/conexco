@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpresa));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.gbxDomicilio = new System.Windows.Forms.GroupBox();
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
-            this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
             this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
             this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.lblPorciento = new System.Windows.Forms.Label();
@@ -74,85 +74,107 @@
             this.txtRepetirContrasenia = new System.Windows.Forms.TextBox();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.lblContrasenia = new System.Windows.Forms.Label();
+            this.toolTipEmpresa = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
-            this.gbxDatosFiscales.SuspendLayout();
             this.gbxConfiguracion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(313, 448);
+            this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.Location = new System.Drawing.Point(312, 432);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(79, 30);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(120, 448);
+            this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardar.Location = new System.Drawing.Point(111, 432);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(79, 30);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipEmpresa.SetToolTip(this.btnGuardar, "Guardar cambios");
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtWeb
             // 
-            this.txtWeb.Location = new System.Drawing.Point(105, 223);
+            this.txtWeb.Location = new System.Drawing.Point(365, 156);
             this.txtWeb.Name = "txtWeb";
             this.txtWeb.Size = new System.Drawing.Size(100, 20);
-            this.txtWeb.TabIndex = 6;
+            this.txtWeb.TabIndex = 10;
+            this.toolTipEmpresa.SetToolTip(this.txtWeb, "Sitio Web de su Empresa, opcional");
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(105, 191);
+            this.txtEmail.Location = new System.Drawing.Point(96, 173);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(147, 20);
             this.txtEmail.TabIndex = 5;
+            this.toolTipEmpresa.SetToolTip(this.txtEmail, "E-Mail de su Empresa, opcional");
             // 
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(100, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(141, 20);
             this.txtDomicilio.TabIndex = 0;
+            this.toolTipEmpresa.SetToolTip(this.txtDomicilio, "Domicilio de su Empresa");
+            this.txtDomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(124, 19);
+            this.txtCuit.Location = new System.Drawing.Point(365, 19);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
-            this.txtCuit.TabIndex = 0;
+            this.txtCuit.TabIndex = 6;
+            this.toolTipEmpresa.SetToolTip(this.txtCuit, "CUIT de su Empresa");
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
+            this.txtCuit.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(105, 101);
+            this.txtApellido.Location = new System.Drawing.Point(96, 83);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.Size = new System.Drawing.Size(147, 20);
             this.txtApellido.TabIndex = 2;
+            this.toolTipEmpresa.SetToolTip(this.txtApellido, "Apellido del Responsable");
+            this.txtApellido.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(105, 69);
+            this.txtNombre.Location = new System.Drawing.Point(96, 53);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(147, 20);
             this.txtNombre.TabIndex = 1;
+            this.toolTipEmpresa.SetToolTip(this.txtNombre, "Nombre del Responsable");
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(105, 37);
+            this.txtRazonSocial.Location = new System.Drawing.Point(96, 23);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(100, 20);
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 20);
             this.txtRazonSocial.TabIndex = 0;
+            this.toolTipEmpresa.SetToolTip(this.txtRazonSocial, "Razón Social de su Empresa");
+            this.txtRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblWeb
             // 
             this.lblWeb.AutoSize = true;
-            this.lblWeb.Location = new System.Drawing.Point(24, 230);
+            this.lblWeb.Location = new System.Drawing.Point(328, 161);
             this.lblWeb.Name = "lblWeb";
             this.lblWeb.Size = new System.Drawing.Size(30, 13);
             this.lblWeb.TabIndex = 28;
@@ -161,7 +183,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(24, 198);
+            this.lblEmail.Location = new System.Drawing.Point(53, 178);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 27;
@@ -170,7 +192,7 @@
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(16, 26);
+            this.lblDomicilio.Location = new System.Drawing.Point(32, 26);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
             this.lblDomicilio.TabIndex = 26;
@@ -179,7 +201,7 @@
             // lblCondIva
             // 
             this.lblCondIva.AutoSize = true;
-            this.lblCondIva.Location = new System.Drawing.Point(21, 58);
+            this.lblCondIva.Location = new System.Drawing.Point(303, 58);
             this.lblCondIva.Name = "lblCondIva";
             this.lblCondIva.Size = new System.Drawing.Size(55, 13);
             this.lblCondIva.TabIndex = 25;
@@ -188,7 +210,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(21, 26);
+            this.lblCuit.Location = new System.Drawing.Point(326, 23);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(32, 13);
             this.lblCuit.TabIndex = 24;
@@ -197,7 +219,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(24, 108);
+            this.lblApellido.Location = new System.Drawing.Point(41, 87);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 23;
@@ -206,7 +228,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(24, 76);
+            this.lblNombre.Location = new System.Drawing.Point(41, 57);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 22;
@@ -215,14 +237,15 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(24, 44);
+            this.lblRazonSocial.Location = new System.Drawing.Point(15, 26);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(70, 13);
             this.lblRazonSocial.TabIndex = 21;
-            this.lblRazonSocial.Text = "Razon Social";
+            this.lblRazonSocial.Text = "Razón Social";
             // 
             // lblTitulo
             // 
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(350, 33);
@@ -234,13 +257,15 @@
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(97, 69);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.txtLocalidad.TabIndex = 1;
+            this.txtLocalidad.Size = new System.Drawing.Size(141, 20);
+            this.txtLocalidad.TabIndex = 3;
+            this.toolTipEmpresa.SetToolTip(this.txtLocalidad, "Localidad de su Empresa");
+            this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(16, 76);
+            this.lblLocalidad.Location = new System.Drawing.Point(28, 76);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
             this.lblLocalidad.TabIndex = 41;
@@ -249,7 +274,7 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(16, 48);
+            this.lblProvincia.Location = new System.Drawing.Point(30, 48);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(51, 13);
             this.lblProvincia.TabIndex = 43;
@@ -260,44 +285,51 @@
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
-            this.txtCodPostal.TabIndex = 3;
+            this.txtCodPostal.TabIndex = 4;
+            this.toolTipEmpresa.SetToolTip(this.txtCodPostal, "Código Postal de su Empresa");
+            this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(16, 104);
+            this.lblCodPostal.Location = new System.Drawing.Point(9, 104);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(72, 13);
             this.lblCodPostal.TabIndex = 45;
-            this.lblCodPostal.Text = "Codigo Postal";
+            this.lblCodPostal.Text = "Código Postal";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(105, 130);
+            this.txtTelefono.Location = new System.Drawing.Point(96, 113);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 3;
+            this.toolTipEmpresa.SetToolTip(this.txtTelefono, "Teléfono de su Empresa");
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(24, 137);
+            this.lblTelefono.Location = new System.Drawing.Point(36, 118);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 47;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Teléfono";
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(105, 156);
+            this.txtFax.Location = new System.Drawing.Point(96, 143);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(100, 20);
             this.txtFax.TabIndex = 4;
+            this.toolTipEmpresa.SetToolTip(this.txtFax, "Fax de su Empresa, opcional");
+            this.txtFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
             // 
             // lblFax
             // 
             this.lblFax.AutoSize = true;
-            this.lblFax.Location = new System.Drawing.Point(24, 163);
+            this.lblFax.Location = new System.Drawing.Point(61, 145);
             this.lblFax.Name = "lblFax";
             this.lblFax.Size = new System.Drawing.Size(24, 13);
             this.lblFax.TabIndex = 49;
@@ -306,7 +338,7 @@
             // lblInicioActividades
             // 
             this.lblInicioActividades.AutoSize = true;
-            this.lblInicioActividades.Location = new System.Drawing.Point(21, 92);
+            this.lblInicioActividades.Location = new System.Drawing.Point(253, 92);
             this.lblInicioActividades.Name = "lblInicioActividades";
             this.lblInicioActividades.Size = new System.Drawing.Size(105, 13);
             this.lblInicioActividades.TabIndex = 51;
@@ -314,15 +346,18 @@
             // 
             // txtIngresosBrutos
             // 
-            this.txtIngresosBrutos.Location = new System.Drawing.Point(124, 125);
+            this.txtIngresosBrutos.Location = new System.Drawing.Point(365, 122);
             this.txtIngresosBrutos.Name = "txtIngresosBrutos";
             this.txtIngresosBrutos.Size = new System.Drawing.Size(100, 20);
-            this.txtIngresosBrutos.TabIndex = 3;
+            this.txtIngresosBrutos.TabIndex = 9;
+            this.toolTipEmpresa.SetToolTip(this.txtIngresosBrutos, "Ingresos Brutos de su Empresa");
+            this.txtIngresosBrutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
+            this.txtIngresosBrutos.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblIngresosBrutos
             // 
             this.lblIngresosBrutos.AutoSize = true;
-            this.lblIngresosBrutos.Location = new System.Drawing.Point(21, 132);
+            this.lblIngresosBrutos.Location = new System.Drawing.Point(278, 126);
             this.lblIngresosBrutos.Name = "lblIngresosBrutos";
             this.lblIngresosBrutos.Size = new System.Drawing.Size(80, 13);
             this.lblIngresosBrutos.TabIndex = 53;
@@ -330,12 +365,21 @@
             // 
             // gbxDatosPersonales
             // 
+            this.gbxDatosPersonales.BackColor = System.Drawing.Color.Transparent;
+            this.gbxDatosPersonales.Controls.Add(this.dtpInicioActividades);
             this.gbxDatosPersonales.Controls.Add(this.lblRazonSocial);
+            this.gbxDatosPersonales.Controls.Add(this.cmbCondicionIva);
             this.gbxDatosPersonales.Controls.Add(this.lblNombre);
+            this.gbxDatosPersonales.Controls.Add(this.lblCuit);
+            this.gbxDatosPersonales.Controls.Add(this.lblCondIva);
             this.gbxDatosPersonales.Controls.Add(this.lblApellido);
+            this.gbxDatosPersonales.Controls.Add(this.txtIngresosBrutos);
             this.gbxDatosPersonales.Controls.Add(this.txtRazonSocial);
+            this.gbxDatosPersonales.Controls.Add(this.txtCuit);
             this.gbxDatosPersonales.Controls.Add(this.txtFax);
+            this.gbxDatosPersonales.Controls.Add(this.lblIngresosBrutos);
             this.gbxDatosPersonales.Controls.Add(this.lblFax);
+            this.gbxDatosPersonales.Controls.Add(this.lblInicioActividades);
             this.gbxDatosPersonales.Controls.Add(this.txtNombre);
             this.gbxDatosPersonales.Controls.Add(this.txtApellido);
             this.gbxDatosPersonales.Controls.Add(this.txtTelefono);
@@ -346,13 +390,14 @@
             this.gbxDatosPersonales.Controls.Add(this.txtWeb);
             this.gbxDatosPersonales.Location = new System.Drawing.Point(15, 51);
             this.gbxDatosPersonales.Name = "gbxDatosPersonales";
-            this.gbxDatosPersonales.Size = new System.Drawing.Size(226, 265);
+            this.gbxDatosPersonales.Size = new System.Drawing.Size(488, 213);
             this.gbxDatosPersonales.TabIndex = 0;
             this.gbxDatosPersonales.TabStop = false;
-            this.gbxDatosPersonales.Text = "Datos Personales";
+            this.gbxDatosPersonales.Text = "Información de su Empresa";
             // 
             // gbxDomicilio
             // 
+            this.gbxDomicilio.BackColor = System.Drawing.Color.Transparent;
             this.gbxDomicilio.Controls.Add(this.btnLocalidad);
             this.gbxDomicilio.Controls.Add(this.cmbProvincia);
             this.gbxDomicilio.Controls.Add(this.lblDomicilio);
@@ -362,7 +407,7 @@
             this.gbxDomicilio.Controls.Add(this.lblProvincia);
             this.gbxDomicilio.Controls.Add(this.txtCodPostal);
             this.gbxDomicilio.Controls.Add(this.lblCodPostal);
-            this.gbxDomicilio.Location = new System.Drawing.Point(262, 51);
+            this.gbxDomicilio.Location = new System.Drawing.Point(247, 282);
             this.gbxDomicilio.Name = "gbxDomicilio";
             this.gbxDomicilio.Size = new System.Drawing.Size(256, 142);
             this.gbxDomicilio.TabIndex = 1;
@@ -371,59 +416,52 @@
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(203, 44);
+            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLocalidad.Location = new System.Drawing.Point(213, 42);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
-            this.btnLocalidad.TabIndex = 47;
-            this.btnLocalidad.Text = "...";
+            this.btnLocalidad.TabIndex = 2;
+            this.toolTipEmpresa.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
-            this.cmbProvincia.TabIndex = 46;
-            // 
-            // gbxDatosFiscales
-            // 
-            this.gbxDatosFiscales.Controls.Add(this.dtpInicioActividades);
-            this.gbxDatosFiscales.Controls.Add(this.cmbCondicionIva);
-            this.gbxDatosFiscales.Controls.Add(this.lblCuit);
-            this.gbxDatosFiscales.Controls.Add(this.lblCondIva);
-            this.gbxDatosFiscales.Controls.Add(this.txtIngresosBrutos);
-            this.gbxDatosFiscales.Controls.Add(this.txtCuit);
-            this.gbxDatosFiscales.Controls.Add(this.lblIngresosBrutos);
-            this.gbxDatosFiscales.Controls.Add(this.lblInicioActividades);
-            this.gbxDatosFiscales.Location = new System.Drawing.Point(262, 199);
-            this.gbxDatosFiscales.Name = "gbxDatosFiscales";
-            this.gbxDatosFiscales.Size = new System.Drawing.Size(256, 157);
-            this.gbxDatosFiscales.TabIndex = 2;
-            this.gbxDatosFiscales.TabStop = false;
-            this.gbxDatosFiscales.Text = "Datos Fiscales";
+            this.cmbProvincia.TabIndex = 1;
+            this.toolTipEmpresa.SetToolTip(this.cmbProvincia, "Provincia de su Empresa");
+            this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // dtpInicioActividades
             // 
             this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioActividades.Location = new System.Drawing.Point(124, 86);
+            this.dtpInicioActividades.Location = new System.Drawing.Point(365, 88);
             this.dtpInicioActividades.Name = "dtpInicioActividades";
-            this.dtpInicioActividades.Size = new System.Drawing.Size(104, 20);
-            this.dtpInicioActividades.TabIndex = 55;
+            this.dtpInicioActividades.Size = new System.Drawing.Size(100, 20);
+            this.dtpInicioActividades.TabIndex = 8;
+            this.toolTipEmpresa.SetToolTip(this.dtpInicioActividades, "Inicio de Actividades de su Empresa");
+            this.dtpInicioActividades.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // cmbCondicionIva
             // 
+            this.cmbCondicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicionIva.FormattingEnabled = true;
-            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
+            this.cmbCondicionIva.Location = new System.Drawing.Point(365, 53);
             this.cmbCondicionIva.Name = "cmbCondicionIva";
-            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
-            this.cmbCondicionIva.TabIndex = 54;
+            this.cmbCondicionIva.Size = new System.Drawing.Size(100, 21);
+            this.cmbCondicionIva.TabIndex = 7;
+            this.toolTipEmpresa.SetToolTip(this.cmbCondicionIva, "Condición ante el IVA de su Empresa");
+            this.cmbCondicionIva.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblPorciento
             // 
             this.lblPorciento.AutoSize = true;
-            this.lblPorciento.Location = new System.Drawing.Point(159, 29);
+            this.lblPorciento.Location = new System.Drawing.Point(154, 27);
             this.lblPorciento.Name = "lblPorciento";
             this.lblPorciento.Size = new System.Drawing.Size(15, 13);
             this.lblPorciento.TabIndex = 58;
@@ -431,15 +469,18 @@
             // 
             // txtPorcentajeIVA
             // 
-            this.txtPorcentajeIVA.Location = new System.Drawing.Point(115, 26);
+            this.txtPorcentajeIVA.Location = new System.Drawing.Point(113, 23);
             this.txtPorcentajeIVA.Name = "txtPorcentajeIVA";
             this.txtPorcentajeIVA.Size = new System.Drawing.Size(38, 20);
-            this.txtPorcentajeIVA.TabIndex = 57;
+            this.txtPorcentajeIVA.TabIndex = 0;
+            this.toolTipEmpresa.SetToolTip(this.txtPorcentajeIVA, "Porcentaje de IVA que maneja en su Empresa (Ej. 21%)");
+            this.txtPorcentajeIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            this.txtPorcentajeIVA.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblPorcentajeIVA
             // 
             this.lblPorcentajeIVA.AutoSize = true;
-            this.lblPorcentajeIVA.Location = new System.Drawing.Point(19, 29);
+            this.lblPorcentajeIVA.Location = new System.Drawing.Point(28, 26);
             this.lblPorcentajeIVA.Name = "lblPorcentajeIVA";
             this.lblPorcentajeIVA.Size = new System.Drawing.Size(78, 13);
             this.lblPorcentajeIVA.TabIndex = 56;
@@ -447,6 +488,7 @@
             // 
             // gbxConfiguracion
             // 
+            this.gbxConfiguracion.BackColor = System.Drawing.Color.Transparent;
             this.gbxConfiguracion.Controls.Add(this.lblRepetirContrasenia);
             this.gbxConfiguracion.Controls.Add(this.txtRepetirContrasenia);
             this.gbxConfiguracion.Controls.Add(this.txtContrasenia);
@@ -454,17 +496,17 @@
             this.gbxConfiguracion.Controls.Add(this.lblPorciento);
             this.gbxConfiguracion.Controls.Add(this.lblPorcentajeIVA);
             this.gbxConfiguracion.Controls.Add(this.txtPorcentajeIVA);
-            this.gbxConfiguracion.Location = new System.Drawing.Point(20, 324);
+            this.gbxConfiguracion.Location = new System.Drawing.Point(15, 282);
             this.gbxConfiguracion.Name = "gbxConfiguracion";
             this.gbxConfiguracion.Size = new System.Drawing.Size(221, 100);
-            this.gbxConfiguracion.TabIndex = 41;
+            this.gbxConfiguracion.TabIndex = 2;
             this.gbxConfiguracion.TabStop = false;
             this.gbxConfiguracion.Text = "Configuración del Sistema";
             // 
             // lblRepetirContrasenia
             // 
             this.lblRepetirContrasenia.AutoSize = true;
-            this.lblRepetirContrasenia.Location = new System.Drawing.Point(19, 77);
+            this.lblRepetirContrasenia.Location = new System.Drawing.Point(8, 74);
             this.lblRepetirContrasenia.Name = "lblRepetirContrasenia";
             this.lblRepetirContrasenia.Size = new System.Drawing.Size(98, 13);
             this.lblRepetirContrasenia.TabIndex = 62;
@@ -472,36 +514,48 @@
             // 
             // txtRepetirContrasenia
             // 
-            this.txtRepetirContrasenia.Location = new System.Drawing.Point(115, 74);
+            this.txtRepetirContrasenia.Location = new System.Drawing.Point(113, 71);
             this.txtRepetirContrasenia.Name = "txtRepetirContrasenia";
+            this.txtRepetirContrasenia.PasswordChar = '*';
             this.txtRepetirContrasenia.Size = new System.Drawing.Size(100, 20);
-            this.txtRepetirContrasenia.TabIndex = 61;
+            this.txtRepetirContrasenia.TabIndex = 2;
+            this.toolTipEmpresa.SetToolTip(this.txtRepetirContrasenia, "Repita la contraseña");
             this.txtRepetirContrasenia.UseSystemPasswordChar = true;
+            this.txtRepetirContrasenia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(115, 48);
+            this.txtContrasenia.Location = new System.Drawing.Point(113, 47);
             this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(100, 20);
-            this.txtContrasenia.TabIndex = 60;
+            this.txtContrasenia.TabIndex = 1;
+            this.toolTipEmpresa.SetToolTip(this.txtContrasenia, "Contraseña para ingresar al Sistema");
             this.txtContrasenia.UseSystemPasswordChar = true;
+            this.txtContrasenia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblContrasenia
             // 
             this.lblContrasenia.AutoSize = true;
-            this.lblContrasenia.Location = new System.Drawing.Point(19, 55);
+            this.lblContrasenia.Location = new System.Drawing.Point(45, 52);
             this.lblContrasenia.Name = "lblContrasenia";
             this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
             this.lblContrasenia.TabIndex = 59;
             this.lblContrasenia.Text = "Contraseña";
             // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
+            // 
             // FrmEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 483);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(530, 475);
             this.Controls.Add(this.gbxConfiguracion);
-            this.Controls.Add(this.gbxDatosFiscales);
             this.Controls.Add(this.gbxDomicilio);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCancelar);
@@ -517,10 +571,9 @@
             this.gbxDatosPersonales.PerformLayout();
             this.gbxDomicilio.ResumeLayout(false);
             this.gbxDomicilio.PerformLayout();
-            this.gbxDatosFiscales.ResumeLayout(false);
-            this.gbxDatosFiscales.PerformLayout();
             this.gbxConfiguracion.ResumeLayout(false);
             this.gbxConfiguracion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,7 +612,6 @@
         private System.Windows.Forms.Label lblIngresosBrutos;
         private System.Windows.Forms.GroupBox gbxDatosPersonales;
         private System.Windows.Forms.GroupBox gbxDomicilio;
-        private System.Windows.Forms.GroupBox gbxDatosFiscales;
         private System.Windows.Forms.Button btnLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.ComboBox cmbCondicionIva;
@@ -572,6 +624,8 @@
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblRepetirContrasenia;
         private System.Windows.Forms.TextBox txtRepetirContrasenia;
+        private System.Windows.Forms.ToolTip toolTipEmpresa;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
 
     }
 }
