@@ -72,8 +72,6 @@
             this.lblTEmpPosicionIva = new System.Windows.Forms.Label();
             this.lblEmpCuit = new System.Windows.Forms.Label();
             this.lblTEmpProvincia = new System.Windows.Forms.Label();
-            this.lblEstadoDoc = new System.Windows.Forms.Label();
-            this.cmbEstadoDoc = new System.Windows.Forms.ComboBox();
             this.btnClientes = new System.Windows.Forms.Button();
             this.lblTEmpFax = new System.Windows.Forms.Label();
             this.lblTEmpTelefono = new System.Windows.Forms.Label();
@@ -102,31 +100,36 @@
             this.lblTEmpCuit = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtNumFactura = new System.Windows.Forms.TextBox();
+            this.txtNumRemito = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxEmpresa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLetra
             // 
             this.lblLetra.AutoSize = true;
+            this.lblLetra.BackColor = System.Drawing.Color.Transparent;
             this.lblLetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLetra.Location = new System.Drawing.Point(333, 23);
+            this.lblLetra.Location = new System.Drawing.Point(333, 63);
             this.lblLetra.Name = "lblLetra";
             this.lblLetra.Size = new System.Drawing.Size(23, 24);
             this.lblLetra.TabIndex = 0;
             this.lblLetra.Text = "R";
+            this.toolTipControl.SetToolTip(this.lblLetra, "Remito");
             // 
             // lblTNumFact
             // 
             this.lblTNumFact.AutoSize = true;
-            this.lblTNumFact.Location = new System.Drawing.Point(384, 37);
+            this.lblTNumFact.BackColor = System.Drawing.Color.Transparent;
+            this.lblTNumFact.Location = new System.Drawing.Point(384, 77);
             this.lblTNumFact.Name = "lblTNumFact";
             this.lblTNumFact.Size = new System.Drawing.Size(19, 13);
             this.lblTNumFact.TabIndex = 78;
@@ -134,26 +137,32 @@
             // 
             // btnGuardarImprimir
             // 
-            this.btnGuardarImprimir.Location = new System.Drawing.Point(146, 685);
+            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
+            this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardarImprimir.Location = new System.Drawing.Point(12, 4);
             this.btnGuardarImprimir.Name = "btnGuardarImprimir";
-            this.btnGuardarImprimir.Size = new System.Drawing.Size(109, 23);
-            this.btnGuardarImprimir.TabIndex = 77;
-            this.btnGuardarImprimir.Text = "Guardar e Imprimir";
+            this.btnGuardarImprimir.Size = new System.Drawing.Size(139, 31);
+            this.btnGuardarImprimir.TabIndex = 42;
+            this.btnGuardarImprimir.Text = "       Guardar e Imprimir";
+            this.toolTipControl.SetToolTip(this.btnGuardarImprimir, "Guardar e Imprimir Remito");
             this.btnGuardarImprimir.UseVisualStyleBackColor = true;
             this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // lblValorDeclarado
             // 
             this.lblValorDeclarado.AutoSize = true;
-            this.lblValorDeclarado.Location = new System.Drawing.Point(452, 604);
+            this.lblValorDeclarado.BackColor = System.Drawing.Color.Transparent;
+            this.lblValorDeclarado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorDeclarado.Location = new System.Drawing.Point(436, 644);
             this.lblValorDeclarado.Name = "lblValorDeclarado";
-            this.lblValorDeclarado.Size = new System.Drawing.Size(95, 13);
+            this.lblValorDeclarado.Size = new System.Drawing.Size(113, 13);
             this.lblValorDeclarado.TabIndex = 62;
             this.lblValorDeclarado.Text = "Valor Declarado $:";
+            this.toolTipControl.SetToolTip(this.lblValorDeclarado, "Valor IVA Incluido");
             // 
             // txtCondIva
             // 
-            this.txtCondIva.Location = new System.Drawing.Point(564, 94);
+            this.txtCondIva.Location = new System.Drawing.Point(564, 80);
             this.txtCondIva.Name = "txtCondIva";
             this.txtCondIva.ReadOnly = true;
             this.txtCondIva.Size = new System.Drawing.Size(100, 20);
@@ -161,30 +170,38 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(419, 685);
+            this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.Location = new System.Drawing.Point(285, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 76;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(85, 31);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "       Cancelar";
+            this.toolTipControl.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(578, 604);
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Location = new System.Drawing.Point(578, 644);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTotal.Size = new System.Drawing.Size(100, 13);
             this.lblTotal.TabIndex = 63;
             this.lblTotal.Text = "0";
+            this.toolTipControl.SetToolTip(this.lblTotal, "IVA Incluido");
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(291, 685);
+            this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardar.Location = new System.Drawing.Point(174, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 48;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Size = new System.Drawing.Size(85, 31);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "       Guardar";
+            this.toolTipControl.SetToolTip(this.btnGuardar, "Guardar Remito");
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -204,6 +221,7 @@
             this.grdDetalleRemito.TabIndex = 0;
             this.grdDetalleRemito.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_CellValueChanged);
             this.grdDetalleRemito.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleRemito_UserDeletedRow);
+            this.grdDetalleRemito.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grdDetalleRemito_CellValidating);
             this.grdDetalleRemito.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_RowValidated);
             // 
             // Envases
@@ -220,16 +238,18 @@
             // 
             // Codigo
             // 
-            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
+            this.Codigo.ToolTipText = "Código y Color de Artículo";
             this.Codigo.Width = 80;
             // 
             // Descripcion
             // 
-            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.ToolTipText = "Descripción de Artículo";
             this.Descripcion.Width = 280;
             // 
             // Precio
@@ -237,6 +257,7 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            this.Precio.ToolTipText = "IVA Incluido";
             this.Precio.Width = 60;
             // 
             // Totales
@@ -244,14 +265,16 @@
             this.Totales.HeaderText = "Totales";
             this.Totales.Name = "Totales";
             this.Totales.ReadOnly = true;
+            this.Totales.ToolTipText = "IVA Incluido";
             this.Totales.Width = 70;
             // 
             // gbxDetalle
             // 
+            this.gbxDetalle.BackColor = System.Drawing.Color.Transparent;
             this.gbxDetalle.Controls.Add(this.lblTArticulo);
             this.gbxDetalle.Controls.Add(this.lblTCantidad);
             this.gbxDetalle.Controls.Add(this.grdDetalleRemito);
-            this.gbxDetalle.Location = new System.Drawing.Point(9, 361);
+            this.gbxDetalle.Location = new System.Drawing.Point(9, 401);
             this.gbxDetalle.Name = "gbxDetalle";
             this.gbxDetalle.Size = new System.Drawing.Size(672, 228);
             this.gbxDetalle.TabIndex = 60;
@@ -278,6 +301,7 @@
             // 
             // gbxFiscales
             // 
+            this.gbxFiscales.BackColor = System.Drawing.Color.Transparent;
             this.gbxFiscales.Controls.Add(this.lblCantBultos);
             this.gbxFiscales.Controls.Add(this.txtCantBultos);
             this.gbxFiscales.Controls.Add(this.txtOrdenCompra);
@@ -289,7 +313,7 @@
             this.gbxFiscales.Controls.Add(this.txtTransportistaRazonSocial);
             this.gbxFiscales.Controls.Add(this.lblDomicilioComercial);
             this.gbxFiscales.Controls.Add(this.lblTTransportista);
-            this.gbxFiscales.Location = new System.Drawing.Point(9, 259);
+            this.gbxFiscales.Location = new System.Drawing.Point(9, 299);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 91);
             this.gbxFiscales.TabIndex = 59;
@@ -298,7 +322,7 @@
             // lblCantBultos
             // 
             this.lblCantBultos.AutoSize = true;
-            this.lblCantBultos.Location = new System.Drawing.Point(427, 55);
+            this.lblCantBultos.Location = new System.Drawing.Point(424, 55);
             this.lblCantBultos.Name = "lblCantBultos";
             this.lblCantBultos.Size = new System.Drawing.Size(131, 13);
             this.lblCantBultos.TabIndex = 66;
@@ -310,6 +334,7 @@
             this.txtCantBultos.Name = "txtCantBultos";
             this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
             this.txtCantBultos.TabIndex = 65;
+            this.txtCantBultos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtOrdenCompra
             // 
@@ -317,6 +342,7 @@
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
             this.txtOrdenCompra.TabIndex = 64;
+            this.txtOrdenCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // lblOrdenCompra
             // 
@@ -329,16 +355,17 @@
             // 
             // txtTransportistaCUIT
             // 
-            this.txtTransportistaCUIT.Location = new System.Drawing.Point(74, 65);
+            this.txtTransportistaCUIT.Location = new System.Drawing.Point(114, 65);
             this.txtTransportistaCUIT.Name = "txtTransportistaCUIT";
             this.txtTransportistaCUIT.ReadOnly = true;
             this.txtTransportistaCUIT.Size = new System.Drawing.Size(100, 20);
             this.txtTransportistaCUIT.TabIndex = 62;
+            this.toolTipControl.SetToolTip(this.txtTransportistaCUIT, "CUIT del transportista");
             // 
             // lblTransportistaCUIT
             // 
             this.lblTransportistaCUIT.AutoSize = true;
-            this.lblTransportistaCUIT.Location = new System.Drawing.Point(18, 65);
+            this.lblTransportistaCUIT.Location = new System.Drawing.Point(60, 68);
             this.lblTransportistaCUIT.Name = "lblTransportistaCUIT";
             this.lblTransportistaCUIT.Size = new System.Drawing.Size(50, 13);
             this.lblTransportistaCUIT.TabIndex = 61;
@@ -346,35 +373,39 @@
             // 
             // btnTransportistas
             // 
-            this.btnTransportistas.Location = new System.Drawing.Point(329, 12);
+            this.btnTransportistas.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnTransportistas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTransportistas.Location = new System.Drawing.Point(358, 11);
             this.btnTransportistas.Name = "btnTransportistas";
             this.btnTransportistas.Size = new System.Drawing.Size(32, 23);
             this.btnTransportistas.TabIndex = 60;
-            this.btnTransportistas.Text = "...";
             this.toolTipControl.SetToolTip(this.btnTransportistas, "Buscador de Transportistas");
             this.btnTransportistas.UseVisualStyleBackColor = true;
             this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
             // 
             // txtTransportistaDomicilio
             // 
-            this.txtTransportistaDomicilio.Location = new System.Drawing.Point(125, 41);
+            this.txtTransportistaDomicilio.Location = new System.Drawing.Point(114, 39);
             this.txtTransportistaDomicilio.Name = "txtTransportistaDomicilio";
             this.txtTransportistaDomicilio.ReadOnly = true;
-            this.txtTransportistaDomicilio.Size = new System.Drawing.Size(194, 20);
+            this.txtTransportistaDomicilio.Size = new System.Drawing.Size(229, 20);
             this.txtTransportistaDomicilio.TabIndex = 57;
+            this.toolTipControl.SetToolTip(this.txtTransportistaDomicilio, "Domicilio del transportista");
             // 
             // txtTransportistaRazonSocial
             // 
-            this.txtTransportistaRazonSocial.Location = new System.Drawing.Point(90, 13);
+            this.txtTransportistaRazonSocial.Location = new System.Drawing.Point(114, 13);
             this.txtTransportistaRazonSocial.Name = "txtTransportistaRazonSocial";
             this.txtTransportistaRazonSocial.ReadOnly = true;
             this.txtTransportistaRazonSocial.Size = new System.Drawing.Size(229, 20);
             this.txtTransportistaRazonSocial.TabIndex = 6;
+            this.toolTipControl.SetToolTip(this.txtTransportistaRazonSocial, "Utilice el buscador para seleccionar un transportista");
+            this.txtTransportistaRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblDomicilioComercial
             // 
             this.lblDomicilioComercial.AutoSize = true;
-            this.lblDomicilioComercial.Location = new System.Drawing.Point(18, 46);
+            this.lblDomicilioComercial.Location = new System.Drawing.Point(9, 42);
             this.lblDomicilioComercial.Name = "lblDomicilioComercial";
             this.lblDomicilioComercial.Size = new System.Drawing.Size(101, 13);
             this.lblDomicilioComercial.TabIndex = 3;
@@ -383,7 +414,7 @@
             // lblTTransportista
             // 
             this.lblTTransportista.AutoSize = true;
-            this.lblTTransportista.Location = new System.Drawing.Point(16, 16);
+            this.lblTTransportista.Location = new System.Drawing.Point(39, 16);
             this.lblTTransportista.Name = "lblTTransportista";
             this.lblTTransportista.Size = new System.Drawing.Size(71, 13);
             this.lblTTransportista.TabIndex = 0;
@@ -391,7 +422,7 @@
             // 
             // txtClienteCod
             // 
-            this.txtClienteCod.Location = new System.Drawing.Point(564, 68);
+            this.txtClienteCod.Location = new System.Drawing.Point(564, 54);
             this.txtClienteCod.Name = "txtClienteCod";
             this.txtClienteCod.ReadOnly = true;
             this.txtClienteCod.Size = new System.Drawing.Size(100, 20);
@@ -399,7 +430,7 @@
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(564, 44);
+            this.txtCuit.Location = new System.Drawing.Point(564, 30);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.ReadOnly = true;
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
@@ -408,7 +439,7 @@
             // lblClienteCod
             // 
             this.lblClienteCod.AutoSize = true;
-            this.lblClienteCod.Location = new System.Drawing.Point(495, 71);
+            this.lblClienteCod.Location = new System.Drawing.Point(493, 57);
             this.lblClienteCod.Name = "lblClienteCod";
             this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
             this.lblClienteCod.TabIndex = 4;
@@ -417,7 +448,7 @@
             // lblIva
             // 
             this.lblIva.AutoSize = true;
-            this.lblIva.Location = new System.Drawing.Point(523, 97);
+            this.lblIva.Location = new System.Drawing.Point(523, 83);
             this.lblIva.Name = "lblIva";
             this.lblIva.Size = new System.Drawing.Size(27, 13);
             this.lblIva.TabIndex = 2;
@@ -426,7 +457,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(500, 47);
+            this.lblCuit.Location = new System.Drawing.Point(500, 33);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(50, 13);
             this.lblCuit.TabIndex = 1;
@@ -435,7 +466,8 @@
             // lblEmpInicioActividades
             // 
             this.lblEmpInicioActividades.AutoSize = true;
-            this.lblEmpInicioActividades.Location = new System.Drawing.Point(565, 103);
+            this.lblEmpInicioActividades.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpInicioActividades.Location = new System.Drawing.Point(563, 142);
             this.lblEmpInicioActividades.Name = "lblEmpInicioActividades";
             this.lblEmpInicioActividades.Size = new System.Drawing.Size(83, 13);
             this.lblEmpInicioActividades.TabIndex = 58;
@@ -444,7 +476,8 @@
             // lblTInicioActividades
             // 
             this.lblTInicioActividades.AutoSize = true;
-            this.lblTInicioActividades.Location = new System.Drawing.Point(451, 103);
+            this.lblTInicioActividades.BackColor = System.Drawing.Color.Transparent;
+            this.lblTInicioActividades.Location = new System.Drawing.Point(451, 142);
             this.lblTInicioActividades.Name = "lblTInicioActividades";
             this.lblTInicioActividades.Size = new System.Drawing.Size(108, 13);
             this.lblTInicioActividades.TabIndex = 57;
@@ -453,7 +486,8 @@
             // lblEmpIngBrutos
             // 
             this.lblEmpIngBrutos.AutoSize = true;
-            this.lblEmpIngBrutos.Location = new System.Drawing.Point(563, 84);
+            this.lblEmpIngBrutos.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpIngBrutos.Location = new System.Drawing.Point(563, 117);
             this.lblEmpIngBrutos.Name = "lblEmpIngBrutos";
             this.lblEmpIngBrutos.Size = new System.Drawing.Size(110, 13);
             this.lblEmpIngBrutos.TabIndex = 56;
@@ -462,7 +496,8 @@
             // lblTEmpIngBrut
             // 
             this.lblTEmpIngBrut.AutoSize = true;
-            this.lblTEmpIngBrut.Location = new System.Drawing.Point(432, 84);
+            this.lblTEmpIngBrut.BackColor = System.Drawing.Color.Transparent;
+            this.lblTEmpIngBrut.Location = new System.Drawing.Point(432, 117);
             this.lblTEmpIngBrut.Name = "lblTEmpIngBrut";
             this.lblTEmpIngBrut.Size = new System.Drawing.Size(127, 13);
             this.lblTEmpIngBrut.TabIndex = 55;
@@ -480,7 +515,8 @@
             // lblEmpCuit
             // 
             this.lblEmpCuit.AutoSize = true;
-            this.lblEmpCuit.Location = new System.Drawing.Point(563, 52);
+            this.lblEmpCuit.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpCuit.Location = new System.Drawing.Point(563, 92);
             this.lblEmpCuit.Name = "lblEmpCuit";
             this.lblEmpCuit.Size = new System.Drawing.Size(83, 13);
             this.lblEmpCuit.TabIndex = 54;
@@ -495,30 +531,14 @@
             this.lblTEmpProvincia.TabIndex = 11;
             this.lblTEmpProvincia.Text = "Pcia.";
             // 
-            // lblEstadoDoc
-            // 
-            this.lblEstadoDoc.AutoSize = true;
-            this.lblEstadoDoc.Location = new System.Drawing.Point(442, 23);
-            this.lblEstadoDoc.Name = "lblEstadoDoc";
-            this.lblEstadoDoc.Size = new System.Drawing.Size(84, 13);
-            this.lblEstadoDoc.TabIndex = 26;
-            this.lblEstadoDoc.Text = "Estado del doc.:";
-            // 
-            // cmbEstadoDoc
-            // 
-            this.cmbEstadoDoc.FormattingEnabled = true;
-            this.cmbEstadoDoc.Location = new System.Drawing.Point(543, 19);
-            this.cmbEstadoDoc.Name = "cmbEstadoDoc";
-            this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstadoDoc.TabIndex = 25;
-            // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(329, 13);
+            this.btnClientes.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClientes.Location = new System.Drawing.Point(335, 12);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
             this.btnClientes.TabIndex = 22;
-            this.btnClientes.Text = "...";
             this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -561,13 +581,12 @@
             // 
             // gbxCliente
             // 
+            this.gbxCliente.BackColor = System.Drawing.Color.Transparent;
             this.gbxCliente.Controls.Add(this.cmbRazonSocial);
             this.gbxCliente.Controls.Add(this.cmbProvincia);
             this.gbxCliente.Controls.Add(this.btnLocalidad);
             this.gbxCliente.Controls.Add(this.txtCondIva);
-            this.gbxCliente.Controls.Add(this.lblEstadoDoc);
             this.gbxCliente.Controls.Add(this.txtClienteCod);
-            this.gbxCliente.Controls.Add(this.cmbEstadoDoc);
             this.gbxCliente.Controls.Add(this.btnClientes);
             this.gbxCliente.Controls.Add(this.txtCuit);
             this.gbxCliente.Controls.Add(this.lblClienteCod);
@@ -581,7 +600,7 @@
             this.gbxCliente.Controls.Add(this.lblLocalidad);
             this.gbxCliente.Controls.Add(this.lblDomicilio);
             this.gbxCliente.Controls.Add(this.lblRazonSocial);
-            this.gbxCliente.Location = new System.Drawing.Point(9, 127);
+            this.gbxCliente.Location = new System.Drawing.Point(9, 167);
             this.gbxCliente.Name = "gbxCliente";
             this.gbxCliente.Size = new System.Drawing.Size(672, 123);
             this.gbxCliente.TabIndex = 45;
@@ -590,45 +609,56 @@
             // 
             // cmbRazonSocial
             // 
+            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRazonSocial.FormattingEnabled = true;
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
             this.cmbRazonSocial.Name = "cmbRazonSocial";
             this.cmbRazonSocial.Size = new System.Drawing.Size(243, 21);
             this.cmbRazonSocial.TabIndex = 62;
+            this.toolTipControl.SetToolTip(this.cmbRazonSocial, "Seleccione un cliente o utilice el buscador");
+            this.cmbRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(76, 94);
+            this.cmbProvincia.Location = new System.Drawing.Point(76, 92);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(149, 21);
             this.cmbProvincia.TabIndex = 61;
+            this.toolTipControl.SetToolTip(this.cmbProvincia, "Provincia de Entrega");
+            this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(392, 66);
+            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLocalidad.Location = new System.Drawing.Point(239, 66);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 60;
-            this.btnLocalidad.Text = "...";
             this.toolTipControl.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
             // txtCodPostal
             // 
-            this.txtCodPostal.Location = new System.Drawing.Point(311, 68);
+            this.txtCodPostal.Location = new System.Drawing.Point(311, 94);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
             this.txtCodPostal.TabIndex = 20;
+            this.toolTipControl.SetToolTip(this.txtCodPostal, "Código Postal de Entrega");
+            this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(76, 68);
+            this.txtLocalidad.Location = new System.Drawing.Point(76, 66);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(149, 20);
             this.txtLocalidad.TabIndex = 19;
+            this.toolTipControl.SetToolTip(this.txtLocalidad, "Localidad de Entrega");
+            this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtDomicilio
             // 
@@ -636,11 +666,13 @@
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(243, 20);
             this.txtDomicilio.TabIndex = 18;
+            this.toolTipControl.SetToolTip(this.txtDomicilio, "Domicilio de entrega");
+            this.txtDomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(11, 94);
+            this.lblProvincia.Location = new System.Drawing.Point(11, 95);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
             this.lblProvincia.TabIndex = 16;
@@ -649,7 +681,7 @@
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(244, 75);
+            this.lblCodPostal.Location = new System.Drawing.Point(244, 97);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(64, 13);
             this.lblCodPostal.TabIndex = 15;
@@ -658,7 +690,7 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(9, 66);
+            this.lblLocalidad.Location = new System.Drawing.Point(9, 68);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(56, 13);
             this.lblLocalidad.TabIndex = 14;
@@ -667,7 +699,7 @@
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(16, 40);
+            this.lblDomicilio.Location = new System.Drawing.Point(13, 42);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(52, 13);
             this.lblDomicilio.TabIndex = 13;
@@ -684,6 +716,7 @@
             // 
             // gbxEmpresa
             // 
+            this.gbxEmpresa.BackColor = System.Drawing.Color.Transparent;
             this.gbxEmpresa.Controls.Add(this.lblTEmpProvincia);
             this.gbxEmpresa.Controls.Add(this.lblTEmpPosicionIva);
             this.gbxEmpresa.Controls.Add(this.lblTEmpFax);
@@ -696,12 +729,13 @@
             this.gbxEmpresa.Controls.Add(this.lblEmpCodPostal);
             this.gbxEmpresa.Controls.Add(this.lblEmpDomicilio);
             this.gbxEmpresa.Controls.Add(this.lblEmpRazonSocial);
-            this.gbxEmpresa.Location = new System.Drawing.Point(9, 7);
+            this.gbxEmpresa.Location = new System.Drawing.Point(9, 47);
             this.gbxEmpresa.Name = "gbxEmpresa";
             this.gbxEmpresa.Size = new System.Drawing.Size(291, 111);
             this.gbxEmpresa.TabIndex = 50;
             this.gbxEmpresa.TabStop = false;
             this.gbxEmpresa.Text = "Empresa";
+            this.toolTipControl.SetToolTip(this.gbxEmpresa, "Información de la Empresa");
             // 
             // lblEmpTel
             // 
@@ -760,15 +794,17 @@
             // dtpFechaEmision
             // 
             this.dtpFechaEmision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEmision.Location = new System.Drawing.Point(581, 19);
+            this.dtpFechaEmision.Location = new System.Drawing.Point(581, 59);
             this.dtpFechaEmision.Name = "dtpFechaEmision";
             this.dtpFechaEmision.Size = new System.Drawing.Size(83, 20);
             this.dtpFechaEmision.TabIndex = 46;
+            this.toolTipControl.SetToolTip(this.dtpFechaEmision, "Seleccione la fecha");
             // 
             // lblTEmpCuit
             // 
             this.lblTEmpCuit.AutoSize = true;
-            this.lblTEmpCuit.Location = new System.Drawing.Point(522, 52);
+            this.lblTEmpCuit.BackColor = System.Drawing.Color.Transparent;
+            this.lblTEmpCuit.Location = new System.Drawing.Point(522, 92);
             this.lblTEmpCuit.Name = "lblTEmpCuit";
             this.lblTEmpCuit.Size = new System.Drawing.Size(35, 13);
             this.lblTEmpCuit.TabIndex = 53;
@@ -777,7 +813,8 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(522, 25);
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecha.Location = new System.Drawing.Point(522, 65);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(37, 13);
             this.lblFecha.TabIndex = 52;
@@ -786,44 +823,54 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(380, 18);
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(380, 58);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(49, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(55, 13);
             this.lblTitulo.TabIndex = 51;
             this.lblTitulo.Text = "REMITO";
             // 
-            // txtNumFactura
+            // txtNumRemito
             // 
-            this.txtNumFactura.Location = new System.Drawing.Point(405, 34);
-            this.txtNumFactura.Name = "txtNumFactura";
-            this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
-            this.txtNumFactura.TabIndex = 79;
+            this.txtNumRemito.Location = new System.Drawing.Point(405, 74);
+            this.txtNumRemito.Name = "txtNumRemito";
+            this.txtNumRemito.Size = new System.Drawing.Size(100, 20);
+            this.txtNumRemito.TabIndex = 79;
+            this.toolTipControl.SetToolTip(this.txtNumRemito, "Número de Remito");
+            this.txtNumRemito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            this.txtNumRemito.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(20, 602);
+            this.lblObservaciones.BackColor = System.Drawing.Color.Transparent;
+            this.lblObservaciones.Location = new System.Drawing.Point(20, 642);
             this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
+            this.lblObservaciones.Size = new System.Drawing.Size(159, 13);
             this.lblObservaciones.TabIndex = 82;
-            this.lblObservaciones.Text = "Observaciones";
+            this.lblObservaciones.Text = "Observaciones (No se imprimen)";
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(16, 618);
+            this.txtObservaciones.Location = new System.Drawing.Point(16, 658);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservaciones.Size = new System.Drawing.Size(379, 53);
             this.txtObservaciones.TabIndex = 83;
+            this.toolTipControl.SetToolTip(this.txtObservaciones, "Información Adicional (No se imprime)");
+            // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmRemito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(689, 721);
-            this.Controls.Add(this.txtObservaciones);
+            this.ClientSize = new System.Drawing.Size(689, 720);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTNumFact);
             this.Controls.Add(this.btnGuardarImprimir);
@@ -844,12 +891,14 @@
             this.Controls.Add(this.lblTEmpCuit);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.txtNumFactura);
+            this.Controls.Add(this.txtNumRemito);
             this.Controls.Add(this.lblLetra);
+            this.Controls.Add(this.txtObservaciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmRemito";
-            this.Text = "FrmRemito";
+            this.Text = "Formulario de Remito";
             this.Load += new System.EventHandler(this.FrmRemito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).EndInit();
             this.gbxDetalle.ResumeLayout(false);
@@ -860,6 +909,7 @@
             this.gbxCliente.PerformLayout();
             this.gbxEmpresa.ResumeLayout(false);
             this.gbxEmpresa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -894,8 +944,6 @@
         private System.Windows.Forms.Label lblTEmpPosicionIva;
         private System.Windows.Forms.Label lblEmpCuit;
         private System.Windows.Forms.Label lblTEmpProvincia;
-        private System.Windows.Forms.Label lblEstadoDoc;
-        private System.Windows.Forms.ComboBox cmbEstadoDoc;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Label lblTEmpFax;
         private System.Windows.Forms.Label lblTEmpTelefono;
@@ -921,7 +969,7 @@
         private System.Windows.Forms.Label lblTEmpCuit;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox txtNumFactura;
+        private System.Windows.Forms.TextBox txtNumRemito;
         private System.Windows.Forms.Button btnTransportistas;
         private System.Windows.Forms.TextBox txtTransportistaCUIT;
         private System.Windows.Forms.Label lblTransportistaCUIT;
@@ -935,13 +983,14 @@
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Button btnLocalidad;
         private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.ToolTip toolTipControl;
+        private System.Windows.Forms.ComboBox cmbRazonSocial;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Envases;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidades;
         private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
-        private System.Windows.Forms.ToolTip toolTipControl;
-        private System.Windows.Forms.ComboBox cmbRazonSocial;
     }
 }

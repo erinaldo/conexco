@@ -4,7 +4,7 @@ Facturas:
 Observaciones varchar(250) nuleable
 SonPesos varchar(250) nuleable
 
-Documentos_Estados:
+Documentos_Estados: VALUES
 Pendiente, Pagado, Anulado
 
 ------------------------------------------------------------------------
@@ -15,6 +15,7 @@ COSAS A HACER:
 -Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Mejorar UI!
+-Chekar tema de stock en remitos
 
 
 ------------------------------------------------------------------------

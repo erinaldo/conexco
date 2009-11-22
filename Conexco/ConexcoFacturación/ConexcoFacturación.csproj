@@ -375,6 +375,18 @@
     <None Include="Resources\factura.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\guardar3png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LupaFacturaPequenia.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

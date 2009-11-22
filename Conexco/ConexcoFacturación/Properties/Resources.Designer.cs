@@ -60,9 +60,37 @@ namespace ConexcoFacturación.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap cancelar {
+            get {
+                object obj = ResourceManager.GetObject("cancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap factura {
             get {
                 object obj = ResourceManager.GetObject("factura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap guardar3png {
+            get {
+                object obj = ResourceManager.GetObject("guardar3png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap imprimir3 {
+            get {
+                object obj = ResourceManager.GetObject("imprimir3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap LupaFacturaPequenia {
+            get {
+                object obj = ResourceManager.GetObject("LupaFacturaPequenia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

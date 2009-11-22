@@ -278,7 +278,7 @@ namespace ConexcoFacturación
                 e.Handled = true;
         }
 
-        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        private void SoloNumerosDecimales_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
                 e.Handled = false;

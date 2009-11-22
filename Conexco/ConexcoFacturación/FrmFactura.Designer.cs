@@ -84,6 +84,11 @@
             this.gbxObservaciones = new System.Windows.Forms.GroupBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.grdDetalleFactura = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCondiciones = new System.Windows.Forms.Label();
             this.txtCondiciones = new System.Windows.Forms.TextBox();
             this.lblPesos = new System.Windows.Forms.Label();
@@ -105,11 +110,6 @@
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
-            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
@@ -126,7 +126,7 @@
             this.dtpFechaEmision.Location = new System.Drawing.Point(575, 58);
             this.dtpFechaEmision.Name = "dtpFechaEmision";
             this.dtpFechaEmision.Size = new System.Drawing.Size(97, 20);
-            this.dtpFechaEmision.TabIndex = 0;
+            this.dtpFechaEmision.TabIndex = 2;
             // 
             // cmbLetra
             // 
@@ -135,7 +135,7 @@
             this.cmbLetra.Location = new System.Drawing.Point(328, 64);
             this.cmbLetra.Name = "cmbLetra";
             this.cmbLetra.Size = new System.Drawing.Size(34, 21);
-            this.cmbLetra.TabIndex = 2;
+            this.cmbLetra.TabIndex = 0;
             this.toolTipControl.SetToolTip(this.cmbLetra, "Tipo de Factura (A/B)");
             this.cmbLetra.SelectedIndexChanged += new System.EventHandler(this.cmbLetra_SelectedIndexChanged);
             // 
@@ -289,7 +289,7 @@
             this.gbxCliente.Location = new System.Drawing.Point(8, 166);
             this.gbxCliente.Name = "gbxCliente";
             this.gbxCliente.Size = new System.Drawing.Size(672, 92);
-            this.gbxCliente.TabIndex = 0;
+            this.gbxCliente.TabIndex = 3;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
             // 
@@ -301,8 +301,8 @@
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 12);
             this.cmbRazonSocial.Name = "cmbRazonSocial";
             this.cmbRazonSocial.Size = new System.Drawing.Size(272, 21);
-            this.cmbRazonSocial.TabIndex = 27;
-            this.toolTipControl.SetToolTip(this.cmbRazonSocial, "Seleccione un cliente o utilize el buscador");
+            this.cmbRazonSocial.TabIndex = 0;
+            this.toolTipControl.SetToolTip(this.cmbRazonSocial, "Seleccione un cliente o utilice el buscador");
             this.cmbRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
@@ -322,7 +322,7 @@
             this.cmbEstadoDoc.Location = new System.Drawing.Point(538, 16);
             this.cmbEstadoDoc.Name = "cmbEstadoDoc";
             this.cmbEstadoDoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstadoDoc.TabIndex = 25;
+            this.cmbEstadoDoc.TabIndex = 2;
             // 
             // txtProvincia
             // 
@@ -330,7 +330,7 @@
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.ReadOnly = true;
             this.txtProvincia.Size = new System.Drawing.Size(117, 20);
-            this.txtProvincia.TabIndex = 24;
+            this.txtProvincia.TabIndex = 6;
             // 
             // btnClientes
             // 
@@ -340,7 +340,7 @@
             this.btnClientes.Location = new System.Drawing.Point(360, 12);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
-            this.btnClientes.TabIndex = 22;
+            this.btnClientes.TabIndex = 1;
             this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -351,7 +351,7 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.ReadOnly = true;
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
-            this.txtCodPostal.TabIndex = 20;
+            this.txtCodPostal.TabIndex = 5;
             // 
             // txtLocalidad
             // 
@@ -360,7 +360,7 @@
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.ReadOnly = true;
             this.txtLocalidad.Size = new System.Drawing.Size(215, 20);
-            this.txtLocalidad.TabIndex = 19;
+            this.txtLocalidad.TabIndex = 4;
             // 
             // txtDomicilio
             // 
@@ -369,7 +369,7 @@
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.ReadOnly = true;
             this.txtDomicilio.Size = new System.Drawing.Size(215, 20);
-            this.txtDomicilio.TabIndex = 18;
+            this.txtDomicilio.TabIndex = 3;
             // 
             // lblProvincia
             // 
@@ -515,7 +515,7 @@
             this.gbxFiscales.Location = new System.Drawing.Point(8, 257);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 73);
-            this.gbxFiscales.TabIndex = 24;
+            this.gbxFiscales.TabIndex = 4;
             this.gbxFiscales.TabStop = false;
             // 
             // txtCondIva
@@ -532,7 +532,7 @@
             this.dtpVencimiento.Location = new System.Drawing.Point(555, 39);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(100, 20);
-            this.dtpVencimiento.TabIndex = 25;
+            this.dtpVencimiento.TabIndex = 2;
             // 
             // txtClienteCod
             // 
@@ -547,7 +547,7 @@
             this.txtOrdenCompra.Location = new System.Drawing.Point(358, 42);
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtOrdenCompra.TabIndex = 57;
+            this.txtOrdenCompra.TabIndex = 1;
             this.txtOrdenCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtCuit
@@ -563,7 +563,7 @@
             this.txtRemito.Location = new System.Drawing.Point(68, 14);
             this.txtRemito.Name = "txtRemito";
             this.txtRemito.Size = new System.Drawing.Size(100, 20);
-            this.txtRemito.TabIndex = 6;
+            this.txtRemito.TabIndex = 0;
             this.txtRemito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // lblVencimiento
@@ -628,7 +628,7 @@
             this.gbxDetalle.Location = new System.Drawing.Point(8, 337);
             this.gbxDetalle.Name = "gbxDetalle";
             this.gbxDetalle.Size = new System.Drawing.Size(672, 255);
-            this.gbxDetalle.TabIndex = 25;
+            this.gbxDetalle.TabIndex = 5;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle";
             // 
@@ -670,6 +670,45 @@
             this.grdDetalleFactura.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grdDetalleFactura_CellValidating);
             this.grdDetalleFactura.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_RowValidated);
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ToolTipText = "Código y Color de Artículo";
+            this.Codigo.Width = 80;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ToolTipText = "Cantidad";
+            this.Cantidad.Width = 70;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.ToolTipText = "Descripción del Artículo";
+            this.Descripcion.Width = 300;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.ToolTipText = "Precio";
+            this.Precio.Width = 70;
+            // 
+            // Totales
+            // 
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            this.Totales.ToolTipText = "Totales";
+            this.Totales.Width = 90;
+            // 
             // lblCondiciones
             // 
             this.lblCondiciones.AutoSize = true;
@@ -677,7 +716,7 @@
             this.lblCondiciones.Location = new System.Drawing.Point(8, 602);
             this.lblCondiciones.Name = "lblCondiciones";
             this.lblCondiciones.Size = new System.Drawing.Size(68, 13);
-            this.lblCondiciones.TabIndex = 1;
+            this.lblCondiciones.TabIndex = 6;
             this.lblCondiciones.Text = "Condiciones:";
             // 
             // txtCondiciones
@@ -687,7 +726,7 @@
             this.txtCondiciones.Name = "txtCondiciones";
             this.txtCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtCondiciones.Size = new System.Drawing.Size(391, 53);
-            this.txtCondiciones.TabIndex = 26;
+            this.txtCondiciones.TabIndex = 7;
             this.toolTipControl.SetToolTip(this.txtCondiciones, "Condiciones de pago (Ej. Efectivo)");
             // 
             // lblPesos
@@ -711,12 +750,12 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGuardar.Location = new System.Drawing.Point(174, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 31);
-            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "       Guardar";
             this.toolTipControl.SetToolTip(this.btnGuardar, "Guardar Factura");
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -724,12 +763,12 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancelar.Location = new System.Drawing.Point(285, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(85, 31);
-            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "       Cancelar";
             this.toolTipControl.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -737,12 +776,12 @@
             // 
             // btnGuardarImprimir
             // 
-            this.btnGuardarImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarImprimir.BackgroundImage")));
+            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
             this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGuardarImprimir.Location = new System.Drawing.Point(12, 4);
             this.btnGuardarImprimir.Name = "btnGuardarImprimir";
             this.btnGuardarImprimir.Size = new System.Drawing.Size(139, 31);
-            this.btnGuardarImprimir.TabIndex = 42;
+            this.btnGuardarImprimir.TabIndex = 10;
             this.btnGuardarImprimir.Text = "       Guardar e Imprimir";
             this.toolTipControl.SetToolTip(this.btnGuardarImprimir, "Guardar e Imprimir factura");
             this.btnGuardarImprimir.UseVisualStyleBackColor = true;
@@ -753,11 +792,11 @@
             this.txtDescuento.Location = new System.Drawing.Point(587, 628);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(88, 20);
-            this.txtDescuento.TabIndex = 35;
+            this.txtDescuento.TabIndex = 8;
             this.txtDescuento.Text = "0";
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
-            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
             // 
             // lblTNetoPagar
             // 
@@ -857,7 +896,7 @@
             this.btnTipoValor.Location = new System.Drawing.Point(563, 628);
             this.btnTipoValor.Name = "btnTipoValor";
             this.btnTipoValor.Size = new System.Drawing.Size(20, 20);
-            this.btnTipoValor.TabIndex = 36;
+            this.btnTipoValor.TabIndex = 9;
             this.btnTipoValor.Text = "$";
             this.toolTipControl.SetToolTip(this.btnTipoValor, "Descuento en pesos o en porcentaje");
             this.btnTipoValor.UseVisualStyleBackColor = true;
@@ -878,48 +917,9 @@
             this.txtNumFactura.Location = new System.Drawing.Point(404, 73);
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
-            this.txtNumFactura.TabIndex = 44;
+            this.txtNumFactura.TabIndex = 1;
             this.txtNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             this.txtNumFactura.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ToolTipText = "Código y Color de Artículo";
-            this.Codigo.Width = 80;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ToolTipText = "Cantidad";
-            this.Cantidad.Width = 70;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Descripcion.ToolTipText = "Descripción del Artículo";
-            this.Descripcion.Width = 300;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.ToolTipText = "Precio";
-            this.Precio.Width = 70;
-            // 
-            // Totales
-            // 
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
-            this.Totales.ReadOnly = true;
-            this.Totales.ToolTipText = "Totales";
-            this.Totales.Width = 90;
             // 
             // errorProviderRequerido
             // 
@@ -966,6 +966,7 @@
             this.Controls.Add(this.cmbLetra);
             this.Controls.Add(this.dtpFechaEmision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmFactura";
             this.Text = "Formulario de Factura";
