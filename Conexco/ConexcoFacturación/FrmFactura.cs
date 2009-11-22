@@ -471,7 +471,7 @@ namespace ConexcoFacturación
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al guardar la factura, intentelo nuevamente");
+                MessageBox.Show("Ocurrio un problema al guardar la factura, inténtelo nuevamente");
             }
             return factura.idFactura;
         }

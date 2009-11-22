@@ -57,6 +57,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
+            this.toolTipClientes.SetToolTip(this.btnGuardar, "Guardar los cambios");
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -77,6 +78,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
+            this.toolTipClientes.SetToolTip(this.btnEliminar, "Elimina el contacto seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -87,6 +89,7 @@
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
+            this.toolTipClientes.SetToolTip(this.btnModificar, "Modifica el comentario seleccionado");
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -97,6 +100,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(65, 23);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
+            this.toolTipClientes.SetToolTip(this.btnNuevo, "Habilita los cuadros de texto para crear un nuevo Contacto");
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -130,6 +134,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(120, 20);
             this.txtNombre.TabIndex = 0;
+            this.toolTipClientes.SetToolTip(this.txtNombre, "Nombre del contacto o información necesaria");
             this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblEmail
@@ -147,6 +152,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(120, 20);
             this.txtEmail.TabIndex = 1;
+            this.toolTipClientes.SetToolTip(this.txtEmail, "E-Mail del contacto");
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCliente

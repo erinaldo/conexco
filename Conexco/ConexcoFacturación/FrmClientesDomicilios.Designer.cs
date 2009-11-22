@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesDomicilios));
             this.grdDomicilios = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -49,8 +50,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.toolTipClientes = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdDomicilios)).BeginInit();
             this.gbxDomicilio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // grdDomicilios
@@ -63,13 +67,14 @@
             this.grdDomicilios.Name = "grdDomicilios";
             this.grdDomicilios.ReadOnly = true;
             this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDomicilios.Size = new System.Drawing.Size(243, 161);
+            this.grdDomicilios.Size = new System.Drawing.Size(266, 161);
             this.grdDomicilios.TabIndex = 0;
             this.grdDomicilios.SelectionChanged += new System.EventHandler(this.grdDomicilios_SelectionChanged);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(111, 13);
@@ -79,6 +84,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
+            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblCliente.Location = new System.Drawing.Point(129, 9);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(0, 13);
@@ -86,6 +92,7 @@
             // 
             // gbxDomicilio
             // 
+            this.gbxDomicilio.BackColor = System.Drawing.Color.Transparent;
             this.gbxDomicilio.Controls.Add(this.txtDescripcion);
             this.gbxDomicilio.Controls.Add(this.lblDescripcion);
             this.gbxDomicilio.Controls.Add(this.btnLocalidad);
@@ -100,8 +107,8 @@
             this.gbxDomicilio.Enabled = false;
             this.gbxDomicilio.Location = new System.Drawing.Point(297, 34);
             this.gbxDomicilio.Name = "gbxDomicilio";
-            this.gbxDomicilio.Size = new System.Drawing.Size(243, 161);
-            this.gbxDomicilio.TabIndex = 17;
+            this.gbxDomicilio.Size = new System.Drawing.Size(259, 161);
+            this.gbxDomicilio.TabIndex = 2;
             this.gbxDomicilio.TabStop = false;
             this.gbxDomicilio.Text = "Detalle";
             // 
@@ -109,40 +116,44 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(97, 126);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 49;
+            this.txtDescripcion.Size = new System.Drawing.Size(144, 20);
+            this.txtDescripcion.TabIndex = 5;
+            this.toolTipClientes.SetToolTip(this.txtDescripcion, "Descripción del domicilio (Ej. Sucursal)");
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(16, 129);
+            this.lblDescripcion.Location = new System.Drawing.Point(18, 129);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 48;
-            this.lblDescripcion.Text = "Descripcion";
+            this.lblDescripcion.Text = "Descripción";
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(203, 44);
+            this.btnLocalidad.Location = new System.Drawing.Point(216, 44);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
-            this.btnLocalidad.TabIndex = 47;
+            this.btnLocalidad.TabIndex = 2;
             this.btnLocalidad.Text = "...";
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
-            this.cmbProvincia.TabIndex = 46;
+            this.cmbProvincia.TabIndex = 1;
+            this.toolTipClientes.SetToolTip(this.cmbProvincia, "Provincia del Cliente");
+            this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(16, 26);
+            this.lblDomicilio.Location = new System.Drawing.Point(32, 23);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
             this.lblDomicilio.TabIndex = 26;
@@ -152,13 +163,15 @@
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(100, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(144, 20);
             this.txtDomicilio.TabIndex = 0;
+            this.toolTipClientes.SetToolTip(this.txtDomicilio, "Domicilio del Cliente");
+            this.txtDomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(16, 76);
+            this.lblLocalidad.Location = new System.Drawing.Point(28, 75);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
             this.lblLocalidad.TabIndex = 41;
@@ -168,13 +181,15 @@
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(97, 69);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.txtLocalidad.TabIndex = 1;
+            this.txtLocalidad.Size = new System.Drawing.Size(144, 20);
+            this.txtLocalidad.TabIndex = 3;
+            this.toolTipClientes.SetToolTip(this.txtLocalidad, "Localidad del Cliente");
+            this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(16, 48);
+            this.lblProvincia.Location = new System.Drawing.Point(30, 49);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(51, 13);
             this.lblProvincia.TabIndex = 43;
@@ -184,73 +199,86 @@
             // 
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
             this.txtCodPostal.Name = "txtCodPostal";
-            this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
-            this.txtCodPostal.TabIndex = 3;
+            this.txtCodPostal.Size = new System.Drawing.Size(144, 20);
+            this.txtCodPostal.TabIndex = 4;
+            this.toolTipClientes.SetToolTip(this.txtCodPostal, "Código Postal del Cliente");
+            this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(16, 104);
+            this.lblCodPostal.Location = new System.Drawing.Point(9, 102);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(72, 13);
             this.lblCodPostal.TabIndex = 45;
-            this.lblCodPostal.Text = "Codigo Postal";
+            this.lblCodPostal.Text = "Código Postal";
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(213, 228);
+            this.btnNuevo.Location = new System.Drawing.Point(96, 217);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(65, 23);
-            this.btnNuevo.TabIndex = 18;
+            this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
+            this.toolTipClientes.SetToolTip(this.btnNuevo, "Habilita los campos para crear un nuevo Domicilio");
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(287, 228);
+            this.btnModificar.Location = new System.Drawing.Point(170, 217);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 19;
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
+            this.toolTipClientes.SetToolTip(this.btnModificar, "Modificar Domicilio seleccionado");
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(371, 228);
+            this.btnEliminar.Location = new System.Drawing.Point(254, 217);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 20;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
+            this.toolTipClientes.SetToolTip(this.btnEliminar, "Eliminar Domicilio seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(465, 228);
+            this.btnSalir.Location = new System.Drawing.Point(481, 217);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 21;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(129, 228);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 217);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
+            this.toolTipClientes.SetToolTip(this.btnGuardar, "Guardar Cambios");
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmClientesDomicilios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 263);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(568, 256);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -269,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDomicilios)).EndInit();
             this.gbxDomicilio.ResumeLayout(false);
             this.gbxDomicilio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +325,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.ToolTip toolTipClientes;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
     }
 }

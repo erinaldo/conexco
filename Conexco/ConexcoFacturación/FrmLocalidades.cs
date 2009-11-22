@@ -99,7 +99,7 @@ namespace ConexcoFacturación
 
                 if (!LocalidadesController.GuardarNuevaLocalidad(nuevaLocalidad))
                 {
-                    MessageBox.Show("Ocurrio un problema al guardar la Localidad, intentelo nuevamente");
+                    MessageBox.Show("Ocurrio un problema al guardar la Localidad, inténtelo nuevamente");
                 }
 
                 LocalidadSeleccionada = txtNuevaLocalidad.Text;

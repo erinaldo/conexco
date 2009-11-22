@@ -35,6 +35,7 @@ namespace ConexcoFacturación
             grdContactos.Columns[0].Visible = false;
             grdContactos.Columns[1].Visible = false;
             grdContactos.Columns[4].Visible = false;
+            grdContactos.Columns[5].Visible = false;
             grdContactos.Columns[3].HeaderText = "E-Mail";
 
             Habilitar(Accion.Inicio);
@@ -108,7 +109,7 @@ namespace ConexcoFacturación
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un problema al guardar el contacto, intentelo de nuevo");
+                    MessageBox.Show("Ocurrio un problema al guardar el contacto, inténtelo de nuevo");
                 }
                 _Refrescar();
             }
@@ -143,7 +144,7 @@ namespace ConexcoFacturación
                 if (ClientesController.EliminarContacto(idContacto))
                     MessageBox.Show("Contacto eliminado correctamente");
                 else
-                    MessageBox.Show("Ocurrio un problema al eliminar el contacto, intentelo nuevamente");
+                    MessageBox.Show("Ocurrio un problema al eliminar el contacto, inténtelo nuevamente");
                 _Refrescar();
             }
             else

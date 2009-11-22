@@ -33,18 +33,19 @@ namespace ConexcoFacturación
 
             lblCliente.Text = ClientesController.DatosCliente(IdCliente).RazonSocial;
 
-            Refrescar();
+            _Refrescar();
         }
 
-        private void Refrescar()
+        private void _Refrescar()
         {
             grdDomicilios.DataSource = ClientesController.ListarDomicilios(IdCliente);
             grdDomicilios.Columns[0].Visible = false;
             grdDomicilios.Columns[1].Visible = false;
             grdDomicilios.Columns[5].HeaderText = "Código Postal";
             grdDomicilios.Columns[7].Visible = false;
+            grdDomicilios.Columns[8].Visible = false;
 
-            Habilitar(Accion.Inicio);
+            _Habilitar(Accion.Inicio);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -85,10 +86,10 @@ namespace ConexcoFacturación
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Habilitar(Accion.Modificar);
+            _Habilitar(Accion.Modificar);
         }
 
-        public void Habilitar(Accion accion)
+        public void _Habilitar(Accion accion)
         {
             if (accion == Accion.Inicio)
             {
@@ -129,44 +130,60 @@ namespace ConexcoFacturación
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Habilitar(Accion.Crear);
+            _Habilitar(Accion.Crear);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idDomicilio = 0;
-            if (grdDomicilios.SelectedRows.Count > 0)
-                idDomicilio = Convert.ToInt32(grdDomicilios.SelectedRows[0].Cells[0].Value);
-            Clientes_Domicilio domicilio;
-            if (idDomicilio > 0)
-            {
-                domicilio = ClientesController.DatosDomicilio(idDomicilio);
-            }
-            else
-            {
-                domicilio = new Clientes_Domicilio();
-                ClientesController.DatosCliente(IdCliente).Clientes_Domicilios.Add(domicilio);
-            }
+            if(_FaltaCampoRequerido())
+                return;
 
-            domicilio.Domicilio = txtDomicilio.Text;
-            domicilio.Provincia = cmbProvincia.Text;
-            domicilio.Localidad = txtLocalidad.Text;
-            domicilio.CodPostal = txtCodPostal.Text;
-            domicilio.Descripcion = txtDescripcion.Text;
+            try
+            {
 
-            if (ClientesController.GuardarCambios())
-            {
-                MessageBox.Show("Domicilio guardado correctamente");
+                int idDomicilio = 0;
+                if (grdDomicilios.SelectedRows.Count > 0)
+                    idDomicilio = Convert.ToInt32(grdDomicilios.SelectedRows[0].Cells[0].Value);
+                Clientes_Domicilio domicilio;
+                if (idDomicilio > 0)
+                {
+                    domicilio = ClientesController.DatosDomicilio(idDomicilio);
+                }
+                else
+                {
+                    domicilio = new Clientes_Domicilio();
+                    ClientesController.DatosCliente(IdCliente).Clientes_Domicilios.Add(domicilio);
+                }
+
+                domicilio.Domicilio = txtDomicilio.Text;
+                domicilio.Provincia = cmbProvincia.Text;
+                domicilio.Localidad = txtLocalidad.Text;
+                domicilio.CodPostal = txtCodPostal.Text;
+                domicilio.Descripcion = txtDescripcion.Text;
+
+                if (ClientesController.GuardarCambios())
+                {
+                    MessageBox.Show("Domicilio guardado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un problema al guardar el domicilio, inténtelo de nuevo");
+                }
+                _Refrescar();
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show("Ocurrio un problema al guardar el domicilio, intentelo de nuevo");
+                MessageBox.Show("Ocurrio un error al guardar el domicilio, inténtelo nuevamente");
+                this.Close();
             }
-            Refrescar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Realmente desea eliminar el Domicilio?", "Atención", MessageBoxButtons.OKCancel);
+            if (result != System.Windows.Forms.DialogResult.OK)
+                return;
+
             int idDomicilio = 0;
             if (grdDomicilios.SelectedRows.Count > 0)
                 idDomicilio = Convert.ToInt32(grdDomicilios.SelectedRows[0].Cells[0].Value);
@@ -175,11 +192,43 @@ namespace ConexcoFacturación
                 if (ClientesController.EliminarDomicilio(idDomicilio))
                     MessageBox.Show("Domicilio eliminado correctamente");
                 else
-                    MessageBox.Show("Ocurrio un problema al eliminar el domicilio, intentelo nuevamente");
-                Refrescar();
+                    MessageBox.Show("Ocurrio un problema al eliminar el domicilio, inténtelo nuevamente");
+                _Refrescar();
             }
             else
                 MessageBox.Show("Debe seleccionar un domicilio");
+        }
+
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0 || control.Text.Trim().StartsWith("-"))
+            {
+                errorProviderRequerido.SetError(control, "Campo Requerido");
+            }
+            else
+            {
+                errorProviderRequerido.Clear();
+            }
+        }
+
+        private bool _FaltaCampoRequerido()
+        {
+            bool error = false;
+
+            if (String.IsNullOrEmpty(txtDomicilio.Text))
+                error = true;
+            if (String.IsNullOrEmpty(cmbProvincia.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtLocalidad.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtCodPostal.Text))
+                error = true;
+
+            if (error)
+                MessageBox.Show("Ingrese los campos requeridos");
+
+            return error;
         }
     }
 

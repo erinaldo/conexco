@@ -164,7 +164,7 @@ namespace ConexcoFacturación
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error al guardar el cliente, intentelo de nuevo");
+                    MessageBox.Show("Ha ocurrido un error al guardar el cliente, inténtelo de nuevo");
                 }
             }
             catch(Exception)

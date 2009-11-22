@@ -61,7 +61,7 @@ namespace ConexcoFacturación
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error al guardar el articulo, intentelo de nuevo");
+                    MessageBox.Show("Ha ocurrido un error al guardar el articulo, inténtelo de nuevo");
                 }
             }
         }

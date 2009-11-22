@@ -124,7 +124,7 @@ namespace ConexcoFacturación
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al guardar los datos de la empresa, intentelo nuevamente");
+                MessageBox.Show("Ocurrio un problema al guardar los datos de la empresa, inténtelo nuevamente");
             }
         }
     }

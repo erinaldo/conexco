@@ -80,7 +80,7 @@ namespace ConexcoFacturación
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar el cliente, intentelo nuevamente");
+                MessageBox.Show("No se pudo eliminar el cliente, inténtelo nuevamente");
             }
         }
 

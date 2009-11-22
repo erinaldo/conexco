@@ -112,7 +112,7 @@ namespace ConexcoFacturación
                 if (ClientesController.EliminarTransportista(idTransportista))
                     MessageBox.Show("Transportista eliminado correctamente");
                 else
-                    MessageBox.Show("Ocurrio un problema al eliminar el transportista, intentelo nuevamente");
+                    MessageBox.Show("Ocurrio un problema al eliminar el transportista, inténtelo nuevamente");
                 Refrescar();
             }
             else
@@ -160,7 +160,7 @@ namespace ConexcoFacturación
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al guardar el transportista, intentelo de nuevo");
+                MessageBox.Show("Ocurrio un problema al guardar el transportista, inténtelo de nuevo");
             }
             Refrescar();
         }

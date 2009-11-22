@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesTelefonos));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -44,17 +45,21 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdTelefonos = new System.Windows.Forms.DataGridView();
+            this.toolTipClientes = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxTelefono.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTelefonos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(94, 173);
+            this.btnGuardar.Location = new System.Drawing.Point(10, 173);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 31;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
+            this.toolTipClientes.SetToolTip(this.btnGuardar, "Guardar cambios");
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -63,43 +68,47 @@
             this.btnSalir.Location = new System.Drawing.Point(430, 173);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 30;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(336, 173);
+            this.btnEliminar.Location = new System.Drawing.Point(252, 173);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
+            this.toolTipClientes.SetToolTip(this.btnEliminar, "Eliminar Teléfono seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(252, 173);
+            this.btnModificar.Location = new System.Drawing.Point(168, 173);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 28;
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
+            this.toolTipClientes.SetToolTip(this.btnModificar, "Modificar Teléfono seleccionado");
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(178, 173);
+            this.btnNuevo.Location = new System.Drawing.Point(94, 173);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(65, 23);
-            this.btnNuevo.TabIndex = 27;
+            this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
+            this.toolTipClientes.SetToolTip(this.btnNuevo, "Habilita los campos para un nuevo Teléfono");
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gbxTelefono
             // 
+            this.gbxTelefono.BackColor = System.Drawing.Color.Transparent;
             this.gbxTelefono.Controls.Add(this.txtDescripcion);
             this.gbxTelefono.Controls.Add(this.lblDescripcion);
             this.gbxTelefono.Controls.Add(this.lblTelefono);
@@ -107,10 +116,10 @@
             this.gbxTelefono.Controls.Add(this.lblFax);
             this.gbxTelefono.Controls.Add(this.txtFax);
             this.gbxTelefono.Enabled = false;
-            this.gbxTelefono.Location = new System.Drawing.Point(287, 43);
+            this.gbxTelefono.Location = new System.Drawing.Point(283, 43);
             this.gbxTelefono.Name = "gbxTelefono";
-            this.gbxTelefono.Size = new System.Drawing.Size(215, 106);
-            this.gbxTelefono.TabIndex = 26;
+            this.gbxTelefono.Size = new System.Drawing.Size(222, 106);
+            this.gbxTelefono.TabIndex = 2;
             this.gbxTelefono.TabStop = false;
             this.gbxTelefono.Text = "Detalle";
             // 
@@ -119,25 +128,26 @@
             this.txtDescripcion.Location = new System.Drawing.Point(97, 71);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 49;
+            this.txtDescripcion.TabIndex = 2;
+            this.toolTipClientes.SetToolTip(this.txtDescripcion, "Descripción del Teléfono (Ej. Principal)");
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(16, 78);
+            this.lblDescripcion.Location = new System.Drawing.Point(19, 76);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 48;
-            this.lblDescripcion.Text = "Descripcion";
+            this.lblDescripcion.Text = "Descripción";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(16, 26);
+            this.lblTelefono.Location = new System.Drawing.Point(33, 24);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 26;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Teléfono";
             // 
             // txtTelefono
             // 
@@ -145,11 +155,14 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 0;
+            this.toolTipClientes.SetToolTip(this.txtTelefono, "Teléfono del Cliente");
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblFax
             // 
             this.lblFax.AutoSize = true;
-            this.lblFax.Location = new System.Drawing.Point(16, 52);
+            this.lblFax.Location = new System.Drawing.Point(58, 50);
             this.lblFax.Name = "lblFax";
             this.lblFax.Size = new System.Drawing.Size(24, 13);
             this.lblFax.TabIndex = 41;
@@ -161,10 +174,13 @@
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(100, 20);
             this.txtFax.TabIndex = 1;
+            this.toolTipClientes.SetToolTip(this.txtFax, "Fax del Cliente, opcional");
+            this.txtFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
+            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblCliente.Location = new System.Drawing.Point(129, 18);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(0, 13);
@@ -173,11 +189,12 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Location = new System.Drawing.Point(12, 18);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(111, 13);
             this.lblTitulo.TabIndex = 24;
-            this.lblTitulo.Text = "Telefonos del cliente: ";
+            this.lblTitulo.Text = "Teléfonos del cliente: ";
             // 
             // grdTelefonos
             // 
@@ -189,14 +206,20 @@
             this.grdTelefonos.Name = "grdTelefonos";
             this.grdTelefonos.ReadOnly = true;
             this.grdTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdTelefonos.Size = new System.Drawing.Size(243, 106);
-            this.grdTelefonos.TabIndex = 23;
+            this.grdTelefonos.Size = new System.Drawing.Size(254, 106);
+            this.grdTelefonos.TabIndex = 0;
             this.grdTelefonos.SelectionChanged += new System.EventHandler(this.grdTelefonos_SelectionChanged);
+            // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmClientesTelefonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(517, 213);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
@@ -216,6 +239,7 @@
             this.gbxTelefono.ResumeLayout(false);
             this.gbxTelefono.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTelefonos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,6 +262,8 @@
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView grdTelefonos;
+        private System.Windows.Forms.ToolTip toolTipClientes;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
 
     }
 }

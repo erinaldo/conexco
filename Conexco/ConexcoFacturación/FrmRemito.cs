@@ -315,7 +315,7 @@ namespace ConexcoFacturación
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al guardar el remito, intentelo nuevamente");
+                MessageBox.Show("Ocurrio un problema al guardar el remito, inténtelo nuevamente");
             }
 
             return remito.idRemito;
