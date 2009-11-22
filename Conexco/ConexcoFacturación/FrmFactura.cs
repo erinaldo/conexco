@@ -218,7 +218,14 @@ namespace ConexcoFacturación
 
         private void lblNetoPagar_TextChanged(object sender, EventArgs e)
         {
-            txtSonPesos.Text = UtilNumerosALetras.Enletras(lblNetoPagar.Text);
+            try
+            {
+                txtSonPesos.Text = UtilNumerosALetras.Enletras(lblNetoPagar.Text);
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         private void lblTotal_TextChanged(object sender, EventArgs e)
@@ -237,31 +244,60 @@ namespace ConexcoFacturación
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
+            double descuento;
+            if (!Double.TryParse(txtDescuento.Text, out descuento))
+            {
+                MessageBox.Show("Valor Invalido");
+                txtDescuento.Text = "0";
+                return;
+            }
+            if (btnTipoValor.Text == "$")
+            {
+                if (Convert.ToDouble(lblTotal.Text) < descuento)
+                {
+                    MessageBox.Show("Valor invalido");
+                    txtDescuento.Text = "0";
+                }
+            }
+            else
+            {
+                if (descuento > 100)
+                {
+                    MessageBox.Show("Valor invalido");
+                    txtDescuento.Text = "0";
+                    return;
+                }
+            }
             CalcularTotales();
         }
 
         private void CalcularTotales()
         {
-            var totalBruto = Convert.ToDouble(lblTotal.Text);
-            var descuento = Convert.ToDouble(txtDescuento.Text);
-            if(btnTipoValor.Text == "$")
-                lblSubtotal.Text = (totalBruto - descuento).ToString();
-            else
-                lblSubtotal.Text = (totalBruto - (totalBruto * descuento / 100)).ToString();
-
-            if (cmbLetra.Text == "A")
+            try
             {
+                var totalBruto = Convert.ToDouble(lblTotal.Text);
+                var descuento = Convert.ToDouble(txtDescuento.Text);
+                if (btnTipoValor.Text == "$")
+                    lblSubtotal.Text = (totalBruto - descuento).ToString();
+                else
+                    lblSubtotal.Text = (totalBruto - (totalBruto * descuento / 100)).ToString();
 
-                lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text)*0.21).ToString();
+                if (cmbLetra.Text == "A")
+                {
 
-                lblNetoPagar.Text = (Convert.ToDouble(lblSubtotal.Text) + Convert.ToDouble(lblTotalIva.Text)).ToString();
+                    lblTotalIva.Text = (Convert.ToDouble(lblSubtotal.Text) * 0.21).ToString();
+
+                    lblNetoPagar.Text = (Convert.ToDouble(lblSubtotal.Text) + Convert.ToDouble(lblTotalIva.Text)).ToString();
+                }
+                else
+                {
+                    lblTotalIva.Text = "INCLUIDO";
+                    lblNetoPagar.Text = lblSubtotal.Text;
+                }
             }
-            else
+            catch (Exception)
             {
-                lblTotalIva.Text = "INCLUIDO";
-                lblNetoPagar.Text = lblSubtotal.Text;
             }
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -351,7 +387,31 @@ namespace ConexcoFacturación
             else
                 new FrmFacturaBImprimir() { IdFactura = idFactura }.ShowDialog();
         }
+
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == ',')
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
    }
-
-
 }

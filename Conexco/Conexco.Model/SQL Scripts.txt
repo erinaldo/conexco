@@ -33,6 +33,7 @@ En Contactos puede haber varios y con sus respectivos mails.
 
 Ver Facturas:
 Ordenadas por fecha de vencimiento y estado pendiente, con posibilidad de cambiar el estado.
+Poder buscar por cliente
 Imprimible? segun lo dificil q sea
 Campos de la grilla:
 NRO.DE FAC
