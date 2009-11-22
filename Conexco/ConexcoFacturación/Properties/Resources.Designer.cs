@@ -74,6 +74,13 @@ namespace ConexcoFacturación.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap cepi {
+            get {
+                object obj = ResourceManager.GetObject("cepi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap factura {
             get {
                 object obj = ResourceManager.GetObject("factura", resourceCulture);

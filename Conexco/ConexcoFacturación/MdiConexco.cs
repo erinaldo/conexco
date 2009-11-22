@@ -19,39 +19,34 @@ namespace ConexcoFacturación
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
+        private void MdiConexco_Load(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            var empresa = new EmpresaController().DatosEmpresa();
+            if (empresa == null)
             {
-                string FileName = openFileDialog.FileName;
+                MessageBox.Show("Bienvenido! Usted no tiene datos de su Empresa cargados, por favor ingreselos");
+                new FrmEmpresa().ShowDialog();
             }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            else
             {
-                string FileName = saveFileDialog.FileName;
+                //TODO: DESCOMENTAR CUANDO SE REQUIERA CONTRASEÑA
+                //bool correcto = false;
+                //for (int i = 0; i < 3; i++)
+                //{
+                //    var result = Inputbox.Show("Autenticación", "Ingrese su contraseña: ", FormStartPosition.CenterScreen);
+                //    if (result == empresa.Contrasenia)
+                //    {
+                //        correcto = true;
+                //        break;
+                //    }
+                //    MessageBox.Show("Contraseña incorrecta, inténtelo nuevamente");
+                //}
+                //if (!correcto)
+                //{
+                //    MessageBox.Show("Ha alcanzado el límite de intentos, el Sistema se cerrará");
+                //    this.Close();
+                //}
             }
-        }
-
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,13 +77,6 @@ namespace ConexcoFacturación
             }
         }
 
-        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var childForm = new FrmEmpresa();
-            childForm.MdiParent = this;
-            childForm.Show();
-        }
-
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmClientes(){MdiParent = this}.Show();
@@ -102,15 +90,6 @@ namespace ConexcoFacturación
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmArticulos() { MdiParent = this }.Show();
-        }
-
-        private void MdiConexco_Load(object sender, EventArgs e)
-        {
-            if(new EmpresaController().DatosEmpresa() == null)
-            {
-                MessageBox.Show("Bienvenido! Usted no tiene datos de su empresa cargados, por favor ingreselos");
-                new FrmEmpresa().ShowDialog();
-            }
         }
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,9 +206,9 @@ namespace ConexcoFacturación
             }
         }
 
-        private void imprimirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmFacturaImprimir(){IdFactura = 6}.Show();
+            new FrmEmpresa(){MdiParent = this}.Show();
         }
     }
 }

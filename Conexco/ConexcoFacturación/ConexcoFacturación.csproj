@@ -213,6 +213,7 @@
     <Compile Include="FrmIngreso.Designer.cs">
       <DependentUpon>FrmIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputBox.cs" />
     <Compile Include="ListColorBox.cs">
       <SubType>Component</SubType>
     </Compile>

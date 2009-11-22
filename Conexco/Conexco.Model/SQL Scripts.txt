@@ -10,13 +10,15 @@ Pendiente, Pagado, Anulado
 ------------------------------------------------------------------------
 
 COSAS A HACER:
--Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.
--TOOLTIPS
--Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones
+
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Mejorar UI!
 -Chekar tema de stock en remitos
+-Backups de la base desde el sistema
 
+-Tooltips																							HECHO
+-Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
+-Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones			HECHO
 
 ------------------------------------------------------------------------
 
