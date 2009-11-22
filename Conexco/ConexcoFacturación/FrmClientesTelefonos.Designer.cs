@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesTelefonos));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -206,6 +207,9 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.grdTelefonos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "FrmClientesTelefonos";
             this.Text = "Telefonos de cliente";
             this.Load += new System.EventHandler(this.FrmClientesTelefonos_Load);

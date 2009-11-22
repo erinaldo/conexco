@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesTransportistas));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.gbxTransportista = new System.Windows.Forms.GroupBox();
+            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.lblCuit = new System.Windows.Forms.Label();
             this.txtInfoAdicional = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -53,8 +56,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.gridTransportistas = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.lblCuit = new System.Windows.Forms.Label();
-            this.txtCuit = new System.Windows.Forms.TextBox();
             this.gbxTransportista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTransportistas)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +136,22 @@
             this.gbxTransportista.TabIndex = 26;
             this.gbxTransportista.TabStop = false;
             this.gbxTransportista.Text = "Detalle";
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(131, 49);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.TabIndex = 57;
+            // 
+            // lblCuit
+            // 
+            this.lblCuit.AutoSize = true;
+            this.lblCuit.Location = new System.Drawing.Point(85, 52);
+            this.lblCuit.Name = "lblCuit";
+            this.lblCuit.Size = new System.Drawing.Size(32, 13);
+            this.lblCuit.TabIndex = 56;
+            this.lblCuit.Text = "CUIT";
             // 
             // txtInfoAdicional
             // 
@@ -303,22 +320,6 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // lblCuit
-            // 
-            this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(85, 52);
-            this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(32, 13);
-            this.lblCuit.TabIndex = 56;
-            this.lblCuit.Text = "CUIT";
-            // 
-            // txtCuit
-            // 
-            this.txtCuit.Location = new System.Drawing.Point(131, 49);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
-            this.txtCuit.TabIndex = 57;
-            // 
             // FrmClientesTransportistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +335,9 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.gridTransportistas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmClientesTransportistas";
             this.Text = "Transportistas del cliente";
             this.Load += new System.EventHandler(this.FrmClientesTransportistas_Load);

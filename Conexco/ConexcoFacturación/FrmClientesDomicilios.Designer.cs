@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesDomicilios));
             this.grdDomicilios = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -259,6 +260,9 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.grdDomicilios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmClientesDomicilios";
             this.Text = "Domicilios del Cliente";
             this.Load += new System.EventHandler(this.FrmClientesDomicilios_Load);

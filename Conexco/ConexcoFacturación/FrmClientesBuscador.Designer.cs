@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesBuscador));
             this.grdClientes = new System.Windows.Forms.DataGridView();
             this.gbxCriteriosBusqueda = new System.Windows.Forms.GroupBox();
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
@@ -43,9 +44,8 @@
             this.lblSeleccioneCliente = new System.Windows.Forms.Label();
             this.lblSeleccioneDomicilio = new System.Windows.Forms.Label();
             this.grdDomicilios = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.gbxCriteriosBusqueda.SuspendLayout();
             this.gbxResultados.SuspendLayout();
@@ -57,7 +57,7 @@
             this.grdClientes.AllowUserToAddRows = false;
             this.grdClientes.AllowUserToDeleteRows = false;
             this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdClientes.Location = new System.Drawing.Point(6, 39);
+            this.grdClientes.Location = new System.Drawing.Point(6, 35);
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
             this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -67,6 +67,7 @@
             // 
             // gbxCriteriosBusqueda
             // 
+            this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.gbxCriteriosBusqueda.Controls.Add(this.txtValorBusqueda);
             this.gbxCriteriosBusqueda.Controls.Add(this.btnBuscar);
             this.gbxCriteriosBusqueda.Controls.Add(this.lblValorBusqueda);
@@ -78,7 +79,7 @@
             this.gbxCriteriosBusqueda.Controls.Add(this.rbtnNombreRazonSocial);
             this.gbxCriteriosBusqueda.Location = new System.Drawing.Point(12, 12);
             this.gbxCriteriosBusqueda.Name = "gbxCriteriosBusqueda";
-            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(562, 100);
+            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(568, 93);
             this.gbxCriteriosBusqueda.TabIndex = 1;
             this.gbxCriteriosBusqueda.TabStop = false;
             this.gbxCriteriosBusqueda.Text = "Criterios de Busqueda";
@@ -92,18 +93,20 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(327, 62);
+            this.btnBuscar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBuscar.Location = new System.Drawing.Point(371, 58);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 28);
             this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "    Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblValorBusqueda
             // 
             this.lblValorBusqueda.AutoSize = true;
-            this.lblValorBusqueda.Location = new System.Drawing.Point(287, 39);
+            this.lblValorBusqueda.Location = new System.Drawing.Point(287, 35);
             this.lblValorBusqueda.Name = "lblValorBusqueda";
             this.lblValorBusqueda.Size = new System.Drawing.Size(78, 13);
             this.lblValorBusqueda.TabIndex = 6;
@@ -177,11 +180,12 @@
             // 
             // gbxResultados
             // 
+            this.gbxResultados.BackColor = System.Drawing.Color.Transparent;
             this.gbxResultados.Controls.Add(this.lblSeleccioneCliente);
             this.gbxResultados.Controls.Add(this.lblSeleccioneDomicilio);
             this.gbxResultados.Controls.Add(this.grdDomicilios);
             this.gbxResultados.Controls.Add(this.grdClientes);
-            this.gbxResultados.Location = new System.Drawing.Point(12, 121);
+            this.gbxResultados.Location = new System.Drawing.Point(12, 113);
             this.gbxResultados.Name = "gbxResultados";
             this.gbxResultados.Size = new System.Drawing.Size(568, 280);
             this.gbxResultados.TabIndex = 2;
@@ -191,7 +195,7 @@
             // lblSeleccioneCliente
             // 
             this.lblSeleccioneCliente.AutoSize = true;
-            this.lblSeleccioneCliente.Location = new System.Drawing.Point(6, 23);
+            this.lblSeleccioneCliente.Location = new System.Drawing.Point(6, 19);
             this.lblSeleccioneCliente.Name = "lblSeleccioneCliente";
             this.lblSeleccioneCliente.Size = new System.Drawing.Size(106, 13);
             this.lblSeleccioneCliente.TabIndex = 7;
@@ -200,7 +204,7 @@
             // lblSeleccioneDomicilio
             // 
             this.lblSeleccioneDomicilio.AutoSize = true;
-            this.lblSeleccioneDomicilio.Location = new System.Drawing.Point(6, 157);
+            this.lblSeleccioneDomicilio.Location = new System.Drawing.Point(6, 155);
             this.lblSeleccioneDomicilio.Name = "lblSeleccioneDomicilio";
             this.lblSeleccioneDomicilio.Size = new System.Drawing.Size(116, 13);
             this.lblSeleccioneDomicilio.TabIndex = 6;
@@ -211,43 +215,53 @@
             this.grdDomicilios.AllowUserToAddRows = false;
             this.grdDomicilios.AllowUserToDeleteRows = false;
             this.grdDomicilios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDomicilios.Location = new System.Drawing.Point(6, 179);
+            this.grdDomicilios.Location = new System.Drawing.Point(6, 177);
             this.grdDomicilios.MultiSelect = false;
             this.grdDomicilios.Name = "grdDomicilios";
             this.grdDomicilios.ReadOnly = true;
             this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDomicilios.Size = new System.Drawing.Size(552, 92);
+            this.grdDomicilios.Size = new System.Drawing.Size(556, 92);
             this.grdDomicilios.TabIndex = 5;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(121, 407);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(359, 407);
+            this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.Location = new System.Drawing.Point(359, 401);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(83, 32);
             this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "       Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.aceptar;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAceptar.Location = new System.Drawing.Point(121, 401);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 32);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "       Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // FrmClientesBuscador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(592, 442);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbxResultados);
             this.Controls.Add(this.gbxCriteriosBusqueda);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmClientesBuscador";
             this.Text = "Buscador de Clientes";
             this.Load += new System.EventHandler(this.FrmClientesBuscador_Load);
@@ -277,7 +291,6 @@
         private System.Windows.Forms.RadioButton rbtnLocalidad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label lblSeleccioneCliente;
         private System.Windows.Forms.Label lblSeleccioneDomicilio;
         private System.Windows.Forms.DataGridView grdDomicilios;

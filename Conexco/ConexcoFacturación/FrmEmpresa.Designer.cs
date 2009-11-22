@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpresa));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtWeb = new System.Windows.Forms.TextBox();
@@ -63,16 +64,16 @@
             this.btnLocalidad = new System.Windows.Forms.Button();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
+            this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
+            this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.lblPorciento = new System.Windows.Forms.Label();
             this.txtPorcentajeIVA = new System.Windows.Forms.TextBox();
             this.lblPorcentajeIVA = new System.Windows.Forms.Label();
-            this.dtpInicioActividades = new System.Windows.Forms.DateTimePicker();
-            this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.gbxConfiguracion = new System.Windows.Forms.GroupBox();
-            this.lblContrasenia = new System.Windows.Forms.Label();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.txtRepetirContrasenia = new System.Windows.Forms.TextBox();
             this.lblRepetirContrasenia = new System.Windows.Forms.Label();
+            this.txtRepetirContrasenia = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
+            this.lblContrasenia = new System.Windows.Forms.Label();
             this.gbxDatosPersonales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxDatosFiscales.SuspendLayout();
@@ -403,6 +404,22 @@
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos Fiscales";
             // 
+            // dtpInicioActividades
+            // 
+            this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioActividades.Location = new System.Drawing.Point(124, 86);
+            this.dtpInicioActividades.Name = "dtpInicioActividades";
+            this.dtpInicioActividades.Size = new System.Drawing.Size(104, 20);
+            this.dtpInicioActividades.TabIndex = 55;
+            // 
+            // cmbCondicionIva
+            // 
+            this.cmbCondicionIva.FormattingEnabled = true;
+            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
+            this.cmbCondicionIva.Name = "cmbCondicionIva";
+            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
+            this.cmbCondicionIva.TabIndex = 54;
+            // 
             // lblPorciento
             // 
             this.lblPorciento.AutoSize = true;
@@ -428,22 +445,6 @@
             this.lblPorcentajeIVA.TabIndex = 56;
             this.lblPorcentajeIVA.Text = "Porcentaje IVA";
             // 
-            // dtpInicioActividades
-            // 
-            this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioActividades.Location = new System.Drawing.Point(124, 86);
-            this.dtpInicioActividades.Name = "dtpInicioActividades";
-            this.dtpInicioActividades.Size = new System.Drawing.Size(104, 20);
-            this.dtpInicioActividades.TabIndex = 55;
-            // 
-            // cmbCondicionIva
-            // 
-            this.cmbCondicionIva.FormattingEnabled = true;
-            this.cmbCondicionIva.Location = new System.Drawing.Point(124, 50);
-            this.cmbCondicionIva.Name = "cmbCondicionIva";
-            this.cmbCondicionIva.Size = new System.Drawing.Size(104, 21);
-            this.cmbCondicionIva.TabIndex = 54;
-            // 
             // gbxConfiguracion
             // 
             this.gbxConfiguracion.Controls.Add(this.lblRepetirContrasenia);
@@ -460,22 +461,14 @@
             this.gbxConfiguracion.TabStop = false;
             this.gbxConfiguracion.Text = "Configuración del Sistema";
             // 
-            // lblContrasenia
+            // lblRepetirContrasenia
             // 
-            this.lblContrasenia.AutoSize = true;
-            this.lblContrasenia.Location = new System.Drawing.Point(19, 55);
-            this.lblContrasenia.Name = "lblContrasenia";
-            this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
-            this.lblContrasenia.TabIndex = 59;
-            this.lblContrasenia.Text = "Contraseña";
-            // 
-            // txtContrasenia
-            // 
-            this.txtContrasenia.Location = new System.Drawing.Point(115, 48);
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(100, 20);
-            this.txtContrasenia.TabIndex = 60;
-            this.txtContrasenia.UseSystemPasswordChar = true;
+            this.lblRepetirContrasenia.AutoSize = true;
+            this.lblRepetirContrasenia.Location = new System.Drawing.Point(19, 77);
+            this.lblRepetirContrasenia.Name = "lblRepetirContrasenia";
+            this.lblRepetirContrasenia.Size = new System.Drawing.Size(98, 13);
+            this.lblRepetirContrasenia.TabIndex = 62;
+            this.lblRepetirContrasenia.Text = "Repetir Contraseña";
             // 
             // txtRepetirContrasenia
             // 
@@ -485,14 +478,22 @@
             this.txtRepetirContrasenia.TabIndex = 61;
             this.txtRepetirContrasenia.UseSystemPasswordChar = true;
             // 
-            // lblRepetirContrasenia
+            // txtContrasenia
             // 
-            this.lblRepetirContrasenia.AutoSize = true;
-            this.lblRepetirContrasenia.Location = new System.Drawing.Point(19, 77);
-            this.lblRepetirContrasenia.Name = "lblRepetirContrasenia";
-            this.lblRepetirContrasenia.Size = new System.Drawing.Size(98, 13);
-            this.lblRepetirContrasenia.TabIndex = 62;
-            this.lblRepetirContrasenia.Text = "Repetir Contraseña";
+            this.txtContrasenia.Location = new System.Drawing.Point(115, 48);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasenia.TabIndex = 60;
+            this.txtContrasenia.UseSystemPasswordChar = true;
+            // 
+            // lblContrasenia
+            // 
+            this.lblContrasenia.AutoSize = true;
+            this.lblContrasenia.Location = new System.Drawing.Point(19, 55);
+            this.lblContrasenia.Name = "lblContrasenia";
+            this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasenia.TabIndex = 59;
+            this.lblContrasenia.Text = "Contraseña";
             // 
             // FrmEmpresa
             // 
@@ -506,6 +507,9 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gbxDatosPersonales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmEmpresa";
             this.Text = "Datos de la Empresa";
             this.Load += new System.EventHandler(this.FrmEmpresa_Load);

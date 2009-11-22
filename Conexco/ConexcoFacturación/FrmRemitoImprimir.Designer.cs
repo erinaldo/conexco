@@ -31,16 +31,32 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewerRemito = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ConexcoImpresionDataSet = new ConexcoFacturación.ConexcoImpresionDataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRemitoImprimir));
             this.RemitoImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RemitoImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.RemitoImpresionTableAdapter();
+            this.ConexcoImpresionDataSet = new ConexcoFacturación.ConexcoImpresionDataSet();
             this.RemitoLineaImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewerRemito = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.RemitoImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.RemitoImpresionTableAdapter();
             this.RemitoLineaImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.RemitoLineaImpresionTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemitoImpresionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemitoLineaImpresionBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // RemitoImpresionBindingSource
+            // 
+            this.RemitoImpresionBindingSource.DataMember = "RemitoImpresion";
+            this.RemitoImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
+            // 
+            // ConexcoImpresionDataSet
+            // 
+            this.ConexcoImpresionDataSet.DataSetName = "ConexcoImpresionDataSet";
+            this.ConexcoImpresionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // RemitoLineaImpresionBindingSource
+            // 
+            this.RemitoLineaImpresionBindingSource.DataMember = "RemitoLineaImpresion";
+            this.RemitoLineaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
             // 
             // reportViewerRemito
             // 
@@ -61,24 +77,9 @@
             this.reportViewerRemito.Size = new System.Drawing.Size(743, 463);
             this.reportViewerRemito.TabIndex = 1;
             // 
-            // ConexcoImpresionDataSet
-            // 
-            this.ConexcoImpresionDataSet.DataSetName = "ConexcoImpresionDataSet";
-            this.ConexcoImpresionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // RemitoImpresionBindingSource
-            // 
-            this.RemitoImpresionBindingSource.DataMember = "RemitoImpresion";
-            this.RemitoImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
-            // 
             // RemitoImpresionTableAdapter
             // 
             this.RemitoImpresionTableAdapter.ClearBeforeFill = true;
-            // 
-            // RemitoLineaImpresionBindingSource
-            // 
-            this.RemitoLineaImpresionBindingSource.DataMember = "RemitoLineaImpresion";
-            this.RemitoLineaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
             // 
             // RemitoLineaImpresionTableAdapter
             // 
@@ -90,11 +91,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 488);
             this.Controls.Add(this.reportViewerRemito);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmRemitoImprimir";
             this.Text = "FrmRemitoImprimir";
             this.Load += new System.EventHandler(this.FrmRemitoImprimir_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemitoImpresionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemitoLineaImpresionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

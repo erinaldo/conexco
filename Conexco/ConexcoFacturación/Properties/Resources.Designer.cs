@@ -60,6 +60,13 @@ namespace ConexcoFacturación.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap aceptar {
+            get {
+                object obj = ResourceManager.GetObject("aceptar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap cancelar {
             get {
                 object obj = ResourceManager.GetObject("cancelar", resourceCulture);

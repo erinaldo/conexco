@@ -31,16 +31,32 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewerFacturaB = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ConexcoImpresionDataSet = new ConexcoFacturación.ConexcoImpresionDataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacturaBImprimir));
             this.FacturaImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.FacturaImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.FacturaImpresionTableAdapter();
+            this.ConexcoImpresionDataSet = new ConexcoFacturación.ConexcoImpresionDataSet();
             this.FacturaBLineaImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewerFacturaB = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.FacturaImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.FacturaImpresionTableAdapter();
             this.FacturaBLineaImpresionTableAdapter = new ConexcoFacturación.ConexcoImpresionDataSetTableAdapters.FacturaBLineaImpresionTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaImpresionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaBLineaImpresionBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // FacturaImpresionBindingSource
+            // 
+            this.FacturaImpresionBindingSource.DataMember = "FacturaImpresion";
+            this.FacturaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
+            // 
+            // ConexcoImpresionDataSet
+            // 
+            this.ConexcoImpresionDataSet.DataSetName = "ConexcoImpresionDataSet";
+            this.ConexcoImpresionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // FacturaBLineaImpresionBindingSource
+            // 
+            this.FacturaBLineaImpresionBindingSource.DataMember = "FacturaBLineaImpresion";
+            this.FacturaBLineaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
             // 
             // reportViewerFacturaB
             // 
@@ -61,24 +77,9 @@
             this.reportViewerFacturaB.Size = new System.Drawing.Size(743, 463);
             this.reportViewerFacturaB.TabIndex = 2;
             // 
-            // ConexcoImpresionDataSet
-            // 
-            this.ConexcoImpresionDataSet.DataSetName = "ConexcoImpresionDataSet";
-            this.ConexcoImpresionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // FacturaImpresionBindingSource
-            // 
-            this.FacturaImpresionBindingSource.DataMember = "FacturaImpresion";
-            this.FacturaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
-            // 
             // FacturaImpresionTableAdapter
             // 
             this.FacturaImpresionTableAdapter.ClearBeforeFill = true;
-            // 
-            // FacturaBLineaImpresionBindingSource
-            // 
-            this.FacturaBLineaImpresionBindingSource.DataMember = "FacturaBLineaImpresion";
-            this.FacturaBLineaImpresionBindingSource.DataSource = this.ConexcoImpresionDataSet;
             // 
             // FacturaBLineaImpresionTableAdapter
             // 
@@ -90,11 +91,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 488);
             this.Controls.Add(this.reportViewerFacturaB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmFacturaBImprimir";
             this.Text = "FrmFacturaBImprimir";
             this.Load += new System.EventHandler(this.FrmFacturaBImprimir_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaImpresionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaBLineaImpresionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
