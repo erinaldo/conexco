@@ -142,7 +142,7 @@
             this.btnGuardarImprimir.Location = new System.Drawing.Point(12, 4);
             this.btnGuardarImprimir.Name = "btnGuardarImprimir";
             this.btnGuardarImprimir.Size = new System.Drawing.Size(139, 31);
-            this.btnGuardarImprimir.TabIndex = 42;
+            this.btnGuardarImprimir.TabIndex = 7;
             this.btnGuardarImprimir.Text = "       Guardar e Imprimir";
             this.toolTipControl.SetToolTip(this.btnGuardarImprimir, "Guardar e Imprimir Remito");
             this.btnGuardarImprimir.UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(285, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(85, 31);
-            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "       Cancelar";
             this.toolTipControl.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(174, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 31);
-            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "       Guardar";
             this.toolTipControl.SetToolTip(this.btnGuardar, "Guardar Remito");
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.gbxDetalle.Location = new System.Drawing.Point(9, 401);
             this.gbxDetalle.Name = "gbxDetalle";
             this.gbxDetalle.Size = new System.Drawing.Size(672, 228);
-            this.gbxDetalle.TabIndex = 60;
+            this.gbxDetalle.TabIndex = 5;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle";
             // 
@@ -316,7 +316,7 @@
             this.gbxFiscales.Location = new System.Drawing.Point(9, 299);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 91);
-            this.gbxFiscales.TabIndex = 59;
+            this.gbxFiscales.TabIndex = 4;
             this.gbxFiscales.TabStop = false;
             // 
             // lblCantBultos
@@ -333,7 +333,7 @@
             this.txtCantBultos.Location = new System.Drawing.Point(562, 48);
             this.txtCantBultos.Name = "txtCantBultos";
             this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
-            this.txtCantBultos.TabIndex = 65;
+            this.txtCantBultos.TabIndex = 3;
             this.txtCantBultos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtOrdenCompra
@@ -341,7 +341,7 @@
             this.txtOrdenCompra.Location = new System.Drawing.Point(562, 17);
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtOrdenCompra.TabIndex = 64;
+            this.txtOrdenCompra.TabIndex = 2;
             this.txtOrdenCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // lblOrdenCompra
@@ -378,7 +378,7 @@
             this.btnTransportistas.Location = new System.Drawing.Point(358, 11);
             this.btnTransportistas.Name = "btnTransportistas";
             this.btnTransportistas.Size = new System.Drawing.Size(32, 23);
-            this.btnTransportistas.TabIndex = 60;
+            this.btnTransportistas.TabIndex = 1;
             this.toolTipControl.SetToolTip(this.btnTransportistas, "Buscador de Transportistas");
             this.btnTransportistas.UseVisualStyleBackColor = true;
             this.btnTransportistas.Click += new System.EventHandler(this.btnTransportistas_Click);
@@ -398,7 +398,7 @@
             this.txtTransportistaRazonSocial.Name = "txtTransportistaRazonSocial";
             this.txtTransportistaRazonSocial.ReadOnly = true;
             this.txtTransportistaRazonSocial.Size = new System.Drawing.Size(229, 20);
-            this.txtTransportistaRazonSocial.TabIndex = 6;
+            this.txtTransportistaRazonSocial.TabIndex = 0;
             this.toolTipControl.SetToolTip(this.txtTransportistaRazonSocial, "Utilice el buscador para seleccionar un transportista");
             this.txtTransportistaRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
@@ -538,7 +538,7 @@
             this.btnClientes.Location = new System.Drawing.Point(335, 12);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(32, 23);
-            this.btnClientes.TabIndex = 22;
+            this.btnClientes.TabIndex = 1;
             this.toolTipControl.SetToolTip(this.btnClientes, "Buscador de Clientes");
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -603,7 +603,7 @@
             this.gbxCliente.Location = new System.Drawing.Point(9, 167);
             this.gbxCliente.Name = "gbxCliente";
             this.gbxCliente.Size = new System.Drawing.Size(672, 123);
-            this.gbxCliente.TabIndex = 45;
+            this.gbxCliente.TabIndex = 3;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
             // 
@@ -614,7 +614,7 @@
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
             this.cmbRazonSocial.Name = "cmbRazonSocial";
             this.cmbRazonSocial.Size = new System.Drawing.Size(243, 21);
-            this.cmbRazonSocial.TabIndex = 62;
+            this.cmbRazonSocial.TabIndex = 0;
             this.toolTipControl.SetToolTip(this.cmbRazonSocial, "Seleccione un cliente o utilice el buscador");
             this.cmbRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
@@ -626,7 +626,7 @@
             this.cmbProvincia.Location = new System.Drawing.Point(76, 92);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(149, 21);
-            this.cmbProvincia.TabIndex = 61;
+            this.cmbProvincia.TabIndex = 5;
             this.toolTipControl.SetToolTip(this.cmbProvincia, "Provincia de Entrega");
             this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
@@ -637,7 +637,7 @@
             this.btnLocalidad.Location = new System.Drawing.Point(239, 66);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
-            this.btnLocalidad.TabIndex = 60;
+            this.btnLocalidad.TabIndex = 4;
             this.toolTipControl.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
@@ -647,7 +647,7 @@
             this.txtCodPostal.Location = new System.Drawing.Point(311, 94);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
-            this.txtCodPostal.TabIndex = 20;
+            this.txtCodPostal.TabIndex = 6;
             this.toolTipControl.SetToolTip(this.txtCodPostal, "Código Postal de Entrega");
             this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
@@ -656,7 +656,7 @@
             this.txtLocalidad.Location = new System.Drawing.Point(76, 66);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(149, 20);
-            this.txtLocalidad.TabIndex = 19;
+            this.txtLocalidad.TabIndex = 3;
             this.toolTipControl.SetToolTip(this.txtLocalidad, "Localidad de Entrega");
             this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
@@ -665,7 +665,7 @@
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(243, 20);
-            this.txtDomicilio.TabIndex = 18;
+            this.txtDomicilio.TabIndex = 2;
             this.toolTipControl.SetToolTip(this.txtDomicilio, "Domicilio de entrega");
             this.txtDomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
@@ -797,7 +797,7 @@
             this.dtpFechaEmision.Location = new System.Drawing.Point(581, 59);
             this.dtpFechaEmision.Name = "dtpFechaEmision";
             this.dtpFechaEmision.Size = new System.Drawing.Size(83, 20);
-            this.dtpFechaEmision.TabIndex = 46;
+            this.dtpFechaEmision.TabIndex = 2;
             this.toolTipControl.SetToolTip(this.dtpFechaEmision, "Seleccione la fecha");
             // 
             // lblTEmpCuit
@@ -836,7 +836,7 @@
             this.txtNumRemito.Location = new System.Drawing.Point(405, 74);
             this.txtNumRemito.Name = "txtNumRemito";
             this.txtNumRemito.Size = new System.Drawing.Size(100, 20);
-            this.txtNumRemito.TabIndex = 79;
+            this.txtNumRemito.TabIndex = 1;
             this.toolTipControl.SetToolTip(this.txtNumRemito, "Número de Remito");
             this.txtNumRemito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             this.txtNumRemito.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -858,7 +858,7 @@
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservaciones.Size = new System.Drawing.Size(379, 53);
-            this.txtObservaciones.TabIndex = 83;
+            this.txtObservaciones.TabIndex = 6;
             this.toolTipControl.SetToolTip(this.txtObservaciones, "Información Adicional (No se imprime)");
             // 
             // errorProviderRequerido

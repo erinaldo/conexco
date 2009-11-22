@@ -92,7 +92,7 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(121, 21);
             this.cmbLocalidad.Sorted = true;
-            this.cmbLocalidad.TabIndex = 3;
+            this.cmbLocalidad.TabIndex = 1;
             this.toolTipLocalidades.SetToolTip(this.cmbLocalidad, "Seleccione la Localidad");
             this.cmbLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
@@ -140,7 +140,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(45, 223);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -150,7 +150,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(142, 223);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -160,7 +160,7 @@
             this.txtNuevaLocalidad.Location = new System.Drawing.Point(138, 156);
             this.txtNuevaLocalidad.Name = "txtNuevaLocalidad";
             this.txtNuevaLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.txtNuevaLocalidad.TabIndex = 10;
+            this.txtNuevaLocalidad.TabIndex = 2;
             this.toolTipLocalidades.SetToolTip(this.txtNuevaLocalidad, "Ingrese aquí la nueva Localidad");
             // 
             // txtNuevoCodPostal
@@ -168,7 +168,7 @@
             this.txtNuevoCodPostal.Location = new System.Drawing.Point(138, 189);
             this.txtNuevoCodPostal.Name = "txtNuevoCodPostal";
             this.txtNuevoCodPostal.Size = new System.Drawing.Size(100, 20);
-            this.txtNuevoCodPostal.TabIndex = 11;
+            this.txtNuevoCodPostal.TabIndex = 3;
             this.toolTipLocalidades.SetToolTip(this.txtNuevoCodPostal, "Ingrese aquí el nuevo Código Postal");
             // 
             // lblTCodPostal

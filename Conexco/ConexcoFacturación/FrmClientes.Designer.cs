@@ -83,7 +83,7 @@
             this.btnSalir.Location = new System.Drawing.Point(512, 227);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -93,7 +93,7 @@
             this.btnDomicilios.Location = new System.Drawing.Point(512, 26);
             this.btnDomicilios.Name = "btnDomicilios";
             this.btnDomicilios.Size = new System.Drawing.Size(81, 23);
-            this.btnDomicilios.TabIndex = 5;
+            this.btnDomicilios.TabIndex = 4;
             this.btnDomicilios.Text = "Domicilios";
             this.toolTipClientes.SetToolTip(this.btnDomicilios, "Administrar domicilios del cliente");
             this.btnDomicilios.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.btnTelefonos.Location = new System.Drawing.Point(512, 66);
             this.btnTelefonos.Name = "btnTelefonos";
             this.btnTelefonos.Size = new System.Drawing.Size(81, 23);
-            this.btnTelefonos.TabIndex = 6;
+            this.btnTelefonos.TabIndex = 5;
             this.btnTelefonos.Text = "Teléfonos";
             this.toolTipClientes.SetToolTip(this.btnTelefonos, "Administrar teléfonos del cliente");
             this.btnTelefonos.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.btnContactos.Location = new System.Drawing.Point(512, 106);
             this.btnContactos.Name = "btnContactos";
             this.btnContactos.Size = new System.Drawing.Size(81, 23);
-            this.btnContactos.TabIndex = 7;
+            this.btnContactos.TabIndex = 6;
             this.btnContactos.Text = "Contactos";
             this.toolTipClientes.SetToolTip(this.btnContactos, "Administrar contactos del cliente");
             this.btnContactos.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.btnTransportistas.Location = new System.Drawing.Point(512, 146);
             this.btnTransportistas.Name = "btnTransportistas";
             this.btnTransportistas.Size = new System.Drawing.Size(81, 23);
-            this.btnTransportistas.TabIndex = 8;
+            this.btnTransportistas.TabIndex = 7;
             this.btnTransportistas.Text = "Transportistas";
             this.toolTipClientes.SetToolTip(this.btnTransportistas, "Administrar transportistas del cliente");
             this.btnTransportistas.UseVisualStyleBackColor = true;
