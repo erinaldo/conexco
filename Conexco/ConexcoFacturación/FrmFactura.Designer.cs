@@ -110,12 +110,14 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
             this.gbxDetalle.SuspendLayout();
             this.gbxObservaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpFechaEmision
@@ -301,6 +303,7 @@
             this.cmbRazonSocial.Size = new System.Drawing.Size(272, 21);
             this.cmbRazonSocial.TabIndex = 27;
             this.toolTipControl.SetToolTip(this.cmbRazonSocial, "Seleccione un cliente o utilize el buscador");
+            this.cmbRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
             // 
             // lblEstadoDoc
@@ -664,6 +667,7 @@
             this.grdDetalleFactura.TabIndex = 0;
             this.grdDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_CellValueChanged);
             this.grdDetalleFactura.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleFactura_UserDeletedRow);
+            this.grdDetalleFactura.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grdDetalleFactura_CellValidating);
             this.grdDetalleFactura.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_RowValidated);
             // 
             // lblCondiciones
@@ -876,6 +880,7 @@
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 44;
             this.txtNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            this.txtNumFactura.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // Codigo
             // 
@@ -915,6 +920,10 @@
             this.Totales.ReadOnly = true;
             this.Totales.ToolTipText = "Totales";
             this.Totales.Width = 90;
+            // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmFactura
             // 
@@ -971,6 +980,7 @@
             this.gbxObservaciones.ResumeLayout(false);
             this.gbxObservaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1058,6 +1068,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
 
     }
 }

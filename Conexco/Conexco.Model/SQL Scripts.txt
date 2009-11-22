@@ -4,11 +4,13 @@ Facturas:
 Observaciones varchar(250) nuleable
 SonPesos varchar(250) nuleable
 
+Documentos_Estados:
+Pendiente, Pagado, Anulado
+
 ------------------------------------------------------------------------
 
 COSAS A HACER:
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.
--No mostrar el color 0 de los articulos ????
 -TOOLTIPS
 -Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
