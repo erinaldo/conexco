@@ -95,13 +95,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Conexco.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\Conexco_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Conexco.mdf</DependentUpon>
-    </Content>
     <Content Include="SQL Scripts.txt" />
   </ItemGroup>
   <ItemGroup>
