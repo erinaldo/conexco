@@ -331,3 +331,42 @@ VALUES('Santa Cruz')
 
 INSERT INTO Provincias (Provincia)
 VALUES('Tierra del Fuego')
+
+------------------------------------------------------------------
+
+Código Backup Database
+
+string sBackup = "BACKUP DATABASE " + this.txtBase.Text + 
+                 " TO DISK = N'" + this.txtBackup.Text +
+                 "' WITH NOFORMAT, NOINIT, NAME =N'" + this.txtBase.Text +
+                 "' -Full Database Backup',SKIP, STATS = 10";
+
+SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder();
+
+csb.DataSource = this.txtServidor.Text;
+csb.InitialCatalog = this.txtBase.Text;
+csb.IntegratedSecurity = true;
+
+using(SqlConnection con = new SqlConnection(csb.ConnectionString))
+{
+    try
+    {
+        con.Open();
+
+        SqlCommand cmdBackUp = new SqlCommand(sBackup, con);
+
+        cmdBackUp.ExecuteNonQuery();
+
+        MessageBox.Show("Se ha creado un BackUp de La base de datos satisfactoriamente", 
+            "Copia de seguridad de base de datos", 
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        con.Close();
+    }
+    catch(Exception ex)
+    {
+        MessageBox.Show(ex.Message, 
+            "Error al copiar la base de datos", 
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
