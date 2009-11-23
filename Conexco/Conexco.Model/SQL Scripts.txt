@@ -21,6 +21,7 @@ COSAS A HACER:
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Mejorar UI!
 -Backups de la base desde el sistema
+-Crear instalador
 
 
 -Tooltips																							HECHO
@@ -333,6 +334,10 @@ INSERT INTO Provincias (Provincia)
 VALUES('Tierra del Fuego')
 
 ------------------------------------------------------------------
+Instaladores
+http://msdn.microsoft.com/en-us/library/49b92ztk.aspx
+
+-------------------------------------------------------------------
 
 Código Backup Database
 
