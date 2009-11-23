@@ -45,6 +45,7 @@
             // lblCodArticulo
             // 
             this.lblCodArticulo.AutoSize = true;
+            this.lblCodArticulo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodArticulo.Location = new System.Drawing.Point(37, 39);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Size = new System.Drawing.Size(81, 13);
@@ -54,6 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(37, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
@@ -63,6 +65,7 @@
             // lblEgresoMotivo
             // 
             this.lblEgresoMotivo.AutoSize = true;
+            this.lblEgresoMotivo.BackColor = System.Drawing.Color.Transparent;
             this.lblEgresoMotivo.Location = new System.Drawing.Point(37, 108);
             this.lblEgresoMotivo.Name = "lblEgresoMotivo";
             this.lblEgresoMotivo.Size = new System.Drawing.Size(78, 13);
@@ -72,6 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(37, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
@@ -134,6 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(37, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
@@ -153,6 +158,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.ClientSize = new System.Drawing.Size(292, 266);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtStockActual);

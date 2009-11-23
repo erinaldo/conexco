@@ -81,6 +81,7 @@
             // 
             // gbxCriteriosBusqueda
             // 
+            this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.gbxCriteriosBusqueda.Controls.Add(this.txtValorBusqueda);
             this.gbxCriteriosBusqueda.Controls.Add(this.rbtnColor);
             this.gbxCriteriosBusqueda.Controls.Add(this.rbtnCodigoArticulo);
@@ -136,13 +137,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(548, 402);
             this.Controls.Add(this.gbxCriteriosBusqueda);
             this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.grdArticulosStock);
             this.Name = "FrmStock";
-            this.Text = "FrmStock";
+            this.Text = "Manejo de Stock";
             this.Load += new System.EventHandler(this.FrmStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulosStock)).EndInit();
             this.gbxCriteriosBusqueda.ResumeLayout(false);
