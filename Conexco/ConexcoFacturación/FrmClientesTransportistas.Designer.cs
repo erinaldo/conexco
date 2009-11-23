@@ -66,7 +66,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(117, 321);
+            this.btnGuardar.Location = new System.Drawing.Point(122, 321);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(359, 321);
+            this.btnEliminar.Location = new System.Drawing.Point(364, 321);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(275, 321);
+            this.btnModificar.Location = new System.Drawing.Point(280, 321);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(201, 321);
+            this.btnNuevo.Location = new System.Drawing.Point(206, 321);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(65, 23);
             this.btnNuevo.TabIndex = 1;
@@ -345,11 +345,11 @@
             // 
             this.btnSeleccionar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.aceptar;
             this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSeleccionar.Location = new System.Drawing.Point(15, 321);
+            this.btnSeleccionar.Location = new System.Drawing.Point(12, 321);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(85, 30);
+            this.btnSeleccionar.Size = new System.Drawing.Size(99, 30);
             this.btnSeleccionar.TabIndex = 1;
-            this.btnSeleccionar.Text = "Seleccinar";
+            this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTipTransportistas.SetToolTip(this.btnSeleccionar, "Utilizar el Transportista seleccionado");
             this.btnSeleccionar.UseVisualStyleBackColor = true;

@@ -15,7 +15,7 @@
   <rd:GridSpacing>0.25cm</rd:GridSpacing>
   <rd:SnapToGrid>true</rd:SnapToGrid>
   <rd:ReportID>af837816-9b81-4053-9854-ec9d803914be</rd:ReportID>
-  <PageWidth>21cm</PageWidth>
+  <PageWidth>17cm</PageWidth>
   <DataSets>
     <DataSet Name="ConexcoImpresionDataSet_RemitoImpresion">
       <Fields>
@@ -185,12 +185,13 @@
     </DataSet>
   </DataSets>
   <Code />
-  <Width>21.00529cm</Width>
+  <Width>17.03968cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Line Name="line1">
-        <Top>19.25cm</Top>
+        <Top>18cm</Top>
+        <Width>17cm</Width>
         <Style>
           <BorderColor>
             <Default>White</Default>
@@ -204,8 +205,8 @@
       </Line>
       <Textbox Name="textbox4">
         <rd:DefaultName>textbox4</rd:DefaultName>
-        <Top>19.5cm</Top>
-        <Width>2.75cm</Width>
+        <Top>18.5cm</Top>
+        <Width>3.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -213,14 +214,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>19</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>13.75cm</Left>
+        <Left>9.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>Valor Declarado:</Value>
       </Textbox>
       <Textbox Name="Total_1">
         <rd:DefaultName>Total_1</rd:DefaultName>
-        <Top>19.5cm</Top>
+        <Top>18.5cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -230,15 +230,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>18</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>16.75cm</Left>
+        <Left>13.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Sum(Fields!Total.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="OrdenCompra">
         <rd:DefaultName>OrdenCompra</rd:DefaultName>
-        <Top>12.25cm</Top>
-        <Width>2.53968cm</Width>
+        <Top>11.25cm</Top>
+        <Width>5.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -246,15 +245,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>17</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>13.75cm</Left>
+        <Left>10.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!OrdenCompra.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="CantBultos">
         <rd:DefaultName>CantBultos</rd:DefaultName>
-        <Top>11.5cm</Top>
-        <Width>2.53968cm</Width>
+        <Top>10.25cm</Top>
+        <Width>2.5cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
           <PaddingLeft>2pt</PaddingLeft>
@@ -263,14 +261,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>16</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>15.75cm</Left>
+        <Left>13.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Sum(Fields!CantBultos.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="CUITTransp">
         <rd:DefaultName>CUITTransp</rd:DefaultName>
-        <Top>11.5cm</Top>
+        <Top>10.25cm</Top>
         <Width>7cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -279,15 +276,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>15</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>2.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CUITTransp.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="CodPostalTransp">
         <rd:DefaultName>CodPostalTransp</rd:DefaultName>
-        <Top>10.75cm</Top>
-        <Width>2.53968cm</Width>
+        <Top>9.5cm</Top>
+        <Width>2cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -295,14 +291,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>14</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>17.25cm</Left>
+        <Left>13.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CodPostalTransp.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="LocalidadTransp">
         <rd:DefaultName>LocalidadTransp</rd:DefaultName>
-        <Top>10.75cm</Top>
+        <Top>9.5cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -311,15 +306,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>13</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>12cm</Left>
+        <Left>9.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!LocalidadTransp.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="DomicilioTransp">
         <rd:DefaultName>DomicilioTransp</rd:DefaultName>
-        <Top>10.75cm</Top>
-        <Width>7cm</Width>
+        <Top>9.5cm</Top>
+        <Width>4.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -327,15 +321,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>12</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>4.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!DomicilioTransp.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="NombreTransp">
         <rd:DefaultName>NombreTransp</rd:DefaultName>
-        <Top>10cm</Top>
-        <Width>16.75cm</Width>
+        <Top>8.75cm</Top>
+        <Width>12cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -343,8 +336,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>11</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>3.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!NombreTransp.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
@@ -366,14 +358,11 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>5.5cm</Left>
-                <Height>0.63492cm</Height>
                 <Value>=Fields!CodigoYColor.Value</Value>
               </Textbox>
               <Textbox Name="Descripcion_1">
                 <rd:DefaultName>Descripcion_1</rd:DefaultName>
-                <Width>9.75cm</Width>
                 <Style>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
@@ -381,9 +370,7 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
-                <CanGrow>true</CanGrow>
-                <Left>8.25cm</Left>
-                <Height>0.63492cm</Height>
+                <Left>7.75cm</Left>
                 <Value>=Fields!Descripcion.Value</Value>
               </Textbox>
               <Textbox Name="Cantidad">
@@ -397,9 +384,7 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
-                <CanGrow>true</CanGrow>
-                <Left>2.5cm</Left>
-                <Height>0.63492cm</Height>
+                <Left>3cm</Left>
                 <Value>=Fields!Cantidad.Value</Value>
               </Textbox>
               <Textbox Name="CodigoYColor">
@@ -411,22 +396,20 @@
                   <PaddingTop>2pt</PaddingTop>
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
-                <CanGrow>true</CanGrow>
-                <Left>1cm</Left>
-                <Height>0.63492cm</Height>
+                <Left>0.5cm</Left>
                 <Value>=Fields!Envases.Value</Value>
               </Textbox>
             </ReportItems>
-            <Top>0.25cm</Top>
-            <Height>0.88492cm</Height>
+            <Top>0cm</Top>
+            <Height>0.5cm</Height>
           </List>
         </ReportItems>
-        <Top>5.21719in</Top>
-        <Width>7.77656in</Width>
-        <Height>2.3625in</Height>
+        <Top>5.11875in</Top>
+        <Width>6.00469in</Width>
+        <Height>1.96875in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
-        <Top>3.75cm</Top>
+        <Top>2.75cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -435,13 +418,12 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>9</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>19.5cm</Left>
+        <Left>14cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Right(Year(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_RemitoImpresion")),2)</Value>
       </Textbox>
       <Textbox Name="textbox2">
-        <Top>3.75cm</Top>
+        <Top>2.75cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -450,13 +432,12 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>8</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>18.5cm</Left>
+        <Left>13cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Month(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_RemitoImpresion"))</Value>
       </Textbox>
       <Textbox Name="textbox1">
-        <Top>3.75cm</Top>
+        <Top>2.75cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -465,14 +446,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>7</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>17.5cm</Left>
+        <Left>12cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Day(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_RemitoImpresion"))</Value>
       </Textbox>
       <Textbox Name="Descripcion">
         <rd:DefaultName>Descripcion</rd:DefaultName>
-        <Top>9cm</Top>
+        <Top>8cm</Top>
         <Width>5.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -481,15 +461,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>6</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>2.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!ClienteIVA.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="CUIT">
         <rd:DefaultName>CUIT</rd:DefaultName>
-        <Top>9cm</Top>
-        <Width>5cm</Width>
+        <Top>8cm</Top>
+        <Width>6.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -497,15 +476,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>5</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>12.75cm</Left>
+        <Left>9.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CUIT.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="Provincia">
         <rd:DefaultName>Provincia</rd:DefaultName>
-        <Top>8cm</Top>
-        <Width>4cm</Width>
+        <Top>7cm</Top>
+        <Width>2.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -513,14 +491,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>4</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>15.75cm</Left>
+        <Left>13cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!ProvinciaEntrega.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="CodPostal">
         <rd:DefaultName>CodPostal</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -529,14 +506,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>3</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>12.75cm</Left>
+        <Left>10cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CodPostalEntrega.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="Localidad">
         <rd:DefaultName>Localidad</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7cm</Top>
         <Width>6cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -545,15 +521,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>2</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>3.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!LocalidadEntrega.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="Domicilio">
         <rd:DefaultName>Domicilio</rd:DefaultName>
-        <Top>7.25cm</Top>
-        <Width>16.75cm</Width>
+        <Top>6.25cm</Top>
+        <Width>12.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -561,29 +536,27 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>1</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>3.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!DomicilioEntrega.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="RazonSocial">
         <rd:DefaultName>RazonSocial</rd:DefaultName>
-        <Top>6.5cm</Top>
-        <Width>16.75cm</Width>
+        <Top>5.5cm</Top>
+        <Width>12.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>3.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!RazonSocial.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
     </ReportItems>
-    <Height>27.9cm</Height>
+    <Height>22.2cm</Height>
   </Body>
   <Language>en-US</Language>
-  <PageHeight>29.7cm</PageHeight>
+  <PageHeight>22.2cm</PageHeight>
 </Report>

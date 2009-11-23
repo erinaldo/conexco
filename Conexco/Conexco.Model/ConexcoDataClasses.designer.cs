@@ -2576,6 +2576,10 @@ namespace Conexco.Model
 	[Table(Name="dbo.CondicionIVA")]
 	public partial class CondicionIVA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+        public override string ToString()
+        {
+            return Descripcion.ToString();
+        }
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
