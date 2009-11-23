@@ -210,5 +210,10 @@ namespace ConexcoFacturación
         {
             new FrmEmpresa(){MdiParent = this}.Show();
         }
+
+        private void copiaDeSeguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmBackupBaseDatos().ShowDialog();
+        }
     }
 }

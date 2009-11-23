@@ -111,6 +111,12 @@
     <Compile Include="FrmArticulos.Designer.cs">
       <DependentUpon>FrmArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBackupBaseDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackupBaseDatos.Designer.cs">
+      <DependentUpon>FrmBackupBaseDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClientesAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmArticulos.resx">
       <DependentUpon>FrmArticulos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackupBaseDatos.resx">
+      <DependentUpon>FrmBackupBaseDatos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientesAlta.resx">
