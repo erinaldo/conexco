@@ -1,11 +1,18 @@
 ﻿CAMPOS A AGREGAR
 
+Articulos_Color:
+R int
+G int
+B int
+
 Facturas:
 Observaciones varchar(250) nuleable
 SonPesos varchar(250) nuleable
 
 Documentos_Estados: VALUES
 Pendiente, Pagado, Anulado
+
+
 
 ------------------------------------------------------------------------
 
