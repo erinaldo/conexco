@@ -39,12 +39,6 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.grdDetalleRemito = new System.Windows.Forms.DataGridView();
-            this.Envases = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDetalle = new System.Windows.Forms.GroupBox();
             this.lblTArticulo = new System.Windows.Forms.Label();
             this.lblTCantidad = new System.Windows.Forms.Label();
@@ -105,6 +99,12 @@
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
             this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Envases = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalleRemito)).BeginInit();
             this.gbxDetalle.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -220,53 +220,10 @@
             this.grdDetalleRemito.Size = new System.Drawing.Size(658, 178);
             this.grdDetalleRemito.TabIndex = 0;
             this.grdDetalleRemito.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_CellValueChanged);
+            this.grdDetalleRemito.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_CellValidated);
             this.grdDetalleRemito.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleRemito_UserDeletedRow);
             this.grdDetalleRemito.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grdDetalleRemito_CellValidating);
             this.grdDetalleRemito.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleRemito_RowValidated);
-            // 
-            // Envases
-            // 
-            this.Envases.HeaderText = "Envases";
-            this.Envases.Name = "Envases";
-            this.Envases.Width = 50;
-            // 
-            // Unidades
-            // 
-            this.Unidades.HeaderText = "Unidades";
-            this.Unidades.Name = "Unidades";
-            this.Unidades.Width = 60;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ToolTipText = "Código y Color de Artículo";
-            this.Codigo.Width = 80;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Descripcion.ToolTipText = "Descripción de Artículo";
-            this.Descripcion.Width = 280;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.ToolTipText = "IVA Incluido";
-            this.Precio.Width = 60;
-            // 
-            // Totales
-            // 
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
-            this.Totales.ReadOnly = true;
-            this.Totales.ToolTipText = "IVA Incluido";
-            this.Totales.Width = 70;
             // 
             // gbxDetalle
             // 
@@ -864,6 +821,52 @@
             // errorProviderRequerido
             // 
             this.errorProviderRequerido.ContainerControl = this;
+            // 
+            // Envases
+            // 
+            this.Envases.HeaderText = "Envases";
+            this.Envases.Name = "Envases";
+            this.Envases.ToolTipText = "Cantidad de Envases";
+            this.Envases.Width = 50;
+            // 
+            // Unidades
+            // 
+            this.Unidades.HeaderText = "Unidades";
+            this.Unidades.Name = "Unidades";
+            this.Unidades.ToolTipText = "Cantidad de Unidades";
+            this.Unidades.Width = 60;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ToolTipText = "Código y Color de Artículo";
+            this.Codigo.Width = 80;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.ToolTipText = "Descripción de Artículo";
+            this.Descripcion.Width = 280;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.ToolTipText = "IVA Incluido";
+            this.Precio.Width = 60;
+            // 
+            // Totales
+            // 
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            this.Totales.ToolTipText = "IVA Incluido";
+            this.Totales.Width = 70;
             // 
             // FrmRemito
             // 

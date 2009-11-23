@@ -93,8 +93,7 @@ namespace ConexcoFacturación
             }
         }
 
-        //Solo numeros para columnas de la grilla
-        private void grdDetalleFactura_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void grdDetalleFactura_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             if (grdDetalleFactura.SelectedCells.Count > 0)
             {
@@ -102,15 +101,34 @@ namespace ConexcoFacturación
                 {
                     try
                     {
-                        Convert.ToDecimal(e.FormattedValue);
+                        Decimal.Parse(grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Cantidad Invalida");
                         grdDetalleFactura.Rows[e.RowIndex].Cells["Cantidad"].Value = 0;
                     }
                 }
             }
+        }
+
+        //Solo numeros para columnas de la grilla
+        private void grdDetalleFactura_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            //if (grdDetalleFactura.SelectedCells.Count > 0)
+            //{
+            //    if (e.ColumnIndex == 1)
+            //    {
+            //        try
+            //        {
+            //            Convert.ToDecimal(e.FormattedValue);
+            //        }
+            //        catch (Exception)
+            //        {
+            //            MessageBox.Show("Cantidad Invalida");
+            //            grdDetalleFactura.Rows[e.RowIndex].Cells["Cantidad"].Value = 0;
+            //        }
+            //    }
+            //}
         }
 
         private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)
@@ -477,6 +495,8 @@ namespace ConexcoFacturación
         }
 
         #endregion
+
+
 
    }
 }

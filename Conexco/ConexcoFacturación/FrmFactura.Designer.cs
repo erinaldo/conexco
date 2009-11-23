@@ -84,11 +84,6 @@
             this.gbxObservaciones = new System.Windows.Forms.GroupBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.grdDetalleFactura = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCondiciones = new System.Windows.Forms.Label();
             this.txtCondiciones = new System.Windows.Forms.TextBox();
             this.lblPesos = new System.Windows.Forms.Label();
@@ -111,6 +106,11 @@
             this.txtNumFactura = new System.Windows.Forms.TextBox();
             this.toolTipControl = new System.Windows.Forms.ToolTip(this.components);
             this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
             this.gbxFiscales.SuspendLayout();
@@ -666,48 +666,10 @@
             this.grdDetalleFactura.Size = new System.Drawing.Size(658, 163);
             this.grdDetalleFactura.TabIndex = 0;
             this.grdDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_CellValueChanged);
+            this.grdDetalleFactura.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_CellValidated);
             this.grdDetalleFactura.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdDetalleFactura_UserDeletedRow);
             this.grdDetalleFactura.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grdDetalleFactura_CellValidating);
             this.grdDetalleFactura.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDetalleFactura_RowValidated);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ToolTipText = "Código y Color de Artículo";
-            this.Codigo.Width = 80;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ToolTipText = "Cantidad";
-            this.Cantidad.Width = 70;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Descripcion.ToolTipText = "Descripción del Artículo";
-            this.Descripcion.Width = 300;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.ToolTipText = "Precio";
-            this.Precio.Width = 70;
-            // 
-            // Totales
-            // 
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
-            this.Totales.ReadOnly = true;
-            this.Totales.ToolTipText = "Totales";
-            this.Totales.Width = 90;
             // 
             // lblCondiciones
             // 
@@ -925,6 +887,45 @@
             // 
             this.errorProviderRequerido.ContainerControl = this;
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ToolTipText = "Código y Color de Artículo";
+            this.Codigo.Width = 80;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ToolTipText = "Cantidad de Artículos";
+            this.Cantidad.Width = 70;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descripcion.ToolTipText = "Descripción del Artículo";
+            this.Descripcion.Width = 300;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.ToolTipText = "Precio";
+            this.Precio.Width = 70;
+            // 
+            // Totales
+            // 
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            this.Totales.ToolTipText = "Totales";
+            this.Totales.Width = 90;
+            // 
             // FrmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1064,12 +1065,12 @@
         private System.Windows.Forms.ComboBox cmbEstadoDoc;
         private System.Windows.Forms.ToolTip toolTipControl;
         private System.Windows.Forms.ComboBox cmbRazonSocial;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
         private System.Windows.Forms.DataGridViewComboBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewComboBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
-        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
 
     }
 }

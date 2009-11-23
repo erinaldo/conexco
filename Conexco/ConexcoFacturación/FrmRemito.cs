@@ -103,18 +103,46 @@ namespace ConexcoFacturación
 
         private void grdDetalleRemito_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
+            //if (grdDetalleRemito.SelectedCells.Count > 0)
+            //{
+            //    if (e.ColumnIndex == 1 || e.ColumnIndex == 0)
+            //    {
+            //        decimal numero = 0;
+            //        if (!Decimal.TryParse(e.FormattedValue.ToString(), out numero))
+            //        {
+            //            grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
+            //            e.Cancel = true;
+            //        }
+            //        //var index = e.ColumnIndex;
+            //        //try
+            //        //{
+            //        //    Convert.ToDecimal(e.FormattedValue);
+            //        //}
+            //        //catch (Exception)
+            //        //{
+            //        //    //MessageBox.Show("Cantidad Invalida");
+            //        //    grdDetalleRemito.Rows[e.RowIndex].Cells[index].Value = 0;
+            //        //}
+            //    }
+            //}
+        }
+
+        private void grdDetalleRemito_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
             if (grdDetalleRemito.SelectedCells.Count > 0)
             {
                 if (e.ColumnIndex == 1 || e.ColumnIndex == 0)
                 {
                     try
                     {
-                        Convert.ToDecimal(e.FormattedValue);
+                        Decimal.Parse(grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Cantidad Invalida");
-                        grdDetalleRemito.Rows[e.RowIndex].Cells["Unidades"].Value = 0;
+                        if (e.ColumnIndex == 0)
+                            grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                        else
+                            grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
             }
@@ -413,7 +441,7 @@ namespace ConexcoFacturación
                     {
                         var codArticulo = row.Cells["Codigo"].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
-                        ArticulosController.ReducirStock(articulo.idArticulo, Convert.ToDecimal(row.Cells["Cantidad"].Value));
+                        ArticulosController.ReducirStock(articulo.idArticulo, Convert.ToDecimal(row.Cells["Unidades"].Value));
                     }
                 }
             }
@@ -445,5 +473,7 @@ namespace ConexcoFacturación
         }
 
         #endregion
+
+
     }
 }
