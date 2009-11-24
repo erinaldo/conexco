@@ -229,7 +229,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>4</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>17cm</Left>
                 <Height>0.63492cm</Height>
                 <Value>=FormatNumber(Fields!TotalLinea.Value, 2)</Value>
@@ -245,7 +244,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>14.25cm</Left>
                 <Height>0.63492cm</Height>
                 <Value>=FormatNumber(Fields!Precio.Value, 2)</Value>
@@ -260,7 +258,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>5.5cm</Left>
                 <Height>0.63492cm</Height>
                 <Value>=Fields!Descripcion.Value</Value>
@@ -276,7 +273,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>2.5cm</Left>
                 <Height>0.63492cm</Height>
                 <Value>=Fields!Cantidad.Value</Value>
@@ -290,7 +286,6 @@
                   <PaddingTop>2pt</PaddingTop>
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
-                <CanGrow>true</CanGrow>
                 <Left>1cm</Left>
                 <Height>0.63492cm</Height>
                 <Value>=Fields!CodigoYColor.Value</Value>
@@ -314,7 +309,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>17</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>19.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Right(Year(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_FacturaImpresion")),2)</Value>
@@ -329,7 +323,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>16</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>18.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Month(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_FacturaImpresion"))</Value>
@@ -344,7 +337,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>15</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>17.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Day(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_FacturaImpresion"))</Value>
@@ -360,7 +352,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>14</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>2cm</Left>
         <Height>1.25cm</Height>
         <Value>=First(Fields!Observaciones.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -376,7 +367,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>13</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3.5cm</Left>
         <Height>1.5cm</Height>
         <Value>=First(Fields!SonPesos.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -392,7 +382,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>12</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Condiciones.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -409,7 +398,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>11</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>17.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Sum(Fields!TotalNeto.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -425,7 +413,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>10</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>17.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Format(First(Fields!FechaVto.Value, "ConexcoImpresionDataSet_FacturaImpresion"),"dd/MM/yyyy")</Value>
@@ -441,7 +428,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>9</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>14.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Codigo.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -457,7 +443,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>8</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>12cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!OrdenCompra.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -473,7 +458,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>7</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>7.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Descripcion.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -489,7 +473,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>6</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CUIT.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -505,7 +488,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>5</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Remito.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -521,7 +503,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>4</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>15.75cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Provincia.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -537,7 +518,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>3</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>10.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CodPostal.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -553,7 +533,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>2</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Localidad.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -569,7 +548,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>1</ZIndex>
-        <CanGrow>true</CanGrow>
         <Left>3cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Domicilio.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
@@ -584,7 +562,6 @@
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <CanGrow>true</CanGrow>
         <Left>3cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!RazonSocial.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
