@@ -20,11 +20,7 @@ COSAS A HACER:
 
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
--Mejorar UI!
 -Crear instalador
--Agregar en los formularios un OnClose "Esa seguro?"
-
-
 
 -Tooltips																							HECHO
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
@@ -34,6 +30,8 @@ COSAS A HACER:
 -Backups de la base desde el sistema																HECHO
 -Hacer menu para Presupuesto																		HECHO
 -Hacer Iconos																						HECHO
+-Agregar en los formularios un OnClose "Esa seguro?"												HECHO
+-Mejorar UI!																						HECHO
 
 ------------------------------------------------------------------------
 

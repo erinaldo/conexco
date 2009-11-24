@@ -11,6 +11,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupConexco", "SetupConexc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.Utils", "Conexco.Utils\Conexco.Utils.csproj", "{9AA2928B-87CA-4BDB-A02F-42B18C828841}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.BDInstalador", "Conexco.BDInstalador\Conexco.BDInstalador.csproj", "{6AAD653A-CFE4-46EC-A379-05950EAC72F1}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -39,6 +41,10 @@ Global
 		{9AA2928B-87CA-4BDB-A02F-42B18C828841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AA2928B-87CA-4BDB-A02F-42B18C828841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AA2928B-87CA-4BDB-A02F-42B18C828841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AAD653A-CFE4-46EC-A379-05950EAC72F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AAD653A-CFE4-46EC-A379-05950EAC72F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AAD653A-CFE4-46EC-A379-05950EAC72F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AAD653A-CFE4-46EC-A379-05950EAC72F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
