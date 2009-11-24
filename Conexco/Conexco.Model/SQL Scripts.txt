@@ -19,9 +19,11 @@ Pendiente, Pagado, Anulado
 COSAS A HACER:
 
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
+-Revisar Impresiones de facturas
 -Mejorar UI!
 -Crear instalador
--Revisar Impresiones de facturas
+-Agregar en los formularios un OnClose "Esa seguro?"
+
 
 
 
