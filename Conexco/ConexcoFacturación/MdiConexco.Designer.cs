@@ -40,6 +40,7 @@
             this.localidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiaDeSeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,9 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonLocalidades = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.copiaDeSeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonPresupuestos = new System.Windows.Forms.ToolStripButton();
+            this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStripConexco.SuspendLayout();
@@ -96,6 +99,7 @@
             this.formulariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.facturaToolStripMenuItem,
             this.remitoToolStripMenuItem,
+            this.presupuestoToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.articulosToolStripMenuItem,
             this.stockToolStripMenuItem,
@@ -161,6 +165,13 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.optionsToolStripMenuItem.Text = "&Opciones";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
+            // 
+            // copiaDeSeguridadToolStripMenuItem
+            // 
+            this.copiaDeSeguridadToolStripMenuItem.Name = "copiaDeSeguridadToolStripMenuItem";
+            this.copiaDeSeguridadToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.copiaDeSeguridadToolStripMenuItem.Text = "Copia de Seguridad";
+            this.copiaDeSeguridadToolStripMenuItem.Click += new System.EventHandler(this.copiaDeSeguridadToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -287,6 +298,8 @@
             this.toolStripButtonFacturas,
             this.toolStripSeparator3,
             this.toolStripButtonRemitos,
+            this.toolStripSeparator5,
+            this.toolStripButtonPresupuestos,
             this.toolStripSeparator2,
             this.toolStripButtonClientes,
             this.toolStripSeparator9,
@@ -405,12 +418,28 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 57);
             // 
-            // copiaDeSeguridadToolStripMenuItem
+            // toolStripSeparator5
             // 
-            this.copiaDeSeguridadToolStripMenuItem.Name = "copiaDeSeguridadToolStripMenuItem";
-            this.copiaDeSeguridadToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.copiaDeSeguridadToolStripMenuItem.Text = "Copia de Seguridad";
-            this.copiaDeSeguridadToolStripMenuItem.Click += new System.EventHandler(this.copiaDeSeguridadToolStripMenuItem_Click);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 57);
+            // 
+            // toolStripButtonPresupuestos
+            // 
+            this.toolStripButtonPresupuestos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPresupuestos.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPresupuestos.Image")));
+            this.toolStripButtonPresupuestos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPresupuestos.Name = "toolStripButtonPresupuestos";
+            this.toolStripButtonPresupuestos.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.toolStripButtonPresupuestos.Size = new System.Drawing.Size(94, 54);
+            this.toolStripButtonPresupuestos.Text = "Crear Presupuesto";
+            this.toolStripButtonPresupuestos.Click += new System.EventHandler(this.toolStripButtonPresupuestos_Click);
+            // 
+            // presupuestoToolStripMenuItem
+            // 
+            this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.presupuestoToolStripMenuItem.Text = "&Presupuesto";
+            this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
             // 
             // MdiConexco
             // 
@@ -481,6 +510,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonArticulos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem copiaDeSeguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButtonPresupuestos;
+        private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem;
     }
 }
 

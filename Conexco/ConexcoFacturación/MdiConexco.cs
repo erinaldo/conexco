@@ -215,5 +215,15 @@ namespace ConexcoFacturación
         {
             new FrmBackupBaseDatos().ShowDialog();
         }
+
+        private void toolStripButtonPresupuestos_Click(object sender, EventArgs e)
+        {
+            new FrmPresupuesto(){MdiParent = this}.Show();
+        }
+
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmPresupuesto() { MdiParent = this }.Show();
+        }
     }
 }

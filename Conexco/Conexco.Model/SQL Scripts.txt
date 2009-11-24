@@ -20,10 +20,9 @@ COSAS A HACER:
 
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Mejorar UI!
-
 -Crear instalador
 -Revisar Impresiones de facturas
--Hacer menu para Presupuesto
+
 
 
 -Tooltips																							HECHO
@@ -32,6 +31,7 @@ COSAS A HACER:
 -Chekar tema de stock en remitos																	HECHO
 -Ver de dejar el campo Envases por defecto en 1														HECHO
 -Backups de la base desde el sistema																HECHO
+-Hacer menu para Presupuesto																		HECHO
 
 
 ------------------------------------------------------------------------
