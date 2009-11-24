@@ -308,6 +308,10 @@
       <DependentUpon>FrmLocalidades.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresupuesto.resx">
+      <DependentUpon>FrmPresupuesto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRemito.resx">
       <DependentUpon>FrmRemito.cs</DependentUpon>
       <SubType>Designer</SubType>

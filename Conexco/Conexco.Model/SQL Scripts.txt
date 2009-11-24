@@ -23,8 +23,6 @@ COSAS A HACER:
 -Mejorar UI!
 -Crear instalador
 -Agregar en los formularios un OnClose "Esa seguro?"
--Hacer Iconos
-
 
 
 
@@ -35,7 +33,7 @@ COSAS A HACER:
 -Ver de dejar el campo Envases por defecto en 1														HECHO
 -Backups de la base desde el sistema																HECHO
 -Hacer menu para Presupuesto																		HECHO
-
+-Hacer Iconos																						HECHO
 
 ------------------------------------------------------------------------
 

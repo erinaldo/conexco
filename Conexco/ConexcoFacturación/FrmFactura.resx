@@ -124,8 +124,8 @@
   <data name="btnClientes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuwAA
-        DrsBx/jUNgAAAxxJREFUOE99VGtIk2EUrugGdi/Lgkqi1o8NRhOHVET1N4NkdvmRMi9pTpRZKc3lj5kU
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOugAA
+        DroBFb820gAAAxxJREFUOE99VGtIk2EUrugGdi/Lgkqi1o8NRhOHVET1N4NkdvmRMi9pTpRZKc3lj5kU
         OrJE5sopMjcQC/HuChLcFC8ooolOMSXnvEV/Iiqw8ul5ZcUazQ8e3vec857nO+9zzvetXxf8Wc+QgHjg
         wxrH/w2JxC3EIZVKdbm2tjbPbrcb4uPjE+mTEJv9yIOSbmBkX3Z2dobL5fowPT2N8fFxTExMYH5+Hm63
         +6ter6/gmcNrkQmSgwaDoXh0dBRtbW14YLcj8/Vr3HrzBvFFRTCZTJidnUVDQ8MIz0qDke3QarU6QVJm
@@ -141,9 +141,6 @@
         iIiIeGI0Gru5j/W9fC2uoLGNjAgZ9hCr/6jfk5ve32hEBTwAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolTipControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 16</value>
-  </metadata>
   <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -165,8 +162,8 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAArEAAALqCAYAAAAikwwZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvAAA
-        DrwBlbxySQAA/3lJREFUeF7svWeYXcd1pa3v91zlnCzJClYOlmzZyjnalizJkmwr2OOcsz2ecR5Pdo4z
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuwAA
+        DrsBx/jUNgAA/3lJREFUeF7svWeYXcd1pa3v91zlnCzJClYOlmzZyjnalizJkmwr2OOcsz2ecR5Pdo4z
         EklRVKZE5JxzbHRCd6MjcgYIECAJkiCp+tauql21q06de89tpG709vMsnzrn3gYhEOx+e/Xaa/9/Bv/3
         GPF/yQ09b/Nq5b3yF2rzi8aPq/8V2v8+0n9Q29+H+J/X+Pcr/zy6+I20/324X7T976HNn0cXv/n0rf4u
         +/imv1z6tyP/F1z+Vbr4I2v859H+99Hw70ObX+TK/zyKf+pN/qUnv/k2v0ryl6fJ7/eq/7fc9u/Qdfhv

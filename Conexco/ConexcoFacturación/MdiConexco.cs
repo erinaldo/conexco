@@ -225,5 +225,13 @@ namespace ConexcoFacturación
         {
             new FrmPresupuesto() { MdiParent = this }.Show();
         }
+
+        private void MdiConexco_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("¿Realmente desea Salir? Se perderán los cambios no guardados", "Atención",
+                             MessageBoxButtons.OKCancel);
+            if (result != System.Windows.Forms.DialogResult.OK)
+                e.Cancel = true;
+        }
     }
 }

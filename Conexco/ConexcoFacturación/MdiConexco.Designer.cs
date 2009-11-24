@@ -456,6 +456,7 @@
             this.Text = "Sistema de Facturación y Control de Stock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MdiConexco_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MdiConexco_FormClosing);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
