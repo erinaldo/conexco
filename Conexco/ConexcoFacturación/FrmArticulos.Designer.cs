@@ -37,11 +37,14 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.agregar;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAgregar.Location = new System.Drawing.Point(140, 261);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 30);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.OnArticuloAgregar);
             // 
@@ -62,23 +65,29 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.modificar;
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(233, 261);
+            this.btnModificar.Location = new System.Drawing.Point(231, 261);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(80, 30);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.OnArticuloModificar);
             // 
             // btnEliiminar
             // 
+            this.btnEliiminar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
+            this.btnEliiminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEliiminar.Enabled = false;
             this.btnEliiminar.Location = new System.Drawing.Point(327, 261);
             this.btnEliiminar.Name = "btnEliiminar";
-            this.btnEliiminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliiminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliiminar.TabIndex = 9;
             this.btnEliiminar.Text = "Eliminar";
+            this.btnEliiminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliiminar.UseVisualStyleBackColor = true;
             this.btnEliiminar.Click += new System.EventHandler(this.OnArticuloEliminar);
             // 

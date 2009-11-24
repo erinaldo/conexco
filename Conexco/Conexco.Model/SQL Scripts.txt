@@ -23,6 +23,7 @@ COSAS A HACER:
 -Mejorar UI!
 -Crear instalador
 -Agregar en los formularios un OnClose "Esa seguro?"
+-Hacer Iconos
 
 
 

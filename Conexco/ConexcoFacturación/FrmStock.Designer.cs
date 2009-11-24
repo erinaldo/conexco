@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStock));
             this.grdArticulosStock = new System.Windows.Forms.DataGridView();
             this.btnIngreso = new System.Windows.Forms.Button();
             this.btnEgreso = new System.Windows.Forms.Button();
@@ -59,23 +60,29 @@
             // 
             // btnIngreso
             // 
+            this.btnIngreso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngreso.BackgroundImage")));
+            this.btnIngreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnIngreso.Enabled = false;
-            this.btnIngreso.Location = new System.Drawing.Point(156, 353);
+            this.btnIngreso.Location = new System.Drawing.Point(160, 353);
             this.btnIngreso.Name = "btnIngreso";
-            this.btnIngreso.Size = new System.Drawing.Size(89, 23);
+            this.btnIngreso.Size = new System.Drawing.Size(105, 30);
             this.btnIngreso.TabIndex = 1;
             this.btnIngreso.Text = "Ingreso Stock";
+            this.btnIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngreso.UseVisualStyleBackColor = true;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // btnEgreso
             // 
+            this.btnEgreso.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
+            this.btnEgreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEgreso.Enabled = false;
-            this.btnEgreso.Location = new System.Drawing.Point(265, 353);
+            this.btnEgreso.Location = new System.Drawing.Point(283, 353);
             this.btnEgreso.Name = "btnEgreso";
-            this.btnEgreso.Size = new System.Drawing.Size(89, 23);
+            this.btnEgreso.Size = new System.Drawing.Size(105, 30);
             this.btnEgreso.TabIndex = 2;
             this.btnEgreso.Text = "Egreso Stock";
+            this.btnEgreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEgreso.UseVisualStyleBackColor = true;
             this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
             // 
