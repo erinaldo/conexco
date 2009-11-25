@@ -1,0 +1,127 @@
+﻿USE Conexco
+GO
+
+--SCRIPT INSERT EGRESO_MOTIVOS
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Devolución por Defecto')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Entrega de muestra')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Rotura sin devolución')
+
+INSERT INTO Egreso_Motivos (Descripcion)
+VALUES ('Otro')
+
+
+--SCRIPT INSERT TIPO DOCUMENTOS
+INSERT INTO Documentos_Tipo(Codigo, Descripcion)
+VALUES ('A', 'Venta con discriminación de IVA')
+
+INSERT INTO Documentos_Tipo(Codigo, Descripcion)
+VALUES ('B', 'Venta sin discriminación de IVA')
+
+
+--SCRIPT INSERT DOCUMENTOS ESTADOS
+
+INSERT INTO Documentos_Estados (Descripcion)
+VALUES ('Pendiente')
+
+INSERT INTO Documentos_Estados (Descripcion)
+VALUES ('Pagado')
+
+INSERT INTO Documentos_Estados (Descripcion)
+VALUES ('Anulado')
+
+--SCRIPT INSERT CONDICION IVA
+
+INSERT INTO CondicionIVA (Descripcion)
+VALUES ('Responsable Inscripto')
+
+INSERT INTO CondicionIVA (Descripcion)
+VALUES ('Consumidor Final')
+
+INSERT INTO CondicionIVA (Descripcion)
+VALUES ('Excento')
+
+INSERT INTO CondicionIVA (Descripcion)
+VALUES ('No gravado')
+
+INSERT INTO CondicionIVA (Descripcion)
+VALUES ('Monotributo')
+
+
+--SCRIPT INSERT PROVINCIAS
+
+INSERT INTO Provincias (Provincia)
+VALUES('Capital Federal')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Buenos Aires')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Córdoba')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Santa Fe')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Mendoza')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Tucumán')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Entre Ríos')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Salta')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Misiones')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Chaco')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Corrientes')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Santiago del Estero')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Jujuy')
+
+INSERT INTO Provincias (Provincia)
+VALUES('San Juan')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Río Negro')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Formosa')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Neuquén')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Chubut')
+
+INSERT INTO Provincias (Provincia)
+VALUES('San Luis')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Catamarca')
+
+INSERT INTO Provincias (Provincia)
+VALUES('La Rioja')
+
+INSERT INTO Provincias (Provincia)
+VALUES('La Pampa')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Santa Cruz')
+
+INSERT INTO Provincias (Provincia)
+VALUES('Tierra del Fuego')

@@ -18,9 +18,18 @@ Pendiente, Pagado, Anulado
 
 COSAS A HACER:
 
+-Ver el scrollbar del mdi
+-en administrador de clientes, aunq no hayan clientes los botones estan habilitados y da exception
+-ver el orden de los de los dropdowns
+-en el remito despues de agregar un cliente no actualiza el dropdown
+-ver tema del condicionIVA tostring
+-Revisar performance de formularioss
+-cambiar vto por Vencimiento en factura
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
 -Crear instalador
+-Ver en el script instalador que si existe la base, la dropee
+-Icono de aplicacion
 
 -Tooltips																							HECHO
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
@@ -230,18 +239,13 @@ VALUES ('B', 'Venta sin discriminación de IVA')
 --SCRIPT INSERT DOCUMENTOS ESTADOS
 
 INSERT INTO Documentos_Estados (Descripcion)
-VALUES ('A Pagar')
+VALUES ('Pendiente')
 
 INSERT INTO Documentos_Estados (Descripcion)
 VALUES ('Pagado')
 
 INSERT INTO Documentos_Estados (Descripcion)
-VALUES ('Demorado')
-
-INSERT INTO Documentos_Estados (Descripcion)
-VALUES ('Otro')
-
-
+VALUES ('Anulado')
 
 --SCRIPT INSERT CONDICION IVA
 

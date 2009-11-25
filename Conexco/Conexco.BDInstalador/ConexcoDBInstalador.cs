@@ -8,6 +8,9 @@ using System.IO;
 using System.Reflection;
 using System.Data.SqlClient;
 using Conexco.BDInstalador.Properties;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using Settings=Conexco.BDInstalador.Properties.Settings;
 
 
 namespace Conexco.BDInstalador
@@ -23,11 +26,13 @@ namespace Conexco.BDInstalador
         public override void Install(IDictionary stateSaver)
         {
             base.Install(stateSaver);
+
             string sqlCrearBaseDatos = "CREATE DATABASE Conexco";
             try
             {
                 EjecutarSql("master", sqlCrearBaseDatos);
-                EjecutarSql("Conexco", "SCRIPT PARA CREAR LAS TABLAS, INSERT Y STORED PROCEDURES");
+                EjecutarSql("Conexco", LeerSqlScript("ScriptTablas.txt"));
+                EjecutarSql("Conexco", LeerSqlScript("Inserts.txt"));
             }
             catch (Exception)
             {
@@ -41,10 +46,10 @@ namespace Conexco.BDInstalador
             try
             {
                 conn.Open();
-                var command = new SqlCommand(sqlQuery, conn);
-                command.Connection.ChangeDatabase(nombreBaseDatos);
 
-                command.ExecuteNonQuery();
+                var serverConnection = new ServerConnection(conn);
+                var server = new Server(serverConnection);
+                server.ConnectionContext.ExecuteNonQuery(sqlQuery);
             }
             finally
             {
@@ -52,19 +57,23 @@ namespace Conexco.BDInstalador
             }
         }
 
-        public string LeerSqlScript()
+        public string LeerSqlScript(string nombreArchivo)
         {
             try
             {
+                var assembly = Assembly.GetExecutingAssembly();
 
+                var stream = assembly.GetManifestResourceStream(assembly.GetType(this.ToString()).Namespace + "." + nombreArchivo);
+
+                var reader = new StreamReader(stream);
+
+                return reader.ReadToEnd();
             }
             catch (Exception)
             {
-                
-                throw;
+                return "";
             }
 
-            return "";
         }
     }
 }

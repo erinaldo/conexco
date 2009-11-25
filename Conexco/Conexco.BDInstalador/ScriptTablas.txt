@@ -1,0 +1,778 @@
+﻿USE Conexco
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Provincias]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Provincias](
+	[idProvincia] [int] IDENTITY(1,1) NOT NULL,
+	[Provincia] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_Provincias] PRIMARY KEY CLUSTERED 
+(
+	[idProvincia] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Articulos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Articulos](
+	[idArticulo] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](20) NOT NULL,
+	[CodColor] [varchar](10) NULL,
+	[Descripcion] [varchar](250) NOT NULL,
+	[Precio] [decimal](18, 2) NOT NULL,
+	[BajaLogica] [bit] NULL,
+	[Stock] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Articulos] PRIMARY KEY CLUSTERED 
+(
+	[idArticulo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CondicionIVA]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[CondicionIVA](
+	[idCondicionIVA] [int] IDENTITY(1,1) NOT NULL,
+	[Descripcion] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CondicionIVA] PRIMARY KEY CLUSTERED 
+(
+	[idCondicionIVA] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[IsNotZero]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+BEGIN
+execute dbo.sp_executesql @statement = N'--Function Para Reportes
+
+CREATE FUNCTION [dbo].[IsNotZero] (
+@Number varchar(10),
+@IsNotZeroNumber varchar(10)
+)
+RETURNS varchar(10)
+AS
+BEGIN
+ 
+
+IF (@Number <> ''0'')
+BEGIN
+SET @Number = @IsNotZeroNumber
+END
+ELSE
+BEGIN
+SET @Number = ''''
+END
+
+ 
+
+RETURN (@Number)
+ 
+
+END
+
+' 
+END
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BackupConexcoDataBase]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BackupConexcoDataBase]
+AS
+BEGIN
+	
+	BACKUP DATABASE Conexco 
+                 TO DISK = ''C:\PUTO.bak''
+                 WITH NOFORMAT, NOINIT, NAME = ''Conexco Backup'',SKIP, STATS = 10
+
+END' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Articulos_Color]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Articulos_Color](
+	[idColor] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](10) NOT NULL,
+	[Descripcion] [varchar](50) NOT NULL,
+	[RGB] [varchar](6) NULL,
+	[BajaLogica] [bit] NULL,
+	[R] [int] NULL,
+	[G] [int] NULL,
+	[B] [int] NULL,
+ CONSTRAINT [PK_Articulos_Color] PRIMARY KEY CLUSTERED 
+(
+	[idColor] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Documentos_Estados]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Documentos_Estados](
+	[idEstado] [int] IDENTITY(1,1) NOT NULL,
+	[Descripcion] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_Documentos_Estados] PRIMARY KEY CLUSTERED 
+(
+	[idEstado] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Documentos_Tipo]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Documentos_Tipo](
+	[idTipoDocumento] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](2) NOT NULL,
+	[Descripcion] [varchar](100) NULL,
+ CONSTRAINT [PK_Documentos_Tipo] PRIMARY KEY CLUSTERED 
+(
+	[idTipoDocumento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Egreso_Motivos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Egreso_Motivos](
+	[idMotivo] [int] IDENTITY(1,1) NOT NULL,
+	[Descripcion] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_Egreso_Motivos] PRIMARY KEY CLUSTERED 
+(
+	[idMotivo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Localidades]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Localidades](
+	[idLocalidad] [int] IDENTITY(1,1) NOT NULL,
+	[idProvincia] [int] NOT NULL,
+	[Localidad] [varchar](250) NOT NULL,
+	[CodPostal] [varchar](10) NULL,
+ CONSTRAINT [PK_Localidades] PRIMARY KEY CLUSTERED 
+(
+	[idLocalidad] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Articulos_Precio]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Articulos_Precio](
+	[idPrecio] [int] IDENTITY(1,1) NOT NULL,
+	[idArticulo] [int] NOT NULL,
+	[Precio] [decimal](18, 2) NOT NULL,
+	[Fecha] [datetime] NOT NULL,
+ CONSTRAINT [PK_Articulos_Precio] PRIMARY KEY CLUSTERED 
+(
+	[idPrecio] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Facturas_Linea]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Facturas_Linea](
+	[idFacturasLinea] [int] IDENTITY(1,1) NOT NULL,
+	[idFactura] [int] NOT NULL,
+	[idArticulo] [int] NOT NULL,
+	[Cantidad] [decimal](18, 2) NOT NULL,
+	[Precio] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Facturas_Linea] PRIMARY KEY CLUSTERED 
+(
+	[idFacturasLinea] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Remitos_Linea]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Remitos_Linea](
+	[idRemitosLinea] [int] IDENTITY(1,1) NOT NULL,
+	[idRemito] [int] NOT NULL,
+	[idArticulo] [int] NOT NULL,
+	[Envases] [decimal](18, 2) NOT NULL,
+	[Cantidad] [decimal](18, 2) NOT NULL,
+	[Precio] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Remitos_Linea] PRIMARY KEY CLUSTERED 
+(
+	[idRemitosLinea] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Presupuestos_Linea]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Presupuestos_Linea](
+	[idPresupuestosLinea] [int] IDENTITY(1,1) NOT NULL,
+	[idPresupuesto] [int] NOT NULL,
+	[idArticulo] [int] NOT NULL,
+	[Cantidad] [int] NOT NULL,
+	[Precio] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Presupuestos_Linea] PRIMARY KEY CLUSTERED 
+(
+	[idPresupuestosLinea] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Egreso_Stock]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Egreso_Stock](
+	[idEgreso] [int] IDENTITY(1,1) NOT NULL,
+	[idArticulo] [int] NOT NULL,
+	[FechaEgreso] [datetime] NOT NULL,
+	[Motivo] [varchar](250) NOT NULL,
+	[Cantidad] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_Egreso_Stock] PRIMARY KEY CLUSTERED 
+(
+	[idEgreso] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Clientes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Clientes](
+	[idCliente] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](10) NULL,
+	[RazonSocial] [varchar](250) NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido] [varchar](50) NULL,
+	[CUIT] [varchar](20) NOT NULL,
+	[idCondicionIVA] [int] NOT NULL,
+	[Pagos] [text] NULL,
+	[Email] [varchar](50) NULL,
+	[Web] [varchar](50) NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Clientes] PRIMARY KEY CLUSTERED 
+(
+	[idCliente] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Empresa]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Empresa](
+	[idEmpresa] [int] IDENTITY(1,1) NOT NULL,
+	[RazonSocial] [varchar](250) NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido] [varchar](50) NULL,
+	[CUIT] [varchar](20) NOT NULL,
+	[idCondicionIVA] [int] NOT NULL,
+	[Domicilio] [varchar](250) NOT NULL,
+	[Localidad] [varchar](100) NOT NULL,
+	[Provincia] [varchar](100) NOT NULL,
+	[CodPostal] [varchar](10) NOT NULL,
+	[Telefono] [varchar](20) NULL,
+	[Fax] [varchar](20) NULL,
+	[InicioActividades] [datetime] NOT NULL,
+	[IngBrutos] [varchar](50) NOT NULL,
+	[Email] [varchar](50) NULL,
+	[Web] [varchar](50) NULL,
+	[PorcentajeIVA] [decimal](18, 2) NULL,
+	[Contrasenia] [varchar](20) NULL,
+ CONSTRAINT [PK_Empresa] PRIMARY KEY CLUSTERED 
+(
+	[idEmpresa] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Clientes_Contactos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Clientes_Contactos](
+	[idContacto] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[Nombre] [varchar](250) NOT NULL,
+	[Email] [varchar](50) NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Clientes_Contactos] PRIMARY KEY CLUSTERED 
+(
+	[idContacto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Clientes_Domicilios]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Clientes_Domicilios](
+	[idDomicilio] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[Domicilio] [varchar](250) NOT NULL,
+	[Localidad] [varchar](100) NOT NULL,
+	[Provincia] [nchar](100) NOT NULL,
+	[CodPostal] [varchar](10) NOT NULL,
+	[Descripcion] [varchar](250) NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Clientes_Domicilios] PRIMARY KEY CLUSTERED 
+(
+	[idDomicilio] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Clientes_Telefonos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Clientes_Telefonos](
+	[idTelefono] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[Fax] [nchar](10) NULL,
+	[Telefono] [varchar](50) NOT NULL,
+	[Descripcion] [varchar](50) NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Clientes_Telefonos] PRIMARY KEY CLUSTERED 
+(
+	[idTelefono] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Clientes_Transportistas]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Clientes_Transportistas](
+	[idTransportista] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NULL,
+	[Nombre] [varchar](250) NOT NULL,
+	[CUIT] [varchar](20) NOT NULL,
+	[Domicilio] [varchar](250) NULL,
+	[Localidad] [varchar](100) NULL,
+	[Provincia] [varchar](100) NULL,
+	[CodPostal] [varchar](10) NULL,
+	[Telefono] [varchar](20) NULL,
+	[InformacionAdicional] [varchar](250) NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Clientes_Transportistas] PRIMARY KEY CLUSTERED 
+(
+	[idTransportista] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Presupuestos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Presupuestos](
+	[idPresupuesto] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[FechaEmision] [datetime] NOT NULL,
+	[Numero] [varchar](50) NOT NULL,
+	[FechaVto] [datetime] NULL,
+	[Condiciones] [varchar](250) NULL,
+	[Disponibilidad] [varchar](250) NULL,
+	[DomicilioEntrega] [varchar](250) NULL,
+	[LocalidadEntrega] [varchar](100) NULL,
+	[ProvinciaEntrega] [varchar](100) NULL,
+	[CodPostalEntrega] [varchar](50) NULL,
+	[Total] [decimal](18, 2) NOT NULL,
+	[Descuento] [decimal](18, 2) NULL,
+	[Subtotal] [decimal](18, 2) NULL,
+	[TotalIVA] [decimal](18, 2) NULL,
+	[TotalNeto] [decimal](18, 2) NOT NULL,
+	[idEstado] [int] NOT NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Presupuestos] PRIMARY KEY CLUSTERED 
+(
+	[idPresupuesto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Facturas]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Facturas](
+	[idFactura] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[idDomicilioCliente] [int] NOT NULL,
+	[FechaEmision] [datetime] NOT NULL,
+	[idTipoDocumento] [int] NOT NULL,
+	[Numero] [varchar](50) NOT NULL,
+	[Remito] [varchar](50) NULL,
+	[OrdenCompra] [varchar](50) NULL,
+	[FechaVto] [datetime] NULL,
+	[Observaciones] [varchar](250) NULL,
+	[Condiciones] [varchar](250) NULL,
+	[SonPesos] [varchar](250) NULL,
+	[Total] [decimal](18, 2) NOT NULL,
+	[Descuento] [decimal](18, 2) NULL,
+	[Subtotal] [decimal](18, 2) NULL,
+	[TotalIVA] [decimal](18, 2) NULL,
+	[TotalNeto] [decimal](18, 2) NOT NULL,
+	[idEstado] [int] NOT NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Facturas] PRIMARY KEY CLUSTERED 
+(
+	[idFactura] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Remitos]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Remitos](
+	[idRemito] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[FechaEmision] [datetime] NOT NULL,
+	[Numero] [varchar](50) NOT NULL,
+	[idTransportista] [int] NULL,
+	[DomicilioEntrega] [varchar](250) NULL,
+	[LocalidadEntrega] [varchar](100) NULL,
+	[ProvinciaEntrega] [varchar](100) NULL,
+	[CodPostalEntrega] [varchar](10) NULL,
+	[CantBultos] [int] NOT NULL,
+	[OrdenCompra] [varchar](50) NULL,
+	[FechaVto] [datetime] NULL,
+	[Observaciones] [varchar](250) NULL,
+	[Total] [decimal](18, 2) NOT NULL,
+	[idEstado] [int] NOT NULL,
+	[BajaLogica] [bit] NULL,
+ CONSTRAINT [PK_Remitos] PRIMARY KEY CLUSTERED 
+(
+	[idRemito] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FacturaLineaImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[FacturaLineaImpresion]
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT fl.*, (a.Codigo + dbo.IsNotZero(a.CodColor, ''-'' + a.CodColor)) ''CodigoYColor'', a.Descripcion, (fl.Precio * fl.Cantidad) ''TotalLinea'' FROM Facturas_Linea fl
+	JOIN Articulos a ON a.idArticulo = fl.idArticulo
+	WHERE fl.idFactura = @IdFactura
+
+END
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RemitoLineaImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[RemitoLineaImpresion]
+(
+	@IdRemito int
+)
+AS
+BEGIN
+
+	SELECT rl.idRemitosLinea, rl.idRemito, rl.idArticulo, rl.Envases, 
+		rl.Cantidad, rl.Precio, (a.Codigo + dbo.IsNotZero(a.CodColor, ''-'' + a.CodColor)) ''CodigoYColor'', 
+		a.Descripcion, (rl.Cantidad * rl.Precio) ''TotalLinea'' FROM Remitos_Linea rl
+	JOIN Articulos a ON a.idArticulo = rl.idArticulo
+	WHERE rl.idRemito = @IdRemito
+
+END' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FacturaBLineaImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[FacturaBLineaImpresion]
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT fl.idFacturasLinea, fl.idFactura, fl.idArticulo, fl.Cantidad, (fl.Precio + (fl.Precio * e.PorcentajeIVA / 100)) ''Precio'', (a.Codigo + dbo.IsNotZero(a.CodColor, ''-'' + a.CodColor)) ''CodigoYColor'', a.Descripcion, (fl.Precio * fl.Cantidad + ((fl.Precio * fl.Cantidad) * e.PorcentajeIVA / 100)) ''TotalLinea'' FROM Facturas_Linea fl
+	JOIN Articulos a ON a.idArticulo = fl.idArticulo
+	JOIN Empresa e ON e.idEmpresa = (SELECT TOP 1 idEmpresa FROM Empresa)
+	WHERE fl.idFactura = @IdFactura
+
+END
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RemitoImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[RemitoImpresion]
+(
+	@IdRemito int
+)
+AS
+BEGIN
+
+	SELECT r.*, c.RazonSocial, c.CUIT, ct.Nombre ''NombreTransp'', ct.CUIT ''CUITTransp'', ct.Domicilio ''DomicilioTransp'', ct.Localidad ''LocalidadTransp'', ct.CodPostal ''CodPostalTransp'',
+			ci.Descripcion ''ClienteIVA'' FROM Remitos r
+	JOIN Clientes c ON r.idCliente = c.idCliente
+	JOIN Clientes_Transportistas ct ON r.idTransportista = ct.idTransportista
+	JOIN CondicionIVA ci ON c.idCondicionIVA = ci.idCondicionIVA
+	
+
+	WHERE r.idRemito = @IdRemito
+
+END
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FacturaImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[FacturaImpresion]
+(
+	@IdFactura int
+)
+AS
+BEGIN
+
+	SELECT f.*, c.RazonSocial, c.CUIT, c.Codigo, cd.Domicilio, 
+			cd.Localidad, cd.Provincia, cd.CodPostal, 
+			ci.Descripcion FROM Facturas f
+	JOIN Clientes c ON f.idCliente = c.idCliente
+	JOIN Clientes_Domicilios cd ON c.idCliente = cd.idCliente
+	JOIN CondicionIVA ci ON c.idCondicionIVA = ci.idCondicionIVA
+	
+
+	WHERE f.idFactura = @IdFactura
+
+END
+
+' 
+END
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Localidades_Provincias]') AND parent_object_id = OBJECT_ID(N'[dbo].[Localidades]'))
+ALTER TABLE [dbo].[Localidades]  WITH CHECK ADD  CONSTRAINT [FK_Localidades_Provincias] FOREIGN KEY([idProvincia])
+REFERENCES [dbo].[Provincias] ([idProvincia])
+GO
+ALTER TABLE [dbo].[Localidades] CHECK CONSTRAINT [FK_Localidades_Provincias]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Articulos_Precio_Articulos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Articulos_Precio]'))
+ALTER TABLE [dbo].[Articulos_Precio]  WITH CHECK ADD  CONSTRAINT [FK_Articulos_Precio_Articulos] FOREIGN KEY([idArticulo])
+REFERENCES [dbo].[Articulos] ([idArticulo])
+GO
+ALTER TABLE [dbo].[Articulos_Precio] CHECK CONSTRAINT [FK_Articulos_Precio_Articulos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Facturas_Linea_Articulos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Facturas_Linea]'))
+ALTER TABLE [dbo].[Facturas_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Facturas_Linea_Articulos] FOREIGN KEY([idArticulo])
+REFERENCES [dbo].[Articulos] ([idArticulo])
+GO
+ALTER TABLE [dbo].[Facturas_Linea] CHECK CONSTRAINT [FK_Facturas_Linea_Articulos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Facturas_Linea_Facturas]') AND parent_object_id = OBJECT_ID(N'[dbo].[Facturas_Linea]'))
+ALTER TABLE [dbo].[Facturas_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Facturas_Linea_Facturas] FOREIGN KEY([idFactura])
+REFERENCES [dbo].[Facturas] ([idFactura])
+GO
+ALTER TABLE [dbo].[Facturas_Linea] CHECK CONSTRAINT [FK_Facturas_Linea_Facturas]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Remitos_Linea_Articulos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Remitos_Linea]'))
+ALTER TABLE [dbo].[Remitos_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Remitos_Linea_Articulos] FOREIGN KEY([idArticulo])
+REFERENCES [dbo].[Articulos] ([idArticulo])
+GO
+ALTER TABLE [dbo].[Remitos_Linea] CHECK CONSTRAINT [FK_Remitos_Linea_Articulos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Remitos_Linea_Remitos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Remitos_Linea]'))
+ALTER TABLE [dbo].[Remitos_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Remitos_Linea_Remitos] FOREIGN KEY([idRemito])
+REFERENCES [dbo].[Remitos] ([idRemito])
+GO
+ALTER TABLE [dbo].[Remitos_Linea] CHECK CONSTRAINT [FK_Remitos_Linea_Remitos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Presupuestos_Linea_Articulos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Presupuestos_Linea]'))
+ALTER TABLE [dbo].[Presupuestos_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Presupuestos_Linea_Articulos] FOREIGN KEY([idArticulo])
+REFERENCES [dbo].[Articulos] ([idArticulo])
+GO
+ALTER TABLE [dbo].[Presupuestos_Linea] CHECK CONSTRAINT [FK_Presupuestos_Linea_Articulos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Presupuestos_Linea_Presupuestos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Presupuestos_Linea]'))
+ALTER TABLE [dbo].[Presupuestos_Linea]  WITH CHECK ADD  CONSTRAINT [FK_Presupuestos_Linea_Presupuestos] FOREIGN KEY([idPresupuesto])
+REFERENCES [dbo].[Presupuestos] ([idPresupuesto])
+GO
+ALTER TABLE [dbo].[Presupuestos_Linea] CHECK CONSTRAINT [FK_Presupuestos_Linea_Presupuestos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Egreso_Stock_Articulos]') AND parent_object_id = OBJECT_ID(N'[dbo].[Egreso_Stock]'))
+ALTER TABLE [dbo].[Egreso_Stock]  WITH CHECK ADD  CONSTRAINT [FK_Egreso_Stock_Articulos] FOREIGN KEY([idArticulo])
+REFERENCES [dbo].[Articulos] ([idArticulo])
+GO
+ALTER TABLE [dbo].[Egreso_Stock] CHECK CONSTRAINT [FK_Egreso_Stock_Articulos]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Clientes_CondicionIVA]') AND parent_object_id = OBJECT_ID(N'[dbo].[Clientes]'))
+ALTER TABLE [dbo].[Clientes]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_CondicionIVA] FOREIGN KEY([idCondicionIVA])
+REFERENCES [dbo].[CondicionIVA] ([idCondicionIVA])
+GO
+ALTER TABLE [dbo].[Clientes] CHECK CONSTRAINT [FK_Clientes_CondicionIVA]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Empresa_CondicionIVA]') AND parent_object_id = OBJECT_ID(N'[dbo].[Empresa]'))
+ALTER TABLE [dbo].[Empresa]  WITH CHECK ADD  CONSTRAINT [FK_Empresa_CondicionIVA] FOREIGN KEY([idCondicionIVA])
+REFERENCES [dbo].[CondicionIVA] ([idCondicionIVA])
+GO
+ALTER TABLE [dbo].[Empresa] CHECK CONSTRAINT [FK_Empresa_CondicionIVA]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Clientes_Contactos_Clientes]') AND parent_object_id = OBJECT_ID(N'[dbo].[Clientes_Contactos]'))
+ALTER TABLE [dbo].[Clientes_Contactos]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Contactos_Clientes] FOREIGN KEY([idCliente])
+REFERENCES [dbo].[Clientes] ([idCliente])
+GO
+ALTER TABLE [dbo].[Clientes_Contactos] CHECK CONSTRAINT [FK_Clientes_Contactos_Clientes]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Clientes_Domicilios_Clientes]') AND parent_object_id = OBJECT_ID(N'[dbo].[Clientes_Domicilios]'))
+ALTER TABLE [dbo].[Clientes_Domicilios]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Domicilios_Clientes] FOREIGN KEY([idCliente])
+REFERENCES [dbo].[Clientes] ([idCliente])
+GO
+ALTER TABLE [dbo].[Clientes_Domicilios] CHECK CONSTRAINT [FK_Clientes_Domicilios_Clientes]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Clientes_Telefonos_Clientes]') AND parent_object_id = OBJECT_ID(N'[dbo].[Clientes_Telefonos]'))
+ALTER TABLE [dbo].[Clientes_Telefonos]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Telefonos_Clientes] FOREIGN KEY([idCliente])
+REFERENCES [dbo].[Clientes] ([idCliente])
+GO
+ALTER TABLE [dbo].[Clientes_Telefonos] CHECK CONSTRAINT [FK_Clientes_Telefonos_Clientes]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Clientes_Transportistas_Clientes]') AND parent_object_id = OBJECT_ID(N'[dbo].[Clientes_Transportistas]'))
+ALTER TABLE [dbo].[Clientes_Transportistas]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Transportistas_Clientes] FOREIGN KEY([idCliente])
+REFERENCES [dbo].[Clientes] ([idCliente])
+GO
+ALTER TABLE [dbo].[Clientes_Transportistas] CHECK CONSTRAINT [FK_Clientes_Transportistas_Clientes]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Presupuestos_Documentos_Estados]') AND parent_object_id = OBJECT_ID(N'[dbo].[Presupuestos]'))
+ALTER TABLE [dbo].[Presupuestos]  WITH CHECK ADD  CONSTRAINT [FK_Presupuestos_Documentos_Estados] FOREIGN KEY([idEstado])
+REFERENCES [dbo].[Documentos_Estados] ([idEstado])
+GO
+ALTER TABLE [dbo].[Presupuestos] CHECK CONSTRAINT [FK_Presupuestos_Documentos_Estados]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Facturas_Documentos_Estados]') AND parent_object_id = OBJECT_ID(N'[dbo].[Facturas]'))
+ALTER TABLE [dbo].[Facturas]  WITH CHECK ADD  CONSTRAINT [FK_Facturas_Documentos_Estados] FOREIGN KEY([idEstado])
+REFERENCES [dbo].[Documentos_Estados] ([idEstado])
+GO
+ALTER TABLE [dbo].[Facturas] CHECK CONSTRAINT [FK_Facturas_Documentos_Estados]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Facturas_Documentos_Tipo]') AND parent_object_id = OBJECT_ID(N'[dbo].[Facturas]'))
+ALTER TABLE [dbo].[Facturas]  WITH CHECK ADD  CONSTRAINT [FK_Facturas_Documentos_Tipo] FOREIGN KEY([idTipoDocumento])
+REFERENCES [dbo].[Documentos_Tipo] ([idTipoDocumento])
+GO
+ALTER TABLE [dbo].[Facturas] CHECK CONSTRAINT [FK_Facturas_Documentos_Tipo]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Remitos_Documentos_Estados]') AND parent_object_id = OBJECT_ID(N'[dbo].[Remitos]'))
+ALTER TABLE [dbo].[Remitos]  WITH CHECK ADD  CONSTRAINT [FK_Remitos_Documentos_Estados] FOREIGN KEY([idEstado])
+REFERENCES [dbo].[Documentos_Estados] ([idEstado])
+GO
+ALTER TABLE [dbo].[Remitos] CHECK CONSTRAINT [FK_Remitos_Documentos_Estados]
