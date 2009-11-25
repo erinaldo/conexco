@@ -31,6 +31,10 @@ COSAS A HACER:
 -Ver en el script instalador que si existe la base, la dropee
 -Icono de aplicacion
 
+ANTES DEL DEPLOY FINAL:
+-Descomentar la autenticacion de contraseña
+-cambiar las connection strings para SQLEXPRESS y SACAR USER INSTANCE XQ PINCHA
+
 -Tooltips																							HECHO
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
 -Agregar seguridad, Contraseña al ingresar al sistema, poder cambiarla desde las opciones			HECHO
