@@ -53,6 +53,10 @@ namespace ConexcoFacturación
         {
             btnModificarCliente.Enabled = true;
             btnEliminarCliente.Enabled = true;
+            btnDomicilios.Enabled = true;
+            btnTelefonos.Enabled = true;
+            btnContactos.Enabled = true;
+            btnTransportistas.Enabled = true;
         }
 
         private void btnModificarCliente_Click(object sender, EventArgs e)

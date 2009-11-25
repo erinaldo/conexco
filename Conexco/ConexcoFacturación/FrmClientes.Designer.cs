@@ -104,6 +104,7 @@
             // 
             this.btnDomicilios.BackgroundImage = global::ConexcoFacturación.Properties.Resources.administrar;
             this.btnDomicilios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDomicilios.Enabled = false;
             this.btnDomicilios.Location = new System.Drawing.Point(512, 26);
             this.btnDomicilios.Name = "btnDomicilios";
             this.btnDomicilios.Size = new System.Drawing.Size(103, 31);
@@ -118,6 +119,7 @@
             // 
             this.btnTelefonos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTelefonos.BackgroundImage")));
             this.btnTelefonos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTelefonos.Enabled = false;
             this.btnTelefonos.Location = new System.Drawing.Point(512, 67);
             this.btnTelefonos.Name = "btnTelefonos";
             this.btnTelefonos.Size = new System.Drawing.Size(103, 31);
@@ -132,6 +134,7 @@
             // 
             this.btnContactos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContactos.BackgroundImage")));
             this.btnContactos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnContactos.Enabled = false;
             this.btnContactos.Location = new System.Drawing.Point(512, 108);
             this.btnContactos.Name = "btnContactos";
             this.btnContactos.Size = new System.Drawing.Size(103, 31);
@@ -146,6 +149,7 @@
             // 
             this.btnTransportistas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTransportistas.BackgroundImage")));
             this.btnTransportistas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTransportistas.Enabled = false;
             this.btnTransportistas.Location = new System.Drawing.Point(512, 149);
             this.btnTransportistas.Name = "btnTransportistas";
             this.btnTransportistas.Size = new System.Drawing.Size(103, 31);

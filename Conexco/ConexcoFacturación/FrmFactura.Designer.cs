@@ -569,16 +569,16 @@
             // lblVencimiento
             // 
             this.lblVencimiento.AutoSize = true;
-            this.lblVencimiento.Location = new System.Drawing.Point(530, 43);
+            this.lblVencimiento.Location = new System.Drawing.Point(482, 43);
             this.lblVencimiento.Name = "lblVencimiento";
-            this.lblVencimiento.Size = new System.Drawing.Size(26, 13);
+            this.lblVencimiento.Size = new System.Drawing.Size(68, 13);
             this.lblVencimiento.TabIndex = 5;
-            this.lblVencimiento.Text = "Vto.";
+            this.lblVencimiento.Text = "Vencimiento:";
             // 
             // lblClienteCod
             // 
             this.lblClienteCod.AutoSize = true;
-            this.lblClienteCod.Location = new System.Drawing.Point(499, 20);
+            this.lblClienteCod.Location = new System.Drawing.Point(493, 20);
             this.lblClienteCod.Name = "lblClienteCod";
             this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
             this.lblClienteCod.TabIndex = 4;
