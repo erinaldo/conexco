@@ -15,15 +15,6 @@ namespace Conexco.Controller
             _context = new ConexcoDataClassesDataContext();
         }
 
-        public void CrearProvincias()
-        {
-            var bsas = new Provincia() {Provincia1 = "Buenos Aires"};
-            var cordoba = new Provincia() {Provincia1 = "Cordoba"};
-            _context.Provincias.InsertOnSubmit(bsas);
-            _context.Provincias.InsertOnSubmit(cordoba);            
-            _context.SubmitChanges();
-        }
-
         public List<Provincia> ListarProvincias()
         {
             return (_context.Provincias.Select(provincia => provincia)).ToList();
@@ -31,8 +22,8 @@ namespace Conexco.Controller
 
         public List<Localidade> ListarLocalidadesPorProvincia(Provincia provincia)
         {
-            return (_context.Localidades.Where(loc => loc.idProvincia == provincia.idProvincia)).ToList();
-        }
+            return (_context.Localidades.Where(loc => loc.idProvincia == provincia.idProvincia).OrderBy(loc => loc.Localidad)).ToList();
+        } 
 
         public bool GuardarNuevaLocalidad(Localidade localidad)
         {

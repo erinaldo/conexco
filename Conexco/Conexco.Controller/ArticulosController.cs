@@ -16,17 +16,22 @@ namespace Conexco.Controller
 
         public List<Articulo> ListarArticulos()
         {
-            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value))).ToList();
+            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value)).OrderBy(articulo => articulo.Codigo)).ToList();
         }
 
         public List<string> ListarCodigoYColorArticulos()
         {
-            return (_context.Articulos.Select(art => art.Codigo + "-" + art.CodColor)).ToList();
+            var listaCodigoYColor = (_context.Articulos.Where(art => !(art.BajaLogica.HasValue && art.BajaLogica.Value))
+                .Select(art => art.Codigo + "-" + art.CodColor)).ToList();
+            listaCodigoYColor.Sort();
+            return listaCodigoYColor;
         }
 
         public List<string> ListarDescripcionArticulos()
         {
-            return (_context.Articulos.Select(art => art.Descripcion)).ToList();
+            var listaDescripcion = (_context.Articulos.Where(art => !(art.BajaLogica.HasValue && art.BajaLogica.Value)).Select(art => art.Descripcion)).ToList();
+            listaDescripcion.Sort();
+            return listaDescripcion;
         }
 
         public Articulo DatosArticuloPorCodigoYColor(string codigoYColor)

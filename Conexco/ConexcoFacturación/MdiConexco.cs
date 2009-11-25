@@ -228,7 +228,7 @@ namespace ConexcoFacturación
 
         private void MdiConexco_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result = MessageBox.Show("¿Realmente desea Salir? Se perderán los cambios no guardados", "Atención",
+            var result = MessageBox.Show("¿Realmente desea Salir del Sistema? Se perderán los cambios no guardados", "Atención",
                              MessageBoxButtons.OKCancel);
             if (result != System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
