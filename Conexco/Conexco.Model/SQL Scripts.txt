@@ -19,9 +19,7 @@ Pendiente, Pagado, Anulado
 COSAS A HACER:
 
 -Ver el scrollbar del mdi
--ver el orden de los de los dropdowns
--ver tema del condicionIVA tostring
--Revisar performance de formularioss
+-Revisar performance de formularios (LAS IMAGENES DE FONDO SON EL TEMA)
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
 -Crear instalador
@@ -31,6 +29,7 @@ COSAS A HACER:
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña
 -cambiar las connection strings para SQLEXPRESS y SACAR USER INSTANCE XQ PINCHA
+-Al cambiar las connection strings, REVISAR QUE LA SOBRECARDA DE TOSTRING() CONDICIONIVA EXISTA
 
 -Tooltips																							HECHO
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
@@ -42,6 +41,7 @@ ANTES DEL DEPLOY FINAL:
 -Hacer Iconos																						HECHO
 -Agregar en los formularios un OnClose "Esa seguro?"												HECHO
 -Mejorar UI!																						HECHO
+-ver el orden de los de los dropdowns																HECHO
 
 ------------------------------------------------------------------------
 
@@ -343,6 +343,9 @@ VALUES('Tierra del Fuego')
 ------------------------------------------------------------------
 Instaladores
 http://msdn.microsoft.com/en-us/library/49b92ztk.aspx
+
+Scrollbar MDI
+http://www.vbforums.com/showthread.php?p=2536172
 
 -------------------------------------------------------------------
 
