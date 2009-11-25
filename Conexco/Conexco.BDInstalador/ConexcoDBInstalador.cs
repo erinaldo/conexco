@@ -27,10 +27,9 @@ namespace Conexco.BDInstalador
         {
             base.Install(stateSaver);
 
-            string sqlCrearBaseDatos = "CREATE DATABASE Conexco";
             try
             {
-                EjecutarSql("master", sqlCrearBaseDatos);
+                EjecutarSql("master", LeerSqlScript("Create.txt"));
                 EjecutarSql("Conexco", LeerSqlScript("ScriptTablas.txt"));
                 EjecutarSql("Conexco", LeerSqlScript("Inserts.txt"));
             }

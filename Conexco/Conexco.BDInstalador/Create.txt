@@ -1,0 +1,9 @@
+﻿USE master
+GO
+
+IF EXISTS(SELECT name FROM sys.databases
+     WHERE name = 'Conexco')
+     DROP DATABASE Conexco
+GO
+
+CREATE DATABASE Conexco
