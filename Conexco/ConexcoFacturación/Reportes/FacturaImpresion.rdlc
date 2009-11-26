@@ -359,7 +359,7 @@
       <Textbox Name="SonPesos">
         <rd:DefaultName>SonPesos</rd:DefaultName>
         <Top>22cm</Top>
-        <Width>11.25cm</Width>
+        <Width>9cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>

@@ -462,7 +462,10 @@ namespace ConexcoFacturación
             factura.Condiciones = txtCondiciones.Text;
             factura.SonPesos = txtSonPesos.Text;
             factura.Total = Convert.ToDecimal(lblTotal.Text);
-            factura.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            var descuento = (btnTipoValor.Text == "$")
+                                ? Convert.ToDecimal(txtDescuento.Text)
+                                : (Convert.ToDecimal(lblTotal.Text) * Convert.ToDecimal(txtDescuento.Text) / 100);
+            factura.Descuento = Convert.ToDecimal(descuento.ToString("N2"));
             factura.Subtotal = Convert.ToDecimal(lblSubtotal.Text);
             factura.TotalIVA = (cmbLetra.Text == "A") ? Convert.ToDecimal(lblTotalIva.Text) : 0;
             factura.TotalNeto = Convert.ToDecimal(lblNetoPagar.Text);

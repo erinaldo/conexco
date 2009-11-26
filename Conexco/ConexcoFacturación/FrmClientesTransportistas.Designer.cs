@@ -164,6 +164,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(131, 49);
+            this.txtCuit.MaxLength = 20;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 1;
@@ -183,6 +184,7 @@
             // txtInfoAdicional
             // 
             this.txtInfoAdicional.Location = new System.Drawing.Point(13, 97);
+            this.txtInfoAdicional.MaxLength = 250;
             this.txtInfoAdicional.Multiline = true;
             this.txtInfoAdicional.Name = "txtInfoAdicional";
             this.txtInfoAdicional.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -193,6 +195,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(373, 125);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 7;
@@ -203,6 +206,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(131, 23);
+            this.txtNombre.MaxLength = 250;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(139, 20);
             this.txtNombre.TabIndex = 0;
@@ -271,6 +275,7 @@
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(373, 19);
+            this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(137, 20);
             this.txtDomicilio.TabIndex = 2;
@@ -289,6 +294,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(373, 69);
+            this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(137, 20);
             this.txtLocalidad.TabIndex = 5;
@@ -307,6 +313,7 @@
             // txtCodPostal
             // 
             this.txtCodPostal.Location = new System.Drawing.Point(373, 97);
+            this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(78, 20);
             this.txtCodPostal.TabIndex = 6;

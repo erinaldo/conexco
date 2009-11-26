@@ -95,7 +95,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmRemitoImprimir";
-            this.Text = "FrmRemitoImprimir";
+            this.Text = "Impresión de Remito";
             this.Load += new System.EventHandler(this.FrmRemitoImprimir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RemitoImpresionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();

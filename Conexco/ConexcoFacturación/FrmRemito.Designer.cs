@@ -342,6 +342,7 @@
             // txtOrdenCompra
             // 
             this.txtOrdenCompra.Location = new System.Drawing.Point(562, 17);
+            this.txtOrdenCompra.MaxLength = 50;
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
             this.txtOrdenCompra.TabIndex = 2;
@@ -648,6 +649,7 @@
             // txtCodPostal
             // 
             this.txtCodPostal.Location = new System.Drawing.Point(311, 94);
+            this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(75, 20);
             this.txtCodPostal.TabIndex = 6;
@@ -657,6 +659,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(76, 66);
+            this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(149, 20);
             this.txtLocalidad.TabIndex = 3;
@@ -666,6 +669,7 @@
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
+            this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(243, 20);
             this.txtDomicilio.TabIndex = 2;
@@ -837,6 +841,7 @@
             // txtNumRemito
             // 
             this.txtNumRemito.Location = new System.Drawing.Point(405, 74);
+            this.txtNumRemito.MaxLength = 50;
             this.txtNumRemito.Name = "txtNumRemito";
             this.txtNumRemito.Size = new System.Drawing.Size(100, 20);
             this.txtNumRemito.TabIndex = 1;
@@ -857,6 +862,7 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Location = new System.Drawing.Point(16, 658);
+            this.txtObservaciones.MaxLength = 250;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

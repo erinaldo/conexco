@@ -141,6 +141,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(97, 71);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 2;
@@ -167,6 +168,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(97, 19);
+            this.txtTelefono.MaxLength = 50;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 0;
@@ -186,6 +188,7 @@
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(97, 45);
+            this.txtFax.MaxLength = 10;
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(100, 20);
             this.txtFax.TabIndex = 1;

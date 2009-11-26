@@ -52,6 +52,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.gbxDatosFiscales = new System.Windows.Forms.GroupBox();
+            this.txtCuit = new System.Windows.Forms.TextBox();
             this.cmbCondicionIva = new System.Windows.Forms.ComboBox();
             this.gbxDomicilio = new System.Windows.Forms.GroupBox();
             this.btnLocalidad = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.gbxOpcionales = new System.Windows.Forms.GroupBox();
             this.toolTipClientes = new System.Windows.Forms.ToolTip(this.components);
             this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtCuit = new System.Windows.Forms.TextBox();
             this.gbxDatosFiscales.SuspendLayout();
             this.gbxDomicilio.SuspendLayout();
             this.gbxOpcionales.SuspendLayout();
@@ -158,6 +158,7 @@
             // txtCodCliente
             // 
             this.txtCodCliente.Location = new System.Drawing.Point(98, 19);
+            this.txtCodCliente.MaxLength = 10;
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.Size = new System.Drawing.Size(150, 20);
             this.txtCodCliente.TabIndex = 0;
@@ -167,6 +168,7 @@
             // txtRazonSocial
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(98, 49);
+            this.txtRazonSocial.MaxLength = 250;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(150, 20);
             this.txtRazonSocial.TabIndex = 1;
@@ -176,6 +178,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(346, 17);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(150, 20);
             this.txtNombre.TabIndex = 4;
@@ -185,6 +188,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(346, 49);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(150, 20);
             this.txtApellido.TabIndex = 5;
@@ -204,6 +208,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(56, 20);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 0;
@@ -212,6 +217,7 @@
             // txtWeb
             // 
             this.txtWeb.Location = new System.Drawing.Point(56, 49);
+            this.txtWeb.MaxLength = 50;
             this.txtWeb.Name = "txtWeb";
             this.txtWeb.Size = new System.Drawing.Size(100, 20);
             this.txtWeb.TabIndex = 1;
@@ -293,6 +299,16 @@
             this.gbxDatosFiscales.TabStop = false;
             this.gbxDatosFiscales.Text = "Datos del cliente";
             // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(98, 81);
+            this.txtCuit.MaxLength = 20;
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.TabIndex = 2;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
+            this.txtCuit.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
+            // 
             // cmbCondicionIva
             // 
             this.cmbCondicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -357,6 +373,7 @@
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
+            this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(133, 20);
             this.txtDomicilio.TabIndex = 0;
@@ -375,6 +392,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.Location = new System.Drawing.Point(97, 69);
+            this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtLocalidad.TabIndex = 3;
@@ -392,6 +410,7 @@
             // txtCodPostal
             // 
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
+            this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodPostal.TabIndex = 4;
@@ -438,15 +457,6 @@
             // errorProviderRequerido
             // 
             this.errorProviderRequerido.ContainerControl = this;
-            // 
-            // txtCuit
-            // 
-            this.txtCuit.Location = new System.Drawing.Point(98, 81);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
-            this.txtCuit.TabIndex = 2;
-            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
-            this.txtCuit.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // FrmClientesAlta
             // 

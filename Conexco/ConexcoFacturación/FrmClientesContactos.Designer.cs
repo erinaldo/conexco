@@ -146,6 +146,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(63, 23);
+            this.txtNombre.MaxLength = 250;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(120, 20);
             this.txtNombre.TabIndex = 0;
@@ -164,6 +165,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(63, 49);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(120, 20);
             this.txtEmail.TabIndex = 1;

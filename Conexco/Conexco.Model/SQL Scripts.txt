@@ -17,11 +17,8 @@ Pendiente, Pagado, Anulado
 ------------------------------------------------------------------------
 
 COSAS A HACER:
--El descuento como se esta guardando?=????
--Text de todos los FORMs
+
 -Ver el scrollbar del mdi
--Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
--Revisar Impresiones de facturas
 
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña
@@ -44,6 +41,8 @@ ANTES DEL DEPLOY FINAL:
 -Ver en el script instalador que si existe la base, la dropee										HECHO
 -Crear instalador																					HECHO
 -Icono de aplicacion, acceso directo del instalador, carpeta en Inicio, Programas					HECHO
+-Titulo de todos los FORMs																			HECHO
+-Cambiar Descuento en Factura que esta guardando mal cuando es en %									HECHO
 
 ------------------------------------------------------------------------
 

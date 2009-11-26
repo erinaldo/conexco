@@ -359,7 +359,7 @@
       <Textbox Name="SonPesos">
         <rd:DefaultName>SonPesos</rd:DefaultName>
         <Top>22.5cm</Top>
-        <Width>9.75cm</Width>
+        <Width>7.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -374,7 +374,7 @@
       <Textbox Name="Condiciones">
         <rd:DefaultName>Condiciones</rd:DefaultName>
         <Top>21.75cm</Top>
-        <Width>12cm</Width>
+        <Width>10.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>

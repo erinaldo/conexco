@@ -545,6 +545,7 @@
             // txtOrdenCompra
             // 
             this.txtOrdenCompra.Location = new System.Drawing.Point(358, 42);
+            this.txtOrdenCompra.MaxLength = 50;
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
             this.txtOrdenCompra.TabIndex = 1;
@@ -561,6 +562,7 @@
             // txtRemito
             // 
             this.txtRemito.Location = new System.Drawing.Point(68, 14);
+            this.txtRemito.MaxLength = 50;
             this.txtRemito.Name = "txtRemito";
             this.txtRemito.Size = new System.Drawing.Size(100, 20);
             this.txtRemito.TabIndex = 0;
@@ -645,6 +647,7 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Location = new System.Drawing.Point(6, 12);
+            this.txtObservaciones.MaxLength = 250;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -723,6 +726,7 @@
             // txtCondiciones
             // 
             this.txtCondiciones.Location = new System.Drawing.Point(11, 615);
+            this.txtCondiciones.MaxLength = 250;
             this.txtCondiciones.Multiline = true;
             this.txtCondiciones.Name = "txtCondiciones";
             this.txtCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -743,6 +747,7 @@
             // txtSonPesos
             // 
             this.txtSonPesos.Location = new System.Drawing.Point(12, 689);
+            this.txtSonPesos.MaxLength = 250;
             this.txtSonPesos.Multiline = true;
             this.txtSonPesos.Name = "txtSonPesos";
             this.txtSonPesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -916,6 +921,7 @@
             // txtNumFactura
             // 
             this.txtNumFactura.Location = new System.Drawing.Point(404, 73);
+            this.txtNumFactura.MaxLength = 50;
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 1;

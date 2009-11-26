@@ -95,7 +95,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmFacturaImprimir";
-            this.Text = "FrmFacturaImprimir";
+            this.Text = "Impresión de Factura A";
             this.Load += new System.EventHandler(this.FrmFacturaImprimir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FacturaImpresionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexcoImpresionDataSet)).EndInit();

@@ -164,6 +164,7 @@
             // txtNuevaLocalidad
             // 
             this.txtNuevaLocalidad.Location = new System.Drawing.Point(138, 156);
+            this.txtNuevaLocalidad.MaxLength = 100;
             this.txtNuevaLocalidad.Name = "txtNuevaLocalidad";
             this.txtNuevaLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtNuevaLocalidad.TabIndex = 2;
@@ -172,6 +173,7 @@
             // txtNuevoCodPostal
             // 
             this.txtNuevoCodPostal.Location = new System.Drawing.Point(138, 189);
+            this.txtNuevoCodPostal.MaxLength = 10;
             this.txtNuevoCodPostal.Name = "txtNuevoCodPostal";
             this.txtNuevoCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoCodPostal.TabIndex = 3;
