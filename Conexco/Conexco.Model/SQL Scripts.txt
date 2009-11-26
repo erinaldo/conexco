@@ -12,7 +12,26 @@ SonPesos varchar(250) nuleable
 Documentos_Estados: VALUES
 Pendiente, Pagado, Anulado
 
+-------------------------------------------------------------
 
+CHECKLIST
+
+-Tooltips
+-Background Image (No olvidar poner TILE en NONE, por performance)
+-Tab Index
+-Error Provider "errorProviderRequerido", usar CampoRequerido_Validating()
+-Usar _FaltaCampoRequerido() antes de guardar
+-Iconos Buttons
+-Alineación de los controles
+-Headers de las grillas
+-Cambiar los combobox type de dropdown a dropdownlist
+-Todos los buttons eliminar con "Confirma?"
+-Usar try catch en los guardar y eso!!!!
+-Usar SoloNumeros_KeyPress(), SoloNumerosYGuion_KeyPress en los texbox
+-Setear MaxLeght de texbox con el max del campo en la base
+-Grillas de lectura AllowAdd, AllowDelete, MultiSelect false, SelectionMode FullRowSelect
+-Titulo de los formularios
+-OnClose de factura, remito, presupuesto con Confirmación
 
 ------------------------------------------------------------------------
 
