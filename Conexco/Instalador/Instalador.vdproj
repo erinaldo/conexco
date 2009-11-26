@@ -1093,7 +1093,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Conexco Facturación"
         "ProductCode" = "8:{DE179E46-3B92-4CD5-87D3-1A618E89DB5D}"
-        "PackageCode" = "8:{A6397D89-5E6B-4D62-8788-493084B1E1C1}"
+        "PackageCode" = "8:{3DCEA034-2FF5-46FD-982E-50BD42E9EED2}"
         "UpgradeCode" = "8:{088445F7-71F6-463E-B1A1-922B4134D25E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
