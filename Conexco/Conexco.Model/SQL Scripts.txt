@@ -21,8 +21,8 @@ COSAS A HACER:
 -Ver el scrollbar del mdi
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
--Crear instalador
--Icono de aplicacion, acceso directo del instalador, carpeta en Inicio, Programas
+
+
 
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña
@@ -43,6 +43,8 @@ ANTES DEL DEPLOY FINAL:
 -Icono y boton en el MDI para reporte de facturas													HECHO
 -Revisar performance de formularios (LAS IMAGENES DE FONDO SON EL TEMA; PONER TILE NONE)			HECHO
 -Ver en el script instalador que si existe la base, la dropee										HECHO
+-Crear instalador																					HECHO
+-Icono de aplicacion, acceso directo del instalador, carpeta en Inicio, Programas					HECHO
 
 ------------------------------------------------------------------------
 
