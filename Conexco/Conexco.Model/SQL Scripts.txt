@@ -347,6 +347,7 @@ http://msdn.microsoft.com/en-us/library/49b92ztk.aspx
 
 Scrollbar MDI
 http://www.vbforums.com/showthread.php?p=2536172
+http://msdn.microsoft.com/en-us/library/system.windows.forms.control.mousewheel.aspx#Mtps_DropDownFilterText
 
 -------------------------------------------------------------------
 
