@@ -233,5 +233,10 @@ namespace ConexcoFacturación
             if (result != System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
         }
+
+        private void facturasEmitidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmFacturaBImprimir(){IdFactura = 5}.Show();
+        }
     }
 }

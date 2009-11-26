@@ -1226,20 +1226,6 @@
             "Icon" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_802F267DBB954E45B1D66C1DF5B2AE88"
-            {
-            "Name" = "8:Conexco Facturación"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
-            "Folder" = "8:_CFFF9D264FA84A048F64885A2FBD83F8"
-            "WorkingFolder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
-            "Icon" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B7978743854D4631891B1EBC0EF28D8A"
             {
             "Name" = "8:Conexco Facturación"

@@ -17,12 +17,11 @@ Pendiente, Pagado, Anulado
 ------------------------------------------------------------------------
 
 COSAS A HACER:
-
+-El descuento como se esta guardando?=????
+-Text de todos los FORMs
 -Ver el scrollbar del mdi
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
-
-
 
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña

@@ -35,6 +35,7 @@
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasEmitidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +67,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonPresupuestos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonReporteFacturas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonClientes = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonArticulos = new System.Windows.Forms.ToolStripButton();
@@ -74,9 +77,6 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonLocalidades = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonReporteFacturas = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.facturasEmitidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStripConexco.SuspendLayout();
@@ -132,6 +132,13 @@
             this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.presupuestoToolStripMenuItem.Text = "&Presupuesto";
             this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
+            // 
+            // facturasEmitidasToolStripMenuItem
+            // 
+            this.facturasEmitidasToolStripMenuItem.Name = "facturasEmitidasToolStripMenuItem";
+            this.facturasEmitidasToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.facturasEmitidasToolStripMenuItem.Text = "Facturas Emitidas";
+            this.facturasEmitidasToolStripMenuItem.Click += new System.EventHandler(this.facturasEmitidasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -383,6 +390,21 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 57);
             // 
+            // toolStripButtonReporteFacturas
+            // 
+            this.toolStripButtonReporteFacturas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonReporteFacturas.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReporteFacturas.Image")));
+            this.toolStripButtonReporteFacturas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonReporteFacturas.Name = "toolStripButtonReporteFacturas";
+            this.toolStripButtonReporteFacturas.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.toolStripButtonReporteFacturas.Size = new System.Drawing.Size(94, 54);
+            this.toolStripButtonReporteFacturas.Text = "Administrar las Facturas Emitidas";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 57);
+            // 
             // toolStripButtonClientes
             // 
             this.toolStripButtonClientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -446,27 +468,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 57);
-            // 
-            // toolStripButtonReporteFacturas
-            // 
-            this.toolStripButtonReporteFacturas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonReporteFacturas.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReporteFacturas.Image")));
-            this.toolStripButtonReporteFacturas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonReporteFacturas.Name = "toolStripButtonReporteFacturas";
-            this.toolStripButtonReporteFacturas.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.toolStripButtonReporteFacturas.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButtonReporteFacturas.Text = "Administrar las Facturas Emitidas";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 57);
-            // 
-            // facturasEmitidasToolStripMenuItem
-            // 
-            this.facturasEmitidasToolStripMenuItem.Name = "facturasEmitidasToolStripMenuItem";
-            this.facturasEmitidasToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.facturasEmitidasToolStripMenuItem.Text = "Facturas Emitidas";
             // 
             // MdiConexco
             // 

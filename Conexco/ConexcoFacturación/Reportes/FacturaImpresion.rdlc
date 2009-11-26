@@ -300,7 +300,7 @@
         <Height>3.15in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
-        <Top>3.75cm</Top>
+        <Top>3.25cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -314,7 +314,7 @@
         <Value>=Right(Year(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_FacturaImpresion")),2)</Value>
       </Textbox>
       <Textbox Name="textbox2">
-        <Top>3.75cm</Top>
+        <Top>3.25cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -328,7 +328,7 @@
         <Value>=Month(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_FacturaImpresion"))</Value>
       </Textbox>
       <Textbox Name="textbox1">
-        <Top>3.75cm</Top>
+        <Top>3.25cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -358,8 +358,8 @@
       </Textbox>
       <Textbox Name="SonPesos">
         <rd:DefaultName>SonPesos</rd:DefaultName>
-        <Top>22.25cm</Top>
-        <Width>12cm</Width>
+        <Top>22cm</Top>
+        <Width>11.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -373,8 +373,8 @@
       </Textbox>
       <Textbox Name="Condiciones">
         <rd:DefaultName>Condiciones</rd:DefaultName>
-        <Top>21.5cm</Top>
-        <Width>12cm</Width>
+        <Top>21cm</Top>
+        <Width>11.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -388,7 +388,7 @@
       </Textbox>
       <Textbox Name="Total">
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>21.5cm</Top>
+        <Top>21cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -404,7 +404,7 @@
       </Textbox>
       <Textbox Name="Descuento">
         <rd:DefaultName>Descuento</rd:DefaultName>
-        <Top>22.25cm</Top>
+        <Top>21.9cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -420,7 +420,7 @@
       </Textbox>
       <Textbox Name="Subtotal">
         <rd:DefaultName>Subtotal</rd:DefaultName>
-        <Top>23cm</Top>
+        <Top>22.7cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -436,7 +436,7 @@
       </Textbox>
       <Textbox Name="TotalIVA">
         <rd:DefaultName>TotalIVA</rd:DefaultName>
-        <Top>23.75cm</Top>
+        <Top>23.5cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -468,7 +468,7 @@
       </Textbox>
       <Textbox Name="FechaVto">
         <rd:DefaultName>FechaVto</rd:DefaultName>
-        <Top>9cm</Top>
+        <Top>8.8cm</Top>
         <Width>2.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -483,7 +483,7 @@
       </Textbox>
       <Textbox Name="Codigo">
         <rd:DefaultName>Codigo</rd:DefaultName>
-        <Top>9cm</Top>
+        <Top>8.8cm</Top>
         <Width>2cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -498,7 +498,7 @@
       </Textbox>
       <Textbox Name="OrdenCompra">
         <rd:DefaultName>OrdenCompra</rd:DefaultName>
-        <Top>9.75cm</Top>
+        <Top>9.5cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -513,7 +513,7 @@
       </Textbox>
       <Textbox Name="Descripcion">
         <rd:DefaultName>Descripcion</rd:DefaultName>
-        <Top>9cm</Top>
+        <Top>8.8cm</Top>
         <Width>5.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -528,7 +528,7 @@
       </Textbox>
       <Textbox Name="CUIT">
         <rd:DefaultName>CUIT</rd:DefaultName>
-        <Top>9.75cm</Top>
+        <Top>9.5cm</Top>
         <Width>5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -537,13 +537,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>6</ZIndex>
-        <Left>3cm</Left>
+        <Left>3.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!CUIT.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
       </Textbox>
       <Textbox Name="Remito">
         <rd:DefaultName>Remito</rd:DefaultName>
-        <Top>9cm</Top>
+        <Top>8.8cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -552,13 +552,13 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>5</ZIndex>
-        <Left>3cm</Left>
+        <Left>3.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=First(Fields!Remito.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
       </Textbox>
       <Textbox Name="Provincia">
         <rd:DefaultName>Provincia</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7.9cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -573,7 +573,7 @@
       </Textbox>
       <Textbox Name="CodPostal">
         <rd:DefaultName>CodPostal</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7.9cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -588,7 +588,7 @@
       </Textbox>
       <Textbox Name="Localidad">
         <rd:DefaultName>Localidad</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7.9cm</Top>
         <Width>6cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -603,7 +603,7 @@
       </Textbox>
       <Textbox Name="Domicilio">
         <rd:DefaultName>Domicilio</rd:DefaultName>
-        <Top>7.25cm</Top>
+        <Top>7.1cm</Top>
         <Width>16.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -618,7 +618,7 @@
       </Textbox>
       <Textbox Name="RazonSocial">
         <rd:DefaultName>RazonSocial</rd:DefaultName>
-        <Top>6.5cm</Top>
+        <Top>6.25cm</Top>
         <Width>16.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
