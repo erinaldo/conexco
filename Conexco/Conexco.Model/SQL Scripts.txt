@@ -18,9 +18,7 @@ Pendiente, Pagado, Anulado
 
 COSAS A HACER:
 
--Icono y boton en el MDI para reporte de facturas
 -Ver el scrollbar del mdi
--Revisar performance de formularios (LAS IMAGENES DE FONDO SON EL TEMA)
 -Revisar la longitud de los campos de la impresion (ejemplo: SON PESOS)
 -Revisar Impresiones de facturas
 -Crear instalador
@@ -43,6 +41,8 @@ ANTES DEL DEPLOY FINAL:
 -Agregar en los formularios un OnClose "Esa seguro?"												HECHO
 -Mejorar UI!																						HECHO
 -ver el orden de los de los dropdowns																HECHO
+-Icono y boton en el MDI para reporte de facturas													HECHO
+-Revisar performance de formularios (LAS IMAGENES DE FONDO SON EL TEMA)								HECHO
 
 ------------------------------------------------------------------------
 

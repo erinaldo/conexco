@@ -930,7 +930,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FacturaBmp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(689, 748);
             this.Controls.Add(this.txtNumFactura);
             this.Controls.Add(this.lblTNumFact);
