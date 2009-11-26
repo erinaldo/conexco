@@ -225,6 +225,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C3C994795DFAB744D711AAD4195C248A"
         "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
         "MsmSig" = "8:_UNDEFINED"
@@ -906,6 +912,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB3D0B615E794C9EA15A3A44EC17E264"
+            {
+            "SourcePath" = "8:..\\..\\Documentos\\Recursos\\C3.ico"
+            "TargetName" = "8:C3.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C3C994795DFAB744D711AAD4195C248A"
             {
             "AssemblyRegister" = "3:1"
@@ -1037,6 +1063,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A6228ACD1E264AB383C735D699420545"
+                    {
+                    "Name" = "8:Conexco Facturación"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D1F30FBF6E88440BB37CAACA50FA1197"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -1054,7 +1091,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Facturación Conexco"
+        "ProductName" = "8:Conexco Facturación"
         "ProductCode" = "8:{DE179E46-3B92-4CD5-87D3-1A618E89DB5D}"
         "PackageCode" = "8:{A6397D89-5E6B-4D62-8788-493084B1E1C1}"
         "UpgradeCode" = "8:{088445F7-71F6-463E-B1A1-922B4134D25E}"
@@ -1066,7 +1103,7 @@
         "Manufacturer" = "8:HELPyME Solutions"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Facturación Conexco"
+        "Title" = "8:Conexco Facturación"
         "Subject" = "8:"
         "ARPCONTACT" = "8:HELPyME Solutions"
         "Keywords" = "8:"
@@ -1175,18 +1212,46 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4BA02B4AE6E24637B95F7BB5C1DF1F60"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_521AE526793A4FFBB5CFD8B862DE8CCD"
             {
-            "Name" = "8:Conexco"
+            "Name" = "8:Conexco Facturación"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A5FD1CA34B59423CA166935DC3BFB50F"
+            "Target" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
             "Folder" = "8:_A5FD1CA34B59423CA166935DC3BFB50F"
-            "WorkingFolder" = "8:_A5FD1CA34B59423CA166935DC3BFB50F"
-            "Icon" = "8:"
+            "WorkingFolder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Icon" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_802F267DBB954E45B1D66C1DF5B2AE88"
+            {
+            "Name" = "8:Conexco Facturación"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
+            "Folder" = "8:_CFFF9D264FA84A048F64885A2FBD83F8"
+            "WorkingFolder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Icon" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B7978743854D4631891B1EBC0EF28D8A"
+            {
+            "Name" = "8:Conexco Facturación"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
+            "Folder" = "8:_A6228ACD1E264AB383C735D699420545"
+            "WorkingFolder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Icon" = "8:_BB3D0B615E794C9EA15A3A44EC17E264"
             "Feature" = "8:"
             }
         }
