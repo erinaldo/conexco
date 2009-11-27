@@ -341,11 +341,13 @@
             // 
             // btnLocalidad
             // 
-            this.btnLocalidad.Location = new System.Drawing.Point(205, 44);
+            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLocalidad.Location = new System.Drawing.Point(205, 43);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 2;
-            this.btnLocalidad.Text = "...";
+            this.toolTipClientes.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
@@ -396,6 +398,7 @@
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtLocalidad.TabIndex = 3;
+            this.toolTipClientes.SetToolTip(this.txtLocalidad, "Ingrese la Localidad o utilize el buscador");
             this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblProvincia
@@ -414,6 +417,7 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodPostal.TabIndex = 4;
+            this.toolTipClientes.SetToolTip(this.txtCodPostal, "Ingrese el Código Postal o utilize el buscador");
             this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCodPostal

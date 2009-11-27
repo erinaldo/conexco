@@ -267,7 +267,8 @@
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(141, 20);
             this.txtLocalidad.TabIndex = 3;
-            this.toolTipEmpresa.SetToolTip(this.txtLocalidad, "Localidad de su Empresa");
+            this.toolTipEmpresa.SetToolTip(this.txtLocalidad, "Ingrese la Localidad de su Empresa o utilize el buscador para completarla automát" +
+                    "icamente");
             this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblLocalidad

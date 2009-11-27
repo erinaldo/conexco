@@ -188,7 +188,7 @@
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(144, 20);
             this.txtLocalidad.TabIndex = 3;
-            this.toolTipClientes.SetToolTip(this.txtLocalidad, "Localidad del Cliente");
+            this.toolTipClientes.SetToolTip(this.txtLocalidad, "Ingrese la Localidad o utilize el Buscador para completar automáticamente");
             this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblProvincia
@@ -207,7 +207,7 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(144, 20);
             this.txtCodPostal.TabIndex = 4;
-            this.toolTipClientes.SetToolTip(this.txtCodPostal, "Código Postal del Cliente");
+            this.toolTipClientes.SetToolTip(this.txtCodPostal, "Ingrese el Código Postal o utilize el Buscador para completar automáticamente");
             this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCodPostal

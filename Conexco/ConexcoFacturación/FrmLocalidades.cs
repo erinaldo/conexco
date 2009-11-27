@@ -155,5 +155,13 @@ namespace ConexcoFacturación
 
             return error;
         }
+
+        private void txtNuevaLocalidadCodPostal_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtNuevaLocalidad.Text) || !String.IsNullOrEmpty(txtNuevoCodPostal.Text))
+                lblMensajeNuevaLocalidad.Visible = true;
+            else
+                lblMensajeNuevaLocalidad.Visible = false;                
+        }
     }
 }

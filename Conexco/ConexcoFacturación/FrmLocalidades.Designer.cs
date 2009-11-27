@@ -45,6 +45,7 @@
             this.lblTCodPostal = new System.Windows.Forms.Label();
             this.toolTipLocalidades = new System.Windows.Forms.ToolTip(this.components);
             this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMensajeNuevaLocalidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +130,7 @@
             // 
             this.lblNuevoCodPostal.AutoSize = true;
             this.lblNuevoCodPostal.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevoCodPostal.Location = new System.Drawing.Point(15, 189);
+            this.lblNuevoCodPostal.Location = new System.Drawing.Point(15, 192);
             this.lblNuevoCodPostal.Name = "lblNuevoCodPostal";
             this.lblNuevoCodPostal.Size = new System.Drawing.Size(107, 13);
             this.lblNuevoCodPostal.TabIndex = 7;
@@ -139,7 +140,7 @@
             // 
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAceptar.Location = new System.Drawing.Point(46, 223);
+            this.btnAceptar.Location = new System.Drawing.Point(45, 263);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 4;
@@ -152,7 +153,7 @@
             // 
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(143, 223);
+            this.btnCancelar.Location = new System.Drawing.Point(142, 263);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(79, 30);
             this.btnCancelar.TabIndex = 5;
@@ -169,6 +170,7 @@
             this.txtNuevaLocalidad.Size = new System.Drawing.Size(100, 20);
             this.txtNuevaLocalidad.TabIndex = 2;
             this.toolTipLocalidades.SetToolTip(this.txtNuevaLocalidad, "Ingrese aquí la nueva Localidad");
+            this.txtNuevaLocalidad.TextChanged += new System.EventHandler(this.txtNuevaLocalidadCodPostal_TextChanged);
             // 
             // txtNuevoCodPostal
             // 
@@ -178,6 +180,7 @@
             this.txtNuevoCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoCodPostal.TabIndex = 3;
             this.toolTipLocalidades.SetToolTip(this.txtNuevoCodPostal, "Ingrese aquí el nuevo Código Postal");
+            this.txtNuevoCodPostal.TextChanged += new System.EventHandler(this.txtNuevaLocalidadCodPostal_TextChanged);
             // 
             // lblTCodPostal
             // 
@@ -193,13 +196,24 @@
             // 
             this.errorProviderRequerido.ContainerControl = this;
             // 
+            // lblMensajeNuevaLocalidad
+            // 
+            this.lblMensajeNuevaLocalidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensajeNuevaLocalidad.Location = new System.Drawing.Point(12, 217);
+            this.lblMensajeNuevaLocalidad.Name = "lblMensajeNuevaLocalidad";
+            this.lblMensajeNuevaLocalidad.Size = new System.Drawing.Size(240, 32);
+            this.lblMensajeNuevaLocalidad.TabIndex = 13;
+            this.lblMensajeNuevaLocalidad.Text = "Una vez agregada la nueva Localidad, podrá seleccionarla en futuras búsquedas";
+            this.lblMensajeNuevaLocalidad.Visible = false;
+            // 
             // FrmLocalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(268, 262);
+            this.ClientSize = new System.Drawing.Size(268, 310);
+            this.Controls.Add(this.lblMensajeNuevaLocalidad);
             this.Controls.Add(this.lblTCodPostal);
             this.Controls.Add(this.txtNuevoCodPostal);
             this.Controls.Add(this.txtNuevaLocalidad);
@@ -242,5 +256,6 @@
         private System.Windows.Forms.Label lblTCodPostal;
         private System.Windows.Forms.ToolTip toolTipLocalidades;
         private System.Windows.Forms.ErrorProvider errorProviderRequerido;
+        private System.Windows.Forms.Label lblMensajeNuevaLocalidad;
     }
 }

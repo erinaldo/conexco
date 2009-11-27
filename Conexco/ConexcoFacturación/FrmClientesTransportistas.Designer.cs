@@ -298,7 +298,8 @@
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(137, 20);
             this.txtLocalidad.TabIndex = 5;
-            this.toolTipTransportistas.SetToolTip(this.txtLocalidad, "Localidad del Transportista");
+            this.toolTipTransportistas.SetToolTip(this.txtLocalidad, "Ingrese la Localidad del Transportista o utilize el buscador para completarla Aut" +
+                    "omáticamente");
             this.txtLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblProvincia
@@ -317,7 +318,8 @@
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(78, 20);
             this.txtCodPostal.TabIndex = 6;
-            this.toolTipTransportistas.SetToolTip(this.txtCodPostal, "Código Postal del Transportista");
+            this.toolTipTransportistas.SetToolTip(this.txtCodPostal, "Ingrese el Código Postal del Transportista o utilize el buscador para completarlo" +
+                    " automáticamente");
             this.txtCodPostal.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblCodPostal

@@ -39,7 +39,7 @@ COSAS A HACER:
 
 -Ver el scrollbar del mdi
 -Mini ayuda?
--Explicar mas la funcionalidad de las localidades
+
 
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña
@@ -66,6 +66,7 @@ ANTES DEL DEPLOY FINAL:
 -Titulo de todos los FORMs																			HECHO
 -Cambiar Descuento en Factura que esta guardando mal cuando es en %									HECHO
 -Reportes consumibles desde afuera del assembly para poder modificarlos IMPORTANTE					HECHO
+-Explicar mas la funcionalidad de las localidades													HECHO
 
 ------------------------------------------------------------------------
 
