@@ -25,6 +25,8 @@ namespace ConexcoFacturación
             // TODO: This line of code loads data into the 'ConexcoImpresionDataSet.RemitoLineaImpresion' table. You can move, or remove it, as needed.
             this.RemitoLineaImpresionTableAdapter.Fill(this.ConexcoImpresionDataSet.RemitoLineaImpresion, IdRemito);
 
+            reportViewerRemito.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\RemitoImpresion.rdlc";
+
             reportViewerRemito.RefreshReport();
         }
     }
