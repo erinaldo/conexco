@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.ComponentModel;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -25,7 +25,6 @@ namespace ConexcoFacturación
             {
                 Text = "Modificar Articulo";
                 txtStock.Visible = false;
-                errorStock.Visible = false;
                 lblStock.Visible = false;
                 _CargarDatosArticulo();
             }
@@ -73,12 +72,7 @@ namespace ConexcoFacturación
 
         private void OnGuardarArticulo(object sender, EventArgs e)
         {
-            errorCodigo.Visible = String.IsNullOrEmpty(txtCodigo.Text);
-            errorDescripcion.Visible = String.IsNullOrEmpty(txtDescripcion.Text);
-            errorPrecio.Visible = String.IsNullOrEmpty(txtPrecio.Text);
-            errorStock.Visible = String.IsNullOrEmpty(txtStock.Text);
-
-            if (errorCodigo.Visible || errorDescripcion.Visible || errorPrecio.Visible || errorStock.Visible)
+            if (_FaltaCampoRequerido())
                 return;
 
             var color = String.IsNullOrEmpty(comboColor.Text) ? "0" : comboColor.Text;
@@ -92,20 +86,76 @@ namespace ConexcoFacturación
                                           Stock = Convert.ToDecimal(txtStock.Text),
                                     };
 
-            bool correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar) 
-                                : ArticulosController.AgregarArticulo(articuloGuardar);
+            try
+            {
+                bool correcto = Modificar
+                                    ? ArticulosController.ActualizarArticulo(articuloGuardar)
+                                    : ArticulosController.AgregarArticulo(articuloGuardar);
 
-            if (correcto)
-            {
-                MessageBox.Show(Constants.OK_ALTA_ARTICULO);
-                DialogResult = DialogResult.OK;
-                Close();
+                if (correcto)
+                {
+                    MessageBox.Show(Constants.OK_ALTA_ARTICULO);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(Constants.ERROR_ALTA_ARTICULO);
+                }
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show(Constants.ERROR_ALTA_ARTICULO);
+                MessageBox.Show("Ocurrio un error al guardar el artículo, verifique los datos");
+                this.Close();
             }
 
         }
+
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0 || control.Text.Trim().StartsWith("-"))
+            {
+                errorProvider1.SetError(control, "Campo Requerido");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private bool _FaltaCampoRequerido()
+        {
+            bool error = false;
+
+            if (String.IsNullOrEmpty(txtCodigo.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtDescripcion.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtPrecio.Text))
+                error = true;
+            if (String.IsNullOrEmpty(txtStock.Text))
+                error = true;
+
+            if (error)
+                MessageBox.Show("Ingrese los campos requeridos");
+
+            return error;
+        }
+
+        private void SoloNumerosDecimales_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == '.')
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
     }
 }

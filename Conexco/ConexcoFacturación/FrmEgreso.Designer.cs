@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCodArticulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEgresoMotivo = new System.Windows.Forms.Label();
@@ -39,7 +40,9 @@
             this.ddlMotivos = new System.Windows.Forms.ComboBox();
             this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodArticulo
@@ -153,12 +156,16 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(134, 163);
-            this.txtCantidad.Mask = "00000.00";
+            this.txtCantidad.Location = new System.Drawing.Point(135, 163);
+            this.txtCantidad.MaxLength = 10;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 12;
-            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEgreso
             // 
@@ -181,8 +188,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodArticulo);
             this.Name = "FrmEgreso";
-            this.Text = "FrmEgreso";
+            this.Text = "Egreso Stock Artículo";
             this.Load += new System.EventHandler(this.FrmEgreso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +209,7 @@
         private System.Windows.Forms.ComboBox ddlMotivos;
         private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

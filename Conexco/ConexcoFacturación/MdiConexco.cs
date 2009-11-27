@@ -238,5 +238,10 @@ namespace ConexcoFacturación
         {
             new FrmFacturaImprimir(){IdFactura = 4}.Show();
         }
+
+        private void toolStripButtonReporteFacturas_Click(object sender, EventArgs e)
+        {
+            new FrmListadoFacturas() {MdiParent = this}.Show();
+        }
     }
 }

@@ -45,7 +45,6 @@
             // 
             this.grdArticulosStock.AllowUserToAddRows = false;
             this.grdArticulosStock.AllowUserToDeleteRows = false;
-            this.grdArticulosStock.AllowUserToOrderColumns = true;
             this.grdArticulosStock.AllowUserToResizeColumns = false;
             this.grdArticulosStock.AllowUserToResizeRows = false;
             this.grdArticulosStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -54,6 +53,7 @@
             this.grdArticulosStock.MultiSelect = false;
             this.grdArticulosStock.Name = "grdArticulosStock";
             this.grdArticulosStock.ReadOnly = true;
+            this.grdArticulosStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdArticulosStock.Size = new System.Drawing.Size(521, 262);
             this.grdArticulosStock.TabIndex = 0;
             this.grdArticulosStock.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);

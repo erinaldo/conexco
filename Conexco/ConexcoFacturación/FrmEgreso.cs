@@ -32,6 +32,12 @@ namespace ConexcoFacturación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtCantidad.Text))
+            {
+                errorProvider1.SetError(txtCantidad,"Ingrese cantidad.");
+                return;
+            }
+
             var stockActual = Convert.ToDecimal(txtStockActual.Text);
             var stockEgreso = Convert.ToDecimal(txtCantidad.Text);
 
@@ -53,18 +59,26 @@ namespace ConexcoFacturación
                                             Stock = Convert.ToDecimal(txtStockActual.Text) - Convert.ToDecimal(txtCantidad.Text)
                                          };
 
-            var resultadoArticuloGuardado = ArticulosController.ActualizarStockArticulo(articulo);
-            var resultadoEgreso = StockController.EgresoStockArticulo(egresoArticulo);
-            
-            if (resultadoArticuloGuardado && resultadoEgreso)
+            try
             {
-                MessageBox.Show(Constants.OK_EGRESO_STOCK);
-                DialogResult = DialogResult.OK;
-                Close();
+                var resultadoArticuloGuardado = ArticulosController.ActualizarStockArticulo(articulo);
+                var resultadoEgreso = StockController.EgresoStockArticulo(egresoArticulo);
+
+                if (resultadoArticuloGuardado && resultadoEgreso)
+                {
+                    MessageBox.Show(Constants.OK_EGRESO_STOCK);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(Constants.ERROR_EGRESO_STOCK);
+                }
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show(Constants.ERROR_EGRESO_STOCK);
+                MessageBox.Show("Ocurrio un error al guardar el egreso de stock, verifique los datos");
+                this.Close();
             }
         }
 
@@ -75,6 +89,20 @@ namespace ConexcoFacturación
             nombreArticulo.Text = articulo.Descripcion;
             txtStockActual.Text = articulo.Stock.ToString();
             ddlMotivos.DataSource = StockController.ListadoMotivosEgreso();
+        }
+
+        private void SoloNumerosDecimales_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == '.')
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

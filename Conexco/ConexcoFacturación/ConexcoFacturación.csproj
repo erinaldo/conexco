@@ -189,6 +189,12 @@
     <Compile Include="FrmFacturaImprimir.Designer.cs">
       <DependentUpon>FrmFacturaImprimir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoFacturas.Designer.cs">
+      <DependentUpon>FrmListadoFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLocalidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFacturaImprimir.resx">
       <DependentUpon>FrmFacturaImprimir.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoFacturas.resx">
+      <DependentUpon>FrmListadoFacturas.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocalidades.resx">

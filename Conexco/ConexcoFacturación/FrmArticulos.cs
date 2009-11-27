@@ -48,20 +48,27 @@ namespace ConexcoFacturación
         private void OnArticuloEliminar(object sender, EventArgs e)
         {
             var nombreArticulo = grdArticulos.SelectedRows[0].Cells[3].Value;
-            var confirmacion = MessageBox.Show("Esta Seguro Desea Eliminar el Articulo: " + nombreArticulo, "Eliminar",
+            var confirmacion = MessageBox.Show("Esta Seguro Desea Eliminar el Articulo: " + nombreArticulo + " ?", "Eliminar",
                                                MessageBoxButtons.YesNo);
             if (confirmacion == DialogResult.Yes)
             {
-                var idArticulo = Convert.ToInt32(grdArticulos.SelectedRows[0].Cells[0].Value);
-                if (ArticulosController.EliminarArticulo(idArticulo))
+                try
                 {
-                    MessageBox.Show("Articulo eliminado satisfactoriamente");
-                    ArticulosController = new ArticulosController();
-                    _ActualizarGrilla();
+                    var idArticulo = Convert.ToInt32(grdArticulos.SelectedRows[0].Cells[0].Value);
+                    if (ArticulosController.EliminarArticulo(idArticulo))
+                    {
+                        MessageBox.Show("Articulo eliminado satisfactoriamente");
+                        ArticulosController = new ArticulosController();
+                        _ActualizarGrilla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error al guardar el articulo, inténtelo de nuevo");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Ha ocurrido un error al guardar el articulo, inténtelo de nuevo");
+                    ex.ToString();
                 }
             }
         }

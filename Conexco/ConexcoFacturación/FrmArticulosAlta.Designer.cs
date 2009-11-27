@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,18 +39,17 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.errorCodigo = new System.Windows.Forms.Label();
-            this.errorDescripcion = new System.Windows.Forms.Label();
-            this.errorPrecio = new System.Windows.Forms.Label();
-            this.errorStock = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.MaskedTextBox();
-            this.txtPrecio = new System.Windows.Forms.MaskedTextBox();
             this.comboColor = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(47, 40);
@@ -61,6 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(47, 72);
             this.label2.Name = "label2";
@@ -71,6 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(47, 103);
             this.label3.Name = "label3";
@@ -84,6 +86,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtDescripcion
             // 
@@ -91,10 +94,12 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(47, 134);
             this.label4.Name = "label4";
@@ -105,6 +110,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
+            this.lblStock.BackColor = System.Drawing.Color.Transparent;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.Location = new System.Drawing.Point(47, 165);
             this.lblStock.Name = "lblStock";
@@ -129,6 +135,7 @@
             // 
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.CausesValidation = false;
             this.btnCancelar.Location = new System.Drawing.Point(149, 217);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(79, 30);
@@ -148,72 +155,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.OnCrearNuevoColor);
             // 
-            // errorCodigo
-            // 
-            this.errorCodigo.AutoSize = true;
-            this.errorCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorCodigo.ForeColor = System.Drawing.Color.Red;
-            this.errorCodigo.Location = new System.Drawing.Point(237, 43);
-            this.errorCodigo.Name = "errorCodigo";
-            this.errorCodigo.Size = new System.Drawing.Size(12, 13);
-            this.errorCodigo.TabIndex = 14;
-            this.errorCodigo.Text = "*";
-            this.errorCodigo.Visible = false;
-            // 
-            // errorDescripcion
-            // 
-            this.errorDescripcion.AutoSize = true;
-            this.errorDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorDescripcion.ForeColor = System.Drawing.Color.Red;
-            this.errorDescripcion.Location = new System.Drawing.Point(238, 105);
-            this.errorDescripcion.Name = "errorDescripcion";
-            this.errorDescripcion.Size = new System.Drawing.Size(12, 13);
-            this.errorDescripcion.TabIndex = 15;
-            this.errorDescripcion.Text = "*";
-            this.errorDescripcion.Visible = false;
-            // 
-            // errorPrecio
-            // 
-            this.errorPrecio.AutoSize = true;
-            this.errorPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorPrecio.ForeColor = System.Drawing.Color.Red;
-            this.errorPrecio.Location = new System.Drawing.Point(238, 137);
-            this.errorPrecio.Name = "errorPrecio";
-            this.errorPrecio.Size = new System.Drawing.Size(12, 13);
-            this.errorPrecio.TabIndex = 16;
-            this.errorPrecio.Text = "*";
-            this.errorPrecio.Visible = false;
-            // 
-            // errorStock
-            // 
-            this.errorStock.AutoSize = true;
-            this.errorStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorStock.ForeColor = System.Drawing.Color.Red;
-            this.errorStock.Location = new System.Drawing.Point(238, 167);
-            this.errorStock.Name = "errorStock";
-            this.errorStock.Size = new System.Drawing.Size(12, 13);
-            this.errorStock.TabIndex = 17;
-            this.errorStock.Text = "*";
-            this.errorStock.Visible = false;
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(138, 165);
-            this.txtStock.Mask = "00000.00";
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 20);
-            this.txtStock.TabIndex = 5;
-            this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(138, 133);
-            this.txtPrecio.Mask = "00000.00";
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 4;
-            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // comboColor
             // 
             this.comboColor.FormattingEnabled = true;
@@ -222,18 +163,40 @@
             this.comboColor.Size = new System.Drawing.Size(121, 21);
             this.comboColor.TabIndex = 2;
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(138, 134);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
+            this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(138, 165);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(100, 20);
+            this.txtStock.TabIndex = 5;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
+            this.txtStock.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmArticulosAlta
             // 
+            this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(297, 266);
-            this.Controls.Add(this.comboColor);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.errorStock);
-            this.Controls.Add(this.errorPrecio);
-            this.Controls.Add(this.errorDescripcion);
-            this.Controls.Add(this.errorCodigo);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.comboColor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -244,9 +207,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "FrmArticulosAlta";
             this.Text = "Alta Articulo";
             this.Load += new System.EventHandler(this.FrmArticulosAlta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,12 +229,9 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label errorCodigo;
-        private System.Windows.Forms.Label errorDescripcion;
-        private System.Windows.Forms.Label errorPrecio;
-        private System.Windows.Forms.Label errorStock;
-        private System.Windows.Forms.MaskedTextBox txtStock;
-        private System.Windows.Forms.MaskedTextBox txtPrecio;
         private System.Windows.Forms.ComboBox comboColor;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

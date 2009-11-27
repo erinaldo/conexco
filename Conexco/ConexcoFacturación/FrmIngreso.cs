@@ -33,16 +33,23 @@ namespace ConexcoFacturación
                                     idArticulo = IdArticulo,
                                     Stock = Convert.ToDecimal(txtStockActual.Text) + Convert.ToDecimal(txtCantidad.Text)
                                 };
-            
-            var resultado = ArticulosController.ActualizarStockArticulo(articulo);
-            if (resultado)
+            try
             {
-                MessageBox.Show(Constants.OK_ACTUALIZAR_STOCK);
-                DialogResult = DialogResult.OK;
+                var resultado = ArticulosController.ActualizarStockArticulo(articulo);
+                if (resultado)
+                {
+                    MessageBox.Show(Constants.OK_ACTUALIZAR_STOCK);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                    MessageBox.Show(Constants.ERROR_ACTUALIZAR_STOCK);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al guardar el ingreso de stock, verifique los datos");
                 Close();
             }
-            else
-                MessageBox.Show(Constants.ERROR_ACTUALIZAR_STOCK);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -56,6 +63,20 @@ namespace ConexcoFacturación
             codArticulo.Text = articulo.Codigo;
             txtStockActual.Text = articulo.Stock.ToString();
             nombreArticulo.Text = articulo.Descripcion;
+        }
+
+        private void SoloNumerosDecimales_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == ',')
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

@@ -37,7 +37,7 @@
             this.lblCodArticulo = new System.Windows.Forms.Label();
             this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nombreArticulo
@@ -85,6 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(27, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
@@ -94,6 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(27, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
@@ -103,6 +105,7 @@
             // lblCodArticulo
             // 
             this.lblCodArticulo.AutoSize = true;
+            this.lblCodArticulo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodArticulo.Location = new System.Drawing.Point(27, 27);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Size = new System.Drawing.Size(81, 13);
@@ -120,6 +123,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(27, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
@@ -129,16 +133,18 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(130, 129);
-            this.txtCantidad.Mask = "00000.00";
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 21;
-            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
             // 
             // FrmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(257, 214);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtStockActual);
@@ -169,7 +175,7 @@
         private System.Windows.Forms.Label lblCodArticulo;
         private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtCantidad;
 
     }
 }

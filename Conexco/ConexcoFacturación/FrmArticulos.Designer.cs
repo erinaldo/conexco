@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.grdArticulos = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliiminar = new System.Windows.Forms.Button();
+            this.toolTipArticulos = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +45,10 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 30);
             this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.Tag = "";
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipArticulos.SetToolTip(this.btnAgregar, "Agregar nuevo artículo.");
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.OnArticuloAgregar);
             // 
@@ -59,6 +63,7 @@
             this.grdArticulos.MultiSelect = false;
             this.grdArticulos.Name = "grdArticulos";
             this.grdArticulos.ReadOnly = true;
+            this.grdArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdArticulos.Size = new System.Drawing.Size(543, 230);
             this.grdArticulos.TabIndex = 7;
             this.grdArticulos.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);
@@ -74,6 +79,7 @@
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipArticulos.SetToolTip(this.btnModificar, "Modificar artículo seleccionado.");
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.OnArticuloModificar);
             // 
@@ -88,6 +94,7 @@
             this.btnEliiminar.TabIndex = 9;
             this.btnEliiminar.Text = "Eliminar";
             this.btnEliiminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipArticulos.SetToolTip(this.btnEliiminar, "Eliminar artículo seleccionado.");
             this.btnEliiminar.UseVisualStyleBackColor = true;
             this.btnEliiminar.Click += new System.EventHandler(this.OnArticuloEliminar);
             // 
@@ -95,11 +102,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(571, 305);
             this.Controls.Add(this.btnEliiminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grdArticulos);
             this.Controls.Add(this.btnAgregar);
+            this.MaximizeBox = false;
             this.Name = "FrmArticulos";
             this.Text = "Stock Articulos";
             this.Load += new System.EventHandler(this.FrmArticulosStock_Load);
@@ -114,5 +125,6 @@
         private System.Windows.Forms.DataGridView grdArticulos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliiminar;
+        private System.Windows.Forms.ToolTip toolTipArticulos;
     }
 }
