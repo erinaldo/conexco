@@ -38,6 +38,8 @@ CHECKLIST
 COSAS A HACER:
 
 -Ver el scrollbar del mdi
+-Mini ayuda?
+-Reportes consumibles desde afuera del assembly para poder modificarlos IMPORTANTE
 
 ANTES DEL DEPLOY FINAL:
 -Descomentar la autenticacion de contraseña
