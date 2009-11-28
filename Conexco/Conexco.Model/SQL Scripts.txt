@@ -46,6 +46,7 @@ ANTES DEL DEPLOY FINAL:
 -cambiar las connection strings para SQLEXPRESS y SACAR USER INSTANCE XQ PINCHA
 -Al cambiar las connection strings, REVISAR QUE LA SOBRECARDA DE TOSTRING() CONDICIONIVA EXISTA
 -DESPUES DEL DEPLOY INSTALAR LA APLICACION Y FIJARSE QUE ESTE LA CARPETA DE REPORTES
+-Revisar el dbml con la base! (r, g, b estan como string y en la base son int, y falta bajalogica)
 
 -Tooltips																							HECHO
 -Menu opciones para acceder a la informacion de la empresa, cambiar contrasenia y porcentaje IVA.	HECHO
@@ -67,6 +68,7 @@ ANTES DEL DEPLOY FINAL:
 -Cambiar Descuento en Factura que esta guardando mal cuando es en %									HECHO
 -Reportes consumibles desde afuera del assembly para poder modificarlos IMPORTANTE					HECHO
 -Explicar mas la funcionalidad de las localidades													HECHO
+-Ver tema de las comas!																				HECHO
 
 ------------------------------------------------------------------------
 

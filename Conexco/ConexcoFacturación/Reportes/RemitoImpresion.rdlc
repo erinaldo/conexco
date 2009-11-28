@@ -400,7 +400,6 @@
                 <Value>=Fields!Envases.Value</Value>
               </Textbox>
             </ReportItems>
-            <Top>0cm</Top>
             <Height>0.5cm</Height>
           </List>
         </ReportItems>
@@ -557,6 +556,6 @@
     </ReportItems>
     <Height>22.2cm</Height>
   </Body>
-  <Language>en-US</Language>
+  <Language>es-AR</Language>
   <PageHeight>22.2cm</PageHeight>
 </Report>
