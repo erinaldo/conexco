@@ -472,6 +472,7 @@ namespace ConexcoFacturación
                     {
                         MessageBox.Show("La cantidad ingresada supera el Stock del artículo, reduzca a " +
                                         articulo.Stock + " o agregue mas Stock");
+                        grdDetalleRemito.Rows[roxIndex].Cells["Unidades"].Value = 0;
                         return;
                     }
                 }
