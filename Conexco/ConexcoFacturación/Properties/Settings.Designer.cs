@@ -26,7 +26,8 @@ namespace ConexcoFacturación.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Conexco;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Conexco;Integrated Security=True" +
+            "")]
         public string ConexcoConnectionString {
             get {
                 return ((string)(this["ConexcoConnectionString"]));

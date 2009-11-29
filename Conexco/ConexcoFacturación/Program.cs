@@ -21,9 +21,6 @@ namespace ConexcoFacturación
             System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");
-
             Application.Run(new MdiConexco());
         }
     }

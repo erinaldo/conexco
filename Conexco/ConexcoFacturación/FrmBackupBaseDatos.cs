@@ -34,8 +34,11 @@ namespace ConexcoFacturación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            var directorio = (txtDirectorio.Text.EndsWith(@"\"))
+                                 ? txtDirectorio.Text + "Conexco Backup.bak"
+                                 : txtDirectorio.Text + "\\Conexco Backup.bak";
             string sBackup = "BACKUP DATABASE Conexco" +
-                 " TO DISK = N'" + txtDirectorio.Text + "\\Conexco Backup.bak" +
+                 " TO DISK = N'" + directorio +
                  "' WITH NOFORMAT, NOINIT, NAME =N'Conexco " + DateTime.Now.ToShortDateString() +
                  " -Full Database Backup',SKIP, STATS = 10";
             
@@ -57,9 +60,9 @@ namespace ConexcoFacturación
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message,
+                    MessageBox.Show(@"Se produjo un error en la copia de seguridad, compruebe que el directorio seleccionado es correcto (Nota: El escritorio ni el directorio raíz (C:\) son directorios válidos. Ej directorio válido: 'C:\Nueva Carpeta')",
                                     "Error al copiar la base de datos",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             this.Close();

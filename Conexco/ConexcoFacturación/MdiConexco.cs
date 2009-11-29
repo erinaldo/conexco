@@ -29,23 +29,22 @@ namespace ConexcoFacturación
             }
             else
             {
-                //TODO: DESCOMENTAR CUANDO SE REQUIERA CONTRASEÑA
-                //bool correcto = false;
-                //for (int i = 0; i < 3; i++)
-                //{
-                //    var result = Inputbox.Show("Autenticación", "Ingrese su contraseña: ", FormStartPosition.CenterScreen);
-                //    if (result == empresa.Contrasenia)
-                //    {
-                //        correcto = true;
-                //        break;
-                //    }
-                //    MessageBox.Show("Contraseña incorrecta, inténtelo nuevamente");
-                //}
-                //if (!correcto)
-                //{
-                //    MessageBox.Show("Ha alcanzado el límite de intentos, el Sistema se cerrará");
-                //    this.Close();
-                //}
+                bool correcto = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    var result = Inputbox.Show("Autenticación", "Ingrese su contraseña: ", FormStartPosition.CenterScreen);
+                    if (result == empresa.Contrasenia)
+                    {
+                        correcto = true;
+                        break;
+                    }
+                    MessageBox.Show("Contraseña incorrecta, inténtelo nuevamente");
+                }
+                if (!correcto)
+                {
+                    MessageBox.Show("Ha alcanzado el límite de intentos, el Sistema se cerrará");
+                    this.Close();
+                }
             }
         }
 

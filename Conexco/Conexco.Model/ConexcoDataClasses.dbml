@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="Conexco" Class="ConexcoDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Conexco;Integrated Security=True;User Instance=True" SettingsObjectName="Conexco.Model.Properties.Settings" SettingsPropertyName="ConexcoConString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=Conexco;Integrated Security=True" SettingsObjectName="Conexco.Model.Properties.Settings" SettingsPropertyName="ConexcoConString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Articulos" Member="Articulos">
     <Type Name="Articulo">
       <Column Name="idArticulo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -34,9 +34,10 @@
       <Column Name="Codigo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RGB" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Member="R" Type="System.String" CanBeNull="false" />
-      <Column Member="G" Type="System.String" CanBeNull="false" />
-      <Column Member="B" Type="System.String" CanBeNull="false" />
+      <Column Name="R" Type="System.Int32" CanBeNull="false" />
+      <Column Name="G" Type="System.Int32" CanBeNull="false" />
+      <Column Name="B" Type="System.Int32" CanBeNull="false" />
+      <Column Name="BajaLogica" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Clientes" Member="Clientes">

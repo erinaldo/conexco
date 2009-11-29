@@ -47,6 +47,7 @@ namespace ConexcoFacturación
             t = new TextBox();
             t.Width = 182;
             t.Top = 40;
+            t.PasswordChar = '*';
 
             b1 = new Button();
             b1.Text = "Aceptar";

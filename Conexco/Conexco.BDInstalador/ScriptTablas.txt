@@ -663,6 +663,101 @@ END
 ' 
 END
 GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PresupuestoLineaImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[PresupuestoLineaImpresion]
+(
+	@IdPresupuesto int
+)
+AS
+BEGIN
+
+	SELECT pl.*, (a.Codigo + dbo.IsNotZero(a.CodColor, ''-'' + a.CodColor)) ''CodigoYColor'', 
+				a.Descripcion, (pl.Precio * pl.Cantidad) ''TotalLinea'' FROM Presupuestos_Linea pl
+	JOIN Articulos a ON a.idArticulo = pl.idArticulo
+	WHERE pl.IdPresupuesto = @IdPresupuesto
+
+END' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PresupuestoImpresion]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[PresupuestoImpresion]
+(
+	@IdPresupuesto int
+)
+AS
+BEGIN
+
+	SELECT p.*, c.RazonSocial, c.CUIT, c.Codigo  
+			FROM Presupuestos p
+	JOIN Clientes c ON p.idCliente = c.idCliente	
+
+	WHERE p.idPresupuesto = @IdPresupuesto
+
+END
+
+
+
+
+--
+
+
+/****** Object:  StoredProcedure [dbo].[PresupuestoImpresionCabecera]    Script Date: 11/29/2009 10:41:22 ******/
+SET ANSI_NULLS ON
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PresupuestoImpresionCabecera]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[PresupuestoImpresionCabecera]
+
+AS
+BEGIN
+
+	SELECT e.*,ci.descripcion as ''IVA''
+			FROM Empresa e
+	JOIN CondicionIVA ci on ci.idCondicionIva = e.idCondicionIVa
+
+
+END
+
+
+---
+
+
+/****** Object:  StoredProcedure [dbo].[PresupuestoLineaImpresion]    Script Date: 11/29/2009 10:41:36 ******/
+SET ANSI_NULLS ON
+' 
+END
+
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Localidades_Provincias]') AND parent_object_id = OBJECT_ID(N'[dbo].[Localidades]'))
 ALTER TABLE [dbo].[Localidades]  WITH CHECK ADD  CONSTRAINT [FK_Localidades_Provincias] FOREIGN KEY([idProvincia])
 REFERENCES [dbo].[Provincias] ([idProvincia])
