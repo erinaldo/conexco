@@ -47,14 +47,9 @@ namespace ConexcoFacturación
         {
             var listadoColores = ArticulosController.ListarColores();
 
-            foreach (var color in listadoColores)
-            {
-                color.RGB = String.Format("{0} - {1}", color.Codigo, color.Descripcion);
-            }
-
-            comboColor.DisplayMember = "RGB";
             comboColor.ValueMember = "Codigo";
-            comboColor.DataSource = listadoColores;
+            comboColor.DisplayMember = "Descripcion";
+            comboColor.DataSource = listadoColores.Tables[0];
         }
 
         private void OnCrearNuevoColor(object sender, EventArgs e)
@@ -75,14 +70,13 @@ namespace ConexcoFacturación
             if (_FaltaCampoRequerido())
                 return;
 
-            var color = String.IsNullOrEmpty(comboColor.Text) ? "0" : comboColor.Text;
+            var color = comboColor.SelectedValue ?? "0";
             var articuloGuardar = new Articulo
                                       {
-                                          idArticulo = IdArticulo,
                                           Codigo = txtCodigo.Text,
                                           Descripcion = txtDescripcion.Text,
                                           Precio = Convert.ToDecimal(txtPrecio.Text),
-                                          CodColor = color,
+                                          CodColor = color.ToString(),
                                           Stock = Convert.ToDecimal(txtStock.Text),
                                     };
 
@@ -151,7 +145,7 @@ namespace ConexcoFacturación
                 e.Handled = false;
             else if (Char.IsSeparator(e.KeyChar))
                 e.Handled = false;
-            else if (e.KeyChar == '.')
+            else if (e.KeyChar == ',')
                 e.Handled = false;
             else
                 e.Handled = true;

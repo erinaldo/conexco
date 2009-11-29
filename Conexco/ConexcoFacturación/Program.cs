@@ -16,6 +16,9 @@ namespace ConexcoFacturación
         static void Main()
         {
             Application.EnableVisualStyles();
+            Application.CurrentCulture = new CultureInfo("es-AR");
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");
             Application.SetCompatibleTextRenderingDefault(false);
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");

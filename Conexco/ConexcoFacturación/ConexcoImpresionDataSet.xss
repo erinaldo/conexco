@@ -11,6 +11,8 @@
     <Shape ID="DesignTable:FacturaBLineaImpresion" ZOrder="3" X="732" Y="70" Height="229" Width="284" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:RemitoImpresion" ZOrder="2" X="1086" Y="70" Height="305" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:RemitoLineaImpresion" ZOrder="1" X="1401" Y="70" Height="248" Width="275" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
+    <Shape ID="DesignTable:PresupuestoImpresion" ZOrder="5" X="70" Y="70" Height="305" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:PresupuestoLineaImpresion" ZOrder="4" X="386" Y="70" Height="229" Width="276" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

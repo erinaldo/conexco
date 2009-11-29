@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using Conexco.Model;
 
@@ -62,6 +63,7 @@ namespace Conexco.Controller
         {
             try
             {
+                articuloGuardar.BajaLogica = false;
                 _context.Articulos.InsertOnSubmit(articuloGuardar);
                 _context.SubmitChanges();
                 return true;
@@ -144,6 +146,7 @@ namespace Conexco.Controller
         {
             try
             {
+                nuevoColor.BajaLogica = false;
                 _context.Articulos_Colors.InsertOnSubmit(nuevoColor);
                 _context.SubmitChanges();
                 return true;
@@ -177,9 +180,19 @@ namespace Conexco.Controller
             }
         }
 
-        public List<Articulos_Color> ListarColores()
+        public DataSet ListarColores()
         {
-            return _context.Articulos_Colors.Select(color => color).ToList();
+            var colores = new DataSet();
+            colores.Tables.Add();
+            colores.Tables[0].Columns.Add("Codigo", typeof (string));
+            colores.Tables[0].Columns.Add("Descripcion", typeof (string));
+
+            var coloresBd = _context.Articulos_Colors.Select(color => color).ToList() ;
+
+            foreach (var color in coloresBd)
+                colores.Tables[0].Rows.Add(color.Codigo,String.Format("{0} - {1}",color.Codigo,color.Descripcion));
+
+            return colores;
         }
     }
 }

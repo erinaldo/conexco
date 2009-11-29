@@ -49,6 +49,7 @@
             // txtNombreColor
             // 
             this.txtNombreColor.Location = new System.Drawing.Point(100, 64);
+            this.txtNombreColor.MaxLength = 20;
             this.txtNombreColor.Name = "txtNombreColor";
             this.txtNombreColor.Size = new System.Drawing.Size(100, 20);
             this.txtNombreColor.TabIndex = 2;
@@ -82,6 +83,7 @@
             // txtCodColor
             // 
             this.txtCodColor.Location = new System.Drawing.Point(100, 35);
+            this.txtCodColor.MaxLength = 10;
             this.txtCodColor.Name = "txtCodColor";
             this.txtCodColor.Size = new System.Drawing.Size(100, 20);
             this.txtCodColor.TabIndex = 1;

@@ -99,7 +99,7 @@ namespace ConexcoFacturación
                 e.Handled = false;
             else if (Char.IsSeparator(e.KeyChar))
                 e.Handled = false;
-            else if (e.KeyChar == '.')
+            else if (e.KeyChar == ',')
                 e.Handled = false;
             else
                 e.Handled = true;

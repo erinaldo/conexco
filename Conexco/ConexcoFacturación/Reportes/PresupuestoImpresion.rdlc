@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="ConexcoConnectionString">
+      <rd:DataSourceID>c7d4a9a9-872a-4969-b356-311ecd83140d</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=.;Initial Catalog=Conexco;Integrated Security=True</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:ReportID>af837816-9b81-4053-9854-ec9d803914be</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="ConexcoImpresionDataSet_PresupuestoImpresion">
+      <Fields>
+        <Field Name="idPresupuesto">
+          <DataField>idPresupuesto</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idCliente">
+          <DataField>idCliente</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FechaEmision">
+          <DataField>FechaEmision</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Numero">
+          <DataField>Numero</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FechaVto">
+          <DataField>FechaVto</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Condiciones">
+          <DataField>Condiciones</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Disponibilidad">
+          <DataField>Disponibilidad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DomicilioEntrega">
+          <DataField>DomicilioEntrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocalidadEntrega">
+          <DataField>LocalidadEntrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProvinciaEntrega">
+          <DataField>ProvinciaEntrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodPostalEntrega">
+          <DataField>CodPostalEntrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Descuento">
+          <DataField>Descuento</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Subtotal">
+          <DataField>Subtotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalIVA">
+          <DataField>TotalIVA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalNeto">
+          <DataField>TotalNeto</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="idEstado">
+          <DataField>idEstado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BajaLogica">
+          <DataField>BajaLogica</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="RazonSocial">
+          <DataField>RazonSocial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CUIT">
+          <DataField>CUIT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Codigo">
+          <DataField>Codigo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ConexcoConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.PresupuestoImpresion</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ConexcoImpresionDataSet</rd:DataSetName>
+        <rd:TableName>PresupuestoImpresion</rd:TableName>
+        <rd:TableAdapterName>PresupuestoImpresionTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ConexcoImpresionDataSet_PresupuestoImpresionCabecera">
+      <Fields>
+        <Field Name="idEmpresa">
+          <DataField>idEmpresa</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RazonSocial">
+          <DataField>RazonSocial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Apellido">
+          <DataField>Apellido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CUIT">
+          <DataField>CUIT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idCondicionIVA">
+          <DataField>idCondicionIVA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Domicilio">
+          <DataField>Domicilio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Localidad">
+          <DataField>Localidad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Provincia">
+          <DataField>Provincia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodPostal">
+          <DataField>CodPostal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Telefono">
+          <DataField>Telefono</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax">
+          <DataField>Fax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InicioActividades">
+          <DataField>InicioActividades</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="IngBrutos">
+          <DataField>IngBrutos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Web">
+          <DataField>Web</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PorcentajeIVA">
+          <DataField>PorcentajeIVA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Contrasenia">
+          <DataField>Contrasenia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IVA">
+          <DataField>IVA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ConexcoConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.PresupuestoImpresionCabecera</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ConexcoImpresionDataSet</rd:DataSetName>
+        <rd:TableName>PresupuestoImpresionCabecera</rd:TableName>
+        <rd:TableAdapterName>PresupuestoImpresionCabeceraTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ConexcoImpresionDataSet_PresupuestoLineaImpresion">
+      <Fields>
+        <Field Name="idPresupuestosLinea">
+          <DataField>idPresupuestosLinea</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idPresupuesto">
+          <DataField>idPresupuesto</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idArticulo">
+          <DataField>idArticulo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Precio">
+          <DataField>Precio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CodigoYColor">
+          <DataField>CodigoYColor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalLinea">
+          <DataField>TotalLinea</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ConexcoConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.PresupuestoLineaImpresion</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ConexcoImpresionDataSet</rd:DataSetName>
+        <rd:TableName>PresupuestoLineaImpresion</rd:TableName>
+        <rd:TableAdapterName>PresupuestoLineaImpresionTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>21.28968cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="Numero">
+        <rd:DefaultName>Numero</rd:DefaultName>
+        <Top>0.98438in</Top>
+        <Width>1.37812in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>75</ZIndex>
+        <Left>4.13437in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Numero.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Line Name="line24">
+        <Top>2.3625in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>74</ZIndex>
+        <Left>4.23281in</Left>
+        <Height>-0.98958in</Height>
+      </Line>
+      <Line Name="line23">
+        <Top>9.45in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>73</ZIndex>
+        <Left>7.18594in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line22">
+        <Top>8.85938in</Top>
+        <Width>8.07187in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>72</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line21">
+        <Top>8.17031in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>71</ZIndex>
+        <Left>6.10312in</Left>
+        <Height>1.38542in</Height>
+      </Line>
+      <Line Name="line20">
+        <Top>8.17031in</Top>
+        <Width>8.07292in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>70</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line19">
+        <Top>4.13437in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>69</ZIndex>
+        <Left>6.89063in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Line Name="line18">
+        <Top>4.13437in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>68</ZIndex>
+        <Left>5.80781in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Line Name="line17">
+        <Top>4.13437in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>67</ZIndex>
+        <Left>2.3625in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Line Name="line16">
+        <Top>4.13437in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>66</ZIndex>
+        <Left>1.27969in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Textbox Name="textbox29">
+        <rd:DefaultName>textbox29</rd:DefaultName>
+        <Top>4.13437in</Top>
+        <Width>1in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>65</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.98906in</Left>
+        <Height>0.25in</Height>
+        <Value>TOTALES</Value>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <rd:DefaultName>textbox28</rd:DefaultName>
+        <Top>4.13437in</Top>
+        <Width>0.7875in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>64</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.90625in</Left>
+        <Height>0.25in</Height>
+        <Value>PRECIO</Value>
+      </Textbox>
+      <Textbox Name="textbox27">
+        <rd:DefaultName>textbox27</rd:DefaultName>
+        <Top>4.13437in</Top>
+        <Width>3.15in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>63</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.46094in</Left>
+        <Height>0.25in</Height>
+        <Value>DESCRIPCION</Value>
+      </Textbox>
+      <Textbox Name="textbox26">
+        <rd:DefaultName>textbox26</rd:DefaultName>
+        <Top>4.13437in</Top>
+        <Width>1in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>62</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.27969in</Left>
+        <Height>0.25in</Height>
+        <Value>CANTIDAD</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Top>4.13437in</Top>
+        <Width>0.79062in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>61</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.39375in</Left>
+        <Height>0.29167in</Height>
+        <Value>CODIGO</Value>
+      </Textbox>
+      <Line Name="line15">
+        <Top>4.42969in</Top>
+        <Width>8.07187in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>60</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line14">
+        <Top>9.54844in</Top>
+        <Width>8.07187in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>59</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line13">
+        <Top>0.49219in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>58</ZIndex>
+        <Left>8.17031in</Left>
+        <Height>9.05625in</Height>
+      </Line>
+      <Line Name="line12">
+        <Top>0.49219in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>57</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>9.05625in</Height>
+      </Line>
+      <Line Name="line11">
+        <Top>0.49219in</Top>
+        <Width>8.07292in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>56</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox25">
+        <rd:DefaultName>textbox25</rd:DefaultName>
+        <Top>1.87031in</Top>
+        <Width>1.27969in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>55</ZIndex>
+        <Left>5.41406in</Left>
+        <Height>0.25in</Height>
+        <Value>Inicio de Actividades:</Value>
+      </Textbox>
+      <Textbox Name="textbox24">
+        <rd:DefaultName>textbox24</rd:DefaultName>
+        <Top>1.575in</Top>
+        <Width>1.47656in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>54</ZIndex>
+        <Left>5.21719in</Left>
+        <Height>0.25in</Height>
+        <Value>Ing. Brutos Conv. Mult. N°</Value>
+      </Textbox>
+      <Textbox Name="textbox23">
+        <rd:DefaultName>textbox23</rd:DefaultName>
+        <Top>1.27969in</Top>
+        <Width>0.49219in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>53</ZIndex>
+        <Left>6.20156in</Left>
+        <Height>0.25in</Height>
+        <Value>CUIT:</Value>
+      </Textbox>
+      <Textbox Name="InicioActividades">
+        <rd:DefaultName>InicioActividades</rd:DefaultName>
+        <Top>1.87031in</Top>
+        <Width>1.37813in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>52</ZIndex>
+        <Left>6.69375in</Left>
+        <Height>0.25in</Height>
+        <Value>=Format(First(Fields!InicioActividades.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera"),"dd/MM/yyyy")</Value>
+      </Textbox>
+      <Textbox Name="IngBrutos">
+        <rd:DefaultName>IngBrutos</rd:DefaultName>
+        <Top>1.575in</Top>
+        <Width>1.37813in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>51</ZIndex>
+        <Left>6.69375in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!IngBrutos.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="CUIT_1">
+        <rd:DefaultName>CUIT_1</rd:DefaultName>
+        <Top>1.27969in</Top>
+        <Width>1.37813in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>50</ZIndex>
+        <Left>6.69375in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!CUIT.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="Fax">
+        <rd:DefaultName>Fax</rd:DefaultName>
+        <Top>1.77187in</Top>
+        <Width>1.77187in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>49</ZIndex>
+        <Left>1.08281in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Fax.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <rd:DefaultName>textbox22</rd:DefaultName>
+        <Top>1.77187in</Top>
+        <Width>0.68906in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>48</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.25in</Height>
+        <Value>Tel/Fax:</Value>
+      </Textbox>
+      <Textbox Name="IVA">
+        <rd:DefaultName>IVA</rd:DefaultName>
+        <Top>2.06719in</Top>
+        <Width>2.65781in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>47</ZIndex>
+        <Left>0.39375in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!IVA.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="textbox21">
+        <rd:DefaultName>textbox21</rd:DefaultName>
+        <Top>1.47656in</Top>
+        <Width>0.49219in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>46</ZIndex>
+        <Left>0.49219in</Left>
+        <Height>0.25in</Height>
+        <Value>Tel.:</Value>
+      </Textbox>
+      <Textbox Name="Telefono">
+        <rd:DefaultName>Telefono</rd:DefaultName>
+        <Top>1.47656in</Top>
+        <Width>1.77187in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>45</ZIndex>
+        <Left>1.08281in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Telefono.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="Provincia_1">
+        <rd:DefaultName>Provincia_1</rd:DefaultName>
+        <Top>1.18125in</Top>
+        <Width>1.37812in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>44</ZIndex>
+        <Left>1.87031in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Provincia.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="Localidad_1">
+        <rd:DefaultName>Localidad_1</rd:DefaultName>
+        <Top>1.18125in</Top>
+        <Width>1.09844in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>43</ZIndex>
+        <Left>0.19687in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Localidad.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="Domicilio_1">
+        <rd:DefaultName>Domicilio_1</rd:DefaultName>
+        <Top>0.88594in</Top>
+        <Width>3.05156in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>42</ZIndex>
+        <Left>0.19688in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!Domicilio.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="CodPostal_1">
+        <rd:DefaultName>CodPostal_1</rd:DefaultName>
+        <Top>1.18125in</Top>
+        <Width>0.49219in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>41</ZIndex>
+        <Left>1.27969in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!CodPostal.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Textbox Name="RazonSocial_1">
+        <rd:DefaultName>RazonSocial_1</rd:DefaultName>
+        <Top>0.59063in</Top>
+        <Width>3.05156in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>40</ZIndex>
+        <Left>0.19688in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!RazonSocial.Value, "ConexcoImpresionDataSet_PresupuestoImpresionCabecera")</Value>
+      </Textbox>
+      <Line Name="line10">
+        <Top>0.7875in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>39</ZIndex>
+        <Left>7.875in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Line Name="line9">
+        <Top>0.7875in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>38</ZIndex>
+        <Left>6.98906in</Left>
+        <Height>0.29167in</Height>
+      </Line>
+      <Line Name="line8">
+        <Top>1.08281in</Top>
+        <Width>0.88542in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>37</ZIndex>
+        <Left>6.98906in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line7">
+        <Top>0.7875in</Top>
+        <Width>0.88542in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>36</ZIndex>
+        <Left>6.98906in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line6">
+        <Top>0.7875in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>35</ZIndex>
+        <Left>7.57969in</Left>
+        <Height>0.29531in</Height>
+      </Line>
+      <Line Name="line5">
+        <Top>0.7875in</Top>
+        <Width>0in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>34</ZIndex>
+        <Left>7.28437in</Left>
+        <Height>0.29531in</Height>
+      </Line>
+      <Textbox Name="textbox20">
+        <rd:DefaultName>textbox20</rd:DefaultName>
+        <Top>3.83906in</Top>
+        <Width>1.18125in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>33</ZIndex>
+        <Left>5.70937in</Left>
+        <Height>0.25in</Height>
+        <Value>Vencimiento:</Value>
+      </Textbox>
+      <Textbox Name="textbox19">
+        <rd:DefaultName>textbox19</rd:DefaultName>
+        <Top>2.75625in</Top>
+        <Width>0.98437in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>32</ZIndex>
+        <Left>3.54375in</Left>
+        <Height>0.25in</Height>
+        <Value>Cod. Cliente:</Value>
+      </Textbox>
+      <Textbox Name="textbox18">
+        <rd:DefaultName>textbox18</rd:DefaultName>
+        <Top>0.7875in</Top>
+        <Width>0.59063in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>31</ZIndex>
+        <Left>6.3in</Left>
+        <Height>0.25in</Height>
+        <Value>Fecha:</Value>
+      </Textbox>
+      <Textbox Name="textbox17">
+        <rd:DefaultName>textbox17</rd:DefaultName>
+        <Top>7.77656in</Top>
+        <Width>5.41667in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>30</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.29531in</Left>
+        <Height>0.29167in</Height>
+        <Value>Los importes expresados no incluyen I.V.A.</Value>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Top>8.85938in</Top>
+        <Width>0.98438in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>29</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.25in</Height>
+        <Value>Disponibilidad:</Value>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Top>8.26875in</Top>
+        <Width>0.49219in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>28</ZIndex>
+        <Left>6.39844in</Left>
+        <Height>0.25in</Height>
+        <Value>Total:</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Top>8.17031in</Top>
+        <Width>0.88594in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>27</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.25in</Height>
+        <Value>Condiciones:</Value>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Top>3.54375in</Top>
+        <Width>0.68906in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>26</ZIndex>
+        <Left>5.41406in</Left>
+        <Height>0.25in</Height>
+        <Value>Provincia:</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <Top>3.54375in</Top>
+        <Width>0.39375in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>25</ZIndex>
+        <Left>3.64219in</Left>
+        <Height>0.25in</Height>
+        <Value>C.P:</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Top>2.75625in</Top>
+        <Width>0.68906in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>24</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.25in</Height>
+        <Value>CUIT:</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <Top>3.54375in</Top>
+        <Width>0.7875in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>23</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.34844in</Height>
+        <Value>Localidad:</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <Top>3.15in</Top>
+        <Width>0.68906in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>22</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.19687in</Height>
+        <Value>Domicilio:</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <Top>2.46094in</Top>
+        <Width>0.68906in</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>21</ZIndex>
+        <Left>0.29531in</Left>
+        <Height>0.25in</Height>
+        <Value>Señores:</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>0.98438in</Top>
+        <Width>0.29531in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <Left>3.83906in</Left>
+        <Height>0.25in</Height>
+        <Value>N°</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>0.59063in</Top>
+        <Width>1.575in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <Left>3.83906in</Left>
+        <Height>0.25in</Height>
+        <Value>PRESUPUESTO</Value>
+      </Textbox>
+      <Line Name="line4">
+        <Top>7.67812in</Top>
+        <Width>8.07187in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line3">
+        <Top>4.13437in</Top>
+        <Width>8.07188in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line2">
+        <Top>2.3625in</Top>
+        <Width>8.07187in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <Left>0.09844in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="line1">
+        <Top>19.25cm</Top>
+        <Width>8.27083in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <Height>0cm</Height>
+      </Line>
+      <Rectangle Name="rectangleDetalleFactura">
+        <Left>0.19687in</Left>
+        <ZIndex>14</ZIndex>
+        <ReportItems>
+          <List Name="ListaPresupuestoLinea">
+            <Left>0.25cm</Left>
+            <DataSetName>ConexcoImpresionDataSet_PresupuestoLineaImpresion</DataSetName>
+            <ReportItems>
+              <Textbox Name="TotalLinea">
+                <rd:DefaultName>TotalLinea</rd:DefaultName>
+                <Width>2.28968cm</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <ZIndex>4</ZIndex>
+                <Left>17cm</Left>
+                <Height>0.63492cm</Height>
+                <Value>=FormatNumber(Fields!TotalLinea.Value, 2)</Value>
+              </Textbox>
+              <Textbox Name="Precio">
+                <rd:DefaultName>Precio</rd:DefaultName>
+                <Width>1.78968cm</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <ZIndex>3</ZIndex>
+                <Left>14.25cm</Left>
+                <Height>0.63492cm</Height>
+                <Value>=Fields!Precio.Value</Value>
+              </Textbox>
+              <Textbox Name="Descripcion_1">
+                <rd:DefaultName>Descripcion_1</rd:DefaultName>
+                <Width>8.25cm</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <ZIndex>2</ZIndex>
+                <Left>5.5cm</Left>
+                <Height>0.63492cm</Height>
+                <Value>=Fields!Descripcion.Value</Value>
+              </Textbox>
+              <Textbox Name="Cantidad">
+                <rd:DefaultName>Cantidad</rd:DefaultName>
+                <Width>1.75cm</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <ZIndex>1</ZIndex>
+                <Left>2.5cm</Left>
+                <Height>0.63492cm</Height>
+                <Value>=Fields!Cantidad.Value</Value>
+              </Textbox>
+              <Textbox Name="CodigoYColor">
+                <rd:DefaultName>CodigoYColor</rd:DefaultName>
+                <Width>1.25cm</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <Left>1cm</Left>
+                <Height>0.63492cm</Height>
+                <Value>=Fields!CodigoYColor.Value</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.25cm</Top>
+            <Height>0.75cm</Height>
+          </List>
+        </ReportItems>
+        <Top>4.42969in</Top>
+        <Width>7.77656in</Width>
+        <Height>3.15in</Height>
+      </Rectangle>
+      <Textbox Name="textbox3">
+        <Top>2cm</Top>
+        <Width>0.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <Left>19.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Right(Year(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")),2)</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Top>2cm</Top>
+        <Width>0.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <Left>18.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Month(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_PresupuestoImpresion"))</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Top>2cm</Top>
+        <Width>0.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <Left>17.75cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Day(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_PresupuestoImpresion"))</Value>
+      </Textbox>
+      <Textbox Name="SonPesos">
+        <rd:DefaultName>SonPesos</rd:DefaultName>
+        <Top>22.5cm</Top>
+        <Width>10.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <Left>3.25cm</Left>
+        <Height>1.5cm</Height>
+        <Value>=First(Fields!Disponibilidad.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="Condiciones">
+        <rd:DefaultName>Condiciones</rd:DefaultName>
+        <Top>20.75cm</Top>
+        <Width>10.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <Left>3cm</Left>
+        <Height>1.5cm</Height>
+        <Value>=First(Fields!Condiciones.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="Total">
+        <rd:DefaultName>Total</rd:DefaultName>
+        <Top>21cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <Left>17.75cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Sum(Fields!Total.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="FechaVto">
+        <rd:DefaultName>FechaVto</rd:DefaultName>
+        <Top>9.75cm</Top>
+        <Width>2.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <Left>17.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Format(First(Fields!FechaVto.Value, "ConexcoImpresionDataSet_PresupuestoImpresion"),"dd/MM/yyyy")</Value>
+      </Textbox>
+      <Textbox Name="Codigo">
+        <rd:DefaultName>Codigo</rd:DefaultName>
+        <Top>7cm</Top>
+        <Width>3.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Left>11.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!Codigo.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="CUIT">
+        <rd:DefaultName>CUIT</rd:DefaultName>
+        <Top>6.99999cm</Top>
+        <Width>5.49999cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Left>3cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!CUIT.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="Provincia">
+        <rd:DefaultName>Provincia</rd:DefaultName>
+        <Top>9cm</Top>
+        <Width>4cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Left>15.75cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!ProvinciaEntrega.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="CodPostal">
+        <rd:DefaultName>CodPostal</rd:DefaultName>
+        <Top>9cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Left>10.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!CodPostalEntrega.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="Localidad">
+        <rd:DefaultName>Localidad</rd:DefaultName>
+        <Top>9cm</Top>
+        <Width>6cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>3cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!LocalidadEntrega.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="Domicilio">
+        <rd:DefaultName>Domicilio</rd:DefaultName>
+        <Top>8cm</Top>
+        <Width>16.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>3cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!DomicilioEntrega.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+      <Textbox Name="RazonSocial">
+        <rd:DefaultName>RazonSocial</rd:DefaultName>
+        <Top>6.25cm</Top>
+        <Width>16.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <Left>3cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!RazonSocial.Value, "ConexcoImpresionDataSet_PresupuestoImpresion")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>27.9cm</Height>
+  </Body>
+  <Language>es-AR</Language>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

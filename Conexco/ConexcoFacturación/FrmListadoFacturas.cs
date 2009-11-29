@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -18,45 +19,87 @@ namespace ConexcoFacturación
         private void CheckedCriterioFiltroChange(object sender, EventArgs e)
         {
             var objectId = ((RadioButton) sender).Name;
-            var dataSourceGrilla = new List<Factura>();
+            
             
             switch (objectId)
             {
                 case "rdTodas":
-                    dataSourceGrilla = FacturasController.ListarFacturas(String.Empty);
+                    _ActualizarGrillaFacturas(String.Empty);
                     break;
                 case "rdPagadas":
-                    dataSourceGrilla = FacturasController.ListarFacturas("Pagado");
+                    _ActualizarGrillaFacturas("Pagado");
                     break;
                 case "rdPendientes":
-                    dataSourceGrilla = FacturasController.ListarFacturas("Pendiente");
+                    _ActualizarGrillaFacturas("Pendiente");
                     break;
                 case "rdAnuladas":
-                    dataSourceGrilla = FacturasController.ListarFacturas("Anulado");
+                    _ActualizarGrillaFacturas("Anulado");
                     break;
             }
 
-            _RecargarGrilla(dataSourceGrilla);
+            
         }
 
-        private void _RecargarGrilla(List<Factura> facturas)
+        private void _ActualizarGrillaFacturas(string estado)
         {
-            gridFacturas.DataSource = facturas;
-            gridFacturas.Columns[1].Visible = false;
-            gridFacturas.Columns[3].Visible = false;
-            gridFacturas.Columns[5].Visible = false;
-            gridFacturas.Columns[6].Visible = false;
-            gridFacturas.Columns[8].Visible = false;
-            gridFacturas.Columns[9].Visible = false;
-            gridFacturas.Columns[10].Visible = false;
-            gridFacturas.Columns[11].Visible = false;
-            gridFacturas.Columns[12].Visible = false;
-            gridFacturas.Columns[13].Visible = false;
-            gridFacturas.Columns[14].Visible = false;
-            gridFacturas.Columns[15].Visible = false;
-            gridFacturas.Columns[16].Visible = false;
-            gridFacturas.Columns[17].Visible = false;
-            gridFacturas.Columns[18].Visible = false;
+            var dataSourceGrilla = FacturasController.ListarFacturas(estado);
+            gridFacturas.DataSource = dataSourceGrilla.Tables[0];
         }
+
+        private void gridFacturas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (gridFacturas.SelectedRows.Count > 0)
+            {
+                var idFactura = gridFacturas.SelectedRows[0].Cells[0].Value.ToString();
+                var idCliente = gridFacturas.SelectedRows[0].Cells[2].Value.ToString();
+
+                _RecardarDetalle(idFactura, idCliente);
+            }
+        }
+
+        private void _RecardarDetalle(string idFactura, string idCliente)
+        {
+            var factura = FacturasController.DatosFactura(Convert.ToInt32(idFactura));
+            var clientesController = new ClientesController();
+            var cliente = clientesController.DatosCliente(Convert.ToInt32(idCliente));
+
+            txtTipo.Text = factura.Documentos_Tipo.Codigo;
+            txtNumero.Text = factura.Numero;
+            txtTotal.Text = string.Format("${0}", factura.Total);
+            txtDesc.Text = string.Format("${0}", factura.Descuento);
+            txtIVA.Text = string.Format("${0}", factura.TotalIVA);
+            txtNeto.Text = string.Format("${0}", factura.TotalNeto);
+            txtVto.Text = factura.FechaVto.ToString();
+            txtCliente.Text = cliente.RazonSocial;
+
+            comboEstado.SelectedIndex = comboEstado.FindString(factura.Documentos_Estado.Descripcion);
+        }
+
+        private void FrmListadoFacturas_Load(object sender, EventArgs e)
+        {
+            var estadosFactura = FacturasController.EstadosFactura();
+            comboEstado.DisplayMember = "Descripcion";
+            comboEstado.ValueMember = "Descripcion";
+            comboEstado.DataSource = estadosFactura;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            var estado = ((Documentos_Estado)comboEstado.SelectedItem).Descripcion;
+            var idFactura = Convert.ToInt32(gridFacturas.SelectedRows[0].Cells[0].Value.ToString());
+            var resultado = FacturasController.ActualizarFactura(idFactura, estado);
+
+            if (resultado)
+            {
+                MessageBox.Show("La factura ha sido modificada correctamente!");
+                _ActualizarGrillaFacturas(estado);
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error al intentar modificar la factura. Inténtelo nuevamente.");
+            }
+        }
+
+        
     }
 }

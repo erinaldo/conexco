@@ -304,7 +304,7 @@ namespace Conexco.Model
 		
 		private string _Codigo;
 		
-		private string _idColor;
+		private string _CodColor;
 		
 		private string _Descripcion;
 		
@@ -391,20 +391,20 @@ namespace Conexco.Model
 			}
 		}
 		
-		[Column(Storage="_idColor", DbType="VarChar(10) ")]
+		[Column(Storage="_CodColor", DbType="VarChar(10)")]
 		public string CodColor
 		{
 			get
 			{
-				return this._idColor;
+				return this._CodColor;
 			}
 			set
 			{
-				if ((this._idColor != value))
+                if ((this._CodColor != value))
 				{
 					this.OnCodColorChanging(value);
 					this.SendPropertyChanging();
-					this._idColor = value;
+                    this._CodColor = value;
 					this.SendPropertyChanged("CodColor");
 					this.OnCodColorChanged();
 				}
@@ -895,6 +895,8 @@ namespace Conexco.Model
 		private int _G;
 		
 		private int _B;
+
+        private System.Nullable<bool> _BajaLogica;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -914,6 +916,8 @@ namespace Conexco.Model
     partial void OnGChanged();
     partial void OnBChanging(int value);
     partial void OnBChanged();
+    partial void OnBajaLogicaChanging(System.Nullable<bool> value);
+    partial void OnBajaLogicaChanged();
     #endregion
 		
 		public Articulos_Color()
@@ -981,7 +985,7 @@ namespace Conexco.Model
 			}
 		}
 		
-		[Column(Storage="_RGB", DbType="VarChar(6)")]
+		[Column(Storage="_RGB", DbType="VarChar(6)", CanBeNull = true)]
 		public string RGB
 		{
 			get
@@ -1060,6 +1064,26 @@ namespace Conexco.Model
 				}
 			}
 		}
+
+        [Column(Storage = "_BajaLogica", DbType = "Bit")]
+        public System.Nullable<bool> BajaLogica
+        {
+            get
+            {
+                return this._BajaLogica;
+            }
+            set
+            {
+                if ((this._BajaLogica != value))
+                {
+                    this.OnBajaLogicaChanging(value);
+                    this.SendPropertyChanging();
+                    this._BajaLogica = value;
+                    this.SendPropertyChanged("BajaLogica");
+                    this.OnBajaLogicaChanged();
+                }
+            }
+        }
 		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
