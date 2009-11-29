@@ -771,7 +771,7 @@
       <Textbox Name="RazonSocial_1">
         <rd:DefaultName>RazonSocial_1</rd:DefaultName>
         <Top>0.59063in</Top>
-        <Width>3.05156in</Width>
+        <Width>3.44531in</Width>
         <Style>
           <FontSize>12pt</FontSize>
           <TextAlign>Center</TextAlign>

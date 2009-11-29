@@ -21,6 +21,9 @@ namespace ConexcoFacturación
         private void FrmArticulosAlta_Load(object sender, EventArgs e)
         {
             ArticulosController = new ArticulosController();
+
+            _CargarComboColores();
+
             if (IdArticulo > 0)
             {
                 Text = "Modificar Articulo";
@@ -31,7 +34,6 @@ namespace ConexcoFacturación
             else
                 Text = "Agregar Articulo";
 
-            _CargarComboColores();
         }
 
         private void _CargarDatosArticulo()
@@ -41,6 +43,7 @@ namespace ConexcoFacturación
             txtDescripcion.Text = articulo.Descripcion;
             txtPrecio.Text = articulo.Precio.ToString();
             txtStock.Text = articulo.Stock.ToString();
+            comboColor.SelectedValue = articulo.CodColor;
         }
 
         private void _CargarComboColores()
@@ -82,6 +85,8 @@ namespace ConexcoFacturación
 
             try
             {
+                if (Modificar)
+                    articuloGuardar.idArticulo = IdArticulo;
                 bool correcto = Modificar
                                     ? ArticulosController.ActualizarArticulo(articuloGuardar)
                                     : ArticulosController.AgregarArticulo(articuloGuardar);

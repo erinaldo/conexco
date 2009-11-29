@@ -39,18 +39,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_24D7D8C21641DC60111456E4961C30B4"
-        "OwnerKey" = "8:_C3C994795DFAB744D711AAD4195C248A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_24D7D8C21641DC60111456E4961C30B4"
-        "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -65,6 +53,12 @@
         {
         "MsmKey" = "8:_35DE9142062F5BF2904DB687BCC51627"
         "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3CFD775EF7BB20856641340F08F649F5"
+        "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -117,6 +111,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5BA0C488869A8BBEEAFD7F471192B056"
+        "OwnerKey" = "8:_3CFD775EF7BB20856641340F08F649F5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5BA0C488869A8BBEEAFD7F471192B056"
+        "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_61671B1849D4449C8E837898CF216552"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_69275914BCF794808ECE4345E71F3813"
         "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
         "MsmSig" = "8:_UNDEFINED"
@@ -159,32 +171,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7FF30FF38BA25DE8669D659D97A3DA2B"
-        "OwnerKey" = "8:_ACE5D547500089EC6E2EF485951A0D16"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7FF30FF38BA25DE8669D659D97A3DA2B"
-        "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8754ABF8340F88E1F3FE1B24646D992C"
-        "OwnerKey" = "8:_ACE5D547500089EC6E2EF485951A0D16"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8754ABF8340F88E1F3FE1B24646D992C"
-        "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8E6A86704FDFB7F4201F1A95C8860734"
+        "MsmKey" = "8:_7082F31C1D601AA90D076D920D6F8FE8"
         "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7FF30FF38BA25DE8669D659D97A3DA2B"
+        "OwnerKey" = "8:_ACE5D547500089EC6E2EF485951A0D16"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7FF30FF38BA25DE8669D659D97A3DA2B"
+        "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8754ABF8340F88E1F3FE1B24646D992C"
+        "OwnerKey" = "8:_ACE5D547500089EC6E2EF485951A0D16"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8754ABF8340F88E1F3FE1B24646D992C"
+        "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -213,6 +225,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AE4876687EE944FD81F2FBCD2D28A3BC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B233BA073CF542F5905932BAA79CA8CB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B9693A94E2863E2000A118A204974D84"
         "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
         "MsmSig" = "8:_UNDEFINED"
@@ -231,12 +255,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C3C994795DFAB744D711AAD4195C248A"
-        "OwnerKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C4A734C09A2BD299F15E14AB45D48F69"
         "OwnerKey" = "8:_35D55CD078C44DA3B515C814130D45DB"
         "MsmSig" = "8:_UNDEFINED"
@@ -244,6 +262,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C8437B6EC957485EB81A8D6D0BB83DE9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CABADF257D884FAAA63F8F9ECA105D44"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -304,19 +328,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8E6A86704FDFB7F4201F1A95C8860734"
+        "OwnerKey" = "8:_7082F31C1D601AA90D076D920D6F8FE8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C3C994795DFAB744D711AAD4195C248A"
+        "OwnerKey" = "8:_3CFD775EF7BB20856641340F08F649F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_24D7D8C21641DC60111456E4961C30B4"
+        "OwnerKey" = "8:_5BA0C488869A8BBEEAFD7F471192B056"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -571,20 +595,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_24D7D8C21641DC60111456E4961C30B4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_35DE9142062F5BF2904DB687BCC51627"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Microsoft.SqlServer.WmiEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_24D7D8C21641DC60111456E4961C30B4"
+                    "_35DE9142062F5BF2904DB687BCC51627"
                     {
-                    "Name" = "8:Conexco.Model.dll"
+                    "Name" = "8:Microsoft.SqlServer.WmiEnum.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Conexco.Model.dll"
+            "SourcePath" = "8:Microsoft.SqlServer.WmiEnum.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
@@ -602,20 +626,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_35DE9142062F5BF2904DB687BCC51627"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3CFD775EF7BB20856641340F08F649F5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.SqlServer.WmiEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_35DE9142062F5BF2904DB687BCC51627"
+                    "_3CFD775EF7BB20856641340F08F649F5"
                     {
-                    "Name" = "8:Microsoft.SqlServer.WmiEnum.dll"
+                    "Name" = "8:Conexco.Controller.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.SqlServer.WmiEnum.dll"
+            "SourcePath" = "8:Conexco.Controller.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
@@ -664,6 +688,57 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5BA0C488869A8BBEEAFD7F471192B056"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Conexco.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5BA0C488869A8BBEEAFD7F471192B056"
+                    {
+                    "Name" = "8:Conexco.Model.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Conexco.Model.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61671B1849D4449C8E837898CF216552"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\PresupuestoImpresion.rdlc"
+            "TargetName" = "8:PresupuestoImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_BB8F00ECE3644E7EB3C818DE0F56DE10"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_69275914BCF794808ECE4345E71F3813"
             {
             "AssemblyRegister" = "3:1"
@@ -709,6 +784,37 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.SqlServer.SmoEnum.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7082F31C1D601AA90D076D920D6F8FE8"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Conexco.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7082F31C1D601AA90D076D920D6F8FE8"
+                    {
+                    "Name" = "8:Conexco.Utils.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Conexco.Utils.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
@@ -788,37 +894,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8E6A86704FDFB7F4201F1A95C8860734"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_8E6A86704FDFB7F4201F1A95C8860734"
-                    {
-                    "Name" = "8:Conexco.Utils.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Conexco.Utils.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9C0DED90FB0A2DCCD4E2C447D406B1C1"
             {
             "AssemblyRegister" = "3:1"
@@ -881,6 +956,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE4876687EE944FD81F2FBCD2D28A3BC"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\FacturaBImpresion.rdlc"
+            "TargetName" = "8:FacturaBImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_BB8F00ECE3644E7EB3C818DE0F56DE10"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B233BA073CF542F5905932BAA79CA8CB"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\RemitoImpresion.rdlc"
+            "TargetName" = "8:RemitoImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_BB8F00ECE3644E7EB3C818DE0F56DE10"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B9693A94E2863E2000A118A204974D84"
             {
             "AssemblyRegister" = "3:1"
@@ -932,37 +1047,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C3C994795DFAB744D711AAD4195C248A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_C3C994795DFAB744D711AAD4195C248A"
-                    {
-                    "Name" = "8:Conexco.Controller.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Conexco.Controller.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3EB375EE9B8944A8907E9153AFD71D29"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4A734C09A2BD299F15E14AB45D48F69"
             {
             "AssemblyRegister" = "3:1"
@@ -992,6 +1076,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CABADF257D884FAAA63F8F9ECA105D44"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\FacturaImpresion.rdlc"
+            "TargetName" = "8:FacturaImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_BB8F00ECE3644E7EB3C818DE0F56DE10"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E8A378861E9422B9D8631B4B6F20EF77"
@@ -1041,6 +1145,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_BB8F00ECE3644E7EB3C818DE0F56DE10"
+                    {
+                    "Name" = "8:Reportes"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A14AE87A98104F48AC5795640FC46FC2"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_A5FD1CA34B59423CA166935DC3BFB50F"
@@ -1093,7 +1208,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Conexco Facturación"
         "ProductCode" = "8:{DE179E46-3B92-4CD5-87D3-1A618E89DB5D}"
-        "PackageCode" = "8:{E881DCB0-D884-43BA-BB1C-16C14A0BEDAA}"
+        "PackageCode" = "8:{9E2235CD-3961-4C1C-81ED-3E055999F5FB}"
         "UpgradeCode" = "8:{088445F7-71F6-463E-B1A1-922B4134D25E}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"

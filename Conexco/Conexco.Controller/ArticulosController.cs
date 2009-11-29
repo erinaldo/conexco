@@ -83,6 +83,7 @@ namespace Conexco.Controller
                 articulo.Descripcion = articuloActualizar.Descripcion;
                 articulo.Stock = articuloActualizar.Stock;
                 articulo.Codigo = articuloActualizar.Codigo;
+                articulo.CodColor = articuloActualizar.CodColor;
                 _context.SubmitChanges();
                 return true;
             }
