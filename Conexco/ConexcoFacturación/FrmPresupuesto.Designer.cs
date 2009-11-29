@@ -45,6 +45,8 @@
             this.lblEmpDomicilio = new System.Windows.Forms.Label();
             this.lblEmpRazonSocial = new System.Windows.Forms.Label();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
+            this.btnLocalidad = new System.Windows.Forms.Button();
+            this.comboProvincia = new System.Windows.Forms.ComboBox();
             this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
             this.btnClientes = new System.Windows.Forms.Button();
             this.txtCodPostal = new System.Windows.Forms.TextBox();
@@ -65,14 +67,10 @@
             this.gbxFiscales = new System.Windows.Forms.GroupBox();
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.txtClienteCod = new System.Windows.Forms.TextBox();
-            this.txtOrdenCompra = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
-            this.txtRemito = new System.Windows.Forms.TextBox();
             this.lblVencimiento = new System.Windows.Forms.Label();
             this.lblClienteCod = new System.Windows.Forms.Label();
-            this.lblOrdenCompra = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.lblRemito = new System.Windows.Forms.Label();
             this.gbxDetalle = new System.Windows.Forms.GroupBox();
             this.grdDetallePresupuesto = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -94,9 +92,7 @@
             this.lblTNumFact = new System.Windows.Forms.Label();
             this.txtNumPresupuesto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboProvincia = new System.Windows.Forms.ComboBox();
             this.lblPesos = new System.Windows.Forms.Label();
-            this.btnLocalidad = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.gbxEmpresa.SuspendLayout();
             this.gbxCliente.SuspendLayout();
@@ -266,6 +262,27 @@
             this.gbxCliente.TabIndex = 3;
             this.gbxCliente.TabStop = false;
             this.gbxCliente.Text = "Cliente";
+            // 
+            // btnLocalidad
+            // 
+            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLocalidad.Location = new System.Drawing.Point(297, 66);
+            this.btnLocalidad.Name = "btnLocalidad";
+            this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
+            this.btnLocalidad.TabIndex = 28;
+            this.toolTipControl.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
+            this.btnLocalidad.UseVisualStyleBackColor = true;
+            this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
+            // 
+            // comboProvincia
+            // 
+            this.comboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboProvincia.FormattingEnabled = true;
+            this.comboProvincia.Location = new System.Drawing.Point(538, 64);
+            this.comboProvincia.Name = "comboProvincia";
+            this.comboProvincia.Size = new System.Drawing.Size(121, 21);
+            this.comboProvincia.TabIndex = 27;
             // 
             // cmbRazonSocial
             // 
@@ -437,14 +454,10 @@
             this.gbxFiscales.BackColor = System.Drawing.Color.Transparent;
             this.gbxFiscales.Controls.Add(this.dtpVencimiento);
             this.gbxFiscales.Controls.Add(this.txtClienteCod);
-            this.gbxFiscales.Controls.Add(this.txtOrdenCompra);
             this.gbxFiscales.Controls.Add(this.txtCuit);
-            this.gbxFiscales.Controls.Add(this.txtRemito);
             this.gbxFiscales.Controls.Add(this.lblVencimiento);
             this.gbxFiscales.Controls.Add(this.lblClienteCod);
-            this.gbxFiscales.Controls.Add(this.lblOrdenCompra);
             this.gbxFiscales.Controls.Add(this.lblCuit);
-            this.gbxFiscales.Controls.Add(this.lblRemito);
             this.gbxFiscales.Location = new System.Drawing.Point(8, 257);
             this.gbxFiscales.Name = "gbxFiscales";
             this.gbxFiscales.Size = new System.Drawing.Size(672, 73);
@@ -454,49 +467,31 @@
             // dtpVencimiento
             // 
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVencimiento.Location = new System.Drawing.Point(555, 39);
+            this.dtpVencimiento.Location = new System.Drawing.Point(548, 29);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(100, 20);
             this.dtpVencimiento.TabIndex = 2;
             // 
             // txtClienteCod
             // 
-            this.txtClienteCod.Location = new System.Drawing.Point(555, 13);
+            this.txtClienteCod.Location = new System.Drawing.Point(296, 29);
             this.txtClienteCod.Name = "txtClienteCod";
             this.txtClienteCod.ReadOnly = true;
             this.txtClienteCod.Size = new System.Drawing.Size(100, 20);
             this.txtClienteCod.TabIndex = 58;
             // 
-            // txtOrdenCompra
-            // 
-            this.txtOrdenCompra.Location = new System.Drawing.Point(358, 42);
-            this.txtOrdenCompra.MaxLength = 50;
-            this.txtOrdenCompra.Name = "txtOrdenCompra";
-            this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtOrdenCompra.TabIndex = 1;
-            this.txtOrdenCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
-            // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(68, 43);
+            this.txtCuit.Location = new System.Drawing.Point(68, 29);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.ReadOnly = true;
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 7;
             // 
-            // txtRemito
-            // 
-            this.txtRemito.Location = new System.Drawing.Point(68, 14);
-            this.txtRemito.MaxLength = 50;
-            this.txtRemito.Name = "txtRemito";
-            this.txtRemito.Size = new System.Drawing.Size(100, 20);
-            this.txtRemito.TabIndex = 0;
-            this.txtRemito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
-            // 
             // lblVencimiento
             // 
             this.lblVencimiento.AutoSize = true;
-            this.lblVencimiento.Location = new System.Drawing.Point(482, 43);
+            this.lblVencimiento.Location = new System.Drawing.Point(474, 32);
             this.lblVencimiento.Name = "lblVencimiento";
             this.lblVencimiento.Size = new System.Drawing.Size(68, 13);
             this.lblVencimiento.TabIndex = 5;
@@ -505,38 +500,20 @@
             // lblClienteCod
             // 
             this.lblClienteCod.AutoSize = true;
-            this.lblClienteCod.Location = new System.Drawing.Point(493, 20);
+            this.lblClienteCod.Location = new System.Drawing.Point(233, 32);
             this.lblClienteCod.Name = "lblClienteCod";
             this.lblClienteCod.Size = new System.Drawing.Size(57, 13);
             this.lblClienteCod.TabIndex = 4;
             this.lblClienteCod.Text = "Cliente N°:";
             // 
-            // lblOrdenCompra
-            // 
-            this.lblOrdenCompra.AutoSize = true;
-            this.lblOrdenCompra.Location = new System.Drawing.Point(244, 44);
-            this.lblOrdenCompra.Name = "lblOrdenCompra";
-            this.lblOrdenCompra.Size = new System.Drawing.Size(108, 13);
-            this.lblOrdenCompra.TabIndex = 3;
-            this.lblOrdenCompra.Text = "Orden de Compra N°:";
-            // 
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(17, 43);
+            this.lblCuit.Location = new System.Drawing.Point(17, 32);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(50, 13);
             this.lblCuit.TabIndex = 1;
             this.lblCuit.Text = "CUIT N°:";
-            // 
-            // lblRemito
-            // 
-            this.lblRemito.AutoSize = true;
-            this.lblRemito.Location = new System.Drawing.Point(9, 17);
-            this.lblRemito.Name = "lblRemito";
-            this.lblRemito.Size = new System.Drawing.Size(58, 13);
-            this.lblRemito.TabIndex = 0;
-            this.lblRemito.Text = "Remito N°:";
             // 
             // gbxDetalle
             // 
@@ -743,15 +720,6 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "P";
             // 
-            // comboProvincia
-            // 
-            this.comboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboProvincia.FormattingEnabled = true;
-            this.comboProvincia.Location = new System.Drawing.Point(538, 64);
-            this.comboProvincia.Name = "comboProvincia";
-            this.comboProvincia.Size = new System.Drawing.Size(121, 21);
-            this.comboProvincia.TabIndex = 27;
-            // 
             // lblPesos
             // 
             this.lblPesos.AutoSize = true;
@@ -761,18 +729,6 @@
             this.lblPesos.Size = new System.Drawing.Size(72, 13);
             this.lblPesos.TabIndex = 29;
             this.lblPesos.Text = "Disponibilidad";
-            // 
-            // btnLocalidad
-            // 
-            this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
-            this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLocalidad.Location = new System.Drawing.Point(297, 66);
-            this.btnLocalidad.Name = "btnLocalidad";
-            this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
-            this.btnLocalidad.TabIndex = 28;
-            this.toolTipControl.SetToolTip(this.btnLocalidad, "Buscador de Localidades");
-            this.btnLocalidad.UseVisualStyleBackColor = true;
-            this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
             // label2
             // 
@@ -870,15 +826,11 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.GroupBox gbxFiscales;
         private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtRemito;
         private System.Windows.Forms.Label lblVencimiento;
         private System.Windows.Forms.Label lblClienteCod;
-        private System.Windows.Forms.Label lblOrdenCompra;
         private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.Label lblRemito;
         private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.TextBox txtClienteCod;
-        private System.Windows.Forms.TextBox txtOrdenCompra;
         private System.Windows.Forms.GroupBox gbxDetalle;
         private System.Windows.Forms.DataGridView grdDetallePresupuesto;
         private System.Windows.Forms.Label lblCondiciones;
