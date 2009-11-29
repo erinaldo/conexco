@@ -1,6 +1,10 @@
 ﻿USE Conexco
 GO
 
+--SCRIPT INSERT ARTICULOS_COLOR
+INSERT INTO Articulos_Color(Codigo, Descripcion, RGB, R, G, B)
+VALUES ('0', 'Color único', '', 0, 0, 0)
+
 --SCRIPT INSERT EGRESO_MOTIVOS
 INSERT INTO Egreso_Motivos (Descripcion)
 VALUES ('Devolución por Defecto')

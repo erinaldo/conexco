@@ -39,6 +39,8 @@ COSAS A HACER:
 
 -Ver el scrollbar del mdi
 -Mini ayuda?
+-Hacer script que el primer articulo codigo color 0 - Sin color
+
 
 
 ANTES DEL DEPLOY FINAL:
