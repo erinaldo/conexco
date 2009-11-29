@@ -1,4 +1,96 @@
-﻿CAMPOS A AGREGAR
+﻿
+
+USE [Conexco]
+GO
+/****** Object:  StoredProcedure [dbo].[PresupuestoImpresion]    Script Date: 11/29/2009 10:40:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[PresupuestoImpresion]
+(
+	@IdPresupuesto int
+)
+AS
+BEGIN
+
+	SELECT p.*, c.RazonSocial, c.CUIT, c.Codigo  
+			FROM Presupuestos p
+	JOIN Clientes c ON p.idCliente = c.idCliente	
+
+	WHERE p.idPresupuesto = @IdPresupuesto
+
+END
+
+
+
+
+--
+
+USE [Conexco]
+GO
+/****** Object:  StoredProcedure [dbo].[PresupuestoImpresionCabecera]    Script Date: 11/29/2009 10:41:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+--Stored procedures Impresion
+
+CREATE PROCEDURE [dbo].[PresupuestoImpresionCabecera]
+
+AS
+BEGIN
+
+	SELECT e.*,ci.descripcion as 'IVA'
+			FROM Empresa e
+	JOIN CondicionIVA ci on ci.idCondicionIva = e.idCondicionIVa
+
+
+END
+
+
+---
+
+USE [Conexco]
+GO
+/****** Object:  StoredProcedure [dbo].[PresupuestoLineaImpresion]    Script Date: 11/29/2009 10:41:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[PresupuestoLineaImpresion]
+(
+	@IdPresupuesto int
+)
+AS
+BEGIN
+
+	SELECT pl.*, (a.Codigo + dbo.IsNotZero(a.CodColor, '-' + a.CodColor)) 'CodigoYColor', 
+				a.Descripcion, (pl.Precio * pl.Cantidad) 'TotalLinea' FROM Presupuestos_Linea pl
+	JOIN Articulos a ON a.idArticulo = pl.idArticulo
+	WHERE pl.IdPresupuesto = @IdPresupuesto
+
+END
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+CAMPOS A AGREGAR
 
 Articulos_Color:
 R int
