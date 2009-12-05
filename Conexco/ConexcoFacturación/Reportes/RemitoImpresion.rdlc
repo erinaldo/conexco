@@ -389,9 +389,6 @@
               </Textbox>
               <Textbox Name="CodigoYColor">
                 <rd:DefaultName>CodigoYColor</rd:DefaultName>
-                <Visibility>
-                  <Hidden>true</Hidden>
-                </Visibility>
                 <Width>1.25cm</Width>
                 <Style>
                   <PaddingLeft>2pt</PaddingLeft>
@@ -400,7 +397,7 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <Left>0.5cm</Left>
-                <Value>=Fields!Envases.Value</Value>
+                <Value>=IIF(Fields!Envases.Value = 0, "",Fields!Envases.Value)</Value>
               </Textbox>
             </ReportItems>
             <Height>0.5cm</Height>
