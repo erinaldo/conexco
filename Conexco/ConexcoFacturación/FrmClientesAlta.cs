@@ -86,7 +86,7 @@ namespace ConexcoFacturación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(_FaltaCampoRequerido())
+            if (_FaltaCampoRequerido())
                 return;
 
             try
@@ -108,20 +108,31 @@ namespace ConexcoFacturación
                 cliente.Web = txtWeb.Text;
 
                 var domicilio = new Clientes_Domicilio
-                                    {
-                                        Domicilio = txtDomicilio.Text,
-                                        Provincia = cmbProvincia.Text,
-                                        Localidad = txtLocalidad.Text,
-                                        CodPostal = txtCodPostal.Text,
-                                        Descripcion = "Domicilio Principal"
-                                    };
+                {
+                    Domicilio = txtDomicilio.Text,
+                    Provincia = cmbProvincia.Text,
+                    Localidad = txtLocalidad.Text,
+                    CodPostal = txtCodPostal.Text,
+                    Descripcion = "Domicilio Principal"
+                };
 
                 var telefono = new Clientes_Telefono
-                                   {
-                                       Telefono = txtTelefono.Text,
-                                       Fax = txtFax.Text,
-                                       Descripcion = "Telefono Principal"
-                                   };
+                {
+                    Telefono = txtTelefono.Text,
+                    Fax = txtFax.Text,
+                    Descripcion = "Telefono Principal"
+                };
+
+                var transportista = new Clientes_Transportista()
+                {
+                    CodPostal = "",
+                    CUIT = "",
+                    Domicilio = "",
+                    InformacionAdicional = "Propio",
+                    Localidad = "",
+                    Nombre = "Propio"
+
+                };
 
                 bool correcto;
 
@@ -153,6 +164,7 @@ namespace ConexcoFacturación
                 {
                     cliente.Clientes_Domicilios.Add(domicilio);
                     cliente.Clientes_Telefonos.Add(telefono);
+                    cliente.Clientes_Transportistas.Add(transportista);
                     correcto = ClientesController.AgregarCliente(cliente);
                 }
 
@@ -167,7 +179,7 @@ namespace ConexcoFacturación
                     MessageBox.Show("Ha ocurrido un error al guardar el cliente, verifique los datos");
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error al guardar el cliente, verifique los datos");
                 this.Close();

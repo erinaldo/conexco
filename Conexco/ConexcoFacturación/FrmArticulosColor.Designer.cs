@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmArticulosColor));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreColor = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 65);
             this.label1.Name = "label1";
@@ -87,10 +89,12 @@
             this.txtCodColor.Name = "txtCodColor";
             this.txtCodColor.Size = new System.Drawing.Size(100, 20);
             this.txtCodColor.TabIndex = 1;
+            this.txtCodColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SinGuion_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 36);
             this.label3.Name = "label3";
@@ -102,6 +106,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(218, 168);
             this.Controls.Add(this.txtCodColor);
             this.Controls.Add(this.label3);
@@ -109,6 +115,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombreColor);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmArticulosColor";
             this.Text = "Agregar Color";
             this.ResumeLayout(false);

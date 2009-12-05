@@ -14,6 +14,8 @@ namespace ConexcoFacturación
     {
         private int childFormNumber = 0;
 
+        private bool _preguntaSalir = true;
+
         public MdiConexco()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace ConexcoFacturación
                 if (!correcto)
                 {
                     MessageBox.Show("Ha alcanzado el límite de intentos, el Sistema se cerrará");
+                    _preguntaSalir = false;
                     this.Close();
                 }
             }
@@ -227,10 +230,14 @@ namespace ConexcoFacturación
 
         private void MdiConexco_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result = MessageBox.Show("¿Realmente desea Salir del Sistema? Se perderán los cambios no guardados", "Atención",
-                             MessageBoxButtons.OKCancel);
-            if (result != System.Windows.Forms.DialogResult.OK)
-                e.Cancel = true;
+            if (_preguntaSalir)
+            {
+                var result = MessageBox.Show(
+                    "¿Realmente desea Salir del Sistema? Se perderán los cambios no guardados", "Atención",
+                    MessageBoxButtons.OKCancel);
+                if (result != System.Windows.Forms.DialogResult.OK)
+                    e.Cancel = true;
+            }
         }
 
         private void facturasEmitidasToolStripMenuItem_Click(object sender, EventArgs e)

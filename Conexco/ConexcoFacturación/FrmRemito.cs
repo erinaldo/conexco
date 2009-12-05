@@ -140,7 +140,7 @@ namespace ConexcoFacturación
                     catch (Exception)
                     {
                         if (e.ColumnIndex == 0)
-                            grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                            grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
                         else
                             grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
@@ -189,7 +189,7 @@ namespace ConexcoFacturación
 
         private void btnTransportistas_Click(object sender, EventArgs e)
         {
-            if(_idCliente > 0)
+            if (_idCliente > 0)
             {
                 var frmTransportistas = new FrmClientesTransportistas() { IdCliente = _idCliente, SeleccionHabilitada = true };
                 var result = frmTransportistas.ShowDialog();
@@ -197,7 +197,10 @@ namespace ConexcoFacturación
                 {
                     _idTransportista = frmTransportistas.TransportistaSeleccionado.idTransportista;
                     txtTransportistaRazonSocial.Text = frmTransportistas.TransportistaSeleccionado.Nombre;
-                    txtTransportistaDomicilio.Text = frmTransportistas.TransportistaSeleccionado.Domicilio + " - " + frmTransportistas.TransportistaSeleccionado.Localidad + " - CP: " + frmTransportistas.TransportistaSeleccionado.CodPostal;
+                    if (!String.IsNullOrEmpty(frmTransportistas.TransportistaSeleccionado.Domicilio))
+                        txtTransportistaDomicilio.Text = frmTransportistas.TransportistaSeleccionado.Domicilio + " - " + frmTransportistas.TransportistaSeleccionado.Localidad + " - CP: " + frmTransportistas.TransportistaSeleccionado.CodPostal;
+                    else
+                        txtTransportistaDomicilio.Text = "";
                     txtTransportistaCUIT.Text = frmTransportistas.TransportistaSeleccionado.CUIT;
                 }
             }
@@ -236,6 +239,19 @@ namespace ConexcoFacturación
                 txtCuit.Text = cliente.CUIT;
                 txtCondIva.Text = cliente.CondicionIVA.ToString();
                 txtClienteCod.Text = cliente.Codigo;
+
+                try
+                {
+                    var transportista = cliente.Clientes_Transportistas.First();
+                    _idTransportista = transportista.idTransportista;
+                    txtTransportistaRazonSocial.Text = transportista.Nombre;
+                    txtTransportistaDomicilio.Text = transportista.Domicilio;
+                    txtTransportistaCUIT.Text = transportista.CUIT;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("El cliente no tiene Transportistas, debe crear uno");
+                }
             }
             catch (Exception)
             {
@@ -317,7 +333,7 @@ namespace ConexcoFacturación
             }
             catch (Exception)
             {
-                remito.idEstado = 1;                
+                remito.idEstado = 1;
             }
 
             //Carga de lineas
@@ -329,7 +345,7 @@ namespace ConexcoFacturación
                     var articulo = ArticulosController.DatosArticuloPorCodigoYColor(row.Cells["Codigo"].Value.ToString());
                     linea.idArticulo = articulo.idArticulo;
                     linea.Cantidad = Convert.ToDecimal(row.Cells["Unidades"].Value);
-                    linea.Envases = Convert.ToDecimal(row.Cells["Envases"].Value);
+                    linea.Envases = ((row.Cells["Envases"].Value != null) ? ((row.Cells["Envases"].Value.ToString() == "") ? 0 : Convert.ToDecimal(row.Cells["Envases"].Value)) : 0);
                     linea.Precio = articulo.Precio;
 
                     remito.Remitos_Lineas.Add(linea);
@@ -340,7 +356,6 @@ namespace ConexcoFacturación
             {
                 _ReducirStockArticulos();
                 MessageBox.Show("Remito guardado correctamente");
-                this.Close();
             }
             else
             {
@@ -368,6 +383,8 @@ namespace ConexcoFacturación
                 error = true;
             if (String.IsNullOrEmpty(txtTransportistaRazonSocial.Text))
                 error = true;
+            if (String.IsNullOrEmpty(txtCantBultos.Text))
+                error = true;
             if (String.IsNullOrEmpty(txtCuit.Text))
                 error = true;
             if (grdDetalleRemito.Rows.Count == 0 || grdDetalleRemito.Rows[0].IsNewRow)
@@ -389,6 +406,9 @@ namespace ConexcoFacturación
             txtCuit.Text = "";
             txtCondIva.Text = "";
             txtClienteCod.Text = "";
+            txtTransportistaRazonSocial.Text = "";
+            txtTransportistaDomicilio.Text = "";
+            txtTransportistaCUIT.Text = "";
         }
 
         private void _CargarControles()
@@ -421,6 +441,8 @@ namespace ConexcoFacturación
             cmbProvincia.DataSource = LocalidadesController.ListarProvincias();
             cmbProvincia.ValueMember = "idProvincia";
             cmbProvincia.DisplayMember = "Provincia1";
+
+            txtCantBultos.Text = "1";
         }
 
         private void _RefrescarClientes()

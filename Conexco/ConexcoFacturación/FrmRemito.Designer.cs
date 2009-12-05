@@ -338,6 +338,7 @@
             this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
             this.txtCantBultos.TabIndex = 3;
             this.txtCantBultos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            this.txtCantBultos.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtOrdenCompra
             // 

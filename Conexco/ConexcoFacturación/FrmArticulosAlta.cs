@@ -156,5 +156,11 @@ namespace ConexcoFacturación
                 e.Handled = true;
         }
 
+        private void SinGuion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-')
+                e.Handled = true;
+        }
+
     }
 }

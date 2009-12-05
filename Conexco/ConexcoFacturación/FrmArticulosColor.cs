@@ -48,5 +48,11 @@ namespace ConexcoFacturación
             else
                 MessageBox.Show("Error al intentar guardar el color!");
         }
+
+        private void SinGuion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-')
+                e.Handled = true;
+        }
     }
 }

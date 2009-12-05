@@ -389,6 +389,9 @@
               </Textbox>
               <Textbox Name="CodigoYColor">
                 <rd:DefaultName>CodigoYColor</rd:DefaultName>
+                <Visibility>
+                  <Hidden>true</Hidden>
+                </Visibility>
                 <Width>1.25cm</Width>
                 <Style>
                   <PaddingLeft>2pt</PaddingLeft>

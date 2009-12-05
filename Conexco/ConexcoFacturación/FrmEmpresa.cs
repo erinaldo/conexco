@@ -65,6 +65,7 @@ namespace ConexcoFacturación
             txtIngresosBrutos.Text = empresa.IngBrutos;
             txtPorcentajeIVA.Text = (empresa.PorcentajeIVA.HasValue) ? empresa.PorcentajeIVA.Value.ToString() : "";
             txtContrasenia.Text = empresa.Contrasenia ?? "";
+            txtRepetirContrasenia.Text = empresa.Contrasenia ?? "";
         }
 
         private void btnLocalidad_Click(object sender, EventArgs e)

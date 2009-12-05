@@ -36,6 +36,7 @@ namespace Conexco.Controller
                 empresaGuardada.InicioActividades = empresa.InicioActividades;
                 empresaGuardada.IngBrutos = empresa.IngBrutos;
                 empresaGuardada.PorcentajeIVA = empresa.PorcentajeIVA;
+                empresaGuardada.Contrasenia = empresa.Contrasenia;
             }
             else
             {
