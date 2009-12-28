@@ -25,6 +25,15 @@ namespace ConexcoFacturación
             grdArticulos.DataSource = listadoArticulos;
             grdArticulos.Columns[0].Visible = false;
             grdArticulos.Columns[5].Visible = false;
+
+            grdArticulos.Columns[2].HeaderText = "Cód.Color";
+            grdArticulos.Columns[3].HeaderText = "Descripción";
+
+            grdArticulos.Columns[1].Width = 70;
+            grdArticulos.Columns[2].Width = 70;
+            grdArticulos.Columns[3].Width = 280;
+            grdArticulos.Columns[4].Width = 100;
+            grdArticulos.Columns[5].Width = 100;
         }
 
         private void OnArticuloAgregar(object sender, EventArgs e)

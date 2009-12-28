@@ -41,7 +41,7 @@
             // 
             this.btnAgregar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.agregar;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAgregar.Location = new System.Drawing.Point(140, 261);
+            this.btnAgregar.Location = new System.Drawing.Point(215, 319);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 30);
             this.btnAgregar.TabIndex = 6;
@@ -59,12 +59,12 @@
             this.grdArticulos.AllowUserToResizeColumns = false;
             this.grdArticulos.AllowUserToResizeRows = false;
             this.grdArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdArticulos.Location = new System.Drawing.Point(13, 13);
+            this.grdArticulos.Location = new System.Drawing.Point(12, 63);
             this.grdArticulos.MultiSelect = false;
             this.grdArticulos.Name = "grdArticulos";
             this.grdArticulos.ReadOnly = true;
             this.grdArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdArticulos.Size = new System.Drawing.Size(543, 230);
+            this.grdArticulos.Size = new System.Drawing.Size(668, 244);
             this.grdArticulos.TabIndex = 7;
             this.grdArticulos.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);
             // 
@@ -73,7 +73,7 @@
             this.btnModificar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.modificar;
             this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(231, 261);
+            this.btnModificar.Location = new System.Drawing.Point(306, 319);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 30);
             this.btnModificar.TabIndex = 8;
@@ -88,7 +88,7 @@
             this.btnEliiminar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
             this.btnEliiminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEliiminar.Enabled = false;
-            this.btnEliiminar.Location = new System.Drawing.Point(327, 261);
+            this.btnEliiminar.Location = new System.Drawing.Point(402, 319);
             this.btnEliiminar.Name = "btnEliiminar";
             this.btnEliiminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliiminar.TabIndex = 9;
@@ -105,14 +105,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(571, 305);
+            this.ClientSize = new System.Drawing.Size(692, 366);
             this.Controls.Add(this.btnEliiminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grdArticulos);
             this.Controls.Add(this.btnAgregar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmArticulos";
-            this.Text = "Stock Articulos";
+            this.Text = "Administración de Articulos";
             this.Load += new System.EventHandler(this.FrmArticulosStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdArticulos)).EndInit();
             this.ResumeLayout(false);

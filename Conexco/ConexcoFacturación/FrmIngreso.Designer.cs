@@ -156,6 +156,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodArticulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmIngreso";
             this.Text = "FromIngreso";
             this.Load += new System.EventHandler(this.FromIngreso_Load);

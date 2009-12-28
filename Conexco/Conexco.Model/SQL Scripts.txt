@@ -1,4 +1,34 @@
 ﻿
+---------------------------------------------
+UPDATE
+
+WILSON:
+
+-Ver como hacer el update sin tener q ir jeje 
+-Ver el problema con el alta de clientes
+-Agrandar formularios 700 x 400
+-Agrandar detalle de articulo, cambiar textbox por textbox multiline
+-Setear radiobutton a Pendientes x defauilt en facturas emitidas
+-Chekear Max Lenght en campos CUIT
+-Administracion de colores (poder borrar solamente)
+-Chekear que todos los form esten no resizable
+-Duplicar articulos
+
+LOMU:
+-Agregar criterio busqueda en administracion de articulos
+-Agregar reporte Impresion de facturas emitidas (Reporte y boton "imprimir" en el form)
+-Revisar "Administrar Facturas Emitidas" el boton guardar
+
+
+
+
+
+
+
+
+---------------------------------------------
+
+
 
 USE [Conexco]
 GO
@@ -37,6 +67,10 @@ GO
 /****** Object:  StoredProcedure [dbo].[PresupuestoImpresionCabecera]    Script Date: 11/29/2009 10:41:22 ******/
 SET ANSI_NULLS ON
 GO
+
+
+
+
 SET QUOTED_IDENTIFIER ON
 GO
 
@@ -83,9 +117,11 @@ BEGIN
 END
 
 
+---------------------------------------------
+UPDATE
 
 
-
+---------------------------------------------
 
 
 

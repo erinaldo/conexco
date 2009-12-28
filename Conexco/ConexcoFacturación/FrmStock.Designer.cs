@@ -152,6 +152,7 @@
             this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.grdArticulosStock);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmStock";
             this.Text = "Manejo de Stock";
             this.Load += new System.EventHandler(this.FrmStock_Load);
