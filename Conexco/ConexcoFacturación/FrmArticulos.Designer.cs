@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmArticulos));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.grdArticulos = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             // 
             this.grdArticulos.AllowUserToAddRows = false;
             this.grdArticulos.AllowUserToDeleteRows = false;
-            this.grdArticulos.AllowUserToResizeColumns = false;
             this.grdArticulos.AllowUserToResizeRows = false;
             this.grdArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdArticulos.Location = new System.Drawing.Point(12, 63);
@@ -111,6 +111,7 @@
             this.Controls.Add(this.grdArticulos);
             this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmArticulos";
             this.Text = "Administración de Articulos";

@@ -7,7 +7,7 @@ WILSON:
 -Ver como hacer el update sin tener q ir jeje 
 -Ver el problema con el alta de clientes
 -Agrandar formularios 700 x 400
--Agrandar detalle de articulo, cambiar textbox por textbox multiline
+-Agrandar detalle de articulo, cambiar textbox por textbox multiline - LISTO, VERIFICAR
 -Setear radiobutton a Pendientes x defauilt en facturas emitidas
 -Chekear Max Lenght en campos CUIT
 -Administracion de colores (poder borrar solamente)
@@ -28,7 +28,21 @@ LOMU:
 
 ---------------------------------------------
 
+GENERADOR DE ARTICULOS
 
+declare @contador int
+set @contador = 0
+
+while @contador < 100
+begin
+
+	insert into articulos(Codigo, CodColor, Descripcion, Precio, BajaLogica, Stock)
+	values((@contador + 10), (@Contador + 1), ('Articulo' + convert(varchar(10), @Contador + 1)), 100, 0, 20)
+	set @contador = @contador + 1
+
+end
+
+--------------------------------------------
 
 USE [Conexco]
 GO

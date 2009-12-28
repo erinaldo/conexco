@@ -54,5 +54,29 @@ namespace ConexcoFacturación
             if (e.KeyChar == '-')
                 e.Handled = true;
         }
+
+        private void FrmArticulosColor_Load(object sender, EventArgs e)
+        {
+            RefrescarGrilla();
+        }
+
+        private void RefrescarGrilla()
+        {
+            grdColoresExistentes.DataSource = ArticulosController.ListarColoresObjeto();
+            grdColoresExistentes.Columns[0].Visible = false;
+            grdColoresExistentes.Columns[3].Visible = false;
+            grdColoresExistentes.Columns[4].Visible = false;
+            grdColoresExistentes.Columns[5].Visible = false;
+            grdColoresExistentes.Columns[6].Visible = false;
+            grdColoresExistentes.Columns[7].Visible = false;
+
+            grdColoresExistentes.Columns[1].HeaderText = "Código";
+            grdColoresExistentes.Columns[2].HeaderText = "Descripción";
+        }
+
+        private void grdColoresExistentes_SelectionChanged(object sender, EventArgs e)
+        {
+            //TODO: FUNCIONALIDAD ELIMINAR
+        }
     }
 }
