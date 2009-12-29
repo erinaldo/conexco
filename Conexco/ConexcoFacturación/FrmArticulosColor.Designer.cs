@@ -37,8 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.gbxNuevoColor = new System.Windows.Forms.GroupBox();
             this.gbxColoresExistentes = new System.Windows.Forms.GroupBox();
-            this.grdColoresExistentes = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.grdColoresExistentes = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.gbxNuevoColor.SuspendLayout();
             this.gbxColoresExistentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdColoresExistentes)).BeginInit();
@@ -128,6 +129,7 @@
             // gbxColoresExistentes
             // 
             this.gbxColoresExistentes.BackColor = System.Drawing.Color.Transparent;
+            this.gbxColoresExistentes.Controls.Add(this.btnSalir);
             this.gbxColoresExistentes.Controls.Add(this.btnEliminar);
             this.gbxColoresExistentes.Controls.Add(this.grdColoresExistentes);
             this.gbxColoresExistentes.Location = new System.Drawing.Point(247, 12);
@@ -137,10 +139,25 @@
             this.gbxColoresExistentes.TabStop = false;
             this.gbxColoresExistentes.Text = "Colores Existentes";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(87, 142);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // grdColoresExistentes
             // 
             this.grdColoresExistentes.AllowUserToAddRows = false;
             this.grdColoresExistentes.AllowUserToDeleteRows = false;
+            this.grdColoresExistentes.AllowUserToResizeRows = false;
             this.grdColoresExistentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdColoresExistentes.Location = new System.Drawing.Point(9, 15);
             this.grdColoresExistentes.MultiSelect = false;
@@ -151,18 +168,18 @@
             this.grdColoresExistentes.TabIndex = 0;
             this.grdColoresExistentes.SelectionChanged += new System.EventHandler(this.grdColoresExistentes_SelectionChanged);
             // 
-            // btnEliminar
+            // btnSalir
             // 
-            this.btnEliminar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(177, 141);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnSalir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.salir3;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSalir.Location = new System.Drawing.Point(177, 141);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 31);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmArticulosColor
             // 
@@ -198,5 +215,6 @@
         private System.Windows.Forms.GroupBox gbxColoresExistentes;
         private System.Windows.Forms.DataGridView grdColoresExistentes;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

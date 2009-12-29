@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIngreso));
             this.nombreArticulo = new System.Windows.Forms.TextBox();
             this.codArticulo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -42,10 +43,11 @@
             // 
             // nombreArticulo
             // 
-            this.nombreArticulo.Location = new System.Drawing.Point(130, 62);
+            this.nombreArticulo.Location = new System.Drawing.Point(30, 72);
+            this.nombreArticulo.Multiline = true;
             this.nombreArticulo.Name = "nombreArticulo";
             this.nombreArticulo.ReadOnly = true;
-            this.nombreArticulo.Size = new System.Drawing.Size(100, 20);
+            this.nombreArticulo.Size = new System.Drawing.Size(200, 49);
             this.nombreArticulo.TabIndex = 17;
             // 
             // codArticulo
@@ -60,7 +62,7 @@
             // 
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(130, 169);
+            this.btnCancelar.Location = new System.Drawing.Point(130, 206);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 30);
             this.btnCancelar.TabIndex = 15;
@@ -73,7 +75,7 @@
             // 
             this.btnAceptar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.aceptar;
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAceptar.Location = new System.Drawing.Point(48, 169);
+            this.btnAceptar.Location = new System.Drawing.Point(48, 206);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 14;
@@ -86,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(27, 132);
+            this.label3.Location = new System.Drawing.Point(27, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 13;
@@ -96,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(27, 65);
+            this.label1.Location = new System.Drawing.Point(27, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 11;
@@ -114,7 +116,7 @@
             // 
             // txtStockActual
             // 
-            this.txtStockActual.Location = new System.Drawing.Point(130, 97);
+            this.txtStockActual.Location = new System.Drawing.Point(130, 136);
             this.txtStockActual.Name = "txtStockActual";
             this.txtStockActual.ReadOnly = true;
             this.txtStockActual.Size = new System.Drawing.Size(100, 20);
@@ -124,7 +126,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(27, 100);
+            this.label2.Location = new System.Drawing.Point(27, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 19;
@@ -132,7 +134,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(130, 129);
+            this.txtCantidad.Location = new System.Drawing.Point(130, 168);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 21;
@@ -145,7 +147,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(257, 214);
+            this.ClientSize = new System.Drawing.Size(257, 258);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtStockActual);
             this.Controls.Add(this.label2);
@@ -157,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodArticulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmIngreso";
             this.Text = "FromIngreso";
             this.Load += new System.EventHandler(this.FromIngreso_Load);

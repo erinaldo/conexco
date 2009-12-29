@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoFacturas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdAnuladas = new System.Windows.Forms.RadioButton();
             this.rdPendientes = new System.Windows.Forms.RadioButton();
@@ -373,6 +374,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmListadoFacturas";
             this.Text = "Listado de Facturas";

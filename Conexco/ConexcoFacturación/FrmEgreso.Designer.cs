@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEgreso));
             this.lblCodArticulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEgresoMotivo = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             // 
             this.lblCodArticulo.AutoSize = true;
             this.lblCodArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCodArticulo.Location = new System.Drawing.Point(37, 39);
+            this.lblCodArticulo.Location = new System.Drawing.Point(21, 27);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Size = new System.Drawing.Size(81, 13);
             this.lblCodArticulo.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(37, 75);
+            this.label1.Location = new System.Drawing.Point(21, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             this.lblEgresoMotivo.AutoSize = true;
             this.lblEgresoMotivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblEgresoMotivo.Location = new System.Drawing.Point(37, 108);
+            this.lblEgresoMotivo.Location = new System.Drawing.Point(21, 126);
             this.lblEgresoMotivo.Name = "lblEgresoMotivo";
             this.lblEgresoMotivo.Size = new System.Drawing.Size(78, 13);
             this.lblEgresoMotivo.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(37, 166);
+            this.label3.Location = new System.Drawing.Point(21, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             this.btnAceptar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.aceptar;
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAceptar.Location = new System.Drawing.Point(66, 219);
+            this.btnAceptar.Location = new System.Drawing.Point(42, 219);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 4;
@@ -102,7 +103,7 @@
             // 
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(147, 219);
+            this.btnCancelar.Location = new System.Drawing.Point(123, 219);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 30);
             this.btnCancelar.TabIndex = 5;
@@ -113,42 +114,43 @@
             // 
             // codArticulo
             // 
-            this.codArticulo.Location = new System.Drawing.Point(134, 31);
+            this.codArticulo.Location = new System.Drawing.Point(118, 24);
             this.codArticulo.Name = "codArticulo";
             this.codArticulo.ReadOnly = true;
-            this.codArticulo.Size = new System.Drawing.Size(100, 20);
+            this.codArticulo.Size = new System.Drawing.Size(109, 20);
             this.codArticulo.TabIndex = 6;
             // 
             // nombreArticulo
             // 
-            this.nombreArticulo.Location = new System.Drawing.Point(134, 68);
+            this.nombreArticulo.Location = new System.Drawing.Point(24, 66);
+            this.nombreArticulo.Multiline = true;
             this.nombreArticulo.Name = "nombreArticulo";
             this.nombreArticulo.ReadOnly = true;
-            this.nombreArticulo.Size = new System.Drawing.Size(100, 20);
+            this.nombreArticulo.Size = new System.Drawing.Size(203, 47);
             this.nombreArticulo.TabIndex = 7;
             // 
             // ddlMotivos
             // 
             this.ddlMotivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlMotivos.FormattingEnabled = true;
-            this.ddlMotivos.Location = new System.Drawing.Point(134, 101);
+            this.ddlMotivos.Location = new System.Drawing.Point(118, 119);
             this.ddlMotivos.Name = "ddlMotivos";
-            this.ddlMotivos.Size = new System.Drawing.Size(121, 21);
+            this.ddlMotivos.Size = new System.Drawing.Size(109, 21);
             this.ddlMotivos.TabIndex = 9;
             // 
             // txtStockActual
             // 
-            this.txtStockActual.Location = new System.Drawing.Point(134, 132);
+            this.txtStockActual.Location = new System.Drawing.Point(118, 150);
             this.txtStockActual.Name = "txtStockActual";
             this.txtStockActual.ReadOnly = true;
-            this.txtStockActual.Size = new System.Drawing.Size(100, 20);
+            this.txtStockActual.Size = new System.Drawing.Size(109, 20);
             this.txtStockActual.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(37, 135);
+            this.label2.Location = new System.Drawing.Point(21, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 10;
@@ -156,10 +158,10 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(135, 163);
+            this.txtCantidad.Location = new System.Drawing.Point(119, 181);
             this.txtCantidad.MaxLength = 10;
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(108, 20);
             this.txtCantidad.TabIndex = 12;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
             // 
@@ -174,7 +176,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(245, 266);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtStockActual);
             this.Controls.Add(this.label2);
@@ -187,7 +189,8 @@
             this.Controls.Add(this.lblEgresoMotivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodArticulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEgreso";
             this.Text = "Egreso Stock Artículo";
             this.Load += new System.EventHandler(this.FrmEgreso_Load);

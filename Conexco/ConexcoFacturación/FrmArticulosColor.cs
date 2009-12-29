@@ -76,7 +76,31 @@ namespace ConexcoFacturación
 
         private void grdColoresExistentes_SelectionChanged(object sender, EventArgs e)
         {
-            //TODO: FUNCIONALIDAD ELIMINAR
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Al eliminar un color se mantendrá en todos los articulos que lo utilicen hasta el momento, pero no podrá utilizarse nuevamente. Esta seguro?",
+                             "Atención", MessageBoxButtons.OKCancel);
+            if (result != System.Windows.Forms.DialogResult.OK)
+                return;
+
+            int idColor = Convert.ToInt32(grdColoresExistentes.SelectedRows[0].Cells[0].Value);
+            if(ArticulosController.EliminarArticulosColor(idColor))
+            {
+                MessageBox.Show("Color eliminado correctamente");
+                RefrescarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar el color, inténtelo nuevamente");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

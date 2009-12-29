@@ -10,8 +10,8 @@ WILSON:
 -Agrandar detalle de articulo, cambiar textbox por textbox multiline - LISTO, VERIFICAR
 -Setear radiobutton a Pendientes x defauilt en facturas emitidas
 -Chekear Max Lenght en campos CUIT
--Administracion de colores (poder borrar solamente)
--Chekear que todos los form esten no resizable
+-Administracion de colores (poder borrar solamente) - LISTO
+-Chekear que todos los form esten no resizable - LISTO
 -Duplicar articulos
 
 LOMU:

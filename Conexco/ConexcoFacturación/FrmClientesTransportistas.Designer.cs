@@ -156,7 +156,7 @@
             this.gbxTransportista.Enabled = false;
             this.gbxTransportista.Location = new System.Drawing.Point(12, 147);
             this.gbxTransportista.Name = "gbxTransportista";
-            this.gbxTransportista.Size = new System.Drawing.Size(527, 158);
+            this.gbxTransportista.Size = new System.Drawing.Size(666, 158);
             this.gbxTransportista.TabIndex = 2;
             this.gbxTransportista.TabStop = false;
             this.gbxTransportista.Text = "Detalle";
@@ -164,7 +164,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(131, 49);
-            this.txtCuit.MaxLength = 20;
+            this.txtCuit.MaxLength = 13;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 1;
@@ -188,13 +188,13 @@
             this.txtInfoAdicional.Multiline = true;
             this.txtInfoAdicional.Name = "txtInfoAdicional";
             this.txtInfoAdicional.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtInfoAdicional.Size = new System.Drawing.Size(257, 47);
+            this.txtInfoAdicional.Size = new System.Drawing.Size(332, 47);
             this.txtInfoAdicional.TabIndex = 8;
             this.toolTipTransportistas.SetToolTip(this.txtInfoAdicional, "Información adicional, opcional");
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(373, 125);
+            this.txtTelefono.Location = new System.Drawing.Point(463, 124);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
@@ -208,7 +208,7 @@
             this.txtNombre.Location = new System.Drawing.Point(131, 23);
             this.txtNombre.MaxLength = 250;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(139, 20);
+            this.txtNombre.Size = new System.Drawing.Size(214, 20);
             this.txtNombre.TabIndex = 0;
             this.toolTipTransportistas.SetToolTip(this.txtNombre, "Razón Social del Transportista");
             this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -225,7 +225,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 130);
+            this.label2.Location = new System.Drawing.Point(402, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 51;
@@ -244,7 +244,7 @@
             // 
             this.btnLocalidad.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
             this.btnLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLocalidad.Location = new System.Drawing.Point(486, 43);
+            this.btnLocalidad.Location = new System.Drawing.Point(600, 42);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(25, 23);
             this.btnLocalidad.TabIndex = 4;
@@ -256,9 +256,9 @@
             // 
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(373, 44);
+            this.cmbProvincia.Location = new System.Drawing.Point(463, 43);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(131, 21);
             this.cmbProvincia.TabIndex = 3;
             this.toolTipTransportistas.SetToolTip(this.cmbProvincia, "Provincia del Transportista");
             this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -266,7 +266,7 @@
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(312, 24);
+            this.lblDomicilio.Location = new System.Drawing.Point(402, 23);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
             this.lblDomicilio.TabIndex = 26;
@@ -274,10 +274,10 @@
             // 
             // txtDomicilio
             // 
-            this.txtDomicilio.Location = new System.Drawing.Point(373, 19);
+            this.txtDomicilio.Location = new System.Drawing.Point(463, 18);
             this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(137, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(197, 20);
             this.txtDomicilio.TabIndex = 2;
             this.toolTipTransportistas.SetToolTip(this.txtDomicilio, "Domicilio del Transportista");
             this.txtDomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -285,7 +285,7 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(308, 73);
+            this.lblLocalidad.Location = new System.Drawing.Point(398, 72);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
             this.lblLocalidad.TabIndex = 41;
@@ -293,10 +293,10 @@
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(373, 69);
+            this.txtLocalidad.Location = new System.Drawing.Point(463, 68);
             this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(137, 20);
+            this.txtLocalidad.Size = new System.Drawing.Size(162, 20);
             this.txtLocalidad.TabIndex = 5;
             this.toolTipTransportistas.SetToolTip(this.txtLocalidad, "Ingrese la Localidad del Transportista o utilize el buscador para completarla Aut" +
                     "omáticamente");
@@ -305,7 +305,7 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(310, 47);
+            this.lblProvincia.Location = new System.Drawing.Point(400, 46);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(51, 13);
             this.lblProvincia.TabIndex = 43;
@@ -313,10 +313,10 @@
             // 
             // txtCodPostal
             // 
-            this.txtCodPostal.Location = new System.Drawing.Point(373, 97);
+            this.txtCodPostal.Location = new System.Drawing.Point(463, 96);
             this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
-            this.txtCodPostal.Size = new System.Drawing.Size(78, 20);
+            this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodPostal.TabIndex = 6;
             this.toolTipTransportistas.SetToolTip(this.txtCodPostal, "Ingrese el Código Postal del Transportista o utilize el buscador para completarlo" +
                     " automáticamente");
@@ -325,7 +325,7 @@
             // lblCodPostal
             // 
             this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(289, 101);
+            this.lblCodPostal.Location = new System.Drawing.Point(379, 100);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(72, 13);
             this.lblCodPostal.TabIndex = 45;
@@ -361,7 +361,7 @@
             this.gridTransportistas.Name = "gridTransportistas";
             this.gridTransportistas.ReadOnly = true;
             this.gridTransportistas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridTransportistas.Size = new System.Drawing.Size(527, 96);
+            this.gridTransportistas.Size = new System.Drawing.Size(666, 96);
             this.gridTransportistas.TabIndex = 0;
             this.gridTransportistas.SelectionChanged += new System.EventHandler(this.gridTransportistas_SelectionChanged);
             // 
@@ -390,7 +390,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(545, 363);
+            this.ClientSize = new System.Drawing.Size(690, 364);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);

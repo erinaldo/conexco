@@ -200,5 +200,20 @@ namespace Conexco.Controller
         {
             return (_context.Articulos_Colors.Where(color => !(color.BajaLogica.HasValue && color.BajaLogica.Value) && (color.Codigo != "0")).OrderBy(color => color.Codigo)).ToList();
         }
+
+        public bool EliminarArticulosColor(int idColor)
+        {
+            try
+            {
+                var color = _context.Articulos_Colors.Where(col => col.idColor == idColor).Single();
+                color.BajaLogica = true;
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -59,8 +59,7 @@ namespace ConexcoFacturación
         {
             var frmArticulosColor = new FrmArticulosColor();
             var resultado = frmArticulosColor.ShowDialog();
-            if (resultado == DialogResult.OK)
-                _CargarComboColores();
+            _CargarComboColores();
         }
 
         private void OnCancelarAlta(object sender, EventArgs e)

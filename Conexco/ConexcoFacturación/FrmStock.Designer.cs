@@ -54,7 +54,7 @@
             this.grdArticulosStock.Name = "grdArticulosStock";
             this.grdArticulosStock.ReadOnly = true;
             this.grdArticulosStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdArticulosStock.Size = new System.Drawing.Size(521, 262);
+            this.grdArticulosStock.Size = new System.Drawing.Size(670, 249);
             this.grdArticulosStock.TabIndex = 0;
             this.grdArticulosStock.SelectionChanged += new System.EventHandler(this.OnArticuloSeleccionado);
             // 
@@ -63,7 +63,7 @@
             this.btnIngreso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngreso.BackgroundImage")));
             this.btnIngreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnIngreso.Enabled = false;
-            this.btnIngreso.Location = new System.Drawing.Point(160, 353);
+            this.btnIngreso.Location = new System.Drawing.Point(233, 329);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(105, 30);
             this.btnIngreso.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.btnEgreso.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
             this.btnEgreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEgreso.Enabled = false;
-            this.btnEgreso.Location = new System.Drawing.Point(283, 353);
+            this.btnEgreso.Location = new System.Drawing.Point(356, 329);
             this.btnEgreso.Name = "btnEgreso";
             this.btnEgreso.Size = new System.Drawing.Size(105, 30);
             this.btnEgreso.TabIndex = 2;
@@ -95,14 +95,14 @@
             this.gbxCriteriosBusqueda.Controls.Add(this.rbtnDescripcion);
             this.gbxCriteriosBusqueda.Location = new System.Drawing.Point(12, 12);
             this.gbxCriteriosBusqueda.Name = "gbxCriteriosBusqueda";
-            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(524, 51);
+            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(670, 51);
             this.gbxCriteriosBusqueda.TabIndex = 3;
             this.gbxCriteriosBusqueda.TabStop = false;
             this.gbxCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // txtValorBusqueda
             // 
-            this.txtValorBusqueda.Location = new System.Drawing.Point(338, 16);
+            this.txtValorBusqueda.Location = new System.Drawing.Point(340, 16);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
             this.txtValorBusqueda.Size = new System.Drawing.Size(171, 20);
             this.txtValorBusqueda.TabIndex = 8;
@@ -147,12 +147,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(548, 402);
+            this.ClientSize = new System.Drawing.Size(694, 368);
             this.Controls.Add(this.gbxCriteriosBusqueda);
             this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.grdArticulosStock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmStock";
             this.Text = "Manejo de Stock";
             this.Load += new System.EventHandler(this.FrmStock_Load);

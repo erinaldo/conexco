@@ -67,7 +67,7 @@
             this.grdDomicilios.Name = "grdDomicilios";
             this.grdDomicilios.ReadOnly = true;
             this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDomicilios.Size = new System.Drawing.Size(266, 161);
+            this.grdDomicilios.Size = new System.Drawing.Size(401, 161);
             this.grdDomicilios.TabIndex = 0;
             this.grdDomicilios.SelectionChanged += new System.EventHandler(this.grdDomicilios_SelectionChanged);
             // 
@@ -105,7 +105,7 @@
             this.gbxDomicilio.Controls.Add(this.txtCodPostal);
             this.gbxDomicilio.Controls.Add(this.lblCodPostal);
             this.gbxDomicilio.Enabled = false;
-            this.gbxDomicilio.Location = new System.Drawing.Point(297, 34);
+            this.gbxDomicilio.Location = new System.Drawing.Point(423, 34);
             this.gbxDomicilio.Name = "gbxDomicilio";
             this.gbxDomicilio.Size = new System.Drawing.Size(259, 161);
             this.gbxDomicilio.TabIndex = 2;
@@ -148,7 +148,7 @@
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(100, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(113, 21);
             this.cmbProvincia.TabIndex = 1;
             this.toolTipClientes.SetToolTip(this.cmbProvincia, "Provincia del Cliente");
             this.cmbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -265,7 +265,7 @@
             // 
             this.btnSalir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.salir3;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSalir.Location = new System.Drawing.Point(481, 217);
+            this.btnSalir.Location = new System.Drawing.Point(607, 217);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 6;
@@ -299,7 +299,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(568, 256);
+            this.ClientSize = new System.Drawing.Size(690, 256);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);

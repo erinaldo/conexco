@@ -70,7 +70,7 @@
             // 
             this.btnSalir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.salir3;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSalir.Location = new System.Drawing.Point(430, 170);
+            this.btnSalir.Location = new System.Drawing.Point(553, 170);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 6;
@@ -131,7 +131,7 @@
             this.gbxTelefono.Controls.Add(this.lblFax);
             this.gbxTelefono.Controls.Add(this.txtFax);
             this.gbxTelefono.Enabled = false;
-            this.gbxTelefono.Location = new System.Drawing.Point(283, 43);
+            this.gbxTelefono.Location = new System.Drawing.Point(406, 43);
             this.gbxTelefono.Name = "gbxTelefono";
             this.gbxTelefono.Size = new System.Drawing.Size(222, 106);
             this.gbxTelefono.TabIndex = 2;
@@ -224,7 +224,7 @@
             this.grdTelefonos.Name = "grdTelefonos";
             this.grdTelefonos.ReadOnly = true;
             this.grdTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdTelefonos.Size = new System.Drawing.Size(254, 106);
+            this.grdTelefonos.Size = new System.Drawing.Size(376, 106);
             this.grdTelefonos.TabIndex = 0;
             this.grdTelefonos.SelectionChanged += new System.EventHandler(this.grdTelefonos_SelectionChanged);
             // 
@@ -236,9 +236,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(517, 213);
+            this.ClientSize = new System.Drawing.Size(641, 213);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);

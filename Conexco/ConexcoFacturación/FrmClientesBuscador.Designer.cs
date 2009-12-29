@@ -61,7 +61,7 @@
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
             this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdClientes.Size = new System.Drawing.Size(556, 115);
+            this.grdClientes.Size = new System.Drawing.Size(654, 115);
             this.grdClientes.TabIndex = 0;
             this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
             // 
@@ -79,23 +79,23 @@
             this.gbxCriteriosBusqueda.Controls.Add(this.rbtnNombreRazonSocial);
             this.gbxCriteriosBusqueda.Location = new System.Drawing.Point(12, 12);
             this.gbxCriteriosBusqueda.Name = "gbxCriteriosBusqueda";
-            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(568, 93);
+            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(666, 93);
             this.gbxCriteriosBusqueda.TabIndex = 1;
             this.gbxCriteriosBusqueda.TabStop = false;
             this.gbxCriteriosBusqueda.Text = "Criterios de Busqueda";
             // 
             // txtValorBusqueda
             // 
-            this.txtValorBusqueda.Location = new System.Drawing.Point(371, 32);
+            this.txtValorBusqueda.Location = new System.Drawing.Point(471, 26);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
-            this.txtValorBusqueda.Size = new System.Drawing.Size(100, 20);
+            this.txtValorBusqueda.Size = new System.Drawing.Size(150, 20);
             this.txtValorBusqueda.TabIndex = 8;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBuscar.Location = new System.Drawing.Point(371, 58);
+            this.btnBuscar.Location = new System.Drawing.Point(471, 52);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 28);
             this.btnBuscar.TabIndex = 7;
@@ -106,7 +106,7 @@
             // lblValorBusqueda
             // 
             this.lblValorBusqueda.AutoSize = true;
-            this.lblValorBusqueda.Location = new System.Drawing.Point(287, 35);
+            this.lblValorBusqueda.Location = new System.Drawing.Point(387, 29);
             this.lblValorBusqueda.Name = "lblValorBusqueda";
             this.lblValorBusqueda.Size = new System.Drawing.Size(78, 13);
             this.lblValorBusqueda.TabIndex = 6;
@@ -115,7 +115,7 @@
             // rbtnCodPostal
             // 
             this.rbtnCodPostal.AutoSize = true;
-            this.rbtnCodPostal.Location = new System.Drawing.Point(174, 65);
+            this.rbtnCodPostal.Location = new System.Drawing.Point(193, 65);
             this.rbtnCodPostal.Name = "rbtnCodPostal";
             this.rbtnCodPostal.Size = new System.Drawing.Size(79, 17);
             this.rbtnCodPostal.TabIndex = 5;
@@ -126,7 +126,7 @@
             // rbtnLocalidad
             // 
             this.rbtnLocalidad.AutoSize = true;
-            this.rbtnLocalidad.Location = new System.Drawing.Point(174, 42);
+            this.rbtnLocalidad.Location = new System.Drawing.Point(193, 42);
             this.rbtnLocalidad.Name = "rbtnLocalidad";
             this.rbtnLocalidad.Size = new System.Drawing.Size(71, 17);
             this.rbtnLocalidad.TabIndex = 4;
@@ -137,7 +137,7 @@
             // rbtnCondIva
             // 
             this.rbtnCondIva.AutoSize = true;
-            this.rbtnCondIva.Location = new System.Drawing.Point(174, 19);
+            this.rbtnCondIva.Location = new System.Drawing.Point(193, 19);
             this.rbtnCondIva.Name = "rbtnCondIva";
             this.rbtnCondIva.Size = new System.Drawing.Size(73, 17);
             this.rbtnCondIva.TabIndex = 3;
@@ -148,7 +148,7 @@
             // rbtnCuit
             // 
             this.rbtnCuit.AutoSize = true;
-            this.rbtnCuit.Location = new System.Drawing.Point(6, 65);
+            this.rbtnCuit.Location = new System.Drawing.Point(26, 65);
             this.rbtnCuit.Name = "rbtnCuit";
             this.rbtnCuit.Size = new System.Drawing.Size(50, 17);
             this.rbtnCuit.TabIndex = 2;
@@ -159,7 +159,7 @@
             // rbtnCodigoCliente
             // 
             this.rbtnCodigoCliente.AutoSize = true;
-            this.rbtnCodigoCliente.Location = new System.Drawing.Point(6, 19);
+            this.rbtnCodigoCliente.Location = new System.Drawing.Point(26, 19);
             this.rbtnCodigoCliente.Name = "rbtnCodigoCliente";
             this.rbtnCodigoCliente.Size = new System.Drawing.Size(108, 17);
             this.rbtnCodigoCliente.TabIndex = 1;
@@ -170,7 +170,7 @@
             // rbtnNombreRazonSocial
             // 
             this.rbtnNombreRazonSocial.AutoSize = true;
-            this.rbtnNombreRazonSocial.Location = new System.Drawing.Point(6, 42);
+            this.rbtnNombreRazonSocial.Location = new System.Drawing.Point(26, 42);
             this.rbtnNombreRazonSocial.Name = "rbtnNombreRazonSocial";
             this.rbtnNombreRazonSocial.Size = new System.Drawing.Size(137, 17);
             this.rbtnNombreRazonSocial.TabIndex = 0;
@@ -187,7 +187,7 @@
             this.gbxResultados.Controls.Add(this.grdClientes);
             this.gbxResultados.Location = new System.Drawing.Point(12, 113);
             this.gbxResultados.Name = "gbxResultados";
-            this.gbxResultados.Size = new System.Drawing.Size(568, 280);
+            this.gbxResultados.Size = new System.Drawing.Size(666, 280);
             this.gbxResultados.TabIndex = 2;
             this.gbxResultados.TabStop = false;
             this.gbxResultados.Text = "Resultados";
@@ -220,14 +220,14 @@
             this.grdDomicilios.Name = "grdDomicilios";
             this.grdDomicilios.ReadOnly = true;
             this.grdDomicilios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDomicilios.Size = new System.Drawing.Size(556, 92);
+            this.grdDomicilios.Size = new System.Drawing.Size(654, 92);
             this.grdDomicilios.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(359, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(423, 401);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 32);
             this.btnCancelar.TabIndex = 4;
@@ -239,7 +239,7 @@
             // 
             this.btnAceptar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.aceptar;
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAceptar.Location = new System.Drawing.Point(121, 401);
+            this.btnAceptar.Location = new System.Drawing.Point(185, 401);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 32);
             this.btnAceptar.TabIndex = 3;
@@ -254,7 +254,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(592, 442);
+            this.ClientSize = new System.Drawing.Size(690, 442);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbxResultados);
