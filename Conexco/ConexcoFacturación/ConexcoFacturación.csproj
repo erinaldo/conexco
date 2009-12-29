@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{34A3C3C9-3B53-4215-9629-5214269C41F1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -473,6 +473,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\salir3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duplicar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duplicar2.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />

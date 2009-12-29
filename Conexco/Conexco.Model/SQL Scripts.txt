@@ -5,8 +5,8 @@ UPDATE
 WILSON:
 
 -Ver como hacer el update sin tener q ir jeje 
--Duplicar articulos
 -Ver el problema con el alta de clientes - INCONCLUSO
+-Duplicar articulos - LISTO
 -Ver tema de Guardar/Guardar Imprimir en los documentos - LISTO
 -Colores en campos requeridos - LISTO
 -Ordenar colores por codigo en Alta de Articulso - LISTO

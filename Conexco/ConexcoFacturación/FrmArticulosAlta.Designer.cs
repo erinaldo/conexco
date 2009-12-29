@@ -100,7 +100,6 @@
             this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(417, 73);
             this.txtDescripcion.TabIndex = 3;
             this.txtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);

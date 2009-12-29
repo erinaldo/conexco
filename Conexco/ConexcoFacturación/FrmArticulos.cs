@@ -54,6 +54,17 @@ namespace ConexcoFacturación
             }
         }
 
+        private void btnDuplicar_Click(object sender, EventArgs e)
+        {
+            var idArticulo = Convert.ToInt32(grdArticulos.SelectedRows[0].Cells[0].Value);
+            var result = new FrmArticulosAlta() { IdArticulo = idArticulo, Modificar = false }.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                ArticulosController = new ArticulosController();
+                _ActualizarGrilla();
+            }
+        }
+
         private void OnArticuloEliminar(object sender, EventArgs e)
         {
             var nombreArticulo = grdArticulos.SelectedRows[0].Cells[3].Value;
@@ -85,7 +96,8 @@ namespace ConexcoFacturación
         private void OnArticuloSeleccionado(object sender, EventArgs e)
         {
             btnEliiminar.Enabled = grdArticulos.SelectedRows.Count > 0;
-            btnModificar.Enabled = btnEliiminar.Enabled;     
+            btnModificar.Enabled = btnEliiminar.Enabled;
+            btnDuplicar.Enabled = btnEliiminar.Enabled;
         }
     }
 }

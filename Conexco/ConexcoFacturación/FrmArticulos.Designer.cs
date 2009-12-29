@@ -35,6 +35,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliiminar = new System.Windows.Forms.Button();
             this.toolTipArticulos = new System.Windows.Forms.ToolTip(this.components);
+            this.btnDuplicar = new System.Windows.Forms.Button();
             this.gbxCriteriosBusqueda = new System.Windows.Forms.GroupBox();
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.rbtnColor = new System.Windows.Forms.RadioButton();
@@ -104,6 +105,22 @@
             this.btnEliiminar.UseVisualStyleBackColor = true;
             this.btnEliiminar.Click += new System.EventHandler(this.OnArticuloEliminar);
             // 
+            // btnDuplicar
+            // 
+            this.btnDuplicar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.duplicar2;
+            this.btnDuplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDuplicar.Enabled = false;
+            this.btnDuplicar.Location = new System.Drawing.Point(12, 322);
+            this.btnDuplicar.Name = "btnDuplicar";
+            this.btnDuplicar.Size = new System.Drawing.Size(78, 30);
+            this.btnDuplicar.TabIndex = 11;
+            this.btnDuplicar.Tag = "";
+            this.btnDuplicar.Text = "Duplicar";
+            this.btnDuplicar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipArticulos.SetToolTip(this.btnDuplicar, "Agregar nuevo artículo.");
+            this.btnDuplicar.UseVisualStyleBackColor = true;
+            this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
+            // 
             // gbxCriteriosBusqueda
             // 
             this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +182,7 @@
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(692, 366);
+            this.Controls.Add(this.btnDuplicar);
             this.Controls.Add(this.gbxCriteriosBusqueda);
             this.Controls.Add(this.btnEliiminar);
             this.Controls.Add(this.btnModificar);
@@ -195,5 +213,6 @@
         private System.Windows.Forms.RadioButton rbtnColor;
         private System.Windows.Forms.RadioButton rbtnCodigoArticulo;
         private System.Windows.Forms.RadioButton rbtnDescripcion;
+        private System.Windows.Forms.Button btnDuplicar;
     }
 }

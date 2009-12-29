@@ -12,6 +12,7 @@ namespace ConexcoFacturación
         public ArticulosController ArticulosController { get; set; }
         public int IdArticulo { get; set; }
         public bool Modificar { get; set; }
+        public bool Duplicar { get; set; }
 
         public FrmArticulosAlta()
         {
@@ -43,7 +44,8 @@ namespace ConexcoFacturación
             txtDescripcion.Text = articulo.Descripcion;
             txtPrecio.Text = articulo.Precio.ToString();
             txtStock.Text = articulo.Stock.ToString();
-            comboColor.SelectedValue = articulo.CodColor;
+            if(Modificar)
+                comboColor.SelectedValue = articulo.CodColor;
         }
 
         private void _CargarComboColores()

@@ -17,7 +17,7 @@ namespace Conexco.Controller
 
         public List<Articulo> ListarArticulos()
         {
-            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value)).OrderBy(articulo => articulo.Codigo)).ToList();
+            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value)).OrderBy(articulo => articulo.Codigo).ThenBy(articulo => articulo.CodColor)).ToList();
         }
 
         public List<string> ListarCodigoYColorArticulos()
