@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Conexco.Controller;
+using Conexco.Model;
 
 namespace ConexcoFacturación
 {
@@ -98,6 +100,37 @@ namespace ConexcoFacturación
             btnEliiminar.Enabled = grdArticulos.SelectedRows.Count > 0;
             btnModificar.Enabled = btnEliiminar.Enabled;
             btnDuplicar.Enabled = btnEliiminar.Enabled;
+        }
+
+        private void OnKeyPress_Busqueda(object sender, KeyPressEventArgs e)
+        {
+            var listaArticulos = new List<Articulo>();
+            var teclaIngresada = e.KeyChar.ToString();
+            var valorIngresado = (teclaIngresada == "\b")
+                                                ? (txtValorBusqueda.Text.Length == 0
+                                                                ? String.Empty
+                                                                : txtValorBusqueda.Text.Substring(0, txtValorBusqueda.Text.Length - 1))
+                                                : txtValorBusqueda.Text + teclaIngresada;
+
+            if (String.IsNullOrEmpty((valorIngresado).Trim()))
+            {
+                listaArticulos = ArticulosController.ListarArticulos();
+            }
+            else
+            {
+                if (rbtnCodigoArticulo.Checked)
+                {
+                    listaArticulos =
+                        ArticulosController.BuscadorPorCodigoArticulo(valorIngresado);
+                }
+                else
+                {
+                    listaArticulos = rbtnDescripcion.Checked ? ArticulosController.BuscadorPorDescripcion(valorIngresado)
+                                                            : ArticulosController.BuscadorPorCódigoColor(valorIngresado);
+                }
+            }
+
+            grdArticulos.DataSource = listaArticulos;
         }
     }
 }
