@@ -37,9 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.gbxNuevoColor = new System.Windows.Forms.GroupBox();
             this.gbxColoresExistentes = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grdColoresExistentes = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.gbxNuevoColor.SuspendLayout();
             this.gbxColoresExistentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdColoresExistentes)).BeginInit();
@@ -58,6 +58,7 @@
             // 
             // txtNombreColor
             // 
+            this.txtNombreColor.BackColor = System.Drawing.Color.Azure;
             this.txtNombreColor.Location = new System.Drawing.Point(97, 87);
             this.txtNombreColor.MaxLength = 20;
             this.txtNombreColor.Name = "txtNombreColor";
@@ -92,6 +93,7 @@
             // 
             // txtCodColor
             // 
+            this.txtCodColor.BackColor = System.Drawing.Color.Azure;
             this.txtCodColor.Location = new System.Drawing.Point(97, 58);
             this.txtCodColor.MaxLength = 10;
             this.txtCodColor.Name = "txtCodColor";
@@ -139,6 +141,19 @@
             this.gbxColoresExistentes.TabStop = false;
             this.gbxColoresExistentes.Text = "Colores Existentes";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.salir3;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSalir.Location = new System.Drawing.Point(177, 141);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 31);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
@@ -167,19 +182,6 @@
             this.grdColoresExistentes.Size = new System.Drawing.Size(243, 116);
             this.grdColoresExistentes.TabIndex = 0;
             this.grdColoresExistentes.SelectionChanged += new System.EventHandler(this.grdColoresExistentes_SelectionChanged);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.salir3;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSalir.Location = new System.Drawing.Point(177, 141);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 31);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmArticulosColor
             // 

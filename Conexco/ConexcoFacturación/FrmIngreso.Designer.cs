@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIngreso));
             this.nombreArticulo = new System.Windows.Forms.TextBox();
             this.codArticulo = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreArticulo
@@ -134,11 +137,17 @@
             // 
             // txtCantidad
             // 
+            this.txtCantidad.BackColor = System.Drawing.Color.Azure;
             this.txtCantidad.Location = new System.Drawing.Point(130, 168);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 21;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
+            this.txtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
+            // 
+            // errorProviderRequerido
+            // 
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmIngreso
             // 
@@ -163,6 +172,7 @@
             this.Name = "FrmIngreso";
             this.Text = "FromIngreso";
             this.Load += new System.EventHandler(this.FromIngreso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +190,7 @@
         private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
 
     }
 }

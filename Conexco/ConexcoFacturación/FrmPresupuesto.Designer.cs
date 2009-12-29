@@ -286,7 +286,7 @@
             // 
             // cmbRazonSocial
             // 
-            this.cmbRazonSocial.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbRazonSocial.BackColor = System.Drawing.Color.Azure;
             this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRazonSocial.FormattingEnabled = true;
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 12);
@@ -588,7 +588,7 @@
             // 
             this.lblCondiciones.AutoSize = true;
             this.lblCondiciones.BackColor = System.Drawing.Color.Transparent;
-            this.lblCondiciones.Location = new System.Drawing.Point(7, 629);
+            this.lblCondiciones.Location = new System.Drawing.Point(9, 629);
             this.lblCondiciones.Name = "lblCondiciones";
             this.lblCondiciones.Size = new System.Drawing.Size(68, 13);
             this.lblCondiciones.TabIndex = 6;
@@ -596,7 +596,7 @@
             // 
             // txtCondiciones
             // 
-            this.txtCondiciones.Location = new System.Drawing.Point(9, 645);
+            this.txtCondiciones.Location = new System.Drawing.Point(11, 645);
             this.txtCondiciones.MaxLength = 250;
             this.txtCondiciones.Multiline = true;
             this.txtCondiciones.Name = "txtCondiciones";
@@ -701,6 +701,7 @@
             // 
             // txtNumPresupuesto
             // 
+            this.txtNumPresupuesto.BackColor = System.Drawing.Color.Azure;
             this.txtNumPresupuesto.Location = new System.Drawing.Point(404, 73);
             this.txtNumPresupuesto.MaxLength = 50;
             this.txtNumPresupuesto.Name = "txtNumPresupuesto";

@@ -268,8 +268,6 @@ namespace ConexcoFacturación
                 error = true;
             if (String.IsNullOrEmpty(txtCodPostal.Text))
                 error = true;
-            if (String.IsNullOrEmpty(txtTelefono.Text))
-                error = true;
 
             if (error)
                 MessageBox.Show("Ingrese los campos requeridos");

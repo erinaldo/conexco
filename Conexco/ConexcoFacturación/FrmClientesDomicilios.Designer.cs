@@ -144,6 +144,7 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.BackColor = System.Drawing.Color.Azure;
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
@@ -164,6 +165,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.BackColor = System.Drawing.Color.Azure;
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
             this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
@@ -183,6 +185,7 @@
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.BackColor = System.Drawing.Color.Azure;
             this.txtLocalidad.Location = new System.Drawing.Point(97, 69);
             this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
@@ -202,6 +205,7 @@
             // 
             // txtCodPostal
             // 
+            this.txtCodPostal.BackColor = System.Drawing.Color.Azure;
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
             this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";

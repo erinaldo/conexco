@@ -242,12 +242,6 @@ namespace ConexcoFacturación
                 error = true;
             if (String.IsNullOrEmpty(cmbCondicionIva.Text))
                 error = true;
-            if (String.IsNullOrEmpty(txtNombre.Text))
-                error = true;
-            if (String.IsNullOrEmpty(txtApellido.Text))
-                error = true;
-            if (String.IsNullOrEmpty(txtTelefono.Text))
-                error = true;
             if (String.IsNullOrEmpty(txtDomicilio.Text))
                 error = true;
             if (String.IsNullOrEmpty(cmbProvincia.Text))

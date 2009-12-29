@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -34,7 +35,7 @@ namespace ConexcoFacturación
         {
             if (String.IsNullOrEmpty(txtCantidad.Text))
             {
-                errorProvider1.SetError(txtCantidad,"Ingrese cantidad.");
+                errorProviderRequerido.SetError(txtCantidad,"Ingrese cantidad.");
                 return;
             }
 
@@ -103,6 +104,19 @@ namespace ConexcoFacturación
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void CampoRequerido_Validating(object sender, CancelEventArgs e)
+        {
+            var control = (Control)sender;
+            if (control.Text.Length == 0 || control.Text.Trim().StartsWith("-"))
+            {
+                errorProviderRequerido.SetError(control, "Campo Requerido");
+            }
+            else
+            {
+                errorProviderRequerido.Clear();
+            }
         }
     }
 }

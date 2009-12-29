@@ -188,7 +188,7 @@ namespace Conexco.Controller
             colores.Tables[0].Columns.Add("Codigo", typeof (string));
             colores.Tables[0].Columns.Add("Descripcion", typeof (string));
                 
-            var coloresBd = _context.Articulos_Colors.Where(color => !(color.BajaLogica.HasValue && color.BajaLogica.Value)).ToList();
+            var coloresBd = _context.Articulos_Colors.Where(color => !(color.BajaLogica.HasValue && color.BajaLogica.Value)).OrderBy(color => color.Codigo).ToList();
 
             foreach (var color in coloresBd)
                 colores.Tables[0].Rows.Add(color.Codigo,String.Format("{0} - {1}",color.Codigo,color.Descripcion));

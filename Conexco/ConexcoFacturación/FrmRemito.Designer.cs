@@ -333,6 +333,7 @@
             // 
             // txtCantBultos
             // 
+            this.txtCantBultos.BackColor = System.Drawing.Color.Azure;
             this.txtCantBultos.Location = new System.Drawing.Point(562, 48);
             this.txtCantBultos.Name = "txtCantBultos";
             this.txtCantBultos.Size = new System.Drawing.Size(100, 20);
@@ -614,6 +615,7 @@
             // 
             // cmbRazonSocial
             // 
+            this.cmbRazonSocial.BackColor = System.Drawing.Color.Azure;
             this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRazonSocial.FormattingEnabled = true;
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 13);
@@ -626,6 +628,7 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.BackColor = System.Drawing.Color.Azure;
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(76, 92);
@@ -649,6 +652,7 @@
             // 
             // txtCodPostal
             // 
+            this.txtCodPostal.BackColor = System.Drawing.Color.Azure;
             this.txtCodPostal.Location = new System.Drawing.Point(311, 94);
             this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
@@ -659,6 +663,7 @@
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.BackColor = System.Drawing.Color.Azure;
             this.txtLocalidad.Location = new System.Drawing.Point(76, 66);
             this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
@@ -669,6 +674,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.BackColor = System.Drawing.Color.Azure;
             this.txtDomicilio.Location = new System.Drawing.Point(76, 40);
             this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
@@ -841,6 +847,7 @@
             // 
             // txtNumRemito
             // 
+            this.txtNumRemito.BackColor = System.Drawing.Color.Azure;
             this.txtNumRemito.Location = new System.Drawing.Point(405, 74);
             this.txtNumRemito.MaxLength = 50;
             this.txtNumRemito.Name = "txtNumRemito";

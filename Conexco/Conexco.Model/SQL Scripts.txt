@@ -6,13 +6,17 @@ WILSON:
 
 -Ver como hacer el update sin tener q ir jeje 
 -Ver el problema con el alta de clientes
--Agrandar formularios 700 x 400
+-Duplicar articulos
+-Ver tema de Guardar/Guardar Imprimir en los documentos
+-Colores en campos requeridos
+-Ordenar colores por codigo en Alta de Articulso - LISTO
+-Setear radiobutton a Pendientes x defauilt en facturas emitidas - LISTO
+-Agrandar formularios 700 x 400 - LISTO
 -Agrandar detalle de articulo, cambiar textbox por textbox multiline - LISTO, VERIFICAR
--Setear radiobutton a Pendientes x defauilt en facturas emitidas
--Chekear Max Lenght en campos CUIT
+-Chekear Max Lenght en campos CUIT - LISTO
 -Administracion de colores (poder borrar solamente) - LISTO
 -Chekear que todos los form esten no resizable - LISTO
--Duplicar articulos
+
 
 LOMU:
 -Agregar criterio busqueda en administracion de articulos

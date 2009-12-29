@@ -157,6 +157,7 @@
             // 
             // txtCodCliente
             // 
+            this.txtCodCliente.BackColor = System.Drawing.Color.Azure;
             this.txtCodCliente.Location = new System.Drawing.Point(98, 20);
             this.txtCodCliente.MaxLength = 10;
             this.txtCodCliente.Name = "txtCodCliente";
@@ -167,6 +168,7 @@
             // 
             // txtRazonSocial
             // 
+            this.txtRazonSocial.BackColor = System.Drawing.Color.Azure;
             this.txtRazonSocial.Location = new System.Drawing.Point(98, 52);
             this.txtRazonSocial.MaxLength = 250;
             this.txtRazonSocial.Name = "txtRazonSocial";
@@ -183,7 +185,6 @@
             this.txtNombre.Size = new System.Drawing.Size(188, 20);
             this.txtNombre.TabIndex = 4;
             this.toolTipClientes.SetToolTip(this.txtNombre, "Nombre del cliente");
-            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtApellido
             // 
@@ -193,7 +194,6 @@
             this.txtApellido.Size = new System.Drawing.Size(188, 20);
             this.txtApellido.TabIndex = 5;
             this.toolTipClientes.SetToolTip(this.txtApellido, "Apellido del cliente");
-            this.txtApellido.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // txtPagos
             // 
@@ -256,13 +256,13 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.BackColor = System.Drawing.Color.Azure;
             this.txtTelefono.Location = new System.Drawing.Point(416, 84);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(86, 20);
             this.txtTelefono.TabIndex = 6;
             this.toolTipClientes.SetToolTip(this.txtTelefono, "Teléfono del cliente");
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
-            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
             // lblTelefono
             // 
@@ -301,6 +301,7 @@
             // 
             // txtCuit
             // 
+            this.txtCuit.BackColor = System.Drawing.Color.Azure;
             this.txtCuit.Location = new System.Drawing.Point(98, 84);
             this.txtCuit.MaxLength = 13;
             this.txtCuit.Name = "txtCuit";
@@ -311,6 +312,7 @@
             // 
             // cmbCondicionIva
             // 
+            this.cmbCondicionIva.BackColor = System.Drawing.Color.Azure;
             this.cmbCondicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicionIva.FormattingEnabled = true;
             this.cmbCondicionIva.Location = new System.Drawing.Point(98, 115);
@@ -355,6 +357,7 @@
             // 
             this.cmbProvincia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbProvincia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProvincia.BackColor = System.Drawing.Color.Azure;
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
@@ -374,6 +377,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.BackColor = System.Drawing.Color.Azure;
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
             this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
@@ -393,6 +397,7 @@
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.BackColor = System.Drawing.Color.Azure;
             this.txtLocalidad.Location = new System.Drawing.Point(97, 71);
             this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
@@ -412,6 +417,7 @@
             // 
             // txtCodPostal
             // 
+            this.txtCodPostal.BackColor = System.Drawing.Color.Azure;
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
             this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";

@@ -53,11 +53,11 @@ namespace ConexcoFacturación
                 var idFactura = gridFacturas.SelectedRows[0].Cells[0].Value.ToString();
                 var idCliente = gridFacturas.SelectedRows[0].Cells[2].Value.ToString();
 
-                _RecardarDetalle(idFactura, idCliente);
+                _RecargarDetalle(idFactura, idCliente);
             }
         }
 
-        private void _RecardarDetalle(string idFactura, string idCliente)
+        private void _RecargarDetalle(string idFactura, string idCliente)
         {
             var factura = FacturasController.DatosFactura(Convert.ToInt32(idFactura));
             var clientesController = new ClientesController();
@@ -81,6 +81,8 @@ namespace ConexcoFacturación
             comboEstado.DisplayMember = "Descripcion";
             comboEstado.ValueMember = "Descripcion";
             comboEstado.DataSource = estadosFactura;
+
+            rdPendientes.Checked = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

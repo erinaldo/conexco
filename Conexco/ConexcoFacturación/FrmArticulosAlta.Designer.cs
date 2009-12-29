@@ -84,6 +84,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.Azure;
             this.txtCodigo.Location = new System.Drawing.Point(79, 31);
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
@@ -94,6 +95,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.Azure;
             this.txtDescripcion.Location = new System.Drawing.Point(20, 94);
             this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
@@ -167,6 +169,7 @@
             // 
             // comboColor
             // 
+            this.comboColor.BackColor = System.Drawing.Color.Azure;
             this.comboColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboColor.FormattingEnabled = true;
             this.comboColor.Location = new System.Drawing.Point(282, 32);
@@ -176,6 +179,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.Color.Azure;
             this.txtPrecio.Location = new System.Drawing.Point(75, 186);
             this.txtPrecio.MaxLength = 20;
             this.txtPrecio.Name = "txtPrecio";
@@ -186,6 +190,7 @@
             // 
             // txtStock
             // 
+            this.txtStock.BackColor = System.Drawing.Color.Azure;
             this.txtStock.Location = new System.Drawing.Point(303, 186);
             this.txtStock.MaxLength = 20;
             this.txtStock.Name = "txtStock";

@@ -88,7 +88,6 @@
             this.rdAnuladas.Name = "rdAnuladas";
             this.rdAnuladas.Size = new System.Drawing.Size(105, 17);
             this.rdAnuladas.TabIndex = 3;
-            this.rdAnuladas.TabStop = true;
             this.rdAnuladas.Text = "Anuladas            ";
             this.toolTip1.SetToolTip(this.rdAnuladas, "Muestra sólo las Facturas Anuladas.");
             this.rdAnuladas.UseVisualStyleBackColor = true;
@@ -101,7 +100,6 @@
             this.rdPendientes.Name = "rdPendientes";
             this.rdPendientes.Size = new System.Drawing.Size(93, 17);
             this.rdPendientes.TabIndex = 2;
-            this.rdPendientes.TabStop = true;
             this.rdPendientes.Text = "Pendientes     ";
             this.toolTip1.SetToolTip(this.rdPendientes, "Muestra sólo las Facturas Pendientes.");
             this.rdPendientes.UseVisualStyleBackColor = true;
@@ -114,7 +112,6 @@
             this.rdPagadas.Name = "rdPagadas";
             this.rdPagadas.Size = new System.Drawing.Size(91, 17);
             this.rdPagadas.TabIndex = 1;
-            this.rdPagadas.TabStop = true;
             this.rdPagadas.Text = "Pagadas        ";
             this.toolTip1.SetToolTip(this.rdPagadas, "Muestra sólo las Facturas Pagadas.");
             this.rdPagadas.UseVisualStyleBackColor = true;
@@ -127,7 +124,6 @@
             this.rdTodas.Name = "rdTodas";
             this.rdTodas.Size = new System.Drawing.Size(92, 17);
             this.rdTodas.TabIndex = 0;
-            this.rdTodas.TabStop = true;
             this.rdTodas.Text = "Ver Todas      ";
             this.toolTip1.SetToolTip(this.rdTodas, "Muestra todas las Facutras.");
             this.rdTodas.UseVisualStyleBackColor = true;

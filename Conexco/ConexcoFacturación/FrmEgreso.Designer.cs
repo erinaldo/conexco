@@ -42,8 +42,8 @@
             this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.errorProviderRequerido = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodArticulo
@@ -158,16 +158,18 @@
             // 
             // txtCantidad
             // 
+            this.txtCantidad.BackColor = System.Drawing.Color.Azure;
             this.txtCantidad.Location = new System.Drawing.Point(119, 181);
             this.txtCantidad.MaxLength = 10;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(108, 20);
             this.txtCantidad.TabIndex = 12;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosDecimales_KeyPress);
+            this.txtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
             // 
-            // errorProvider1
+            // errorProviderRequerido
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderRequerido.ContainerControl = this;
             // 
             // FrmEgreso
             // 
@@ -194,7 +196,7 @@
             this.Name = "FrmEgreso";
             this.Text = "Egreso Stock Artículo";
             this.Load += new System.EventHandler(this.FrmEgreso_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRequerido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +216,6 @@
         private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderRequerido;
     }
 }

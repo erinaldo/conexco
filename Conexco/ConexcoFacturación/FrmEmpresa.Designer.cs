@@ -111,10 +111,10 @@
             // 
             // txtWeb
             // 
-            this.txtWeb.Location = new System.Drawing.Point(495, 156);
+            this.txtWeb.Location = new System.Drawing.Point(461, 148);
             this.txtWeb.MaxLength = 50;
             this.txtWeb.Name = "txtWeb";
-            this.txtWeb.Size = new System.Drawing.Size(100, 20);
+            this.txtWeb.Size = new System.Drawing.Size(134, 20);
             this.txtWeb.TabIndex = 10;
             this.toolTipEmpresa.SetToolTip(this.txtWeb, "Sitio Web de su Empresa, opcional");
             // 
@@ -129,6 +129,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.BackColor = System.Drawing.Color.Azure;
             this.txtDomicilio.Location = new System.Drawing.Point(97, 19);
             this.txtDomicilio.MaxLength = 250;
             this.txtDomicilio.Name = "txtDomicilio";
@@ -139,10 +140,11 @@
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(495, 19);
-            this.txtCuit.MaxLength = 20;
+            this.txtCuit.BackColor = System.Drawing.Color.Azure;
+            this.txtCuit.Location = new System.Drawing.Point(461, 23);
+            this.txtCuit.MaxLength = 13;
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.Size = new System.Drawing.Size(134, 20);
             this.txtCuit.TabIndex = 6;
             this.toolTipEmpresa.SetToolTip(this.txtCuit, "CUIT de su Empresa");
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumerosYGuion_KeyPress);
@@ -150,6 +152,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.Color.Azure;
             this.txtApellido.Location = new System.Drawing.Point(96, 83);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
@@ -160,6 +163,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.Azure;
             this.txtNombre.Location = new System.Drawing.Point(96, 53);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
@@ -170,6 +174,7 @@
             // 
             // txtRazonSocial
             // 
+            this.txtRazonSocial.BackColor = System.Drawing.Color.Azure;
             this.txtRazonSocial.Location = new System.Drawing.Point(96, 23);
             this.txtRazonSocial.MaxLength = 250;
             this.txtRazonSocial.Name = "txtRazonSocial";
@@ -181,7 +186,7 @@
             // lblWeb
             // 
             this.lblWeb.AutoSize = true;
-            this.lblWeb.Location = new System.Drawing.Point(458, 161);
+            this.lblWeb.Location = new System.Drawing.Point(415, 152);
             this.lblWeb.Name = "lblWeb";
             this.lblWeb.Size = new System.Drawing.Size(30, 13);
             this.lblWeb.TabIndex = 28;
@@ -208,7 +213,7 @@
             // lblCondIva
             // 
             this.lblCondIva.AutoSize = true;
-            this.lblCondIva.Location = new System.Drawing.Point(433, 58);
+            this.lblCondIva.Location = new System.Drawing.Point(391, 57);
             this.lblCondIva.Name = "lblCondIva";
             this.lblCondIva.Size = new System.Drawing.Size(55, 13);
             this.lblCondIva.TabIndex = 25;
@@ -217,7 +222,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(456, 23);
+            this.lblCuit.Location = new System.Drawing.Point(416, 26);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(32, 13);
             this.lblCuit.TabIndex = 24;
@@ -262,6 +267,7 @@
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.BackColor = System.Drawing.Color.Azure;
             this.txtLocalidad.Location = new System.Drawing.Point(97, 70);
             this.txtLocalidad.MaxLength = 100;
             this.txtLocalidad.Name = "txtLocalidad";
@@ -291,6 +297,7 @@
             // 
             // txtCodPostal
             // 
+            this.txtCodPostal.BackColor = System.Drawing.Color.Azure;
             this.txtCodPostal.Location = new System.Drawing.Point(97, 97);
             this.txtCodPostal.MaxLength = 10;
             this.txtCodPostal.Name = "txtCodPostal";
@@ -310,6 +317,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.BackColor = System.Drawing.Color.Azure;
             this.txtTelefono.Location = new System.Drawing.Point(96, 113);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
@@ -350,7 +358,7 @@
             // lblInicioActividades
             // 
             this.lblInicioActividades.AutoSize = true;
-            this.lblInicioActividades.Location = new System.Drawing.Point(383, 92);
+            this.lblInicioActividades.Location = new System.Drawing.Point(341, 93);
             this.lblInicioActividades.Name = "lblInicioActividades";
             this.lblInicioActividades.Size = new System.Drawing.Size(105, 13);
             this.lblInicioActividades.TabIndex = 51;
@@ -358,7 +366,8 @@
             // 
             // txtIngresosBrutos
             // 
-            this.txtIngresosBrutos.Location = new System.Drawing.Point(495, 122);
+            this.txtIngresosBrutos.BackColor = System.Drawing.Color.Azure;
+            this.txtIngresosBrutos.Location = new System.Drawing.Point(461, 117);
             this.txtIngresosBrutos.MaxLength = 50;
             this.txtIngresosBrutos.Name = "txtIngresosBrutos";
             this.txtIngresosBrutos.Size = new System.Drawing.Size(100, 20);
@@ -370,7 +379,7 @@
             // lblIngresosBrutos
             // 
             this.lblIngresosBrutos.AutoSize = true;
-            this.lblIngresosBrutos.Location = new System.Drawing.Point(408, 126);
+            this.lblIngresosBrutos.Location = new System.Drawing.Point(366, 120);
             this.lblIngresosBrutos.Name = "lblIngresosBrutos";
             this.lblIngresosBrutos.Size = new System.Drawing.Size(80, 13);
             this.lblIngresosBrutos.TabIndex = 53;
@@ -410,8 +419,10 @@
             // 
             // dtpInicioActividades
             // 
+            this.dtpInicioActividades.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dtpInicioActividades.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.dtpInicioActividades.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioActividades.Location = new System.Drawing.Point(495, 88);
+            this.dtpInicioActividades.Location = new System.Drawing.Point(461, 86);
             this.dtpInicioActividades.Name = "dtpInicioActividades";
             this.dtpInicioActividades.Size = new System.Drawing.Size(100, 20);
             this.dtpInicioActividades.TabIndex = 8;
@@ -420,11 +431,12 @@
             // 
             // cmbCondicionIva
             // 
+            this.cmbCondicionIva.BackColor = System.Drawing.Color.Azure;
             this.cmbCondicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicionIva.FormattingEnabled = true;
-            this.cmbCondicionIva.Location = new System.Drawing.Point(495, 53);
+            this.cmbCondicionIva.Location = new System.Drawing.Point(461, 54);
             this.cmbCondicionIva.Name = "cmbCondicionIva";
-            this.cmbCondicionIva.Size = new System.Drawing.Size(100, 21);
+            this.cmbCondicionIva.Size = new System.Drawing.Size(134, 21);
             this.cmbCondicionIva.TabIndex = 7;
             this.toolTipEmpresa.SetToolTip(this.cmbCondicionIva, "Condición ante el IVA de su Empresa");
             this.cmbCondicionIva.Validating += new System.ComponentModel.CancelEventHandler(this.CampoRequerido_Validating);
@@ -462,6 +474,7 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.BackColor = System.Drawing.Color.Azure;
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(97, 44);
@@ -482,6 +495,7 @@
             // 
             // txtPorcentajeIVA
             // 
+            this.txtPorcentajeIVA.BackColor = System.Drawing.Color.Azure;
             this.txtPorcentajeIVA.Location = new System.Drawing.Point(113, 23);
             this.txtPorcentajeIVA.MaxLength = 3;
             this.txtPorcentajeIVA.Name = "txtPorcentajeIVA";
@@ -528,6 +542,7 @@
             // 
             // txtRepetirContrasenia
             // 
+            this.txtRepetirContrasenia.BackColor = System.Drawing.Color.Azure;
             this.txtRepetirContrasenia.Location = new System.Drawing.Point(113, 75);
             this.txtRepetirContrasenia.MaxLength = 20;
             this.txtRepetirContrasenia.Name = "txtRepetirContrasenia";
@@ -540,6 +555,7 @@
             // 
             // txtContrasenia
             // 
+            this.txtContrasenia.BackColor = System.Drawing.Color.Azure;
             this.txtContrasenia.Location = new System.Drawing.Point(113, 49);
             this.txtContrasenia.MaxLength = 20;
             this.txtContrasenia.Name = "txtContrasenia";

@@ -145,6 +145,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.Azure;
             this.txtNombre.Location = new System.Drawing.Point(63, 23);
             this.txtNombre.MaxLength = 250;
             this.txtNombre.Name = "txtNombre";
@@ -164,6 +165,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.Azure;
             this.txtEmail.Location = new System.Drawing.Point(63, 49);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";

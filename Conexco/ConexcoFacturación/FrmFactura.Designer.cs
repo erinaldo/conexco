@@ -130,6 +130,7 @@
             // 
             // cmbLetra
             // 
+            this.cmbLetra.BackColor = System.Drawing.Color.Azure;
             this.cmbLetra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLetra.FormattingEnabled = true;
             this.cmbLetra.Location = new System.Drawing.Point(328, 64);
@@ -295,7 +296,7 @@
             // 
             // cmbRazonSocial
             // 
-            this.cmbRazonSocial.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbRazonSocial.BackColor = System.Drawing.Color.Azure;
             this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRazonSocial.FormattingEnabled = true;
             this.cmbRazonSocial.Location = new System.Drawing.Point(76, 12);
@@ -920,6 +921,7 @@
             // 
             // txtNumFactura
             // 
+            this.txtNumFactura.BackColor = System.Drawing.Color.Azure;
             this.txtNumFactura.Location = new System.Drawing.Point(404, 73);
             this.txtNumFactura.MaxLength = 50;
             this.txtNumFactura.Name = "txtNumFactura";

@@ -167,6 +167,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.BackColor = System.Drawing.Color.Azure;
             this.txtTelefono.Location = new System.Drawing.Point(97, 19);
             this.txtTelefono.MaxLength = 50;
             this.txtTelefono.Name = "txtTelefono";
@@ -187,6 +188,7 @@
             // 
             // txtFax
             // 
+            this.txtFax.BackColor = System.Drawing.Color.Azure;
             this.txtFax.Location = new System.Drawing.Point(97, 45);
             this.txtFax.MaxLength = 10;
             this.txtFax.Name = "txtFax";
