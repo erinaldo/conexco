@@ -26,6 +26,8 @@ namespace ConexcoFacturación
         private int _idCliente;
         private int _idTransportista;
 
+        private int _idRemitoGuardado;
+
         public FrmRemito()
         {
             InitializeComponent();
@@ -261,7 +263,7 @@ namespace ConexcoFacturación
 
         private void btnGuardarImprimir_Click(object sender, EventArgs e)
         {
-            int idRemito = _GuardarRemito();
+            int idRemito = (_idRemitoGuardado > 0) ? _idRemitoGuardado : _GuardarRemito();
             if (idRemito > 0)
                 new FrmRemitoImprimir() {IdRemito = idRemito}.ShowDialog();
         }
@@ -356,6 +358,8 @@ namespace ConexcoFacturación
             {
                 _ReducirStockArticulos();
                 MessageBox.Show("Remito guardado correctamente");
+                _idRemitoGuardado = remito.idRemito;
+                btnGuardar.Enabled = false;
             }
             else
             {

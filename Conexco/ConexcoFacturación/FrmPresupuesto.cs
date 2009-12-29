@@ -28,6 +28,8 @@ namespace ConexcoFacturación
         private int _idCliente;
         private int _idDomicilio;
 
+        private int _idPresupuestoGuardado;
+
         public FrmPresupuesto()
         {
             InitializeComponent();
@@ -200,7 +202,7 @@ namespace ConexcoFacturación
 
         private void btnGuardarImprimir_Click(object sender, EventArgs e)
         {
-            var idPresupuesto = _GuardarPresupuesto();
+            var idPresupuesto = (_idPresupuestoGuardado > 0) ? _idPresupuestoGuardado : _GuardarPresupuesto();
             if (idPresupuesto > 0)
             {
                 new FrmPresupuestoImprimir() {IdPresupuesto = idPresupuesto}.ShowDialog();
@@ -341,27 +343,27 @@ namespace ConexcoFacturación
             if (_FaltaCampoRequerido())
                 return 0;
 
-            var Presupuesto = new Presupuesto();
+            var presupuesto = new Presupuesto();
 
-            Presupuesto.idCliente = _idCliente;
-            Presupuesto.FechaEmision = dtpFechaEmision.Value;
-            Presupuesto.Numero = txtNumPresupuesto.Text;
-            Presupuesto.FechaVto = dtpVencimiento.Value;
-            Presupuesto.Condiciones = txtCondiciones.Text;
-            Presupuesto.Total = Convert.ToDecimal(lblTotal.Text);
-            Presupuesto.DomicilioEntrega = txtDomicilioEntrega.Text;
-            Presupuesto.LocalidadEntrega = txtLocalidad.Text;
-            Presupuesto.ProvinciaEntrega = comboProvincia.Text;
-            Presupuesto.CodPostalEntrega = txtCodPostal.Text;
-            Presupuesto.Disponibilidad = txtDisponibilidad.Text;
+            presupuesto.idCliente = _idCliente;
+            presupuesto.FechaEmision = dtpFechaEmision.Value;
+            presupuesto.Numero = txtNumPresupuesto.Text;
+            presupuesto.FechaVto = dtpVencimiento.Value;
+            presupuesto.Condiciones = txtCondiciones.Text;
+            presupuesto.Total = Convert.ToDecimal(lblTotal.Text);
+            presupuesto.DomicilioEntrega = txtDomicilioEntrega.Text;
+            presupuesto.LocalidadEntrega = txtLocalidad.Text;
+            presupuesto.ProvinciaEntrega = comboProvincia.Text;
+            presupuesto.CodPostalEntrega = txtCodPostal.Text;
+            presupuesto.Disponibilidad = txtDisponibilidad.Text;
 
             try
             {
-                Presupuesto.idEstado = PresupuestoController.ListarDocumentosEstado().First().idEstado;
+                presupuesto.idEstado = PresupuestoController.ListarDocumentosEstado().First().idEstado;
             }
             catch (Exception)
             {
-                Presupuesto.idEstado = 1;
+                presupuesto.idEstado = 1;
             }
 
             //Carga de lineas
@@ -375,19 +377,22 @@ namespace ConexcoFacturación
                     linea.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
                     linea.Precio = articulo.Precio;
 
-                    Presupuesto.Presupuestos_Lineas.Add(linea);
+                    presupuesto.Presupuestos_Lineas.Add(linea);
                 }
             }
 
-            if (PresupuestoController.AgregarPresupuesto(Presupuesto))
+            if (PresupuestoController.AgregarPresupuesto(presupuesto))
             {
                 MessageBox.Show("Presupuesto guardado correctamente");
+                _idPresupuestoGuardado = presupuesto.idPresupuesto;
+                btnGuardar.Enabled = false;
+
             }
             else
             {
                 MessageBox.Show("Ocurrio un problema al guardar el Presupuesto, inténtelo nuevamente");
             }
-            return Presupuesto.idPresupuesto;
+            return presupuesto.idPresupuesto;
         }
 
         #endregion

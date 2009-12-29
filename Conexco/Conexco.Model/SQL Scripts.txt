@@ -5,10 +5,10 @@ UPDATE
 WILSON:
 
 -Ver como hacer el update sin tener q ir jeje 
--Ver el problema con el alta de clientes
 -Duplicar articulos
--Ver tema de Guardar/Guardar Imprimir en los documentos
--Colores en campos requeridos
+-Ver el problema con el alta de clientes - INCONCLUSO
+-Ver tema de Guardar/Guardar Imprimir en los documentos - LISTO
+-Colores en campos requeridos - LISTO
 -Ordenar colores por codigo en Alta de Articulso - LISTO
 -Setear radiobutton a Pendientes x defauilt en facturas emitidas - LISTO
 -Agrandar formularios 700 x 400 - LISTO

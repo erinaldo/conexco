@@ -27,6 +27,8 @@ namespace ConexcoFacturación
         private int _idCliente;
         private int _idDomicilio;
 
+        private int _idFacturaGuardada;
+
         public FrmFactura()
         {
             InitializeComponent();
@@ -261,7 +263,7 @@ namespace ConexcoFacturación
 
         private void btnGuardarImprimir_Click(object sender, EventArgs e)
         {
-            var idFactura = _GuardarFactura();
+            var idFactura = (_idFacturaGuardada > 0) ? _idFacturaGuardada : _GuardarFactura();
             if (idFactura > 0)
             {
                 if (cmbLetra.Text == "A")
@@ -489,6 +491,8 @@ namespace ConexcoFacturación
             if (FacturasController.AgregarFactura(factura))
             {
                 MessageBox.Show("Factura guardada correctamente");
+                btnGuardar.Enabled = false;
+                _idFacturaGuardada = factura.idFactura;
             }
             else
             {
