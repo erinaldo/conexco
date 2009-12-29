@@ -27,7 +27,7 @@ namespace ConexcoFacturación
 
             if (IdArticulo > 0)
             {
-                Text = "Modificar Articulo";
+                Text = (Modificar) ? "Modificar Articulo" : "Duplicar Articulo";
                 txtStock.Visible = false;
                 lblStock.Visible = false;
                 _CargarDatosArticulo();
