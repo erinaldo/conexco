@@ -137,15 +137,16 @@
             // 
             // txtValorBusqueda
             // 
-            this.txtValorBusqueda.Location = new System.Drawing.Point(340, 16);
+            this.txtValorBusqueda.Location = new System.Drawing.Point(483, 19);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
             this.txtValorBusqueda.Size = new System.Drawing.Size(171, 20);
             this.txtValorBusqueda.TabIndex = 8;
+            this.txtValorBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress_Busqueda);
             // 
             // rbtnColor
             // 
             this.rbtnColor.AutoSize = true;
-            this.rbtnColor.Location = new System.Drawing.Point(221, 19);
+            this.rbtnColor.Location = new System.Drawing.Point(319, 20);
             this.rbtnColor.Name = "rbtnColor";
             this.rbtnColor.Size = new System.Drawing.Size(85, 17);
             this.rbtnColor.TabIndex = 2;
@@ -156,7 +157,7 @@
             // 
             this.rbtnCodigoArticulo.AutoSize = true;
             this.rbtnCodigoArticulo.Checked = true;
-            this.rbtnCodigoArticulo.Location = new System.Drawing.Point(13, 19);
+            this.rbtnCodigoArticulo.Location = new System.Drawing.Point(15, 20);
             this.rbtnCodigoArticulo.Name = "rbtnCodigoArticulo";
             this.rbtnCodigoArticulo.Size = new System.Drawing.Size(111, 17);
             this.rbtnCodigoArticulo.TabIndex = 1;
@@ -167,7 +168,7 @@
             // rbtnDescripcion
             // 
             this.rbtnDescripcion.AutoSize = true;
-            this.rbtnDescripcion.Location = new System.Drawing.Point(130, 19);
+            this.rbtnDescripcion.Location = new System.Drawing.Point(180, 20);
             this.rbtnDescripcion.Name = "rbtnDescripcion";
             this.rbtnDescripcion.Size = new System.Drawing.Size(81, 17);
             this.rbtnDescripcion.TabIndex = 0;
