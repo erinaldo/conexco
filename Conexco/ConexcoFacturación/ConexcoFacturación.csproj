@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{34A3C3C9-3B53-4215-9629-5214269C41F1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -88,10 +88,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexcoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConexcoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConexcoImpresionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConexcoImpresionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoFacturasImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoFacturasImprimir.Designer.cs">
+      <DependentUpon>FrmListadoFacturasImprimir.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPresupuestoImprimir.cs">
       <SubType>Form</SubType>
@@ -252,6 +263,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmListadoFacturasImprimir.resx">
+      <DependentUpon>FrmListadoFacturasImprimir.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPresupuestoImprimir.resx">
       <DependentUpon>FrmPresupuestoImprimir.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -356,6 +371,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoFacturasImpresion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\PresupuestoImpresion.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -478,6 +496,17 @@
     <None Include="Resources\duplicar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ConexcoDataSet.xsc">
+      <DependentUpon>ConexcoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConexcoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConexcoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConexcoDataSet.xss">
+      <DependentUpon>ConexcoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\duplicar2.png" />
   </ItemGroup>
   <ItemGroup>

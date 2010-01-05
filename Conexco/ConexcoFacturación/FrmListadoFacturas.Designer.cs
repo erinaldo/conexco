@@ -59,6 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnGuardarImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -149,6 +150,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnGuardarImprimir);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.btnGuardar);
@@ -351,13 +353,25 @@
             // 
             this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGuardar.Location = new System.Drawing.Point(440, 123);
+            this.btnGuardar.Location = new System.Drawing.Point(440, 108);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 31);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "       Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnGuardarImprimir
+            // 
+            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
+            this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardarImprimir.Location = new System.Drawing.Point(418, 145);
+            this.btnGuardarImprimir.Name = "btnGuardarImprimir";
+            this.btnGuardarImprimir.Size = new System.Drawing.Size(139, 31);
+            this.btnGuardarImprimir.TabIndex = 18;
+            this.btnGuardarImprimir.Text = "       Guardar e Imprimir";
+            this.btnGuardarImprimir.UseVisualStyleBackColor = true;
+            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // FrmListadoFacturas
             // 
@@ -418,5 +432,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnGuardarImprimir;
     }
 }
