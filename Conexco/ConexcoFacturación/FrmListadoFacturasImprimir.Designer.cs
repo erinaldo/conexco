@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ConexcoDataSet = new ConexcoFacturación.ConexcoDataSet();
             this.ListadoFacturasLineaImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ConexcoDataSet = new ConexcoFacturación.ConexcoDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ListadoFacturasLineaImpresionTableAdapter = new ConexcoFacturación.ConexcoDataSetTableAdapters.ListadoFacturasLineaImpresionTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasLineaImpresionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ListadoFacturasLineaImpresionBindingSource
+            // 
+            this.ListadoFacturasLineaImpresionBindingSource.DataMember = "ListadoFacturasLineaImpresion";
+            this.ListadoFacturasLineaImpresionBindingSource.DataSource = this.ConexcoDataSet;
+            // 
+            // ConexcoDataSet
+            // 
+            this.ConexcoDataSet.DataSetName = "ConexcoDataSet";
+            this.ConexcoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -48,16 +58,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(846, 463);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ConexcoDataSet
-            // 
-            this.ConexcoDataSet.DataSetName = "ConexcoDataSet";
-            this.ConexcoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ListadoFacturasLineaImpresionBindingSource
-            // 
-            this.ListadoFacturasLineaImpresionBindingSource.DataMember = "ListadoFacturasLineaImpresion";
-            this.ListadoFacturasLineaImpresionBindingSource.DataSource = this.ConexcoDataSet;
             // 
             // ListadoFacturasLineaImpresionTableAdapter
             // 
@@ -72,8 +72,8 @@
             this.Name = "FrmListadoFacturasImprimir";
             this.Text = "Listado Facturas a Imprimir";
             this.Load += new System.EventHandler(this.FrmListadoFacturasImprimir_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasLineaImpresionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

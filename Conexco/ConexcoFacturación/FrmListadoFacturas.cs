@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
@@ -104,7 +102,19 @@ namespace ConexcoFacturación
 
         private void btnGuardarImprimir_Click(object sender, EventArgs e)
         {
-            new FrmListadoFacturasImprimir().ShowDialog();
+            var frmParameteres = new FrmListadoFacturasReportParameter();
+            var result = frmParameteres.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                new FrmListadoFacturasImprimir
+                                            {
+                                                    CantidadFacturas = frmParameteres.CantidadFacturas,
+                                                    IdEstadoFacturas = frmParameteres.IdEstadoFacturas
+                                                }.ShowDialog();
+            }
+            else
+                return;
         }
 
         

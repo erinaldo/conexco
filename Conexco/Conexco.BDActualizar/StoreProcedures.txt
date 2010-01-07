@@ -2,29 +2,55 @@
 set QUOTED_IDENTIFIER ON
 go
 
-CREATE Procedure [dbo].[ListadoFacturasLineaImpresion]
+CREATE Procedure [dbo].[ListadoFacturasLineaImpresion](
+
+	@CantidadMaxima int,
+	@IdEstado int
+)
 
 As
 
+
 BEGIN
 
-	SELECT
-		f.Numero,
-		dt.Codigo as 'Tipo Factura',
-		c.Codigo + ' - ' + c.RazonSocial as 'Cliente',
-		CONVERT(VARCHAR(10),f.FechaEmision, 103) AS 'Fecha Emision',
-		CONVERT(VARCHAR(10),f.FechaVto, 103) AS 'Fecha Vencimiento',
-        f.Total,
-		f.Descuento,
-		f.TotalIVA as 'IVA',
-		f.TotalNeto as 'Total Neto',
-		de.Descripcion as 'Estado'
+	IF (@IdEstado=0)	
+		SELECT  TOP (@CantidadMaxima)
+			f.Numero,
+			dt.Codigo as 'Tipo Factura',
+			c.Codigo + ' - ' + c.RazonSocial as 'Cliente',
+			CONVERT(VARCHAR(10),f.FechaEmision, 103) AS 'Fecha Emision',
+			CONVERT(VARCHAR(10),f.FechaVto, 103) AS 'Fecha Vencimiento',
+			f.Total,
+			f.Descuento,
+			f.TotalIVA as 'IVA',
+			f.TotalNeto as 'Total Neto',
+			de.Descripcion as 'Estado'
 
-	FROM facturas f
-	INNER JOIN Clientes c on c.idCliente = f.idCliente
-	INNER JOIN Documentos_Tipo dt on dt.idTipoDocumento = f.idTipoDocumento
-	INNER JOIN Documentos_Estados de on de.idEstado = f.idEstado
+		FROM facturas f
+		INNER JOIN Clientes c on c.idCliente = f.idCliente
+		INNER JOIN Documentos_Tipo dt on dt.idTipoDocumento = f.idTipoDocumento
+		INNER JOIN Documentos_Estados de on de.idEstado = f.idEstado
+		
+		ORDER BY dt.Codigo, f.Numero
+	ELSE
+		SELECT  TOP (@CantidadMaxima)
+			f.Numero,
+			dt.Codigo as 'Tipo Factura',
+			c.Codigo + ' - ' + c.RazonSocial as 'Cliente',
+			CONVERT(VARCHAR(10),f.FechaEmision, 103) AS 'Fecha Emision',
+			CONVERT(VARCHAR(10),f.FechaVto, 103) AS 'Fecha Vencimiento',
+			f.Total,
+			f.Descuento,
+			f.TotalIVA as 'IVA',
+			f.TotalNeto as 'Total Neto',
+			de.Descripcion as 'Estado'
 
-	ORDER BY dt.Codigo, f.Numero
+		FROM facturas f
+		INNER JOIN Clientes c on c.idCliente = f.idCliente
+		INNER JOIN Documentos_Tipo dt on dt.idTipoDocumento = f.idTipoDocumento
+		INNER JOIN Documentos_Estados de on de.idEstado = f.idEstado
+		
+		WHERE f.IdEstado = @IdEstado
 
+		ORDER BY dt.Codigo, f.Numero
 END
