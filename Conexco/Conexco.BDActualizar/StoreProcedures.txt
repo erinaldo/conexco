@@ -2,6 +2,9 @@
 set QUOTED_IDENTIFIER ON
 go
 
+USE CONEXCO
+GO
+
 CREATE Procedure [dbo].[ListadoFacturasLineaImpresion](
 
 	@CantidadMaxima int,
