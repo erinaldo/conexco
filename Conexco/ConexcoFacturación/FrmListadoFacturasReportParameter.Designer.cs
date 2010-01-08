@@ -40,6 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
@@ -50,6 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(106, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
@@ -59,6 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(39, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 13);
@@ -80,6 +83,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(127, 20);
             this.txtCantidad.TabIndex = 4;
+            this.txtCantidad.Text = "20";
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // btnCancelar
@@ -112,6 +116,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(367, 181);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
@@ -122,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmListadoFacturasReportParameter";
             this.Text = "Parámetros Listado Facturas";
+            this.Load += new System.EventHandler(this.FrmListadoFacturasReportParameter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

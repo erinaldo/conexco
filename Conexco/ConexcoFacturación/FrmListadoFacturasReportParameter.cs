@@ -67,5 +67,10 @@ namespace ConexcoFacturación
             else
                 e.Handled = true;
         }
+
+        private void FrmListadoFacturasReportParameter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

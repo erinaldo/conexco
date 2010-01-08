@@ -93,6 +93,25 @@ namespace Conexco.Controller
             }
         }
 
+        public bool ActualizarArtiticulosConMismoCodigo(Articulo articuloActualizar)
+        {
+            try
+            {
+                var articulos = _context.Articulos.Where(art => art.Codigo == articuloActualizar.Codigo).ToList();
+                articulos.ForEach(articulo=>
+                                      {
+                                          articulo.Descripcion = articuloActualizar.Descripcion;
+                                          articulo.Precio = articuloActualizar.Precio;
+                                      });
+                _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool ActualizarStockArticulo(Articulo articuloActualizar)
         {
             try

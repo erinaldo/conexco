@@ -45,6 +45,7 @@
             this.txtStock = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTipArticulos = new System.Windows.Forms.ToolTip(this.components);
+            this.chkModificarTodos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +131,7 @@
             // 
             this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGuardar.Location = new System.Drawing.Point(138, 237);
+            this.btnGuardar.Location = new System.Drawing.Point(138, 244);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 30);
             this.btnGuardar.TabIndex = 6;
@@ -145,7 +146,7 @@
             this.btnCancelar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.cancelar;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancelar.CausesValidation = false;
-            this.btnCancelar.Location = new System.Drawing.Point(234, 237);
+            this.btnCancelar.Location = new System.Drawing.Point(234, 244);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(79, 30);
             this.btnCancelar.TabIndex = 7;
@@ -202,6 +203,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // chkModificarTodos
+            // 
+            this.chkModificarTodos.AutoSize = true;
+            this.chkModificarTodos.BackColor = System.Drawing.Color.Transparent;
+            this.chkModificarTodos.Location = new System.Drawing.Point(20, 220);
+            this.chkModificarTodos.Name = "chkModificarTodos";
+            this.chkModificarTodos.Size = new System.Drawing.Size(367, 17);
+            this.chkModificarTodos.TabIndex = 14;
+            this.chkModificarTodos.Text = "Modificar descripción y precio en todos los articulos con el mismo código";
+            this.chkModificarTodos.UseVisualStyleBackColor = false;
+            this.chkModificarTodos.Visible = false;
+            // 
             // FrmArticulosAlta
             // 
             this.AcceptButton = this.btnGuardar;
@@ -211,6 +224,7 @@
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(458, 282);
+            this.Controls.Add(this.chkModificarTodos);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.comboColor);
@@ -253,5 +267,6 @@
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTipArticulos;
+        private System.Windows.Forms.CheckBox chkModificarTodos;
     }
 }

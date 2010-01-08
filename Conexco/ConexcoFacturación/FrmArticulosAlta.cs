@@ -30,6 +30,7 @@ namespace ConexcoFacturación
                 Text = (Modificar) ? "Modificar Articulo" : "Duplicar Articulo";
                 txtStock.Visible = false;
                 lblStock.Visible = false;
+                chkModificarTodos.Visible = Modificar;
                 _CargarDatosArticulo();
             }
             else
@@ -86,11 +87,15 @@ namespace ConexcoFacturación
 
             try
             {
+                bool correcto;
                 if (Modificar)
                     articuloGuardar.idArticulo = IdArticulo;
-                bool correcto = Modificar
-                                    ? ArticulosController.ActualizarArticulo(articuloGuardar)
-                                    : ArticulosController.AgregarArticulo(articuloGuardar);
+
+                if(chkModificarTodos.Checked)
+                    correcto = ArticulosController.ActualizarArtiticulosConMismoCodigo(articuloGuardar);
+                else
+                    correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar)
+                                            : ArticulosController.AgregarArticulo(articuloGuardar);
 
                 if (correcto)
                 {
