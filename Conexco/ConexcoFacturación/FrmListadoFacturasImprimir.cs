@@ -24,6 +24,8 @@ namespace ConexcoFacturación
             // TODO: This line of code loads data into the 'ConexcoDataSet.ListadoFacturasLineaImpresion' table. You can move, or remove it, as needed.
             this.ListadoFacturasLineaImpresionTableAdapter.Fill(this.ConexcoDataSet.ListadoFacturasLineaImpresion,CantidadFacturas,IdEstadoFacturas);
 
+            reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ListadoFacturasImpresion.rdlc";
+
             this.reportViewer1.RefreshReport();
         }
     }
