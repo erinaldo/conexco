@@ -32,6 +32,7 @@ namespace Conexco.BDInstalador
                 EjecutarSql("master", LeerSqlScript("Create.txt"));
                 EjecutarSql("Conexco", LeerSqlScript("ScriptTablas.txt"));
                 EjecutarSql("Conexco", LeerSqlScript("Inserts.txt"));
+                EjecutarSql("Conexco", LeerSqlScript("StoreProcedures.txt"));
             }
             catch (Exception)
             {
