@@ -282,6 +282,8 @@ namespace ConexcoFacturación {
             
             private global::System.Data.DataColumn columnEstado;
             
+            private global::System.Data.DataColumn columnEstadoFacturas;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public ListadoFacturasLineaImpresionDataTable() {
                 this.TableName = "ListadoFacturasLineaImpresion";
@@ -383,6 +385,13 @@ namespace ConexcoFacturación {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn EstadoFacturasColumn {
+                get {
+                    return this.columnEstadoFacturas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -411,7 +420,7 @@ namespace ConexcoFacturación {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public ListadoFacturasLineaImpresionRow AddListadoFacturasLineaImpresionRow(string Numero, string Tipo_Factura, string Cliente, string Fecha_Emision, string Fecha_Vencimiento, decimal Total, decimal Descuento, decimal IVA, decimal Total_Neto, string Estado) {
+            public ListadoFacturasLineaImpresionRow AddListadoFacturasLineaImpresionRow(string Numero, string Tipo_Factura, string Cliente, string Fecha_Emision, string Fecha_Vencimiento, decimal Total, decimal Descuento, decimal IVA, decimal Total_Neto, string Estado, string EstadoFacturas) {
                 ListadoFacturasLineaImpresionRow rowListadoFacturasLineaImpresionRow = ((ListadoFacturasLineaImpresionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Numero,
@@ -423,7 +432,8 @@ namespace ConexcoFacturación {
                         Descuento,
                         IVA,
                         Total_Neto,
-                        Estado};
+                        Estado,
+                        EstadoFacturas};
                 rowListadoFacturasLineaImpresionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListadoFacturasLineaImpresionRow);
                 return rowListadoFacturasLineaImpresionRow;
@@ -453,6 +463,7 @@ namespace ConexcoFacturación {
                 this.columnIVA = base.Columns["IVA"];
                 this.columnTotal_Neto = base.Columns["Total Neto"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnEstadoFacturas = base.Columns["EstadoFacturas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +488,8 @@ namespace ConexcoFacturación {
                 base.Columns.Add(this.columnTotal_Neto);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnEstadoFacturas = new global::System.Data.DataColumn("EstadoFacturas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoFacturas);
                 this.columnNumero.AllowDBNull = false;
                 this.columnNumero.MaxLength = 50;
                 this.columnTipo_Factura.AllowDBNull = false;
@@ -491,6 +504,8 @@ namespace ConexcoFacturación {
                 this.columnTotal_Neto.AllowDBNull = false;
                 this.columnEstado.AllowDBNull = false;
                 this.columnEstado.MaxLength = 100;
+                this.columnEstadoFacturas.ReadOnly = true;
+                this.columnEstadoFacturas.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -752,6 +767,22 @@ namespace ConexcoFacturación {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string EstadoFacturas {
+                get {
+                    try {
+                        return ((string)(this[this.tableListadoFacturasLineaImpresion.EstadoFacturasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EstadoFacturas\' in table \'ListadoFacturasLineaImpresion\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListadoFacturasLineaImpresion.EstadoFacturasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsClienteNull() {
                 return this.IsNull(this.tableListadoFacturasLineaImpresion.ClienteColumn);
             }
@@ -799,6 +830,16 @@ namespace ConexcoFacturación {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetIVANull() {
                 this[this.tableListadoFacturasLineaImpresion.IVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsEstadoFacturasNull() {
+                return this.IsNull(this.tableListadoFacturasLineaImpresion.EstadoFacturasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetEstadoFacturasNull() {
+                this[this.tableListadoFacturasLineaImpresion.EstadoFacturasColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -962,6 +1003,7 @@ namespace ConexcoFacturación.ConexcoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("IVA", "IVA");
             tableMapping.ColumnMappings.Add("Total Neto", "Total Neto");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("EstadoFacturas", "EstadoFacturas");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

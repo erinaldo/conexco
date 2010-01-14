@@ -2,9 +2,6 @@
 set QUOTED_IDENTIFIER ON
 go
 
-USE CONEXCO
-GO
-
 CREATE Procedure [dbo].[ListadoFacturasLineaImpresion](
 
 	@CantidadMaxima int,
@@ -27,7 +24,8 @@ BEGIN
 			f.Descuento,
 			f.TotalIVA as 'IVA',
 			f.TotalNeto as 'Total Neto',
-			de.Descripcion as 'Estado'
+			de.Descripcion as 'Estado',
+			'Todas' as 'EstadoFacturas'
 
 		FROM facturas f
 		INNER JOIN Clientes c on c.idCliente = f.idCliente
@@ -46,7 +44,8 @@ BEGIN
 			f.Descuento,
 			f.TotalIVA as 'IVA',
 			f.TotalNeto as 'Total Neto',
-			de.Descripcion as 'Estado'
+			de.Descripcion as 'Estado',
+			de.Descripcion as 'EstadoFacturas'
 
 		FROM facturas f
 		INNER JOIN Clientes c on c.idCliente = f.idCliente
@@ -57,3 +56,4 @@ BEGIN
 
 		ORDER BY dt.Codigo, f.Numero
 END
+
