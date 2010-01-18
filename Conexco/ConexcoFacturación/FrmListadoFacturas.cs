@@ -110,7 +110,8 @@ namespace ConexcoFacturación
                 new FrmListadoFacturasImprimir
                                             {
                                                     CantidadFacturas = frmParameteres.CantidadFacturas,
-                                                    IdEstadoFacturas = frmParameteres.IdEstadoFacturas
+                                                    IdEstadoFacturas = frmParameteres.IdEstadoFacturas,
+                                                    EstadoFacturas = frmParameteres.EstadoFacturas
                                                 }.ShowDialog();
             }
             else

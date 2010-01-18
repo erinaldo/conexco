@@ -10,6 +10,14 @@
     </DataSource>
   </DataSources>
   <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Estado_Facturas">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Estado_Facturas</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>8.5in</InteractiveWidth>
   <rd:SnapToGrid>true</rd:SnapToGrid>
@@ -97,7 +105,7 @@
         <CanGrow>true</CanGrow>
         <Left>1.5in</Left>
         <Height>0.25in</Height>
-        <Value />
+        <Value>=Parameters!Estado_Facturas.Value</Value>
       </Textbox>
       <Textbox Name="textbox23">
         <rd:DefaultName>textbox23</rd:DefaultName>
@@ -113,7 +121,7 @@
         <CanGrow>true</CanGrow>
         <Left>7.375in</Left>
         <Height>0.25in</Height>
-        <Value>=DateString()</Value>
+        <Value>= Now().ToString("dd-MM-yyyy")</Value>
       </Textbox>
       <Textbox Name="textbox21">
         <rd:DefaultName>textbox21</rd:DefaultName>

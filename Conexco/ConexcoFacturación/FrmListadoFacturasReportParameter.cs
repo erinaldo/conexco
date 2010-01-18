@@ -9,6 +9,7 @@ namespace ConexcoFacturación
     {
         public int CantidadFacturas { get; set; }
         public int IdEstadoFacturas { get; set; }
+        public string EstadoFacturas { get; set; }
 
         public FrmListadoFacturasReportParameter()
         {
@@ -53,6 +54,7 @@ namespace ConexcoFacturación
                 CantidadFacturas = Convert.ToInt32(txtCantidad.Text.Trim());
 
             IdEstadoFacturas = Convert.ToInt32(((Documentos_Estado)ddlEstados.SelectedItem).idEstado);
+            EstadoFacturas = ((Documentos_Estado) ddlEstados.SelectedItem).Descripcion;
 
             DialogResult = DialogResult.OK;
             Close();
