@@ -375,7 +375,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>9</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>7.375in</Left>
                 <Value>=Fields!Estado.Value</Value>
               </Textbox>
@@ -401,7 +400,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>8</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>6.625in</Left>
                 <Value>=Fields!Total_Neto.Value</Value>
               </Textbox>
@@ -427,7 +425,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>7</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>6in</Left>
                 <Value>=Fields!IVA.Value</Value>
               </Textbox>
@@ -453,7 +450,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>6</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>5.375in</Left>
                 <Value>=Fields!Descuento.Value</Value>
               </Textbox>
@@ -479,7 +475,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>5</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>3.875in</Left>
                 <Value>=Fields!Fecha_Vencimiento.Value</Value>
               </Textbox>
@@ -505,7 +500,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>4</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>3in</Left>
                 <Value>=Fields!Fecha_Emision.Value</Value>
               </Textbox>
@@ -531,7 +525,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>1.375in</Left>
                 <Value>=Fields!Cliente.Value</Value>
               </Textbox>
@@ -557,7 +550,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Left>0.625in</Left>
                 <Value>=Fields!Tipo_Factura.Value</Value>
               </Textbox>
@@ -587,7 +579,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
-                <CanGrow>true</CanGrow>
                 <Value>=Fields!Numero.Value</Value>
               </Textbox>
               <Textbox Name="textbox2">
@@ -611,7 +602,6 @@
                   <PaddingTop>2pt</PaddingTop>
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
-                <CanGrow>true</CanGrow>
                 <Left>4.75in</Left>
                 <Value>=Fields!Total.Value</Value>
               </Textbox>

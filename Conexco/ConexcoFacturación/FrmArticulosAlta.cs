@@ -91,11 +91,22 @@ namespace ConexcoFacturación
                 if (Modificar)
                     articuloGuardar.idArticulo = IdArticulo;
 
-                if(chkModificarTodos.Checked)
+                var mensaje = Constants.ERROR_ALTA_ARTICULO;
+
+                if (chkModificarTodos.Checked)
                     correcto = ArticulosController.ActualizarArtiticulosConMismoCodigo(articuloGuardar);
                 else
-                    correcto = Modificar ? ArticulosController.ActualizarArticulo(articuloGuardar)
-                                            : ArticulosController.AgregarArticulo(articuloGuardar);
+                {
+                    if (ArticulosController.DatosArticuloPorCodigoYColor(articuloGuardar.Codigo + "-" + articuloGuardar.CodColor) == null)
+                        correcto = Modificar
+                                       ? ArticulosController.ActualizarArticulo(articuloGuardar)
+                                       : ArticulosController.AgregarArticulo(articuloGuardar);
+                    else
+                    {
+                        correcto = false;
+                        mensaje = "El Código de Artículo con el color elegido ya existe";
+                    }
+                }
 
                 if (correcto)
                 {
@@ -105,7 +116,7 @@ namespace ConexcoFacturación
                 }
                 else
                 {
-                    MessageBox.Show(Constants.ERROR_ALTA_ARTICULO);
+                    MessageBox.Show(mensaje);
                 }
             }
             catch(Exception)

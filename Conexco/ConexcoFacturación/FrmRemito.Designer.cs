@@ -849,7 +849,7 @@
             // 
             this.txtNumRemito.BackColor = System.Drawing.Color.Azure;
             this.txtNumRemito.Location = new System.Drawing.Point(405, 74);
-            this.txtNumRemito.MaxLength = 50;
+            this.txtNumRemito.MaxLength = 20;
             this.txtNumRemito.Name = "txtNumRemito";
             this.txtNumRemito.Size = new System.Drawing.Size(100, 20);
             this.txtNumRemito.TabIndex = 1;

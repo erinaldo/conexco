@@ -923,7 +923,7 @@
             // 
             this.txtNumFactura.BackColor = System.Drawing.Color.Azure;
             this.txtNumFactura.Location = new System.Drawing.Point(404, 73);
-            this.txtNumFactura.MaxLength = 50;
+            this.txtNumFactura.MaxLength = 20;
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumFactura.TabIndex = 1;

@@ -703,7 +703,7 @@
             // 
             this.txtNumPresupuesto.BackColor = System.Drawing.Color.Azure;
             this.txtNumPresupuesto.Location = new System.Drawing.Point(404, 73);
-            this.txtNumPresupuesto.MaxLength = 50;
+            this.txtNumPresupuesto.MaxLength = 20;
             this.txtNumPresupuesto.Name = "txtNumPresupuesto";
             this.txtNumPresupuesto.Size = new System.Drawing.Size(100, 20);
             this.txtNumPresupuesto.TabIndex = 1;

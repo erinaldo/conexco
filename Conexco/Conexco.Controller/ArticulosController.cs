@@ -41,17 +41,17 @@ namespace Conexco.Controller
             var codigo = arrayCodColor[0];
             var codColor = arrayCodColor[1];
 
-            return (_context.Articulos.Single(art => art.Codigo == codigo && art.CodColor == codColor));
+            return (_context.Articulos.Where(art =>!(art.BajaLogica.HasValue && art.BajaLogica.Value) && art.Codigo == codigo && art.CodColor == codColor).FirstOrDefault());
         }
 
         public Articulo DatosArticuloPorDescripcion(string descripcion)
         {
-            return (_context.Articulos.Single(art => art.Descripcion == descripcion));
+            return (_context.Articulos.Where(art => art.Descripcion == descripcion).First());
         }
 
         public Articulos_Color DatosArticuloColorPorCodigoColor(string codColor)
         {
-            return (_context.Articulos_Colors.Single(col => col.Codigo == codColor));
+            return (_context.Articulos_Colors.Where(col => !(col.BajaLogica.HasValue && col.BajaLogica.Value) && col.Codigo == codColor).FirstOrDefault());
         }
 
         public Articulos_Color DatosArticuloColor(int idColor)
@@ -149,17 +149,17 @@ namespace Conexco.Controller
 
         public List<Articulo> BuscadorPorCodigoArticulo(string codigoArticulo)
         {
-            return _context.Articulos.Where(art => art.Codigo.Contains(codigoArticulo)).ToList();
+            return _context.Articulos.Where(art => !(art.BajaLogica.HasValue && art.BajaLogica.Value) && art.Codigo.Contains(codigoArticulo)).ToList();
         }
 
         public List<Articulo> BuscadorPorDescripcion(string descripcion)
         {
-            return _context.Articulos.Where(art => art.Descripcion.Contains(descripcion)).ToList();
+            return _context.Articulos.Where(art => !(art.BajaLogica.HasValue && art.BajaLogica.Value) && art.Descripcion.Contains(descripcion)).ToList();
         }
 
         public List<Articulo> BuscadorPorCódigoColor(string codigoColor)
         {
-            return _context.Articulos.Where(art => art.CodColor.Contains(codigoColor)).ToList();
+            return _context.Articulos.Where(art => !(art.BajaLogica.HasValue && art.BajaLogica.Value) && art.CodColor.Contains(codigoColor)).ToList();
         }
 
         public bool GuardarColor(Articulos_Color nuevoColor)

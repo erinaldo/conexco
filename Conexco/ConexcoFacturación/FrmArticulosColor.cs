@@ -37,16 +37,22 @@ namespace ConexcoFacturación
             colorNuevo.G = 0;
             colorNuevo.B = 0;
 
-            var resultado = ArticulosController.GuardarColor(colorNuevo);
-
-            if (resultado)
+            if (ArticulosController.DatosArticuloColorPorCodigoColor(txtCodColor.Text) == null)
             {
-                MessageBox.Show("El color se ha guardado correctamente.");
-                DialogResult = DialogResult.OK;
-                Close();
+                var resultado = ArticulosController.GuardarColor(colorNuevo);
+
+                if (resultado)
+                {
+                    MessageBox.Show("El color se ha guardado correctamente.");
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Error al intentar guardar el color!");
             }
             else
-                MessageBox.Show("Error al intentar guardar el color!");
+                MessageBox.Show("El Código de Color ya existe");
+
         }
 
         private void SinGuion_KeyPress(object sender, KeyPressEventArgs e)
