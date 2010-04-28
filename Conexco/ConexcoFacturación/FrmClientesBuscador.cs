@@ -52,8 +52,7 @@ namespace ConexcoFacturación
             else
             {
                 MessageBox.Show("No se encontraron clientes con ese criterio");
-            }
-            
+            }            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

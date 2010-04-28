@@ -35,6 +35,16 @@ namespace ConexcoFacturación
             grdClientes.Columns[11].HeaderText = "Condición IVA";
         }
 
+        private void RefrescarGrilla(List<Conexco.Model.Cliente> clientes)
+        {
+            grdClientes.DataSource = clientes;
+            grdClientes.Columns[0].Visible = false;
+            grdClientes.Columns[2].HeaderText = "Razón Social";
+            grdClientes.Columns[6].Visible = false;
+            grdClientes.Columns[10].Visible = false;
+            grdClientes.Columns[11].HeaderText = "Condición IVA";
+        }
+
         private void grdClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -115,6 +125,33 @@ namespace ConexcoFacturación
         {
             int idCliente = Convert.ToInt32(grdClientes.SelectedRows[0].Cells[0].Value);
             var result = new FrmClientesTransportistas() { IdCliente = idCliente }.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string criterioBusqueda = "";
+            foreach (var control in gbxCriteriosBusqueda.Controls)
+            {
+                if (control.GetType() == typeof(RadioButton))
+                {
+                    var radioButton = (RadioButton)control;
+                    if (radioButton.Checked)
+                    {
+                        criterioBusqueda = radioButton.Text;
+                    }
+                }
+            }
+
+            var clientesEncontrados = ClientesController.ListarClientesPorCriterio(criterioBusqueda,
+                                                                                   txtValorBusqueda.Text);
+            if (clientesEncontrados.Count > 0)
+            {
+                RefrescarGrilla(clientesEncontrados);
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron clientes con ese criterio");
+            }  
         }
     }
 }
