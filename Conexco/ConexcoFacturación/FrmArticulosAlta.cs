@@ -14,6 +14,9 @@ namespace ConexcoFacturación
         public bool Modificar { get; set; }
         public bool Duplicar { get; set; }
 
+        private string _codigo = "";
+        private string _codColor = "";
+
         public FrmArticulosAlta()
         {
             InitializeComponent();
@@ -45,8 +48,12 @@ namespace ConexcoFacturación
             txtDescripcion.Text = articulo.Descripcion;
             txtPrecio.Text = articulo.Precio.ToString();
             txtStock.Text = articulo.Stock.ToString();
-            if(Modificar)
+            if (Modificar)
+            {
                 comboColor.SelectedValue = articulo.CodColor;
+                _codColor = articulo.CodColor;
+                _codigo = articulo.Codigo;
+            }
         }
 
         private void _CargarComboColores()
@@ -97,7 +104,7 @@ namespace ConexcoFacturación
                     correcto = ArticulosController.ActualizarArtiticulosConMismoCodigo(articuloGuardar);
                 else
                 {
-                    if (ArticulosController.DatosArticuloPorCodigoYColor(articuloGuardar.Codigo + "-" + articuloGuardar.CodColor) == null)
+                    if (ArticulosController.DatosArticuloPorCodigoYColor(articuloGuardar.Codigo + "-" + articuloGuardar.CodColor) == null || (articuloGuardar.Codigo == _codigo && articuloGuardar.CodColor == _codColor))
                         correcto = Modificar
                                        ? ArticulosController.ActualizarArticulo(articuloGuardar)
                                        : ArticulosController.AgregarArticulo(articuloGuardar);
@@ -177,6 +184,25 @@ namespace ConexcoFacturación
         {
             if (e.KeyChar == '-')
                 e.Handled = true;
+        }
+
+        private void chkModificarTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkModificarTodos.Checked)
+            {
+                txtCodigo.Enabled = false;
+                comboColor.Enabled = false;
+                if(!String.IsNullOrEmpty(_codigo) && !String.IsNullOrEmpty(_codColor))
+                {
+                    txtCodigo.Text = _codigo;
+                    comboColor.SelectedValue = _codColor;
+                }
+            }
+            else
+            {
+                txtCodigo.Enabled = true;
+                comboColor.Enabled = true;
+            }
         }
 
     }

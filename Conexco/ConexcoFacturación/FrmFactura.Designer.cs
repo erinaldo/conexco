@@ -550,7 +550,6 @@
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Size = new System.Drawing.Size(100, 20);
             this.txtOrdenCompra.TabIndex = 1;
-            this.txtOrdenCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtCuit
             // 

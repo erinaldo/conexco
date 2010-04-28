@@ -258,6 +258,7 @@
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.Azure;
             this.txtTelefono.Location = new System.Drawing.Point(416, 84);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(86, 20);
             this.txtTelefono.TabIndex = 6;

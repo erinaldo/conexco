@@ -214,6 +214,7 @@
             this.chkModificarTodos.Text = "Modificar descripción y precio en todos los articulos con el mismo código";
             this.chkModificarTodos.UseVisualStyleBackColor = false;
             this.chkModificarTodos.Visible = false;
+            this.chkModificarTodos.CheckedChanged += new System.EventHandler(this.chkModificarTodos_CheckedChanged);
             // 
             // FrmArticulosAlta
             // 
