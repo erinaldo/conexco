@@ -50,6 +50,7 @@
             this.rbtnCuit = new System.Windows.Forms.RadioButton();
             this.rbtnCodigoCliente = new System.Windows.Forms.RadioButton();
             this.rbtnNombreRazonSocial = new System.Windows.Forms.RadioButton();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.gbxCriteriosBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -191,6 +192,7 @@
             // gbxCriteriosBusqueda
             // 
             this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.gbxCriteriosBusqueda.Controls.Add(this.btnLimpiar);
             this.gbxCriteriosBusqueda.Controls.Add(this.txtValorBusqueda);
             this.gbxCriteriosBusqueda.Controls.Add(this.btnBuscar);
             this.gbxCriteriosBusqueda.Controls.Add(this.lblValorBusqueda);
@@ -211,7 +213,7 @@
             // 
             this.txtValorBusqueda.Location = new System.Drawing.Point(471, 26);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
-            this.txtValorBusqueda.Size = new System.Drawing.Size(150, 20);
+            this.txtValorBusqueda.Size = new System.Drawing.Size(167, 20);
             this.txtValorBusqueda.TabIndex = 8;
             // 
             // btnBuscar
@@ -242,7 +244,6 @@
             this.rbtnCodPostal.Name = "rbtnCodPostal";
             this.rbtnCodPostal.Size = new System.Drawing.Size(79, 17);
             this.rbtnCodPostal.TabIndex = 5;
-            this.rbtnCodPostal.TabStop = true;
             this.rbtnCodPostal.Text = "Cod. Postal";
             this.rbtnCodPostal.UseVisualStyleBackColor = true;
             // 
@@ -253,7 +254,6 @@
             this.rbtnLocalidad.Name = "rbtnLocalidad";
             this.rbtnLocalidad.Size = new System.Drawing.Size(71, 17);
             this.rbtnLocalidad.TabIndex = 4;
-            this.rbtnLocalidad.TabStop = true;
             this.rbtnLocalidad.Text = "Localidad";
             this.rbtnLocalidad.UseVisualStyleBackColor = true;
             // 
@@ -264,7 +264,6 @@
             this.rbtnCondIva.Name = "rbtnCondIva";
             this.rbtnCondIva.Size = new System.Drawing.Size(73, 17);
             this.rbtnCondIva.TabIndex = 3;
-            this.rbtnCondIva.TabStop = true;
             this.rbtnCondIva.Text = "Cond. IVA";
             this.rbtnCondIva.UseVisualStyleBackColor = true;
             // 
@@ -275,7 +274,6 @@
             this.rbtnCuit.Name = "rbtnCuit";
             this.rbtnCuit.Size = new System.Drawing.Size(50, 17);
             this.rbtnCuit.TabIndex = 2;
-            this.rbtnCuit.TabStop = true;
             this.rbtnCuit.Text = "CUIT";
             this.rbtnCuit.UseVisualStyleBackColor = true;
             // 
@@ -286,13 +284,13 @@
             this.rbtnCodigoCliente.Name = "rbtnCodigoCliente";
             this.rbtnCodigoCliente.Size = new System.Drawing.Size(108, 17);
             this.rbtnCodigoCliente.TabIndex = 1;
-            this.rbtnCodigoCliente.TabStop = true;
             this.rbtnCodigoCliente.Text = "Código de Cliente";
             this.rbtnCodigoCliente.UseVisualStyleBackColor = true;
             // 
             // rbtnNombreRazonSocial
             // 
             this.rbtnNombreRazonSocial.AutoSize = true;
+            this.rbtnNombreRazonSocial.Checked = true;
             this.rbtnNombreRazonSocial.Location = new System.Drawing.Point(26, 42);
             this.rbtnNombreRazonSocial.Name = "rbtnNombreRazonSocial";
             this.rbtnNombreRazonSocial.Size = new System.Drawing.Size(137, 17);
@@ -300,6 +298,17 @@
             this.rbtnNombreRazonSocial.TabStop = true;
             this.rbtnNombreRazonSocial.Text = "Nombre o Razón Social";
             this.rbtnNombreRazonSocial.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLimpiar.Location = new System.Drawing.Point(563, 52);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 28);
+            this.btnLimpiar.TabIndex = 9;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmClientes
             // 
@@ -355,5 +364,6 @@
         private System.Windows.Forms.RadioButton rbtnCuit;
         private System.Windows.Forms.RadioButton rbtnCodigoCliente;
         private System.Windows.Forms.RadioButton rbtnNombreRazonSocial;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

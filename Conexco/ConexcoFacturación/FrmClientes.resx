@@ -124,8 +124,8 @@
   <data name="btnTelefonos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvwAA
-        Dr8BOAVTJAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvgAA
+        Dr4B6kKxwAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
         m/ewFBMSY71RGokZppmXxbxEKl7WW7q17q6XXHV11Z2d1ZlfZ1b2Ms4qPuyBD2bO+f2/c2bOmZGlRwTk
         ygkSCJH5EW81oIx0Zp/ASmssLD/ivEJP/klkRgSAeEvo8AiLzI3y9yxmeu6CWzNgp8bbzLCq0zw+ZcG5
         bcTc8uiOUscgb1uCpeOyRF4U7SddMTvycldSR8im+ygRl1zYKqazc8w/kZizTEMoZkdywI7lY322GeB5
@@ -141,14 +141,11 @@
         QnASTklyoSRW+wRegjpL/wOHYPGD8STBhQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="toolTipClientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnContactos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvwAA
-        Dr8BOAVTJAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvgAA
+        Dr4B6kKxwAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
         m/ewFBMSY71RGokZppmXxbxEKl7WW7q17q6XXHV11Z2d1ZlfZ1b2Ms4qPuyBD2bO+f2/c2bOmZGlRwTk
         ygkSCJH5EW81oIx0Zp/ASmssLD/ivEJP/klkRgSAeEvo8AiLzI3y9yxmeu6CWzNgp8bbzLCq0zw+ZcG5
         bcTc8uiOUscgb1uCpeOyRF4U7SddMTvycldSR8im+ygRl1zYKqazc8w/kZizTEMoZkdywI7lY322GeB5
@@ -167,8 +164,8 @@
   <data name="btnTransportistas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvwAA
-        Dr8BOAVTJAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvgAA
+        Dr4B6kKxwAAAAxJJREFUSEutlFtIFFEch8/uamq+9OBDFNJDD71EkBBoBhGC+FCBiCREFEhg2R17KCyx
         m/ewFBMSY71RGokZppmXxbxEKl7WW7q17q6XXHV11Z2d1ZlfZ1b2Ms4qPuyBD2bO+f2/c2bOmZGlRwTk
         ygkSCJH5EW81oIx0Zp/ASmssLD/ivEJP/klkRgSAeEvo8AiLzI3y9yxmeu6CWzNgp8bbzLCq0zw+ZcG5
         bcTc8uiOUscgb1uCpeOyRF4U7SddMTvycldSR8im+ygRl1zYKqazc8w/kZizTEMoZkdywI7lY322GeB5

@@ -153,5 +153,11 @@ namespace ConexcoFacturación
                 MessageBox.Show("No se encontraron clientes con ese criterio");
             }  
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtValorBusqueda.Text = "";
+            btnBuscar_Click(null, null);
+        }
     }
 }
