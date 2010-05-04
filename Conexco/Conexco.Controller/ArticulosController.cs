@@ -17,7 +17,15 @@ namespace Conexco.Controller
 
         public List<Articulo> ListarArticulos()
         {
-            return (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value)).OrderBy(articulo => articulo.Codigo).ThenBy(articulo => articulo.CodColor)).ToList();
+            return this.ListarArticulos(false);
+        }
+
+        public List<Articulo> ListarArticulos(bool refresh)
+        {
+            var articulos = (_context.Articulos.Where(articulo => !(articulo.BajaLogica.HasValue && articulo.BajaLogica.Value)).OrderBy(articulo => articulo.Codigo).ThenBy(articulo => articulo.CodColor)).ToList();
+            if (refresh)
+                _context.Refresh(System.Data.Linq.RefreshMode.KeepChanges, articulos);
+            return articulos;
         }
 
         public List<string> ListarCodigoYColorArticulos()
@@ -119,6 +127,39 @@ namespace Conexco.Controller
                 var articulo = _context.Articulos.Where(art => art.idArticulo == articuloActualizar.idArticulo).Single();
                 articulo.Stock = articuloActualizar.Stock;
                 _context.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool ActualizarPreciosArticulos(string signo, string tipoValor, decimal valor)
+        {
+            try
+            {
+                var articulos = this.ListarArticulos();
+                foreach (var articulo in articulos)
+                {
+                    decimal valorAModificar = 0;
+                    if (tipoValor == "%")
+                        valorAModificar = articulo.Precio * valor / 100;
+                    else
+                        valorAModificar = valor;
+
+                    if (signo == "+")
+                    {
+                        articulo.Precio += valorAModificar;
+                    }
+                    else
+                    {
+                        if ((articulo.Precio - valorAModificar) > 0)
+                            articulo.Precio -= valorAModificar;
+                    }
+                }
+                _context.SubmitChanges();
+                _context.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, articulos);
                 return true;
             }
             catch (Exception)

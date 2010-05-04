@@ -23,7 +23,13 @@ namespace ConexcoFacturación
 
         private void _ActualizarGrilla()
         {
-            var listadoArticulos = ArticulosController.ListarArticulos();
+            _ActualizarGrilla(false);
+        }
+
+        private void _ActualizarGrilla(bool refresh)
+        {
+            var listadoArticulos = ArticulosController.ListarArticulos(refresh);
+
             grdArticulos.DataSource = listadoArticulos;
             grdArticulos.Columns[0].Visible = false;
             grdArticulos.Columns[5].Visible = false;
@@ -131,6 +137,13 @@ namespace ConexcoFacturación
             }
 
             grdArticulos.DataSource = listaArticulos;
+        }
+
+        private void btnPrecios_Click(object sender, EventArgs e)
+        {
+            var resultado = new FrmPrecios().ShowDialog();
+            if (resultado == DialogResult.OK)
+                _ActualizarGrilla(true);
         }
     }
 }

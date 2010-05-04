@@ -36,6 +36,7 @@
             this.btnEliiminar = new System.Windows.Forms.Button();
             this.toolTipArticulos = new System.Windows.Forms.ToolTip(this.components);
             this.btnDuplicar = new System.Windows.Forms.Button();
+            this.btnPrecios = new System.Windows.Forms.Button();
             this.gbxCriteriosBusqueda = new System.Windows.Forms.GroupBox();
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.rbtnColor = new System.Windows.Forms.RadioButton();
@@ -121,6 +122,20 @@
             this.btnDuplicar.UseVisualStyleBackColor = true;
             this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
             // 
+            // btnPrecios
+            // 
+            this.btnPrecios.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
+            this.btnPrecios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrecios.Location = new System.Drawing.Point(605, 322);
+            this.btnPrecios.Name = "btnPrecios";
+            this.btnPrecios.Size = new System.Drawing.Size(75, 30);
+            this.btnPrecios.TabIndex = 12;
+            this.btnPrecios.Text = "Precios";
+            this.btnPrecios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipArticulos.SetToolTip(this.btnPrecios, "Eliminar artículo seleccionado.");
+            this.btnPrecios.UseVisualStyleBackColor = true;
+            this.btnPrecios.Click += new System.EventHandler(this.btnPrecios_Click);
+            // 
             // gbxCriteriosBusqueda
             // 
             this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
@@ -183,6 +198,7 @@
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(692, 366);
+            this.Controls.Add(this.btnPrecios);
             this.Controls.Add(this.btnDuplicar);
             this.Controls.Add(this.gbxCriteriosBusqueda);
             this.Controls.Add(this.btnEliiminar);
@@ -215,5 +231,6 @@
         private System.Windows.Forms.RadioButton rbtnCodigoArticulo;
         private System.Windows.Forms.RadioButton rbtnDescripcion;
         private System.Windows.Forms.Button btnDuplicar;
+        private System.Windows.Forms.Button btnPrecios;
     }
 }
