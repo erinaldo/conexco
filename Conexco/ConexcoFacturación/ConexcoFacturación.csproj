@@ -534,6 +534,9 @@
     <None Include="Resources\duplicar2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\precios.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

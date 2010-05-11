@@ -37,6 +37,7 @@
             this.rdTodas = new System.Windows.Forms.RadioButton();
             this.gridFacturas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGuardarImprimir = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboEstado = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnGuardarImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -160,6 +160,18 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
+            // 
+            // btnGuardarImprimir
+            // 
+            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
+            this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardarImprimir.Location = new System.Drawing.Point(440, 145);
+            this.btnGuardarImprimir.Name = "btnGuardarImprimir";
+            this.btnGuardarImprimir.Size = new System.Drawing.Size(85, 31);
+            this.btnGuardarImprimir.TabIndex = 18;
+            this.btnGuardarImprimir.Text = "       Imprimir";
+            this.btnGuardarImprimir.UseVisualStyleBackColor = true;
+            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // groupBox5
             // 
@@ -360,18 +372,6 @@
             this.btnGuardar.Text = "       Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnGuardarImprimir
-            // 
-            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
-            this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGuardarImprimir.Location = new System.Drawing.Point(418, 145);
-            this.btnGuardarImprimir.Name = "btnGuardarImprimir";
-            this.btnGuardarImprimir.Size = new System.Drawing.Size(139, 31);
-            this.btnGuardarImprimir.TabIndex = 18;
-            this.btnGuardarImprimir.Text = "       Guardar e Imprimir";
-            this.btnGuardarImprimir.UseVisualStyleBackColor = true;
-            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
             // 
             // FrmListadoFacturas
             // 

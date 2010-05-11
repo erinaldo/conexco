@@ -43,6 +43,13 @@ namespace ConexcoFacturación
                 return;
 
             var valor = Convert.ToDecimal(txtValor.Text);
+
+            if(rbtnDisminucion.Checked && rbtnPorcentaje.Checked && valor > 100)
+            {
+                MessageBox.Show("No se puede disminuir los precios en mas del 100%");
+                return;
+            }
+
             if (ArticulosController.ActualizarPreciosArticulos(lblSigno.Text, lblTipo.Text, valor))
             {
                 MessageBox.Show("Todos los articulos fueron actualizados correctamente");

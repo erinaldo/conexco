@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.BDActualizar", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexco.BDActualizador", "Conexco.BDActualizador\Conexco.BDActualizador.csproj", "{EFE789C0-184C-4153-B36E-AC313E2F8060}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ActualizarV2", "ActualizarV2\ActualizarV2.vdproj", "{D8D185C9-2ACC-4DDC-A6FE-F08696C7C21C}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -61,6 +63,8 @@ Global
 		{EFE789C0-184C-4153-B36E-AC313E2F8060}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{EFE789C0-184C-4153-B36E-AC313E2F8060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE789C0-184C-4153-B36E-AC313E2F8060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D185C9-2ACC-4DDC-A6FE-F08696C7C21C}.Debug|Any CPU.ActiveCfg = Debug
+		{D8D185C9-2ACC-4DDC-A6FE-F08696C7C21C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

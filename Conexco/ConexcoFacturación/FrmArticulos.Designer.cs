@@ -124,7 +124,7 @@
             // 
             // btnPrecios
             // 
-            this.btnPrecios.BackgroundImage = global::ConexcoFacturación.Properties.Resources.eliminar;
+            this.btnPrecios.BackgroundImage = global::ConexcoFacturación.Properties.Resources.precios;
             this.btnPrecios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPrecios.Location = new System.Drawing.Point(605, 322);
             this.btnPrecios.Name = "btnPrecios";

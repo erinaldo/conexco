@@ -172,6 +172,13 @@ namespace ConexcoFacturación.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap precios {
+            get {
+                object obj = ResourceManager.GetObject("precios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap RemitoBmp {
             get {
                 object obj = ResourceManager.GetObject("RemitoBmp", resourceCulture);
