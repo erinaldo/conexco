@@ -15,7 +15,19 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_04049FC139B84698B7B9C480BDB4CA2C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0E1ECCEC4DD649DBA310DB4DF270EE8E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_39FCFD76EF5547339D01283EC0C48E83"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_536FD3EFD06D4C92B74968A6BF533B93"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_755378C990A7A95B4474E6C702CFDBB2"
         "OwnerKey" = "8:_42F92A5F8AB742FB824B659CF494CE1D"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8C851BCAB8DC35FB6FBBFDC51595F333"
-        "OwnerKey" = "8:_C4707BB0800DA8043216B3D71E2C7575"
+        "OwnerKey" = "8:_42F92A5F8AB742FB824B659CF494CE1D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8C851BCAB8DC35FB6FBBFDC51595F333"
-        "OwnerKey" = "8:_42F92A5F8AB742FB824B659CF494CE1D"
+        "OwnerKey" = "8:_C4707BB0800DA8043216B3D71E2C7575"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,6 +87,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DBAF0C41573248EBB5D3D3E51A41C242"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E21F6303AC5897BA4D9F9F7D37E5C5D6"
         "OwnerKey" = "8:_755378C990A7A95B4474E6C702CFDBB2"
         "MsmSig" = "8:_UNDEFINED"
@@ -77,6 +101,12 @@
         {
         "MsmKey" = "8:_E21F6303AC5897BA4D9F9F7D37E5C5D6"
         "OwnerKey" = "8:_42F92A5F8AB742FB824B659CF494CE1D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F99E736AA5D54959BF3F9B4893845503"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -139,6 +169,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -205,12 +243,52 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_04049FC139B84698B7B9C480BDB4CA2C"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\FacturaImpresion.rdlc"
+            "TargetName" = "8:FacturaImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_872068BFE7004F76A865B302C3599FBA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E1ECCEC4DD649DBA310DB4DF270EE8E"
             {
             "SourcePath" = "8:..\\..\\Documentos\\Recursos\\C3.ico"
             "TargetName" = "8:C3.ico"
             "Tag" = "8:"
             "Folder" = "8:_4F221F92F5BF4E77AD61694DC3B601EB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39FCFD76EF5547339D01283EC0C48E83"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\RemitoImpresion.rdlc"
+            "TargetName" = "8:RemitoImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_872068BFE7004F76A865B302C3599FBA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -256,11 +334,31 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_536FD3EFD06D4C92B74968A6BF533B93"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\PresupuestoImpresion.rdlc"
+            "TargetName" = "8:PresupuestoImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_872068BFE7004F76A865B302C3599FBA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_755378C990A7A95B4474E6C702CFDBB2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_755378C990A7A95B4474E6C702CFDBB2"
@@ -380,6 +478,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DBAF0C41573248EBB5D3D3E51A41C242"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\ListadoFacturasImpresion.rdlc"
+            "TargetName" = "8:ListadoFacturasImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_872068BFE7004F76A865B302C3599FBA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E21F6303AC5897BA4D9F9F7D37E5C5D6"
             {
             "AssemblyRegister" = "3:1"
@@ -409,6 +527,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F99E736AA5D54959BF3F9B4893845503"
+            {
+            "SourcePath" = "8:..\\ConexcoFacturación\\Reportes\\FacturaBImpresion.rdlc"
+            "TargetName" = "8:FacturaBImpresion.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_872068BFE7004F76A865B302C3599FBA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -449,6 +587,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_872068BFE7004F76A865B302C3599FBA"
+                    {
+                    "Name" = "8:Reportes"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_F1A1D9B3BDD946D7AE58CB431FF26B48"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_E096D8973349498A858D7651563FC324"
