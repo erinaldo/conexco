@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
+using System.Reflection;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -27,17 +29,18 @@ namespace ConexcoFacturación
 
         private void RefrescarGrilla()
         {
-            grdClientes.DataSource = ClientesController.ListarClientes();
+            var clientes = ClientesController.ListarClientes();
+            grdClientes.DataSource = clientes.ToDataTable();
             grdClientes.Columns[0].Visible = false;
             grdClientes.Columns[2].HeaderText = "Razón Social";
             grdClientes.Columns[6].Visible = false;
             grdClientes.Columns[10].Visible = false;
-            grdClientes.Columns[11].HeaderText = "Condición IVA";
+            grdClientes.Columns[11].HeaderText = "Condición IVA";          
         }
 
         private void RefrescarGrilla(List<Conexco.Model.Cliente> clientes)
         {
-            grdClientes.DataSource = clientes;
+            grdClientes.DataSource = clientes.ToDataTable();
             grdClientes.Columns[0].Visible = false;
             grdClientes.Columns[2].HeaderText = "Razón Social";
             grdClientes.Columns[6].Visible = false;
@@ -158,6 +161,11 @@ namespace ConexcoFacturación
         {
             txtValorBusqueda.Text = "";
             btnBuscar_Click(null, null);
+        }
+
+        private void grdClientes_Sorted(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,6 +41,7 @@
             this.grdClientes = new System.Windows.Forms.DataGridView();
             this.toolTipClientes = new System.Windows.Forms.ToolTip(this.components);
             this.gbxCriteriosBusqueda = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblValorBusqueda = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.rbtnCuit = new System.Windows.Forms.RadioButton();
             this.rbtnCodigoCliente = new System.Windows.Forms.RadioButton();
             this.rbtnNombreRazonSocial = new System.Windows.Forms.RadioButton();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.gbxCriteriosBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +176,6 @@
             // 
             this.grdClientes.AllowUserToAddRows = false;
             this.grdClientes.AllowUserToDeleteRows = false;
-            this.grdClientes.AllowUserToOrderColumns = true;
             this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdClientes.Location = new System.Drawing.Point(12, 120);
             this.grdClientes.MultiSelect = false;
@@ -186,6 +185,7 @@
             this.grdClientes.Size = new System.Drawing.Size(557, 279);
             this.grdClientes.TabIndex = 0;
             this.toolTipClientes.SetToolTip(this.grdClientes, "Lista de Clientes");
+            this.grdClientes.Sorted += new System.EventHandler(this.grdClientes_Sorted);
             this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
             this.grdClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdClientes_CellContentClick);
             // 
@@ -208,6 +208,17 @@
             this.gbxCriteriosBusqueda.TabIndex = 9;
             this.gbxCriteriosBusqueda.TabStop = false;
             this.gbxCriteriosBusqueda.Text = "Criterios de Busqueda";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLimpiar.Location = new System.Drawing.Point(563, 52);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 28);
+            this.btnLimpiar.TabIndex = 9;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // txtValorBusqueda
             // 
@@ -298,17 +309,6 @@
             this.rbtnNombreRazonSocial.TabStop = true;
             this.rbtnNombreRazonSocial.Text = "Nombre o Razón Social";
             this.rbtnNombreRazonSocial.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLimpiar.Location = new System.Drawing.Point(563, 52);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 28);
-            this.btnLimpiar.TabIndex = 9;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmClientes
             // 
