@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -30,7 +31,7 @@ namespace ConexcoFacturación
         {
             var listadoArticulos = ArticulosController.ListarArticulos(refresh);
 
-            grdArticulos.DataSource = listadoArticulos;
+            grdArticulos.DataSource = listadoArticulos.ToDataTable();
             grdArticulos.Columns[0].Visible = false;
             grdArticulos.Columns[5].Visible = false;
 
@@ -136,7 +137,7 @@ namespace ConexcoFacturación
                 }
             }
 
-            grdArticulos.DataSource = listaArticulos;
+            grdArticulos.DataSource = listaArticulos.ToDataTable();
         }
 
         private void btnPrecios_Click(object sender, EventArgs e)

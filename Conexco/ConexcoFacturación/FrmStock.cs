@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -27,7 +28,7 @@ namespace ConexcoFacturación
             ArticulosController = new ArticulosController();
 
             var listadoArticulos = ArticulosController.ListarArticulos();
-            grdArticulosStock.DataSource = listadoArticulos;
+            grdArticulosStock.DataSource = listadoArticulos.ToDataTable();
             grdArticulosStock.Columns[0].Visible = false;
             grdArticulosStock.Columns[4].Visible = false;
             grdArticulosStock.Columns[5].Visible = false;
@@ -46,7 +47,7 @@ namespace ConexcoFacturación
 
         private void _ActualizarGrilla()
         {
-            grdArticulosStock.DataSource = ArticulosController.ListarArticulos();
+            grdArticulosStock.DataSource = ArticulosController.ListarArticulos().ToDataTable();
         }
 
         private void btnEgreso_Click(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace ConexcoFacturación
                 }
             }
 
-            grdArticulosStock.DataSource = listaArticulos;
+            grdArticulosStock.DataSource = listaArticulos.ToDataTable();
         }
     }
 }

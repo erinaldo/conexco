@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Conexco.Controller;
 using Conexco.Model;
+using Conexco.Utils;
 
 namespace ConexcoFacturación
 {
@@ -84,7 +85,7 @@ namespace ConexcoFacturación
             var clientes = ClientesController.ListarClientes();
             if (clientes.Count > 0)
             {
-                grdClientes.DataSource = clientes;
+                grdClientes.DataSource = clientes.ToDataTable();
                 grdClientes.Columns[0].Visible = false;
                 grdClientes.Columns[2].HeaderText = "Razón Social";
                 grdClientes.Columns[6].Visible = false;
@@ -111,7 +112,7 @@ namespace ConexcoFacturación
 
         private void _RefrescarGrilla(List<Cliente> clientes)
         {
-            grdClientes.DataSource = clientes;
+            grdClientes.DataSource = clientes.ToDataTable();
             grdClientes.Columns[0].Visible = false;
             grdClientes.Columns[2].HeaderText = "Razón Social";
             grdClientes.Columns[6].Visible = false;
