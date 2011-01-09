@@ -198,7 +198,7 @@
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Line Name="line1">
-        <Top>19.25cm</Top>
+        <Top>21.75cm</Top>
         <Style>
           <BorderColor>
             <Default>White</Default>
@@ -223,14 +223,13 @@
                 <Width>2.28968cm</Width>
                 <Style>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>4</ZIndex>
                 <Left>17cm</Left>
-                <Height>0.63492cm</Height>
                 <Value>=FormatNumber(Fields!TotalLinea.Value, 2)</Value>
               </Textbox>
               <Textbox Name="Precio">
@@ -238,28 +237,26 @@
                 <Width>1.78968cm</Width>
                 <Style>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
                 <Left>14.25cm</Left>
-                <Height>0.63492cm</Height>
                 <Value>=FormatNumber(Fields!Precio.Value, 2)</Value>
               </Textbox>
               <Textbox Name="Descripcion_1">
                 <rd:DefaultName>Descripcion_1</rd:DefaultName>
                 <Width>8.25cm</Width>
                 <Style>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
                 <Left>5.5cm</Left>
-                <Height>0.63492cm</Height>
                 <Value>=Fields!Descripcion.Value</Value>
               </Textbox>
               <Textbox Name="Cantidad">
@@ -267,37 +264,36 @@
                 <Width>1.75cm</Width>
                 <Style>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
-                <Left>2.5cm</Left>
-                <Height>0.63492cm</Height>
+                <Left>3.5cm</Left>
                 <Value>=Fields!Cantidad.Value</Value>
               </Textbox>
               <Textbox Name="CodigoYColor">
                 <rd:DefaultName>CodigoYColor</rd:DefaultName>
-                <Width>1.25cm</Width>
+                <Width>3cm</Width>
                 <Style>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
-                <Left>1cm</Left>
-                <Height>0.63492cm</Height>
+                <CanGrow>true</CanGrow>
+                <Left>0.5cm</Left>
                 <Value>=Fields!CodigoYColor.Value</Value>
               </Textbox>
             </ReportItems>
             <Top>0.25cm</Top>
-            <Height>0.88492cm</Height>
+            <Height>0.5cm</Height>
           </List>
         </ReportItems>
         <Top>4.42969in</Top>
         <Width>7.77656in</Width>
-        <Height>3.15in</Height>
+        <Height>4.13437in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
         <Top>3.3cm</Top>
@@ -343,7 +339,7 @@
       </Textbox>
       <Textbox Name="Observaciones">
         <rd:DefaultName>Observaciones</rd:DefaultName>
-        <Top>19.5cm</Top>
+        <Top>21.75cm</Top>
         <Width>18cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -353,7 +349,7 @@
         </Style>
         <ZIndex>14</ZIndex>
         <Left>2cm</Left>
-        <Height>1.25cm</Height>
+        <Height>0.75cm</Height>
         <Value>=First(Fields!Observaciones.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
       </Textbox>
       <Textbox Name="SonPesos">
