@@ -190,7 +190,7 @@
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Line Name="line1">
-        <Top>18cm</Top>
+        <Top>18.75cm</Top>
         <Width>17cm</Width>
         <Style>
           <BorderColor>
@@ -205,33 +205,33 @@
       </Line>
       <Textbox Name="textbox4">
         <rd:DefaultName>textbox4</rd:DefaultName>
-        <Top>18.5cm</Top>
+        <Top>18.75cm</Top>
         <Width>3.25cm</Width>
         <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>1pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+          <PaddingTop>1pt</PaddingTop>
+          <PaddingBottom>1pt</PaddingBottom>
         </Style>
         <ZIndex>19</ZIndex>
         <Left>9.75cm</Left>
-        <Height>0.63492cm</Height>
+        <Height>0.5cm</Height>
         <Value>Valor Declarado:</Value>
       </Textbox>
       <Textbox Name="Total_1">
         <rd:DefaultName>Total_1</rd:DefaultName>
-        <Top>18.5cm</Top>
+        <Top>18.75cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>1pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+          <PaddingTop>1pt</PaddingTop>
+          <PaddingBottom>1pt</PaddingBottom>
         </Style>
         <ZIndex>18</ZIndex>
         <Left>13.25cm</Left>
-        <Height>0.63492cm</Height>
+        <Height>0.5cm</Height>
         <Value>=Sum(Fields!Total.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>
       <Textbox Name="OrdenCompra">
@@ -350,38 +350,42 @@
             <ReportItems>
               <Textbox Name="CodigoYColor_1">
                 <rd:DefaultName>CodigoYColor_1</rd:DefaultName>
-                <Width>2.25cm</Width>
+                <Width>2.75cm</Width>
                 <Style>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
+                <CanGrow>true</CanGrow>
                 <Left>5.5cm</Left>
                 <Value>=Fields!CodigoYColor.Value</Value>
               </Textbox>
               <Textbox Name="Descripcion_1">
                 <rd:DefaultName>Descripcion_1</rd:DefaultName>
                 <Style>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
-                <Left>7.75cm</Left>
+                <Left>8.25cm</Left>
                 <Value>=Fields!Descripcion.Value</Value>
               </Textbox>
               <Textbox Name="Cantidad">
                 <rd:DefaultName>Cantidad</rd:DefaultName>
                 <Width>1.75cm</Width>
                 <Style>
+                  <FontSize>8pt</FontSize>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
                 <Left>3cm</Left>
@@ -391,21 +395,22 @@
                 <rd:DefaultName>CodigoYColor</rd:DefaultName>
                 <Width>1.25cm</Width>
                 <Style>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <Left>0.5cm</Left>
                 <Value>=IIF(Fields!Envases.Value = 0, "",Fields!Envases.Value)</Value>
               </Textbox>
             </ReportItems>
-            <Height>0.5cm</Height>
+            <Height>0.4cm</Height>
           </List>
         </ReportItems>
         <Top>5.11875in</Top>
         <Width>6.00469in</Width>
-        <Height>1.96875in</Height>
+        <Height>2.26406in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
         <Top>2.75cm</Top>
