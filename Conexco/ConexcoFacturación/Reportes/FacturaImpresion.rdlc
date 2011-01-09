@@ -198,7 +198,7 @@
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Line Name="line1">
-        <Top>19.25cm</Top>
+        <Top>20cm</Top>
         <Style>
           <BorderColor>
             <Default>White</Default>
@@ -224,10 +224,10 @@
                 <Style>
                   <FontSize>8pt</FontSize>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>4</ZIndex>
                 <Left>17cm</Left>
@@ -239,10 +239,10 @@
                 <Style>
                   <FontSize>8pt</FontSize>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
                 <Left>14.25cm</Left>
@@ -253,10 +253,10 @@
                 <Width>8.25cm</Width>
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
                 <Left>5.5cm</Left>
@@ -268,10 +268,10 @@
                 <Style>
                   <FontSize>8pt</FontSize>
                   <TextAlign>Right</TextAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
                 <Left>3.5cm</Left>
@@ -282,10 +282,10 @@
                 <Width>2.75cm</Width>
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingLeft>1pt</PaddingLeft>
+                  <PaddingRight>1pt</PaddingRight>
+                  <PaddingTop>1pt</PaddingTop>
+                  <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <CanGrow>true</CanGrow>
                 <Left>0.5cm</Left>
@@ -293,12 +293,12 @@
               </Textbox>
             </ReportItems>
             <Top>0.25cm</Top>
-            <Height>0.5cm</Height>
+            <Height>0.4cm</Height>
           </List>
         </ReportItems>
         <Top>4.42969in</Top>
         <Width>7.77656in</Width>
-        <Height>3.15in</Height>
+        <Height>3.44531in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
         <Top>3.25cm</Top>
@@ -344,7 +344,7 @@
       </Textbox>
       <Textbox Name="Observaciones">
         <rd:DefaultName>Observaciones</rd:DefaultName>
-        <Top>19.5cm</Top>
+        <Top>20cm</Top>
         <Width>18cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -354,7 +354,7 @@
         </Style>
         <ZIndex>18</ZIndex>
         <Left>2cm</Left>
-        <Height>1.25cm</Height>
+        <Height>0.75cm</Height>
         <Value>=First(Fields!Observaciones.Value, "ConexcoImpresionDataSet_FacturaImpresion")</Value>
       </Textbox>
       <Textbox Name="SonPesos">
