@@ -215,14 +215,14 @@
           <PaddingBottom>1pt</PaddingBottom>
         </Style>
         <ZIndex>19</ZIndex>
-        <Left>11cm</Left>
+        <Left>11.25cm</Left>
         <Height>0.5cm</Height>
         <Value>Valor Declarado:</Value>
       </Textbox>
       <Textbox Name="Total_1">
         <rd:DefaultName>Total_1</rd:DefaultName>
         <Top>18.75cm</Top>
-        <Width>2.28968cm</Width>
+        <Width>2.03968cm</Width>
         <Style>
           <FontSize>8pt</FontSize>
           <FontWeight>700</FontWeight>
@@ -234,7 +234,7 @@
         </Style>
         <ZIndex>18</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>13.5cm</Left>
+        <Left>13.75cm</Left>
         <Height>0.5cm</Height>
         <Value>=Sum(Fields!Total.Value, "ConexcoImpresionDataSet_RemitoImpresion")</Value>
       </Textbox>

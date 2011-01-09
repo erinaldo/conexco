@@ -21,7 +21,7 @@ namespace ConexcoFacturación
         public RemitosController RemitosController { get; set; }
         public decimal PorcentajeIVA { get; set; }
 
-        private const int MAX_FILAS = 10;
+        private const int MAX_FILAS = 20;
 
         private int _idCliente;
         private int _idTransportista;
