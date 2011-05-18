@@ -240,7 +240,7 @@
       </Textbox>
       <Textbox Name="OrdenCompra">
         <rd:DefaultName>OrdenCompra</rd:DefaultName>
-        <Top>11.25cm</Top>
+        <Top>11cm</Top>
         <Width>5.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -255,7 +255,7 @@
       </Textbox>
       <Textbox Name="CantBultos">
         <rd:DefaultName>CantBultos</rd:DefaultName>
-        <Top>10.25cm</Top>
+        <Top>10cm</Top>
         <Width>2.5cm</Width>
         <Style>
           <TextAlign>Right</TextAlign>
@@ -271,7 +271,7 @@
       </Textbox>
       <Textbox Name="CUITTransp">
         <rd:DefaultName>CUITTransp</rd:DefaultName>
-        <Top>10.25cm</Top>
+        <Top>10cm</Top>
         <Width>7cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -286,7 +286,7 @@
       </Textbox>
       <Textbox Name="CodPostalTransp">
         <rd:DefaultName>CodPostalTransp</rd:DefaultName>
-        <Top>9.5cm</Top>
+        <Top>9.25cm</Top>
         <Width>2cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -301,7 +301,7 @@
       </Textbox>
       <Textbox Name="LocalidadTransp">
         <rd:DefaultName>LocalidadTransp</rd:DefaultName>
-        <Top>9.5cm</Top>
+        <Top>9.25cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -316,7 +316,7 @@
       </Textbox>
       <Textbox Name="DomicilioTransp">
         <rd:DefaultName>DomicilioTransp</rd:DefaultName>
-        <Top>9.5cm</Top>
+        <Top>9.25cm</Top>
         <Width>4.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -331,7 +331,7 @@
       </Textbox>
       <Textbox Name="NombreTransp">
         <rd:DefaultName>NombreTransp</rd:DefaultName>
-        <Top>8.75cm</Top>
+        <Top>8.5cm</Top>
         <Width>12cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -418,7 +418,7 @@
         <Height>2.26406in</Height>
       </Rectangle>
       <Textbox Name="textbox3">
-        <Top>2.75cm</Top>
+        <Top>2.5cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -432,7 +432,7 @@
         <Value>=Right(Year(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_RemitoImpresion")),2)</Value>
       </Textbox>
       <Textbox Name="textbox2">
-        <Top>2.75cm</Top>
+        <Top>2.5cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -446,7 +446,7 @@
         <Value>=Month(First(Fields!FechaEmision.Value, "ConexcoImpresionDataSet_RemitoImpresion"))</Value>
       </Textbox>
       <Textbox Name="textbox1">
-        <Top>2.75cm</Top>
+        <Top>2.5cm</Top>
         <Width>0.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -461,7 +461,7 @@
       </Textbox>
       <Textbox Name="Descripcion">
         <rd:DefaultName>Descripcion</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7.75cm</Top>
         <Width>5.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -476,7 +476,7 @@
       </Textbox>
       <Textbox Name="CUIT">
         <rd:DefaultName>CUIT</rd:DefaultName>
-        <Top>8cm</Top>
+        <Top>7.75cm</Top>
         <Width>6.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -491,7 +491,7 @@
       </Textbox>
       <Textbox Name="Provincia">
         <rd:DefaultName>Provincia</rd:DefaultName>
-        <Top>7cm</Top>
+        <Top>6.75cm</Top>
         <Width>2.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -506,7 +506,7 @@
       </Textbox>
       <Textbox Name="CodPostal">
         <rd:DefaultName>CodPostal</rd:DefaultName>
-        <Top>7cm</Top>
+        <Top>6.75cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -521,7 +521,7 @@
       </Textbox>
       <Textbox Name="Localidad">
         <rd:DefaultName>Localidad</rd:DefaultName>
-        <Top>7cm</Top>
+        <Top>6.75cm</Top>
         <Width>6cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -536,7 +536,7 @@
       </Textbox>
       <Textbox Name="Domicilio">
         <rd:DefaultName>Domicilio</rd:DefaultName>
-        <Top>6.25cm</Top>
+        <Top>6cm</Top>
         <Width>12.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -551,7 +551,7 @@
       </Textbox>
       <Textbox Name="RazonSocial">
         <rd:DefaultName>RazonSocial</rd:DefaultName>
-        <Top>5.5cm</Top>
+        <Top>5.25cm</Top>
         <Width>12.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>

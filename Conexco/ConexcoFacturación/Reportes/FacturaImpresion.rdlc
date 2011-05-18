@@ -245,7 +245,7 @@
                   <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>3</ZIndex>
-                <Left>14.25cm</Left>
+                <Left>14cm</Left>
                 <Value>=Fields!Precio.Value</Value>
               </Textbox>
               <Textbox Name="Descripcion_1">
@@ -259,12 +259,12 @@
                   <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>2</ZIndex>
-                <Left>5.5cm</Left>
+                <Left>5cm</Left>
                 <Value>=Fields!Descripcion.Value</Value>
               </Textbox>
               <Textbox Name="Cantidad">
                 <rd:DefaultName>Cantidad</rd:DefaultName>
-                <Width>1.75cm</Width>
+                <Width>1.25cm</Width>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <TextAlign>Right</TextAlign>
@@ -274,12 +274,12 @@
                   <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <ZIndex>1</ZIndex>
-                <Left>3.5cm</Left>
+                <Left>3cm</Left>
                 <Value>=Fields!Cantidad.Value</Value>
               </Textbox>
               <Textbox Name="CodigoYColor">
                 <rd:DefaultName>CodigoYColor</rd:DefaultName>
-                <Width>2.75cm</Width>
+                <Width>1.75cm</Width>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <PaddingLeft>1pt</PaddingLeft>
@@ -288,7 +288,7 @@
                   <PaddingBottom>1pt</PaddingBottom>
                 </Style>
                 <CanGrow>true</CanGrow>
-                <Left>0.5cm</Left>
+                <Left>1cm</Left>
                 <Value>=Fields!CodigoYColor.Value</Value>
               </Textbox>
             </ReportItems>
