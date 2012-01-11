@@ -1,6 +1,6 @@
 ﻿namespace ConexcoFacturación
 {
-    partial class FrmListadoFacturasImprimir
+    partial class FrmListadoStockImprimir
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoFacturasImprimir));
-            this.ListadoFacturasLineaImpresionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoStockImprimir));
+            this.ListadoStockActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ConexcoDataSet = new ConexcoFacturación.ConexcoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ListadoFacturasLineaImpresionTableAdapter = new ConexcoFacturación.ConexcoDataSetTableAdapters.ListadoFacturasLineaImpresionTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasLineaImpresionBindingSource)).BeginInit();
+            this.listadoStockActualTableAdapter = new ConexcoFacturación.ConexcoDataSetTableAdapters.ListadoStockActualTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoStockActualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // ListadoFacturasLineaImpresionBindingSource
+            // ListadoStockActualBindingSource
             // 
-            this.ListadoFacturasLineaImpresionBindingSource.DataMember = "ListadoFacturasLineaImpresion";
-            this.ListadoFacturasLineaImpresionBindingSource.DataSource = this.ConexcoDataSet;
+            this.ListadoStockActualBindingSource.DataMember = "ListadoStockActual";
+            this.ListadoStockActualBindingSource.DataSource = this.ConexcoDataSet;
             // 
             // ConexcoDataSet
             // 
@@ -51,30 +51,30 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "ConexcoDataSet_ListadoFacturasLineaImpresion";
-            reportDataSource1.Value = this.ListadoFacturasLineaImpresionBindingSource;
+            reportDataSource1.Name = "StockActualDataSet";
+            reportDataSource1.Value = this.ListadoStockActualBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ConexcoFacturación.Reportes.ListadoFacturasImpresion.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ConexcoFacturación.Reportes.ListadoStockActual.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(846, 463);
             this.reportViewer1.TabIndex = 0;
             // 
-            // ListadoFacturasLineaImpresionTableAdapter
+            // listadoStockActualTableAdapter
             // 
-            this.ListadoFacturasLineaImpresionTableAdapter.ClearBeforeFill = true;
+            this.listadoStockActualTableAdapter.ClearBeforeFill = true;
             // 
-            // FrmListadoFacturasImprimir
+            // FrmListadoStockImprimir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 494);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmListadoFacturasImprimir";
-            this.Text = "Listado Facturas a Imprimir";
-            this.Load += new System.EventHandler(this.FrmListadoFacturasImprimir_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ListadoFacturasLineaImpresionBindingSource)).EndInit();
+            this.Name = "FrmListadoStockImprimir";
+            this.Text = "Listado Stock Actual";
+            this.Load += new System.EventHandler(this.FrmListadoStockImprimir_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ListadoStockActualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConexcoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -83,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource ListadoFacturasLineaImpresionBindingSource;
+        private System.Windows.Forms.BindingSource ListadoStockActualBindingSource;
         private ConexcoDataSet ConexcoDataSet;
-        private ConexcoFacturación.ConexcoDataSetTableAdapters.ListadoFacturasLineaImpresionTableAdapter ListadoFacturasLineaImpresionTableAdapter;
+        private ConexcoDataSetTableAdapters.ListadoStockActualTableAdapter listadoStockActualTableAdapter;
     }
 }

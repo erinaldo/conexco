@@ -71,6 +71,7 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonLocalidades = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStripConexco.SuspendLayout();
@@ -275,7 +276,8 @@
             this.toolStripButtonStock,
             this.toolStripSeparator11,
             this.toolStripButtonLocalidades,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.toolStripButton1});
             this.toolStripConexco.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStripConexco.Location = new System.Drawing.Point(0, 24);
             this.toolStripConexco.Name = "toolStripConexco";
@@ -417,6 +419,17 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 57);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.toolStripButton1.Size = new System.Drawing.Size(94, 54);
+            this.toolStripButton1.Text = "Reportes";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // MdiConexco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,8 +444,8 @@
             this.Name = "MdiConexco";
             this.Text = "Sistema de Facturación y Control de Stock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MdiConexco_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MdiConexco_FormClosing);
+            this.Load += new System.EventHandler(this.MdiConexco_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -487,6 +500,7 @@
         private System.Windows.Forms.ToolStripMenuItem facturasEmitidasToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonReporteFacturas;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
