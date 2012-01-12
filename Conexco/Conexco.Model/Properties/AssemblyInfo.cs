@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Conexco.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Accenture")]
+[assembly: AssemblyCompany("HELPyme Solutions")]
 [assembly: AssemblyProduct("Conexco.Model")]
-[assembly: AssemblyCopyright("Copyright © Accenture 2009")]
+[assembly: AssemblyCopyright("Copyright © HELPyme Solutions")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

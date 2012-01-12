@@ -236,7 +236,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                "FrameworkVersion" = "8:.NETFramework,Version=v3.5"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=131000"
                 }
@@ -248,7 +248,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Model, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Conexco.Model, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_1C3A442B6D977C99544346F35D73DFEC"
@@ -523,7 +523,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Conexco.Controller, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_AA9D1BCC33A536B5712779D29F33C7FD"
@@ -594,7 +594,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Conexco.Utils, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Conexco.Utils, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_DA30246471F277BCDE13F37C9FBD9FB5"
@@ -700,7 +700,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Conexco Facturación"
         "ProductCode" = "8:{6BB72007-E53D-4C94-BBCC-C94C2515EBA4}"
-        "PackageCode" = "8:{A989A421-D127-451B-9A04-F034BA0F4E96}"
+        "PackageCode" = "8:{E2621E90-18A0-40B9-A7DF-1D51E7A0AE41}"
         "UpgradeCode" = "8:{088445F7-71F6-463E-B1A1-922B4134D25E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

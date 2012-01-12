@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Conexco.BDActualizar")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Accenture")]
+[assembly: AssemblyCompany("HELPyme Solutions")]
 [assembly: AssemblyProduct("Conexco.BDActualizar")]
-[assembly: AssemblyCopyright("Copyright © Accenture 2010")]
+[assembly: AssemblyCopyright("Copyright © HELPyme Solutions")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
