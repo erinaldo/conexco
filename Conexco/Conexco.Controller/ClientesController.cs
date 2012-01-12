@@ -105,6 +105,8 @@ namespace Conexco.Controller
 
         public List<Cliente> ListarClientesPorCriterio(string criterio, string valor)
         {
+            valor = valor.ToLower();
+
             List<Cliente> clientesEncontrados;
             try
             {
@@ -114,7 +116,7 @@ namespace Conexco.Controller
                         clientesEncontrados =
                             (_context.Clientes.Where(
                                 cte =>
-                                !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && (cte.Codigo.Contains(valor))).
+                                !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) && (cte.Codigo.ToLower().Contains(valor))).
                                 OrderBy(cliente => cliente.RazonSocial)).ToList();
                         break;
                     case "Nombre o Razón Social":
@@ -122,8 +124,8 @@ namespace Conexco.Controller
                             (_context.Clientes.Where(
                                 cte =>
                                 !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) &&
-                                ((cte.Nombre.Contains(valor) || cte.Apellido.Contains(valor) ||
-                                  cte.RazonSocial.Contains(valor)))).OrderBy(cliente => cliente.RazonSocial)).ToList();
+                                ((cte.Nombre.ToLower().Contains(valor) || cte.Apellido.ToLower().Contains(valor) ||
+                                  cte.RazonSocial.ToLower().Contains(valor)))).OrderBy(cliente => cliente.RazonSocial)).ToList();
                         break;
                     case "CUIT":
                         clientesEncontrados =
@@ -136,7 +138,7 @@ namespace Conexco.Controller
                             (_context.Clientes.Where(
                                 cte =>
                                 !(cte.BajaLogica.HasValue && cte.BajaLogica.Value) &&
-                                (cte.CondicionIVA.Descripcion.Contains(valor))).OrderBy(cliente => cliente.RazonSocial))
+                                (cte.CondicionIVA.Descripcion.ToLower().Contains(valor))).OrderBy(cliente => cliente.RazonSocial))
                                 .ToList();
                         break;
                     case "Localidad":
@@ -144,7 +146,7 @@ namespace Conexco.Controller
                             cte =>
                             ((cte.Clientes_Domicilios.Where(
                                  dom =>
-                                 !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.Localidad.Contains(valor))).
+                                 !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.Localidad.ToLower().Contains(valor))).
                                  Count() > 0)).OrderBy(cliente => cliente.RazonSocial)).ToList();
                         break;
                     case "Cod. Postal":
@@ -152,7 +154,7 @@ namespace Conexco.Controller
                             cte =>
                             ((cte.Clientes_Domicilios.Where(
                                  dom =>
-                                 !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.CodPostal.Contains(valor))).
+                                 !(dom.BajaLogica.HasValue && dom.BajaLogica.Value) && dom.CodPostal.ToLower().Contains(valor))).
                                  Count() > 0)).OrderBy(cliente => cliente.RazonSocial)).ToList();
                         break;
                     default:

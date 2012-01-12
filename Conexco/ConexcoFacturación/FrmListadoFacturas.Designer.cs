@@ -37,7 +37,6 @@
             this.rdTodas = new System.Windows.Forms.RadioButton();
             this.gridFacturas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGuardarImprimir = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboEstado = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,16 +59,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gbxCriteriosBusqueda = new System.Windows.Forms.GroupBox();
+            this.txtValorBusqueda = new System.Windows.Forms.TextBox();
+            this.rbtnCuit = new System.Windows.Forms.RadioButton();
+            this.rbtnNombre = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.rbtnCodigoCliente = new System.Windows.Forms.RadioButton();
+            this.btnVer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFacturas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.gbxCriteriosBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.gbxCriteriosBusqueda);
             this.groupBox1.Controls.Add(this.rdAnuladas);
             this.groupBox1.Controls.Add(this.rdPendientes);
             this.groupBox1.Controls.Add(this.rdPagadas);
@@ -77,7 +85,7 @@
             this.groupBox1.Controls.Add(this.gridFacturas);
             this.groupBox1.Location = new System.Drawing.Point(12, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(598, 244);
+            this.groupBox1.Size = new System.Drawing.Size(598, 305);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado Facturas";
@@ -138,7 +146,7 @@
             this.gridFacturas.AllowUserToResizeRows = false;
             this.gridFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFacturas.Location = new System.Drawing.Point(7, 53);
+            this.gridFacturas.Location = new System.Drawing.Point(6, 114);
             this.gridFacturas.MultiSelect = false;
             this.gridFacturas.Name = "gridFacturas";
             this.gridFacturas.ReadOnly = true;
@@ -150,44 +158,33 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.btnGuardarImprimir);
+            this.groupBox2.Controls.Add(this.btnVer);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.btnGuardar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 268);
+            this.groupBox2.Location = new System.Drawing.Point(13, 315);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(598, 191);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
             // 
-            // btnGuardarImprimir
-            // 
-            this.btnGuardarImprimir.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
-            this.btnGuardarImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGuardarImprimir.Location = new System.Drawing.Point(440, 145);
-            this.btnGuardarImprimir.Name = "btnGuardarImprimir";
-            this.btnGuardarImprimir.Size = new System.Drawing.Size(85, 31);
-            this.btnGuardarImprimir.TabIndex = 18;
-            this.btnGuardarImprimir.Text = "       Imprimir";
-            this.btnGuardarImprimir.UseVisualStyleBackColor = true;
-            this.btnGuardarImprimir.Click += new System.EventHandler(this.btnGuardarImprimir_Click);
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.comboEstado);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Location = new System.Drawing.Point(380, 36);
+            this.groupBox5.Controls.Add(this.btnGuardar);
+            this.groupBox5.Location = new System.Drawing.Point(394, 81);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(190, 63);
+            this.groupBox5.Size = new System.Drawing.Size(190, 95);
             this.groupBox5.TabIndex = 17;
             this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Cambiar estado";
             // 
             // comboEstado
             // 
             this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(60, 26);
+            this.comboEstado.Location = new System.Drawing.Point(60, 24);
             this.comboEstado.Name = "comboEstado";
             this.comboEstado.Size = new System.Drawing.Size(121, 21);
             this.comboEstado.TabIndex = 14;
@@ -195,7 +192,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 29);
+            this.label3.Location = new System.Drawing.Point(11, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 13;
@@ -227,7 +224,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(284, 59);
+            this.txtDesc.Location = new System.Drawing.Point(285, 46);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ReadOnly = true;
             this.txtDesc.Size = new System.Drawing.Size(64, 20);
@@ -236,7 +233,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(213, 62);
+            this.label9.Location = new System.Drawing.Point(214, 49);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 13);
             this.label9.TabIndex = 16;
@@ -244,7 +241,7 @@
             // 
             // txtNeto
             // 
-            this.txtNeto.Location = new System.Drawing.Point(284, 110);
+            this.txtNeto.Location = new System.Drawing.Point(285, 97);
             this.txtNeto.Name = "txtNeto";
             this.txtNeto.ReadOnly = true;
             this.txtNeto.Size = new System.Drawing.Size(64, 20);
@@ -253,7 +250,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(213, 113);
+            this.label6.Location = new System.Drawing.Point(214, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 14;
@@ -261,7 +258,7 @@
             // 
             // txtIVA
             // 
-            this.txtIVA.Location = new System.Drawing.Point(284, 84);
+            this.txtIVA.Location = new System.Drawing.Point(285, 71);
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.ReadOnly = true;
             this.txtIVA.Size = new System.Drawing.Size(64, 20);
@@ -270,7 +267,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(213, 87);
+            this.label7.Location = new System.Drawing.Point(214, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 12;
@@ -278,7 +275,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(284, 33);
+            this.txtTotal.Location = new System.Drawing.Point(285, 20);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(64, 20);
@@ -287,7 +284,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(213, 36);
+            this.label8.Location = new System.Drawing.Point(214, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 10;
@@ -298,7 +295,7 @@
             this.txtCliente.Location = new System.Drawing.Point(77, 125);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtCliente.Size = new System.Drawing.Size(272, 20);
             this.txtCliente.TabIndex = 9;
             // 
             // labelll
@@ -365,13 +362,92 @@
             // 
             this.btnGuardar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.guardar3png;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGuardar.Location = new System.Drawing.Point(440, 108);
+            this.btnGuardar.Location = new System.Drawing.Point(51, 57);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(85, 31);
+            this.btnGuardar.Size = new System.Drawing.Size(93, 31);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "       Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // gbxCriteriosBusqueda
+            // 
+            this.gbxCriteriosBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.gbxCriteriosBusqueda.Controls.Add(this.rbtnCodigoCliente);
+            this.gbxCriteriosBusqueda.Controls.Add(this.btnBuscar);
+            this.gbxCriteriosBusqueda.Controls.Add(this.txtValorBusqueda);
+            this.gbxCriteriosBusqueda.Controls.Add(this.rbtnCuit);
+            this.gbxCriteriosBusqueda.Controls.Add(this.rbtnNombre);
+            this.gbxCriteriosBusqueda.Location = new System.Drawing.Point(8, 49);
+            this.gbxCriteriosBusqueda.Name = "gbxCriteriosBusqueda";
+            this.gbxCriteriosBusqueda.Size = new System.Drawing.Size(583, 51);
+            this.gbxCriteriosBusqueda.TabIndex = 5;
+            this.gbxCriteriosBusqueda.TabStop = false;
+            this.gbxCriteriosBusqueda.Text = "Criterios de Busqueda";
+            // 
+            // txtValorBusqueda
+            // 
+            this.txtValorBusqueda.Location = new System.Drawing.Point(344, 17);
+            this.txtValorBusqueda.Name = "txtValorBusqueda";
+            this.txtValorBusqueda.Size = new System.Drawing.Size(152, 20);
+            this.txtValorBusqueda.TabIndex = 8;
+            // 
+            // rbtnCuit
+            // 
+            this.rbtnCuit.AutoSize = true;
+            this.rbtnCuit.Location = new System.Drawing.Point(289, 19);
+            this.rbtnCuit.Name = "rbtnCuit";
+            this.rbtnCuit.Size = new System.Drawing.Size(50, 17);
+            this.rbtnCuit.TabIndex = 2;
+            this.rbtnCuit.Text = "CUIT";
+            this.rbtnCuit.UseVisualStyleBackColor = true;
+            // 
+            // rbtnNombre
+            // 
+            this.rbtnNombre.AutoSize = true;
+            this.rbtnNombre.Checked = true;
+            this.rbtnNombre.Location = new System.Drawing.Point(6, 19);
+            this.rbtnNombre.Name = "rbtnNombre";
+            this.rbtnNombre.Size = new System.Drawing.Size(137, 17);
+            this.rbtnNombre.TabIndex = 1;
+            this.rbtnNombre.TabStop = true;
+            this.rbtnNombre.Text = "Nombre o Razón Social";
+            this.rbtnNombre.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBuscar.Location = new System.Drawing.Point(502, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 28);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "    Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // rbtnCodigoCliente
+            // 
+            this.rbtnCodigoCliente.AutoSize = true;
+            this.rbtnCodigoCliente.Location = new System.Drawing.Point(157, 19);
+            this.rbtnCodigoCliente.Name = "rbtnCodigoCliente";
+            this.rbtnCodigoCliente.Size = new System.Drawing.Size(108, 17);
+            this.rbtnCodigoCliente.TabIndex = 10;
+            this.rbtnCodigoCliente.TabStop = true;
+            this.rbtnCodigoCliente.Text = "Código de Cliente";
+            this.rbtnCodigoCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackgroundImage = global::ConexcoFacturación.Properties.Resources.LupaFacturaPequenia;
+            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVer.Location = new System.Drawing.Point(430, 30);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(128, 28);
+            this.btnVer.TabIndex = 11;
+            this.btnVer.Text = "    VER FACTURA";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // FrmListadoFacturas
             // 
@@ -380,7 +456,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ConexcoFacturación.Properties.Resources.FondoTodos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(623, 471);
+            this.ClientSize = new System.Drawing.Size(623, 518);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -397,6 +473,8 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.gbxCriteriosBusqueda.ResumeLayout(false);
+            this.gbxCriteriosBusqueda.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -432,6 +510,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnGuardarImprimir;
+        private System.Windows.Forms.GroupBox gbxCriteriosBusqueda;
+        private System.Windows.Forms.TextBox txtValorBusqueda;
+        private System.Windows.Forms.RadioButton rbtnCuit;
+        private System.Windows.Forms.RadioButton rbtnNombre;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.RadioButton rbtnCodigoCliente;
+        private System.Windows.Forms.Button btnVer;
     }
 }

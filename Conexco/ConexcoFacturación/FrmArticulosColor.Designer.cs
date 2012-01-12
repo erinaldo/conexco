@@ -40,6 +40,9 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grdColoresExistentes = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.gbxNuevoColor.SuspendLayout();
             this.gbxColoresExistentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdColoresExistentes)).BeginInit();
@@ -50,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 88);
+            this.label1.Location = new System.Drawing.Point(11, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 0;
@@ -59,7 +62,7 @@
             // txtNombreColor
             // 
             this.txtNombreColor.BackColor = System.Drawing.Color.Azure;
-            this.txtNombreColor.Location = new System.Drawing.Point(97, 87);
+            this.txtNombreColor.Location = new System.Drawing.Point(97, 64);
             this.txtNombreColor.MaxLength = 20;
             this.txtNombreColor.Name = "txtNombreColor";
             this.txtNombreColor.Size = new System.Drawing.Size(100, 20);
@@ -94,7 +97,7 @@
             // txtCodColor
             // 
             this.txtCodColor.BackColor = System.Drawing.Color.Azure;
-            this.txtCodColor.Location = new System.Drawing.Point(97, 58);
+            this.txtCodColor.Location = new System.Drawing.Point(97, 35);
             this.txtCodColor.MaxLength = 10;
             this.txtCodColor.Name = "txtCodColor";
             this.txtCodColor.Size = new System.Drawing.Size(100, 20);
@@ -106,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 59);
+            this.label3.Location = new System.Drawing.Point(11, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 15);
             this.label3.TabIndex = 8;
@@ -115,6 +118,8 @@
             // gbxNuevoColor
             // 
             this.gbxNuevoColor.BackColor = System.Drawing.Color.Transparent;
+            this.gbxNuevoColor.Controls.Add(this.btnColor);
+            this.gbxNuevoColor.Controls.Add(this.label2);
             this.gbxNuevoColor.Controls.Add(this.txtCodColor);
             this.gbxNuevoColor.Controls.Add(this.label1);
             this.gbxNuevoColor.Controls.Add(this.label3);
@@ -183,6 +188,32 @@
             this.grdColoresExistentes.TabIndex = 0;
             this.grdColoresExistentes.SelectionChanged += new System.EventHandler(this.grdColoresExistentes_SelectionChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Color:";
+            // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.Color.Transparent;
+            this.btnColor.Location = new System.Drawing.Point(97, 93);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(100, 23);
+            this.btnColor.TabIndex = 10;
+            this.btnColor.Text = "Elija un color";
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // colorDialog1
+            // 
+            this.colorDialog1.Color = System.Drawing.Color.Transparent;
+            // 
             // FrmArticulosColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,5 +249,8 @@
         private System.Windows.Forms.DataGridView grdColoresExistentes;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

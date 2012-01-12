@@ -42,6 +42,8 @@ namespace ConexcoFacturación
         {
             var dataSourceGrilla = FacturasController.ListarFacturas(estado);
             gridFacturas.DataSource = dataSourceGrilla.Tables[0];
+            gridFacturas.Columns[0].Visible = false;
+            gridFacturas.Columns[1].Visible = false;
         }
 
         private void gridFacturas_SelectionChanged(object sender, EventArgs e)
@@ -49,9 +51,14 @@ namespace ConexcoFacturación
             if (gridFacturas.SelectedRows.Count > 0)
             {
                 var idFactura = gridFacturas.SelectedRows[0].Cells[0].Value.ToString();
-                var idCliente = gridFacturas.SelectedRows[0].Cells[2].Value.ToString();
+                var idCliente = gridFacturas.SelectedRows[0].Cells[1].Value.ToString();
 
                 _RecargarDetalle(idFactura, idCliente);
+                this.btnVer.Enabled = true;
+            }
+            else
+            {
+                this.btnVer.Enabled = false;
             }
         }
 
@@ -67,7 +74,7 @@ namespace ConexcoFacturación
             txtDesc.Text = string.Format("${0}", factura.Descuento);
             txtIVA.Text = string.Format("${0}", factura.TotalIVA);
             txtNeto.Text = string.Format("${0}", factura.TotalNeto);
-            txtVto.Text = factura.FechaVto.ToString();
+            txtVto.Text = factura.FechaVto.HasValue ? factura.FechaVto.Value.ToString("dd/MM/yyyy") : string.Empty;
             txtCliente.Text = cliente.RazonSocial;
 
             comboEstado.SelectedIndex = comboEstado.FindString(factura.Documentos_Estado.Descripcion);
@@ -81,6 +88,7 @@ namespace ConexcoFacturación
             comboEstado.DataSource = estadosFactura;
 
             rdPendientes.Checked = true;
+            this.btnVer.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -92,7 +100,26 @@ namespace ConexcoFacturación
             if (resultado)
             {
                 MessageBox.Show("La factura ha sido modificada correctamente!");
-                _ActualizarGrillaFacturas(estado);
+
+                RadioButton rd;
+                if (this.rdAnuladas.Checked)
+                {
+                    rd = this.rdAnuladas;
+                }
+                else if (this.rdPagadas.Checked)
+                {
+                    rd = this.rdPagadas;
+                }
+                else if (this.rdPendientes.Checked)
+                {
+                    rd = this.rdPendientes;
+                }
+                else
+                {
+                    rd = this.rdTodas;
+                }
+
+                this.CheckedCriterioFiltroChange((object) rd, e);
             }
             else
             {
@@ -100,24 +127,61 @@ namespace ConexcoFacturación
             }
         }
 
-        private void btnGuardarImprimir_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var frmParameteres = new FrmListadoFacturasReportParameter();
-            var result = frmParameteres.ShowDialog();
-
-            if (result == DialogResult.OK)
+            string criterioBusqueda = "";
+            foreach (var control in gbxCriteriosBusqueda.Controls)
             {
-                new FrmListadoFacturasImprimir
-                                            {
-                                                    CantidadFacturas = frmParameteres.CantidadFacturas,
-                                                    IdEstadoFacturas = frmParameteres.IdEstadoFacturas,
-                                                    EstadoFacturas = frmParameteres.EstadoFacturas
-                                                }.ShowDialog();
+                if (control.GetType() == typeof(RadioButton))
+                {
+                    var radioButton = (RadioButton)control;
+                    if (radioButton.Checked)
+                    {
+                        criterioBusqueda = radioButton.Text;
+                    }
+                }
+            }
+
+            var estadoFactura = string.Empty;
+
+            if (this.rdPagadas.Checked)
+            {
+                estadoFactura = "Pagado";
+            }
+            else if (this.rdPendientes.Checked)
+            {
+                estadoFactura = "Pendiente";
+            }
+            else if (this.rdAnuladas.Checked)
+            {
+                estadoFactura = "Anulado";
+            }
+
+            var facturasEncontradas = FacturasController.ListarFacturasPorCriterio(estadoFactura,
+                                                                                   criterioBusqueda,
+                                                                                   txtValorBusqueda.Text);
+
+            if (facturasEncontradas.Tables[0] != null && facturasEncontradas.Tables[0].Rows.Count > 0)
+            {
+                gridFacturas.DataSource = facturasEncontradas.Tables[0];
             }
             else
-                return;
+            {
+                MessageBox.Show("No se encontraron facturas con ese criterio");
+            } 
         }
 
-        
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            var idFactura = Convert.ToInt32(gridFacturas.SelectedRows[0].Cells[0].Value.ToString());
+
+            if (idFactura > 0)
+            {
+                if (txtTipo.Text == "A")
+                    new FrmFacturaImprimir() { IdFactura = idFactura }.ShowDialog();
+                else
+                    new FrmFacturaBImprimir() { IdFactura = idFactura }.ShowDialog();
+            }
+        }
     }
 }

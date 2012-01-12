@@ -38,7 +38,7 @@
             // 
             this.btnStockActual.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
             this.btnStockActual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnStockActual.Location = new System.Drawing.Point(12, 43);
+            this.btnStockActual.Location = new System.Drawing.Point(12, 37);
             this.btnStockActual.Name = "btnStockActual";
             this.btnStockActual.Size = new System.Drawing.Size(260, 31);
             this.btnStockActual.TabIndex = 19;
@@ -62,7 +62,7 @@
             // 
             this.btnFacturasEmitidas.BackgroundImage = global::ConexcoFacturación.Properties.Resources.imprimir3;
             this.btnFacturasEmitidas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFacturasEmitidas.Location = new System.Drawing.Point(12, 201);
+            this.btnFacturasEmitidas.Location = new System.Drawing.Point(12, 195);
             this.btnFacturasEmitidas.Name = "btnFacturasEmitidas";
             this.btnFacturasEmitidas.Size = new System.Drawing.Size(260, 31);
             this.btnFacturasEmitidas.TabIndex = 21;

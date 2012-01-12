@@ -32,7 +32,7 @@ namespace ConexcoFacturación
 
             colorNuevo.Codigo = txtCodColor.Text;
             colorNuevo.Descripcion = txtNombreColor.Text;
-            colorNuevo.RGB = "";
+            colorNuevo.RGB = HexConverter(this.colorDialog1.Color);
             colorNuevo.R = 0;
             colorNuevo.G = 0;
             colorNuevo.B = 0;
@@ -107,6 +107,31 @@ namespace ConexcoFacturación
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            var result = this.colorDialog1.ShowDialog();
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                this.btnColor.BackColor = this.colorDialog1.Color;
+            }
+        }
+
+        private static String HexConverter(System.Drawing.Color c)
+        {
+            String rtn = String.Empty;
+            try
+            {
+                rtn = c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
+            }
+            catch (Exception ex)
+            {
+                //doing nothing
+            }
+
+            return rtn;
         }
     }
 }

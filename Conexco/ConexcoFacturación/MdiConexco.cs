@@ -138,7 +138,7 @@ namespace ConexcoFacturación
 
         private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new FrmReportes(){MdiParent = this}.Show();
+            new FrmStock(){MdiParent = this}.Show();
         }
 
         private void salieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace ConexcoFacturación
 
         private void toolStripButtonStock_Click(object sender, EventArgs e)
         {
-            new FrmReportes() { MdiParent = this }.Show();
+            new FrmStock() { MdiParent = this }.Show();
         }
 
         private void toolStripButtonArticulos_Click(object sender, EventArgs e)
@@ -251,6 +251,11 @@ namespace ConexcoFacturación
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            new FrmReportes() { MdiParent = this }.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmReportes() { MdiParent = this }.Show();
         }

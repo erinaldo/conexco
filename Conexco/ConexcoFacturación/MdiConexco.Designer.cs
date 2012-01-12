@@ -71,7 +71,8 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonLocalidades = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonReportes = new System.Windows.Forms.ToolStripButton();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStripConexco.SuspendLayout();
@@ -101,7 +102,8 @@
             this.clientesToolStripMenuItem,
             this.articulosToolStripMenuItem,
             this.stockToolStripMenuItem,
-            this.localidadesToolStripMenuItem});
+            this.localidadesToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.formulariosToolStripMenuItem.Name = "formulariosToolStripMenuItem";
             this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.formulariosToolStripMenuItem.Text = "For&mularios";
@@ -277,7 +279,7 @@
             this.toolStripSeparator11,
             this.toolStripButtonLocalidades,
             this.toolStripSeparator4,
-            this.toolStripButton1});
+            this.toolStripButtonReportes});
             this.toolStripConexco.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStripConexco.Location = new System.Drawing.Point(0, 24);
             this.toolStripConexco.Name = "toolStripConexco";
@@ -419,16 +421,23 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 57);
             // 
-            // toolStripButton1
+            // toolStripButtonReportes
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.toolStripButton1.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton1.Text = "Reportes";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButtonReportes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonReportes.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReportes.Image")));
+            this.toolStripButtonReportes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonReportes.Name = "toolStripButtonReportes";
+            this.toolStripButtonReportes.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.toolStripButtonReportes.Size = new System.Drawing.Size(94, 54);
+            this.toolStripButtonReportes.Text = "Reportes";
+            this.toolStripButtonReportes.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // MdiConexco
             // 
@@ -500,7 +509,8 @@
         private System.Windows.Forms.ToolStripMenuItem facturasEmitidasToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonReporteFacturas;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonReportes;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }
 

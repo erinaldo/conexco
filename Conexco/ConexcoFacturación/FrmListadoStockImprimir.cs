@@ -37,21 +37,5 @@ namespace ConexcoFacturación
 
             this.reportViewer1.RefreshReport();
         }
-
-        private static String HexConverter(System.Drawing.Color c)
-        {
-            String rtn = String.Empty;
-            try
-            {
-                rtn = "#" + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
-            }
-            catch (Exception ex)
-            {
-                //doing nothing
-            }
-
-            return rtn;
-        }
-
     }
 }
