@@ -52,14 +52,14 @@ namespace ConexcoFacturación
             {
                 if (grdDetalleFactura.SelectedCells.Count > 0)
                 {
-                    if (e.ColumnIndex == 0)
+                    if (e.ColumnIndex == 0 && grdDetalleFactura.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var codArticulo = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
                         grdDetalleFactura.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                         grdDetalleFactura.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
                     }
-                    else if (e.ColumnIndex == 2)
+                    else if (e.ColumnIndex == 2 && grdDetalleFactura.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var descripcion = grdDetalleFactura.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
@@ -510,8 +510,5 @@ namespace ConexcoFacturación
             if (result != System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
         }
-
-
-
    }
 }

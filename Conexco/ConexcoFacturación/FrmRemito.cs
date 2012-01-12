@@ -51,7 +51,7 @@ namespace ConexcoFacturación
             {
                 if (grdDetalleRemito.SelectedCells.Count > 0)
                 {
-                    if (e.ColumnIndex == 2)
+                    if (e.ColumnIndex == 2 && grdDetalleRemito.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var codArticulo = grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
@@ -60,14 +60,14 @@ namespace ConexcoFacturación
 
                         _VerificarStock(articulo, e.RowIndex);
                     }
-                    else if (e.ColumnIndex == 3)
+                    else if (e.ColumnIndex == 3 && grdDetalleRemito.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var descripcion = grdDetalleRemito.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
                         grdDetalleRemito.Rows[e.RowIndex].Cells["Precio"].Value = _CalcularPrecio(articulo.Precio);
                         grdDetalleRemito.Rows[e.RowIndex].Cells["Codigo"].Value = articulo.Codigo + ((articulo.CodColor == null) ? "" : "-" + articulo.CodColor);
                     }
-                    else if(e.ColumnIndex == 1)
+                    else if (e.ColumnIndex == 1 && grdDetalleRemito.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         if (grdDetalleRemito.Rows[e.RowIndex].Cells["Codigo"].Value != null)
                         {

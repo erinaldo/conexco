@@ -54,14 +54,14 @@ namespace ConexcoFacturación
             {
                 if (grdDetallePresupuesto.SelectedCells.Count > 0)
                 {
-                    if (e.ColumnIndex == 0)
+                    if (e.ColumnIndex == 0 && grdDetallePresupuesto.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var codArticulo = grdDetallePresupuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorCodigoYColor(codArticulo);
                         grdDetallePresupuesto.Rows[e.RowIndex].Cells["Precio"].Value = (articulo.Precio);
                         grdDetallePresupuesto.Rows[e.RowIndex].Cells["Descripcion"].Value = articulo.Descripcion;
                     }
-                    else if (e.ColumnIndex == 2)
+                    else if (e.ColumnIndex == 2 && grdDetallePresupuesto.CurrentCell.ColumnIndex == e.ColumnIndex)
                     {
                         var descripcion = grdDetallePresupuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                         var articulo = ArticulosController.DatosArticuloPorDescripcion((descripcion));
