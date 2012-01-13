@@ -25,6 +25,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ActualizarV3", "ActualizarV
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ActualizarV4", "ActualizarV4\ActualizarV4.vdproj", "{6F2EED59-0D03-4170-AAF1-A141E9D31225}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalar2010", "Instalar2010\Instalar2010.vdproj", "{496E3465-CEF6-415A-9A84-51F30B906A91}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -73,6 +75,8 @@ Global
 		{7B3BF351-0830-4276-9175-5086594846F7}.Release|Any CPU.ActiveCfg = Release
 		{6F2EED59-0D03-4170-AAF1-A141E9D31225}.Debug|Any CPU.ActiveCfg = Debug
 		{6F2EED59-0D03-4170-AAF1-A141E9D31225}.Release|Any CPU.ActiveCfg = Release
+		{496E3465-CEF6-415A-9A84-51F30B906A91}.Debug|Any CPU.ActiveCfg = Debug
+		{496E3465-CEF6-415A-9A84-51F30B906A91}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -215,6 +215,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -700,7 +721,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Conexco Facturación"
         "ProductCode" = "8:{6BB72007-E53D-4C94-BBCC-C94C2515EBA4}"
-        "PackageCode" = "8:{E2621E90-18A0-40B9-A7DF-1D51E7A0AE41}"
+        "PackageCode" = "8:{C8DAB6E7-9846-4018-8A4D-B16E9F966818}"
         "UpgradeCode" = "8:{088445F7-71F6-463E-B1A1-922B4134D25E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -57,3 +57,15 @@ BEGIN
 
 		ORDER BY dt.Codigo, f.Numero
 END
+GO
+
+CREATE PROCEDURE [dbo].[ListadoStockActual]
+AS
+BEGIN
+
+SELECT a.idArticulo, a.Codigo, a.CodColor, a.Descripcion, a.Stock, c.RGB
+FROM Articulos a INNER JOIN Articulos_Color c ON a.CodColor = c.Codigo
+WHERE (a.BajaLogica IS NULL OR a.BajaLogica = 0) AND (c.BajaLogica IS NULL OR c.BajaLogica = 0)
+
+END
+GO
